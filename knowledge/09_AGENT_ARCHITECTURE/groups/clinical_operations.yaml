@@ -1,0 +1,6 @@
+# Kode agent mengikuti roster resmi (retag 2026-11-07; registry: knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json).
+name: Clinical Operations
+members:
+- KATT
+owner: KATT
+purpose: Operational clinical flow, quality and support exceptions

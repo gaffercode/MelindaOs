@@ -1,0 +1,157 @@
+.report-page .tool-workspace {
+  --report-section-pad-x: 0;
+  --report-section-pad-y: 1.5rem;
+}
+.tool-workspace > .melinda-running-header { display: none; }
+.report-page .tool-workspace .tool-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: .5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+.report-page .tool-workspace .tool-page-header h1 { margin: .5rem 0; font-size: var(--report-title); font-weight: 500; }
+.report-page .tool-workspace .tool-page-eyebrow { margin: 0; color: var(--muted); font-size: var(--report-body); }
+.report-page .tool-workspace .tool-page-description { margin: 0; color: var(--muted); max-width: 42rem; }
+.tool-page-info { flex-shrink: 0; max-width: 24rem; }
+.tool-page-info summary { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; color: var(--muted); list-style: none; }
+.tool-page-info-content { margin-top: .75rem; padding: 1rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--surface-soft); }
+.tool-page-info .melinda-brief-meta { width: auto; padding: 0; border: 0; }
+.report-page .tool-workspace .tool-page-notice { margin: 0 0 1.5rem; padding: .75rem 1rem; border-left: 2px solid var(--accent); color: var(--muted); background: var(--surface-soft); }
+.tool-workspace .swiss-section-num { display: none; }
+.report-page .tool-workspace .swiss-section { padding-inline: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.tool-workspace .melinda-tool-section-head { align-items: center; gap: 1rem; }
+.tool-workspace .melinda-tool-section-head .swiss-section-heading { margin: 0; }
+.tool-workspace :is(.melinda-tool-segment, .melinda-tool-tab, .melinda-tool-score, .button-primary, .button-secondary) { min-height: 2.75rem; }
+.tool-workspace :is(.melinda-tool-segment, .melinda-tool-tab)[aria-pressed="true"] { border-color: var(--accent); }
+.tool-workspace .melinda-tool-segment.is-active { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-line); }
+.tool-workspace .melinda-tool-choice { padding: 1rem; border-radius: .5rem; box-shadow: none; }
+.tool-workspace .melinda-tool-choice.is-selected { background: var(--accent-soft); box-shadow: none; }
+.tool-workspace .melinda-tool-choice p { margin-bottom: 0; }
+.tool-workspace :is(.text-slate-400, .text-slate-500) { color: var(--muted); }
+.tool-workspace .tool-preset-select { display: block; width: 100%; margin-top: .5rem; }
+.tool-workspace .tool-field-label { display: block; color: var(--text); }
+.tool-workspace .tool-field-help { color: var(--muted); margin: .5rem 0 0; }
+.tool-workspace .tool-tariff-fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: .5rem; }
+.report-page .tool-workspace :is(.font-semibold, .font-bold, .font-extrabold) { font-weight: 500; }
+.tool-workspace .font-mono { font-family: inherit; }
+.report-page .tool-workspace :is(input:not([type="checkbox"]), textarea, select) {
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: .625rem .75rem;
+  font-family: inherit;
+  font-size: var(--report-body);
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+  background: var(--surface);
+}
+.tool-workspace textarea { resize: vertical; }
+.report-page .tool-starkes input[aria-label^="Cari"] { padding-left: 2.5rem; }
+.report-page .tool-workspace :is(input, textarea, select, button, a, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tool-workspace :is(.melinda-tool-section-head, .melinda-tool-action-bar) > div { flex-wrap: wrap; }
+.tool-workspace .swiss-table-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+.tool-starkes .swiss-table { min-width: 56rem; }
+.tool-starkes .swiss-table tr > :first-child { min-width: 6rem; white-space: nowrap; }
+.tool-workspace .tool-chapter-toggle { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; text-align: left; color: var(--text); }
+.tool-chapter-toggle svg { flex-shrink: 0; transform: rotate(-90deg); }
+.tool-chapter-toggle[aria-expanded="true"] svg { transform: rotate(0); }
+.tool-workspace .tool-empty-state { padding: 1.5rem; color: var(--muted); text-align: center; }
+.tool-workspace .tool-presets { margin-bottom: 1.5rem; }
+.tool-workspace .tool-presets > summary { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding-block: .5rem; color: var(--accent); }
+.tool-presets > summary::before { content: "+"; }
+.tool-presets[open] > summary::before { content: "−"; }
+.tool-workspace .tool-presets > div { margin-top: .75rem; }
+.tool-workspace .melinda-tool-mode-bar { background: var(--surface); padding: .75rem 0; border-width: 0 0 1px; border-radius: 0; }
+.tool-workspace .simrs-chart-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.report-page .tool-workspace .simrs-chart-card { border: 1px solid var(--line); border-radius: .5rem; box-shadow: none; background: var(--surface); padding: 1.25rem; }
+.tool-workspace .simrs-chart-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem 1rem; align-items: start; }
+.tool-workspace .simrs-chart-header > .simrs-chart-kicker { grid-column: 1 / -1; }
+.tool-workspace .simrs-chart-header .simrs-chart-title { margin: 0; }
+.report-page .tool-workspace .simrs-chart-header .simrs-chart-title { font-size: var(--report-body); line-height: 1.5; font-weight: 500; }
+.tool-starkes .simrs-chart-header { grid-template-columns: minmax(0, 1fr); }
+.report-page .tool-workspace .simrs-chart-header .simrs-chart-kicker { font-size: var(--report-body); font-weight: 400; color: var(--muted); }
+.report-page .tool-starkes .simrs-chart-body .text-3xl { font-size: var(--report-body); line-height: 1.5; font-variant-numeric: tabular-nums; }
+.report-page .tool-workspace .simrs-chart-body .tool-metric-value { font-size: var(--report-body); line-height: 1.5; font-weight: 500; font-variant-numeric: tabular-nums; }
+.tool-workspace .melinda-tool-tab-bar { max-width: 100%; }
+.tool-workspace .melinda-tool-tab-bar button { white-space: normal; text-align: left; }
+.tool-workspace .tool-status-error { color: var(--orange-ink); }
+@media (min-width: 900px) {
+  .tool-workspace .simrs-chart-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  .tool-starkes .simrs-chart-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .report-page .tool-workspace .tool-page-header { flex-direction: column; gap: .75rem; }
+  .tool-page-info { max-width: 100%; width: 100%; }
+  .tool-workspace .melinda-tool-section-head { align-items: flex-start; }
+  .tool-workspace .melinda-tool-section-head > div { width: 100%; }
+  .tool-workspace .melinda-tool-choice { width: 100%; }
+  .tool-workspace .tool-document-types p { display: none; }
+  .tool-workspace .tool-tariff-fields { grid-template-columns: minmax(0, 1fr); }
+  .tool-workspace .simrs-chart-header { grid-template-columns: minmax(0, 1fr); }
+  .tool-workspace .melinda-tool-section-head :is(button, a) { white-space: normal; height: auto; }
+  .tool-workspace .melinda-tool-mode-bar { align-items: flex-start; }
+  .tool-workspace :is(.melinda-tool-segment-group, .melinda-tool-tab-bar) { gap: .5rem; }
+  .tool-workspace :is(#studio-editor, .tool-input-table) :is(table, tbody, tr, td) { display: block; width: 100%; }
+  .tool-workspace #studio-editor thead, .tool-workspace .tool-input-table thead { display: none; }
+  .tool-workspace :is(#studio-editor, .tool-input-table) td { border: 0; }
+  .tool-workspace :is(#studio-editor, .tool-input-table) td + td { padding-top: .25rem; }
+  .tool-workspace :is(#studio-editor, .tool-input-table) tr { border-bottom: 1px solid var(--line); padding-block: .5rem; }
+  .tool-workspace :is(#studio-editor, .tool-input-table) td > .flex { flex-wrap: wrap; }
+  .tool-workspace .tool-input-table input { width: 100%; text-align: left; }
+}
+@keyframes satusehat-bar-grow {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+@keyframes satusehat-curve-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes satusehat-curve-flow {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes satusehat-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes satusehat-halo-pulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.18; }
+  50% { transform: scale(1.45); opacity: 0.42; }
+}
+.tool-satusehat .satusehat-bar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: satusehat-bar-grow 0.85s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.tool-satusehat .satusehat-curve-area {
+  animation: satusehat-fade-in 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s backwards;
+}
+.tool-satusehat .satusehat-curve-main {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: satusehat-curve-draw 1.3s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.tool-satusehat .satusehat-curve-pulse {
+  stroke-dasharray: 0.22 0.78;
+  animation: satusehat-curve-flow 2.4s linear infinite;
+}
+.tool-satusehat .satusehat-node-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: satusehat-halo-pulse 2.4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-workspace *, .tool-workspace *::before, .tool-workspace *::after { transition: none; animation: none; scroll-behavior: auto; }
+}
+@media print {
+  .tool-workspace .tool-page-info { display: none; }
+  .tool-workspace .swiss-table-wrap { overflow: visible; }
+  .tool-starkes .swiss-table { min-width: 0; }
+}

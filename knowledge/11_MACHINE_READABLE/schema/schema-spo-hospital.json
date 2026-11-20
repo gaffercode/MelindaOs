@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skema Standar Prosedur Operasional Rumah Sakit STARKES",
+  "description": "Skema validasi sembilan elemen baku Standar Prosedur Operasional (SPO) akreditasi STARKES di RSIA Melinda DHAI Kediri",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "judul_spo",
+    "unit_pemilik",
+    "no_dokumen",
+    "no_revisi",
+    "tanggal_terbit",
+    "pengertian",
+    "tujuan",
+    "kebijakan",
+    "prosedur_langkah",
+    "unit_terkait",
+    "pengesahan_direktur"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string",
+      "description": "Kode unik dokumen SOP format SOP-XXX-NAMA",
+      "pattern": "^SOP-(KLI|OPS|FIN|MGT)-[A-Z0-9-]+$"
+    },
+    "judul_spo": {
+      "type": "string",
+      "description": "Judul lengkap tindakan atau prosedur operasional",
+      "minLength": 5
+    },
+    "unit_pemilik": {
+      "type": "string",
+      "description": "Unit kerja penyusun prosedur operasional",
+      "minLength": 2
+    },
+    "no_dokumen": {
+      "type": "string",
+      "description": "Nomor register penomoran dokumen resmi rumah sakit",
+      "pattern": "^[0-9]{3}/[A-Z0-9.-]+/[A-Z]+/[0-9]{4}$"
+    },
+    "no_revisi": {
+      "type": "string",
+      "description": "Nomor edisi revisi dokumen contoh 00 atau 01",
+      "pattern": "^[0-9]{2}$"
+    },
+    "tanggal_terbit": {
+      "type": "string",
+      "description": "Tanggal penetapan pemberlakuan dokumen format YYYY-MM-DD",
+      "format": "date"
+    },
+    "pengertian": {
+      "type": "string",
+      "description": "Definisi operasional atau batasan terminologi prosedur",
+      "minLength": 10
+    },
+    "tujuan": {
+      "type": "array",
+      "description": "Sasaran objektif yang ingin dicapai melalui prosedur ini",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Rincian butir tujuan operasional"
+      }
+    },
+    "kebijakan": {
+      "type": "string",
+      "description": "Dasar hukum Surat Keputusan Direktur yang memayungi SPO",
+      "minLength": 10
+    },
+    "prosedur_langkah": {
+      "type": "array",
+      "description": "Urutan langkah-langkah teknis pelaksanaan tindakan",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Rincian instruksi kerja kronologis"
+      }
+    },
+    "unit_terkait": {
+      "type": "array",
+      "description": "Daftar instalasi atau unit yang terlibat dalam alur prosedur",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "description": "Nama unit atau instalasi terkait"
+      }
+    },
+    "pengesahan_direktur": {
+      "type": "object",
+      "description": "Blok tanda tangan pengesahan pimpinan rumah sakit",
+      "required": [
+        "nama_direktur",
+        "jabatan",
+        "kota_penetapan"
+      ],
+      "properties": {
+        "nama_direktur": {
+          "type": "string",
+          "description": "Nama lengkap dan gelar Direktur penandatangan",
+          "const": "dr. Ferdi Andriska, S.H., M.Kn., CMDC"
+        },
+        "jabatan": {
+          "type": "string",
+          "description": "Jabatan resmi penandatangan",
+          "const": "Direktur RSIA Melinda DHAI"
+        },
+        "kota_penetapan": {
+          "type": "string",
+          "description": "Lokasi kedudukan penandatanganan",
+          "const": "Kediri"
+        }
+      }
+    }
+  },
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

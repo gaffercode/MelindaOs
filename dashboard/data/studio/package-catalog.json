@@ -1,0 +1,361 @@
+[
+  {
+    "key": "identifikasi-pasien",
+    "name": "Paket Identifikasi Pasien",
+    "requiredFactKeys": [
+      "director.name"
+    ],
+    "documents": [
+      {
+        "id": "sk-skp",
+        "kind": "sk",
+        "title": "Penetapan Sasaran Keselamatan Pasien RSIA Melinda DHAI",
+        "unit": "Pelayanan Keperawatan dan Kebidanan",
+        "authority": "director",
+        "revision": "00",
+        "number": null,
+        "issueDate": null,
+        "sections": [
+          {
+            "id": "menimbang",
+            "heading": "Menimbang",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Keselamatan pasien memerlukan penerapan enam sasaran secara konsisten pada seluruh pelayanan RSIA Melinda DHAI."
+              }
+            ]
+          },
+          {
+            "id": "mengingat",
+            "heading": "Mengingat",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Keputusan Menteri Kesehatan Nomor HK.01.07/MENKES/1596/2024 tentang Standar Akreditasi Rumah Sakit dan Peraturan Menteri Kesehatan Nomor 6 Tahun 2026 tentang Rumah Sakit."
+              }
+            ]
+          },
+          {
+            "id": "memutuskan",
+            "heading": "Memutuskan",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Menetapkan enam sasaran keselamatan pasien: identifikasi pasien dengan benar; komunikasi efektif; keamanan obat yang perlu diwaspadai; kepastian lokasi, prosedur dan pasien pada tindakan invasif; pengurangan risiko infeksi; serta pengurangan risiko cedera akibat jatuh.",
+                  "Seluruh unit menerapkan sasaran yang relevan dengan pelayanan masing-masing melalui pedoman dan SPO terkait yang dikendalikan dalam register dokumen RS.",
+                  "Kepala unit memastikan staf memahami prosedur, melakukan pemantauan, melaporkan ketidaksesuaian dan menindaklanjuti hasil evaluasi kepada pimpinan pelayanan.",
+                  "Keputusan berlaku setelah disahkan oleh Direktur pada tanggal penetapan yang tercantum."
+                ]
+              }
+            ]
+          }
+        ],
+        "requirementIds": [
+          "47104-2024:SKP:1:1"
+        ],
+        "relatedDocumentIds": [],
+        "sourceIds": [
+          "identifikasi",
+          "org-2026"
+        ]
+      },
+      {
+        "id": "spo-identifikasi",
+        "kind": "spo",
+        "title": "Identifikasi Pasien Sebelum Pelayanan",
+        "unit": "Pelayanan Keperawatan dan Kebidanan",
+        "authority": "director",
+        "revision": "00",
+        "number": null,
+        "issueDate": null,
+        "sections": [
+          {
+            "id": "pengertian",
+            "heading": "1. Pengertian",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Identifikasi pasien adalah pencocokan identitas individu dengan pelayanan yang akan diberikan untuk mencegah salah pasien."
+              }
+            ]
+          },
+          {
+            "id": "tujuan",
+            "heading": "2. Tujuan",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Memastikan pelayanan, obat, spesimen, tindakan dan makanan diberikan kepada pasien yang benar."
+              }
+            ]
+          },
+          {
+            "id": "ruang_lingkup",
+            "heading": "3. Ruang Lingkup",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Berlaku pada rawat jalan, IGD, rawat inap, kamar operasi, perinatologi, farmasi, laboratorium, dan unit pemberi pelayanan lainnya sesuai pelayanan RS."
+              }
+            ]
+          },
+          {
+            "id": "kebijakan",
+            "heading": "4. Kebijakan",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Gunakan nama lengkap dan tanggal lahir sebagai dua identitas. Nomor kamar atau lokasi tempat tidur tidak digunakan sebagai identitas. Cocokkan identitas pada pasien, gelang atau dokumen identitas, dan permintaan pelayanan."
+              }
+            ]
+          },
+          {
+            "id": "tanggung_jawab",
+            "heading": "5. Tanggung Jawab",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Petugas pemberi pelayanan melakukan verifikasi. Petugas pendaftaran memeriksa data identitas. Kepala unit mengawasi kepatuhan dan tindak lanjut. Pimpinan pelayanan mengevaluasi laporan antarunit."
+              }
+            ]
+          },
+          {
+            "id": "unit_terkait",
+            "heading": "6. Unit Terkait",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Pendaftaran, seluruh unit klinis dan penunjang yang memberikan pelayanan kepada pasien."
+              }
+            ]
+          },
+          {
+            "id": "prosedur",
+            "heading": "7. Prosedur",
+            "blocks": [
+              {
+                "type": "list",
+                "items": [
+                  "Sebelum memberikan pelayanan, minta pasien menyebutkan nama lengkap dan tanggal lahir dengan pertanyaan terbuka; hindari pertanyaan yang hanya mengundang jawaban ya atau tidak.",
+                  "Cocokkan kedua identitas dengan gelang identitas atau dokumen identitas yang sah dan permintaan pelayanan. Verifikasi dilakukan sebelum obat, darah/produk darah, tindakan, pengambilan spesimen, pemeriksaan diagnostik, dan penyajian makanan.",
+                  "Bila pasien tidak mampu berkomunikasi, konfirmasikan identitas kepada keluarga atau pendamping yang dapat dipercaya dan cocokkan dengan rekam medis serta gelang; ikuti panduan identifikasi situasi khusus RS.",
+                  "Pada bayi baru lahir, pasien dengan nama sama, atau identitas tidak diketahui, gunakan tata laksana identifikasi khusus dalam panduan RS dan pastikan label spesimen serta ASI terkait dengan identitas bayi yang benar.",
+                  "Bila identitas tidak cocok atau gelang hilang/tidak terbaca, hentikan pelayanan non-darurat, hubungi penanggung jawab unit dan petugas pendaftaran untuk rekonsiliasi; tindakan penyelamatan jiwa tetap dilaksanakan sesuai tata laksana kegawatdaruratan dengan pencatatan identitas sementara.",
+                  "Dokumentasikan verifikasi sesuai formulir pelayanan, laporkan ketidaksesuaian sebagai insiden atau kondisi berisiko, dan lakukan serah terima identitas ketika pasien berpindah unit."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dokumen_terkait",
+            "heading": "8. Dokumen Terkait",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Kebijakan sasaran keselamatan pasien; Panduan Identifikasi Pasien RS; formulir audit identifikasi; instrumen monitoring kepatuhan; prosedur pelaporan insiden."
+              }
+            ]
+          },
+          {
+            "id": "riwayat_revisi",
+            "heading": "9. Riwayat Revisi",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Revisi 00: penyelarasan prosedur identifikasi dengan kebutuhan instrumen akreditasi dan panduan RS pada penerbitan ini."
+              }
+            ]
+          }
+        ],
+        "requirementIds": [
+          "47104-2024:SKP:1:2",
+          "47104-2024:SKP:1:3",
+          "47104-2024:SKP:1:4"
+        ],
+        "relatedDocumentIds": [
+          "sk-skp",
+          "form-audit-identifikasi",
+          "monitoring-identifikasi"
+        ],
+        "sourceIds": [
+          "identifikasi",
+          "org-2026"
+        ]
+      },
+      {
+        "id": "form-audit-identifikasi",
+        "kind": "form",
+        "title": "Formulir Audit Identifikasi Pasien",
+        "unit": "Pelayanan Keperawatan dan Kebidanan",
+        "authority": "director",
+        "revision": "00",
+        "number": null,
+        "issueDate": null,
+        "sections": [
+          {
+            "id": "petunjuk",
+            "heading": "Petunjuk Pengisian",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Auditor mencatat observasi nyata tanpa nama atau nomor rekam medis pasien pada lembar audit ini. Pilih sesuai atau tidak sesuai untuk setiap kesempatan identifikasi; jelaskan alasan bila tidak dapat diamati."
+              },
+              {
+                "type": "input",
+                "label": "Tanggal dan waktu observasi",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Unit pelayanan",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Kode observasi tanpa identitas pasien",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Dua identitas dicocokkan",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Identitas sesuai permintaan pelayanan",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Situasi khusus dan penggunaan label",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Ketidaksesuaian dan tindak lanjut",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Nama dan tanda tangan auditor",
+                "purpose": "signature"
+              }
+            ]
+          }
+        ],
+        "requirementIds": [
+          "47104-2024:SKP:1:3",
+          "47104-2024:SKP:1:4"
+        ],
+        "relatedDocumentIds": [],
+        "sourceIds": [
+          "identifikasi",
+          "org-2026"
+        ]
+      },
+      {
+        "id": "materi-identifikasi",
+        "kind": "materi",
+        "title": "Materi Sosialisasi Identifikasi Pasien",
+        "unit": "Pelayanan Keperawatan dan Kebidanan",
+        "authority": "director",
+        "revision": "00",
+        "number": null,
+        "issueDate": null,
+        "sections": [
+          {
+            "id": "tujuan",
+            "heading": "Tujuan",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Staf mampu memverifikasi dua identitas dan merespons ketidaksesuaian sebelum pelayanan."
+              }
+            ]
+          },
+          {
+            "id": "materi",
+            "heading": "Materi",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Praktikkan pertanyaan terbuka nama lengkap dan tanggal lahir; cocokkan dengan gelang/dokumen dan permintaan pelayanan. Latih skenario bayi, pasien tidak sadar, nama sama, label spesimen dan ASI. Hentikan pelayanan non-darurat ketika identitas belum cocok dan eskalasikan kepada penanggung jawab unit. Fasilitator menilai peragaan, mencatat hasil sebenarnya dan mengulang latihan bila belum tepat."
+              }
+            ]
+          }
+        ],
+        "requirementIds": [
+          "47104-2024:SKP:1:2"
+        ],
+        "relatedDocumentIds": [],
+        "sourceIds": [
+          "identifikasi",
+          "org-2026"
+        ]
+      },
+      {
+        "id": "monitoring-identifikasi",
+        "kind": "monitoring",
+        "title": "Instrumen Monitoring Kepatuhan Identifikasi",
+        "unit": "Pelayanan Keperawatan dan Kebidanan",
+        "authority": "director",
+        "revision": "00",
+        "number": null,
+        "issueDate": null,
+        "sections": [
+          {
+            "id": "petunjuk",
+            "heading": "Petunjuk Monitoring",
+            "blocks": [
+              {
+                "type": "text",
+                "text": "Rekap observasi dari formulir audit sesuai periode yang ditetapkan program mutu unit. Hitung kepatuhan dari kesempatan yang benar-benar diamati; data tanpa observasi tidak dihitung sebagai patuh. Kepala unit menelaah ketidaksesuaian, menentukan tindakan perbaikan dan menilai ulang hasil."
+              },
+              {
+                "type": "table",
+                "headers": [
+                  "Periode",
+                  "Unit",
+                  "Kesempatan diamati",
+                  "Sesuai",
+                  "Tidak sesuai",
+                  "Analisis dan tindakan"
+                ],
+                "rows": [
+                  [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ]
+                ]
+              },
+              {
+                "type": "input",
+                "label": "Tanggal evaluasi dan tindak lanjut berikutnya",
+                "purpose": "operational"
+              },
+              {
+                "type": "input",
+                "label": "Penanggung jawab dan tanda tangan",
+                "purpose": "signature"
+              }
+            ]
+          }
+        ],
+        "requirementIds": [
+          "47104-2024:SKP:1:2"
+        ],
+        "relatedDocumentIds": [],
+        "sourceIds": [
+          "identifikasi",
+          "org-2026"
+        ]
+      }
+    ]
+  }
+]

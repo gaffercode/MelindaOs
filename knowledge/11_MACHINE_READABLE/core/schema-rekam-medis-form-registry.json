@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rekam medis form registry entry",
+  "description": "Satu entri daftar susunan formulir rekam medis RSIA Melinda (Keputusan Direktur tentang Formulir Rekam Medis Pasien, ditetapkan di Kediri 28 Mei 2022). Skema hanya memuat struktur kolom; daftar formulir tetap di knowledge/01_HOSPITAL/hospital_sop/kb-operasional-pengaturan-urutan-susunan-formulir-rm.md. Sumber: sources/raw/2-policies-sop-forms/sop/PENGATURAN URUTAN SUSUNAN FORMULIR RM.pdf.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "section": {
+      "type": "string",
+      "enum": [
+        "Admission",
+        "Rawat Jalan",
+        "Gawat Darurat",
+        "Medis",
+        "Rawat Inap",
+        "Farmasi",
+        "Laboratorium",
+        "Gizi",
+        "Humas",
+        "Binroh",
+        "Case Manager"
+      ],
+      "description": "Kelompok formulir sesuai judul kelompok pada lampiran keputusan."
+    },
+    "sequence_number": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Nomor urut formulir pada kolom No."
+    },
+    "form_code": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Kode formulir pada kolom Kode. Nilai kode tidak terbaca pada scan sumber sehingga field ini opsional."
+    },
+    "form_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nama formulir pada kolom Formulir."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Inti", "Insidentil"],
+      "description": "Kolom Keterangan pada lampiran: Inti atau Insidentil."
+    }
+  },
+  "required": ["section", "form_name", "category"],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

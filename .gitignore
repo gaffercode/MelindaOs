@@ -1,0 +1,106 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.env
+# Dashboard source is versioned; generated artifacts stay local
+dashboard/node_modules/
+dashboard/.next/
+dashboard/coverage/
+dashboard/*.tsbuildinfo
+dashboard/tmp-gaffer-preview/
+dashboard/public/generated/
+dashboard/data/simrs/*.json
+# Management Morning Brief: daily files stay out of Git; one labeled example is versioned
+dashboard/data/melinda/*.json
+!dashboard/data/melinda/2026-10-23.json
+dashboard/data/simrs/inbox/*
+!dashboard/data/simrs/inbox/TEMPLATE.csv
+dashboard/data/chatgpt/
+
+# IDE & editor state (local only)
+.vscode/
+.idea/
+
+# AI agent local state. Shared agent config stays versioned: .agents/skills/ and .claude/launch.json.
+.claude/worktrees/
+.claude/settings.local.json
+.claude/*.local.*
+.cursor/
+.codex/
+.gemini/
+.opencode/
+.factory/
+.grok/
+.windsurf/
+.kiro/
+.continue/
+.cline/
+.roo/
+.aider*
+.superpowers/
+.impeccable/
+.superdesign/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editor workspace files
+*.code-workspace
+
+# Local source material: raw scans (sources/raw) and credentialing photos with GPS metadata and possible
+# patient content (sources/images). Large and sensitive, stays local (see SECURITY.md).
+/sources/
+
+# Separate local app repository (its own git history); anchored so dashboard/app/ stays tracked.
+/app/
+
+# Photo evidence sheets for BPJS credentialing (contain photos); served from the private Supabase bucket instead.
+07_LEGAL_REGULATORY/kredensial/berkas_2026/bukti_foto/
+knowledge/07_LEGAL_REGULATORY/kredensial/berkas_2026/bukti_foto/
+
+# Restructure working notes (repo map, move plan, status, report); local only.
+docs/restructure/
+
+# --- Hospital data: never published ---
+# This is the public source. Hospital documents and operational data live in private storage; the production
+# build fetches them (dashboard/scripts/fetch-private-data.mjs). These rules keep them out of Git when on disk.
+/sources/
+/knowledge/01_HOSPITAL/
+/knowledge/02_PATIENT_ACCESS/
+/knowledge/03_INSURANCE/
+/knowledge/04_BPJS/
+/knowledge/05_REFERRAL/
+/knowledge/06_CLINICAL_SAFETY/
+/knowledge/07_LEGAL_REGULATORY/
+/knowledge/99_ARCHIVE/
+/knowledge/11_MACHINE_READABLE/manifest/
+/knowledge/12_GOVERNANCE/agentic_os/docs/superpowers/
+dashboard/data/*
+!dashboard/data/synthetic/
+!dashboard/data/starkes/
+!dashboard/data/studio/
+!dashboard/data/validation.json
+!dashboard/data/content/
+!dashboard/data/director/
+dashboard/data/director/*
+!dashboard/data/director/templates/
+!dashboard/data/kredensial/
+dashboard/data/kredensial/*
+!dashboard/data/kredensial/index.json
+
+# Internal plans and the readiness outputs quoted from the private hospital documents: real files come from private
+# storage at build time (dashboard/scripts/fetch-private-data.mjs); the repository keeps fictional or empty stand-ins
+# for the files the code reads.
+/knowledge/12_GOVERNANCE/knowledge/URUTAN_PEMBARUAN_DOKUMEN.md
+/knowledge/12_GOVERNANCE/knowledge/MISSING_DOCUMENTS.md
+/knowledge/12_GOVERNANCE/knowledge/starkes-r-gaps-review.md
+/knowledge/12_GOVERNANCE/knowledge/readiness-director-items.md

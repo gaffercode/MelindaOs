@@ -1,0 +1,56 @@
+{
+  "_note": "Fictional sample for the public repository. The production build replaces this file with the hospital's real content from private storage (dashboard/scripts/fetch-private-data.mjs).",
+  "lead": {
+    "headline": "{openCount} butir kerja contoh aktif; {directorDecisionCount} menunggu keputusan Direktur",
+    "deck": "{bedClause} Lead Brief contoh (Pekan {weekIndex}) dipimpin oleh {leaderName}, dengan sorotan pada {mainForumTitle}.",
+    "paragraphs": [
+      "Sebanyak {openCount} butir kerja contoh dipetakan ke jadwal; {thirdPartyCount} tertahan pihak ke-3 dan {verificationCount} menunggu verifikasi.",
+      "Paragraf contoh fiktif kedua untuk pengujian tampilan Warta."
+    ]
+  },
+  "deadlines": [
+    {
+      "when": "1 Januari 2099",
+      "title": "Tenggat contoh",
+      "note": "Catatan tenggat fiktif.",
+      "org": "Lembaga Contoh",
+      "source": "bpjs"
+    },
+    {
+      "when": "2 Januari 2099",
+      "title": "Tenggat contoh kedua",
+      "note": "Catatan tenggat fiktif kedua.",
+      "org": "Unit Contoh",
+      "source": "melinda"
+    },
+    {
+      "when": "3 Januari 2099",
+      "title": "Tenggat contoh ketiga",
+      "note": "Catatan tenggat fiktif ketiga.",
+      "org": "Lembaga Contoh",
+      "source": "melinda"
+    }
+  ],
+  "inbox": [
+    {
+      "kicker": "Contoh rubrik",
+      "headline": "Berita internal contoh",
+      "deck": "Ringkasan contoh fiktif.",
+      "byline": "Redaksi Contoh",
+      "editorNote": "Catatan redaksi contoh.",
+      "paragraphs": [
+        "Paragraf berita contoh fiktif."
+      ]
+    },
+    {
+      "kicker": "Contoh rubrik kedua",
+      "headline": "Berita internal contoh kedua",
+      "deck": "Ringkasan contoh fiktif kedua.",
+      "byline": "Redaksi Contoh",
+      "editorNote": "Catatan redaksi contoh.",
+      "paragraphs": [
+        "Paragraf berita contoh fiktif kedua."
+      ]
+    }
+  ]
+}

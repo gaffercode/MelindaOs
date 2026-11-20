@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skema Checklist Audit Akreditasi Rumah Sakit STARKES",
+  "description": "Skema validasi instrumen audit internal dan mock survey standar akreditasi rumah sakit Kemenkes RI di RSIA Melinda DHAI Kediri",
+  "type": "object",
+  "required": [
+    "audit_id",
+    "tanggal_audit",
+    "auditor_nama",
+    "bab_akreditasi",
+    "skor_capaian",
+    "status_kelulusan",
+    "daftar_elemen_penilaian"
+  ],
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "description": "Nomor identifikasi unik sesi audit akreditasi",
+      "pattern": "^AUD-STARKES-[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "tanggal_audit": {
+      "type": "string",
+      "description": "Tanggal pelaksanaan survei simulasi akreditasi",
+      "format": "date"
+    },
+    "auditor_nama": {
+      "type": "string",
+      "description": "Nama ketua tim auditor internal akreditasi",
+      "minLength": 3
+    },
+    "bab_akreditasi": {
+      "type": "string",
+      "description": "Kode bab standar akreditasi STARKES yang diaudit",
+      "enum": [
+        "TKRS",
+        "KPS",
+        "MFK",
+        "PMKP",
+        "MRMIK",
+        "AKP",
+        "HPK",
+        "PP",
+        "PAP",
+        "PAB",
+        "PKPO",
+        "KE",
+        "PPI",
+        "SKP",
+        "PROGNAS"
+      ]
+    },
+    "skor_capaian": {
+      "type": "number",
+      "description": "Persentase skor capaian kepatuhan bab rentang 0 hingga 100",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "status_kelulusan": {
+      "type": "string",
+      "description": "Predikat kelayakan hasil audit bab",
+      "enum": [
+        "MEMENUHI_LENGKAP",
+        "MEMENUHI_SEBAGIAN",
+        "TIDAK_MEMENUHI"
+      ]
+    },
+    "daftar_elemen_penilaian": {
+      "type": "array",
+      "description": "Daftar perincian penilaian elemen per standar",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "description": "Detail penilaian satu elemen penilaian standar",
+        "required": [
+          "kode_standar",
+          "skor_ep",
+          "metode_verifikasi"
+        ],
+        "properties": {
+          "kode_standar": {
+            "type": "string",
+            "description": "Kode standar dan nomor elemen penilaian contoh TKRS 1.1"
+          },
+          "skor_ep": {
+            "type": "number",
+            "description": "Nilai elemen penilaian: 0, 5, atau 10",
+            "enum": [0, 5, 10]
+          },
+          "metode_verifikasi": {
+            "type": "string",
+            "description": "Metode pembuktian elemen penilaian",
+            "enum": ["REGULASI", "DOKUMEN", "OBSERVASI", "WAWANCARA", "SIMULASI"]
+          }
+        }
+      }
+    }
+  },
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC"
+    ,
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema_ref": "schema-starkes-kelulusan.json",
+  "id": "starkes-kelulusan-2024",
+  "description": "Pass/fail criteria for hospital accreditation survey results (Paripurna, Utama, Madya, Tidak terakreditasi) under STARKES 2024, transcribed from the official survey guideline. Chapter counts exclude the Program Nasional chapter, which is scored separately. 'all_applicable_except_prognas' means every applicable chapter other than PROGNAS (15 of 16 when PPK applies; PPK is not applicable to non-teaching hospitals).",
+  "standard": {
+    "decree": "Keputusan Menteri Kesehatan Nomor HK.01.07/MENKES/1596/2024",
+    "title": "Standar Akreditasi Rumah Sakit",
+    "revokes": "Keputusan Menteri Kesehatan Nomor HK.01.07/MENKES/1128/2022 (dicabut oleh HK.01.07/MENKES/1596/2024)"
+  },
+  "source": {
+    "decree": "Keputusan Direktur Jenderal Pelayanan Kesehatan Nomor HK.02.02/D/43961/2024 tentang Pedoman Survei Akreditasi Rumah Sakit",
+    "url": "https://keslan.kemkes.go.id/unduhan/fileunduhan_1723085704_228058.pdf",
+    "sha256": "4120aea116bd9855edc9b166c9d7ac33f03a9c597857cd37663facb9f1741c43",
+    "page": "20-21",
+    "section": "B. Hasil Survei, a. Rumah sakit",
+    "retrievedAt": "2026-11-07"
+  },
+  "non_teaching": {
+    "paripurna": { "chapters_min_80": "all_applicable_except_prognas", "prognas_min": 100 },
+    "utama": { "chapters_min_80_range": [11, 13], "skp_min": 80, "prognas_min": 100 },
+    "madya": { "chapters_min_80_range": [7, 10], "skp_min": 70, "prognas_min": 100 },
+    "tidak_terakreditasi": { "chapters_min_80_below": 7, "skp_below": 70, "prognas_below": 100, "logic": "any" }
+  },
+  "teaching": {
+    "paripurna": { "chapters_min_80": "all_applicable_except_prognas", "prognas_min": 100 },
+    "utama": { "chapters_min_80_range": [11, 14], "skp_min": 80, "prognas_min": 100 },
+    "madya": { "chapters_min_80_range": [7, 10], "skp_min": 70, "prognas_min": 100 },
+    "tidak_terakreditasi": { "chapters_min_80_below": 7, "skp_below": 70, "prognas_below": 100, "logic": "any" }
+  }
+}

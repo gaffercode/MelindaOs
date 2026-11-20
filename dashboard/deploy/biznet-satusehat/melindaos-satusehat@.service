@@ -1,0 +1,21 @@
+[Unit]
+Description=MelindaOS SATUSEHAT OAuth2 pull (%i slot)
+Documentation=https://github.com/gaffercode/MelindaOs/blob/main/dashboard/deploy/biznet-satusehat/README.md
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=melindaos
+Group=melindaos
+EnvironmentFile=/etc/melindaos/satusehat.env
+Environment=MELINDAOS_SATUSEHAT_LOCK_DIR=/var/lib/melindaos-satusehat
+StateDirectory=melindaos-satusehat
+WorkingDirectory=/opt/melindaos-satusehat
+ExecStart=@NODE_BIN@ /opt/melindaos-satusehat/run-satusehat-scheduled.mjs %i
+TimeoutStartSec=10min
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/melindaos-satusehat

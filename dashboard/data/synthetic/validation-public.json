@@ -1,0 +1,1 @@
+{"status":"available","scannedAt":"2026-11-19T13:37:27.457Z","counts":[{"category":"A","passed":17,"total":17},{"category":"B","passed":20,"total":20},{"category":"C","passed":13,"total":13}],"passed":50,"total":50,"limitation":"Mengukur format dokumen dan governance canonical; bukan akurasi semantik, kelengkapan, atau freshness knowledge.","source":"live"}

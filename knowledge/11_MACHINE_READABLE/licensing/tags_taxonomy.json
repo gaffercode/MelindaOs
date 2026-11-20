@@ -1,0 +1,39 @@
+{
+  "domains": [
+    "kesehatan",
+    "oss_rba",
+    "rumah_sakit",
+    "sdmk",
+    "bangunan",
+    "tata_ruang_lokal",
+    "lingkungan",
+    "limbah_b3",
+    "radiologi",
+    "kefarmasian",
+    "data_rekam_medis",
+    "privacy",
+    "akreditasi",
+    "lokal_portal"
+  ],
+  "status": [
+    "berlaku",
+    "aktif",
+    "dicabut",
+    "tergantikan",
+    "arsip",
+    "needs_confirmation"
+  ],
+  "evidence_status": [
+    "PASS",
+    "GAP",
+    "NEEDS EVIDENCE",
+    "NEEDS AUTHORITY CONFIRMATION",
+    "NOT APPLICABLE"
+  ],
+  "risk": [
+    "CRITICAL",
+    "HIGH",
+    "MEDIUM",
+    "LOW"
+  ]
+}

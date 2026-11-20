@@ -1,0 +1,917 @@
+/* STARKES Readiness View: Swiss Medical Precision with Vertical & Horizontal Grid Lines and the shared accent.
+   The --sv-cyan names stay; their values follow the dashboard accent tokens (Melinda blue since 2026-11-09). */
+
+:root {
+  --sv-cyan: var(--color-accent);
+  --sv-cyan-deep: var(--color-accent-text);
+  --sv-cyan-bright: var(--color-accent);
+  --sv-cyan-soft: rgba(53, 115, 184, 0.07);
+  --sv-cyan-border: rgba(53, 115, 184, 0.28);
+}
+
+.starkes-v2 {
+  /* Gridlines stay (Director's layout, 2026-11-08) but on a lighter hairline so the sheet reads soft (2026-11-09). */
+  --line: #ECEBE8;
+  display: grid;
+  gap: 24px;
+  font-size: var(--type-body);
+  color: var(--text);
+  line-height: var(--line-body);
+}
+
+.starkes-v2 .sv-section {
+  display: grid;
+  gap: 12px;
+}
+
+.starkes-v2 .sv-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.starkes-v2 .sv-section-head h2 {
+  margin: 0;
+  font-size: var(--type-title-sm);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.starkes-v2 h2 {
+  margin: 0 0 12px;
+  font-size: var(--type-title-sm);
+  font-weight: 600;
+}
+
+.starkes-v2 .sv-problem {
+  color: var(--orange-ink);
+}
+
+.starkes-v2 .sv-muted {
+  color: var(--muted);
+}
+
+.starkes-v2 .sv-cyan {
+  color: var(--sv-cyan-deep);
+}
+
+.starkes-v2 button.sv-link,
+.starkes-v2 a.sv-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--sv-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: opacity var(--motion-fast);
+}
+
+.starkes-v2 button.sv-link:hover,
+.starkes-v2 a.sv-link:hover {
+  opacity: 0.8;
+  color: var(--sv-cyan-deep);
+}
+
+/* ==========================================================================
+   1. Prediksi & Header Matrix
+   ========================================================================== */
+
+.sv-header {
+  display: grid;
+  gap: 16px;
+}
+
+.sv-predicate-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--sv-cyan);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.sv-predicate-grid {
+  display: grid;
+  grid-template-columns: minmax(14rem, 22rem) 1fr;
+  align-items: stretch;
+}
+
+.sv-predicate-main {
+  padding: 18px 20px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: var(--surface);
+}
+
+.sv-predicate-main .sv-kicker {
+  font-size: var(--type-ui);
+  color: var(--sv-cyan-deep);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sv-predicate-main .sv-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sv-cyan);
+}
+
+.sv-predicate-main strong {
+  font-size: clamp(1.75rem, 2.2vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.sv-predicate-meta {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  background: var(--surface-soft);
+}
+
+.sv-target-note {
+  font-size: var(--type-body);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.sv-blocking-banner {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange-ink);
+  border-radius: var(--radius-control, 6px);
+  background: var(--surface);
+  font-size: var(--type-ui);
+}
+
+/* Chapter Progress Matrix with Vertical & Horizontal Gridlines */
+.sv-matrix-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--sv-cyan);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+/* Shifting the vertical divider to the right: minmax(16rem, 23rem) gives generous space */
+.sv-matrix-head {
+  display: grid;
+  grid-template-columns: minmax(16rem, 23rem) 1fr 6.5rem;
+  align-items: center;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--type-ui);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sv-matrix-head > span {
+  padding: 10px 16px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.sv-matrix-head > span:last-child {
+  border-right: none;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.sv-bars {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sv-bar {
+  display: grid;
+  grid-template-columns: minmax(16rem, 23rem) 1fr 6.5rem;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--motion-fast);
+}
+
+.sv-bar:last-child {
+  border-bottom: none;
+}
+
+.sv-bar:hover {
+  background: var(--surface-soft);
+}
+
+.sv-bar-name {
+  padding: 10px 16px;
+  border-right: 1px solid var(--line);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
+.sv-bar-track-cell {
+  padding: 10px 16px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+}
+
+.sv-track {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--surface-shell, #e5e4e2);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Vibrant Cyan Progress Fill */
+.sv-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--sv-cyan);
+  transition: width 0.3s ease;
+}
+
+/* Progress fills from the left when the page arrives (2026-11-11); transform only, so nothing reflows. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .sv-fill { transform-origin: left center; animation: grow-x var(--motion-layout) var(--ease-out-expo) backwards; animation-delay: min(var(--i, 0) * 30ms, 210ms); }
+}
+
+.sv-fill.is-low {
+  background: var(--orange-ink);
+}
+
+/* Vertical target marker line directed to the right */
+.sv-mark {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  right: 0;
+  width: 2px;
+  background: var(--sv-cyan-deep);
+  z-index: 2;
+  box-shadow: 0 0 2px rgba(12, 180, 182, 0.4);
+}
+
+.sv-pct {
+  padding: 10px 16px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sv-blocking-panel {
+  padding: 12px 16px;
+  border-top: 1px solid var(--line);
+  background: var(--surface-soft);
+  border-left: 3px solid var(--orange-ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--type-ui);
+}
+
+.sv-blocking-panel p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   2. Prioritas Minggu Ini (Grid Table)
+   ========================================================================== */
+
+.sv-priority-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--sv-cyan);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.sv-priority-thead {
+  display: grid;
+  grid-template-columns: 1fr minmax(12rem, 16rem) 7rem;
+  align-items: center;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--type-ui);
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sv-priority-thead > span {
+  padding: 10px 16px;
+  border-right: 1px solid var(--line);
+}
+
+.sv-priority-thead > span:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.sv-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sv-list li {
+  display: grid;
+  grid-template-columns: 1fr minmax(12rem, 16rem) 7rem;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--motion-fast);
+}
+
+.sv-list li:last-child {
+  border-bottom: none;
+}
+
+.sv-list li:hover {
+  background: var(--surface-soft);
+}
+
+.sv-priority-ep-text {
+  padding: 12px 16px;
+  border-right: 1px solid var(--line);
+  font-weight: 400;
+}
+
+.sv-priority-ep-need {
+  padding: 12px 16px;
+  border-right: 1px solid var(--line);
+  font-size: var(--type-ui);
+}
+
+.sv-priority-ep-act {
+  padding: 12px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sv-empty-state {
+  padding: 24px;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+}
+
+/* ==========================================================================
+   3. Evidence Inbox (Ledger Table Style)
+   ========================================================================== */
+
+.sv-inbox {
+  display: grid;
+  gap: 16px;
+}
+
+.sv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sv-cyan);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+}
+
+.sv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.sv-actions button {
+  font: inherit;
+  font-size: var(--type-ui);
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control, 6px);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast);
+}
+
+.sv-actions button:hover:not(:disabled) {
+  background: var(--sv-cyan-soft);
+  border-color: var(--sv-cyan);
+  color: var(--sv-cyan-deep);
+}
+
+.sv-actions button:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sv-table-card {
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--sv-cyan);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.sv-table-caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+  font-size: var(--type-body);
+}
+
+.sv-table-caption-code {
+  padding: 2px 8px;
+  border: 1px solid var(--sv-cyan-border);
+  border-radius: 4px;
+  background: var(--sv-cyan-soft);
+  color: var(--sv-cyan-deep);
+  font-size: var(--type-ui);
+  font-weight: 600;
+}
+
+.sv-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.sv-inbox table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: var(--type-body);
+}
+
+.sv-inbox th {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: var(--type-ui);
+  font-weight: 600;
+  text-align: left;
+}
+
+.sv-inbox th:last-child {
+  border-right: none;
+}
+
+.sv-inbox td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.sv-inbox td:last-child {
+  border-right: none;
+}
+
+.sv-inbox tr:last-child td {
+  border-bottom: none;
+}
+
+.sv-inbox tr:hover td {
+  background: var(--surface-soft);
+}
+
+.sv-col-check {
+  width: 4rem;
+  text-align: center;
+}
+
+.sv-col-kind {
+  width: 5.5rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. Elemen Penilaian per Bab (Chapter Cards & EpRow)
+   ========================================================================== */
+
+.sv-chapter-deck {
+  display: grid;
+  gap: 10px;
+}
+
+.sv-chapter {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-structure, 8px);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color var(--motion-fast);
+}
+
+.sv-chapter[open] {
+  border-color: var(--sv-cyan-border);
+}
+
+.sv-chapter > summary {
+  cursor: pointer;
+  list-style: none;
+  background: var(--surface);
+  transition: background var(--motion-fast);
+}
+
+.sv-chapter > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sv-chapter > summary:hover {
+  background: var(--surface-soft);
+}
+
+.sv-chapter[open] > summary {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+
+.sv-summary-grid {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(10rem, 1fr) 6.5rem 5rem minmax(13rem, 1.2fr) 5.5rem;
+  align-items: center;
+}
+
+.sv-summary-grid > * {
+  padding: 12px 14px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+}
+
+.sv-summary-grid > *:last-child {
+  border-right: none;
+  justify-content: center;
+}
+
+.sv-sum-code {
+  font-weight: 600;
+  font-size: var(--type-heading);
+}
+
+.sv-sum-code b {
+  color: var(--sv-cyan-deep);
+}
+
+.sv-sum-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sv-sum-pct {
+  text-align: right;
+  justify-content: flex-end;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.sv-sum-eps {
+  text-align: right;
+  justify-content: flex-end;
+  font-variant-numeric: tabular-nums;
+}
+
+.sv-lead {
+  font-size: var(--type-ui);
+  color: var(--muted);
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sv-lead-title {
+  color: var(--muted);
+}
+
+.sv-chapter-body {
+  display: grid;
+  background: var(--surface);
+}
+
+/* Individual EP Row with Vertical Line Partition */
+.sv-ep {
+  display: grid;
+  grid-template-columns: 1fr 14rem;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--motion-fast);
+}
+
+.sv-ep:last-child {
+  border-bottom: none;
+}
+
+.sv-ep:hover {
+  background: var(--surface-soft);
+}
+
+.sv-ep-main {
+  padding: 12px 16px;
+  border-right: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+}
+
+.sv-ep-text {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.sv-ep-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: var(--type-ui);
+}
+
+.sv-ep-chips {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sv-chip {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.85rem;
+  height: 1.85rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+/* Cyan Chip Accent */
+.sv-chip.is-filled {
+  background: var(--sv-cyan);
+  border-color: var(--sv-cyan);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(12, 180, 182, 0.2);
+}
+
+.sv-ep-score {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sv-ep-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--type-ui);
+  color: var(--muted);
+}
+
+.sv-ep-label select {
+  font: inherit;
+  font-size: var(--type-ui);
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control, 6px);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--motion-fast);
+}
+
+.sv-ep-label select:focus {
+  border-color: var(--sv-cyan);
+  outline: none;
+}
+
+.sv-ep-score-value {
+  font-size: var(--type-ui);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   5. Responsive Viewport Adaptations
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .sv-predicate-grid {
+    grid-template-columns: 1fr;
+  }
+  .sv-predicate-main {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .sv-matrix-head {
+    grid-template-columns: minmax(13rem, 18rem) 1fr 6rem;
+  }
+  .sv-bar {
+    grid-template-columns: minmax(13rem, 18rem) 1fr 6rem;
+  }
+  .sv-summary-grid {
+    grid-template-columns: 5rem 1fr 5.5rem 5rem;
+  }
+  .sv-summary-grid > .sv-lead,
+  .sv-summary-grid > .sv-sum-act {
+    grid-column: span 2;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 640px) {
+  .sv-matrix-head {
+    grid-template-columns: 1fr 4.5rem;
+  }
+  .sv-matrix-head > .sv-col-progress {
+    display: none;
+  }
+  .sv-bar {
+    grid-template-columns: 1fr 4.5rem;
+  }
+  .sv-bar-track-cell {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-top: 1px solid var(--line);
+    padding: 8px 16px;
+  }
+  .sv-priority-thead {
+    grid-template-columns: 1fr 5rem;
+  }
+  .sv-priority-thead > .sv-priority-col-need {
+    display: none;
+  }
+  .sv-list li {
+    grid-template-columns: 1fr 5rem;
+  }
+  .sv-priority-ep-need {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-top: 1px solid var(--line);
+  }
+  .sv-ep {
+    grid-template-columns: 1fr;
+  }
+  .sv-ep-main {
+    border-right: none;
+  }
+  .sv-ep-score {
+    border-top: 1px solid var(--line);
+    justify-content: flex-start;
+  }
+}
+
+/* Same language as the Morning Brief (Director 2026-11-09: "STARKES beda sendiri, samakan"): every section is a
+   rounded card with a sky strip for its title, inner tables keep horizontal hairlines only, no accent top borders. */
+.starkes-v2 .sv-section {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-structure);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+.starkes-v2 .sv-section-head {
+  align-items: center;
+  min-height: 40px;
+  margin: 8px 8px 0;
+  padding: 8px 16px;
+  border-bottom: 0;
+  border-radius: calc(var(--radius-structure) - 8px);
+  background: var(--p-sky-soft);
+}
+.starkes-v2 .sv-section-head h2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--p-sky-text);
+}
+.starkes-v2 .sv-section > :not(.sv-section-head) {
+  margin: 0;
+  padding: 12px 16px;
+}
+.starkes-v2 .sv-section > * + *:not(.sv-section-head) {
+  border-top: 1px solid var(--line);
+}
+.sv-predicate-card,
+.sv-matrix-card {
+  border-top: 1px solid var(--line);
+  border-radius: var(--radius-structure);
+  box-shadow: var(--shadow-soft);
+}
+.sv-priority-card,
+.sv-table-card,
+.sv-chapter {
+  border-top: 1px solid var(--line);
+  border-radius: calc(var(--radius-structure) - 8px);
+  box-shadow: none;
+}
+.sv-matrix-head,
+.sv-priority-thead,
+.sv-inbox th {
+  font-weight: 500;
+}
+.sv-predicate-main,
+.sv-matrix-head > span,
+.sv-bar-name,
+.sv-bar-track-cell,
+.sv-priority-thead > span,
+.sv-priority-ep-text,
+.sv-priority-ep-need,
+.sv-inbox th,
+.sv-inbox td,
+.sv-summary-grid > * {
+  border-right: 0;
+}
+
+/* Redesign 2026-11-09 ("samakan dengan halaman lain"): STARKES is one sheet like Formularium and Order obat:
+   masthead, numbered sections (SectionHeading), swiss-table for the matrix, priorities and inbox. */
+.starkes-v2.swiss-report-sheet { display: block; --line: var(--color-border-subtle, #ECEBE8); }
+.starkes-v2 .swiss-section { margin-top: 28px; }
+.starkes-v2 .sv-note { margin: 0 0 12px; color: var(--muted); font-size: var(--type-ui); }
+.starkes-v2 .sv-note.sv-problem { color: var(--orange-ink); }
+.starkes-v2 .sv-num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.starkes-v2 .sv-matrix .sv-bar-name { text-align: left; font-weight: 500; white-space: nowrap; }
+.starkes-v2 .sv-matrix .sv-bar-track-cell { display: table-cell; width: 55%; min-width: 10rem; padding: 10px 12px; border: 0; }
+.starkes-v2 .sv-matrix .sv-track { display: block; }
+.starkes-v2 .sv-matrix .sv-pct { display: table-cell; padding: 10px 12px; font-weight: 500; }
+.starkes-v2 .sv-priority td { vertical-align: top; }
+.starkes-v2 .sv-inbox { display: block; }
+.starkes-v2 .sv-inbox .sv-table-card { margin-top: 16px; border: 0; border-radius: 0; background: transparent; overflow: visible; }
+.starkes-v2 .sv-inbox .sv-table-caption { margin: 0 0 6px; padding: 0; border: 0; background: transparent; font-size: var(--type-body); }
+.starkes-v2 .sv-inbox .swiss-table th, .starkes-v2 .sv-inbox .swiss-table td { border-right: 0; }
+.starkes-v2 .sv-toolbar { margin-bottom: 12px; padding: 0; border: 0; background: transparent; }
+.starkes-v2 .sv-actions button { padding: 0; border: 0; background: none; }
+.starkes-v2 .sv-actions button.button-primary, .starkes-v2 .sv-actions button.button-secondary { padding: revert; border: revert; background: revert; }
+
+/* STARKES 1-Click AI Document Generation Button */
+.starkes-v2 .sv-generate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--sv-cyan, #0891b2);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-control, 4px);
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+.starkes-v2 .sv-generate-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  background: var(--sv-cyan-deep, #0e7490);
+}
+.starkes-v2 .sv-generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.starkes-v2 .sv-link-pdf {
+  color: #059669;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

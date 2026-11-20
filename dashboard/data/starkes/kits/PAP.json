@@ -1,0 +1,1724 @@
+[
+ {
+  "epId": "47104-2024:PAP:1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-ALUR-PELAYANAN-DAN-ASUHAN-PASIEN"
+   ],
+   "studioPresetCodes": [
+    "SPO Asuhan Terintegrasi CPPT (PAP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Asuhan Terintegrasi CPPT (PAP 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1 EP 2: Asuhan yang seragam diberikan kepada setiap pasien meliputi poin a) – e) dalam maksud…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Asuhan yang seragam diberikan kepada setiap pasien meliputi poin a) – e) dalam maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.1 EP 1: Rumah sakit telah melakukan pelayanan dan asuhan yang terintegrasi serta terkoordinasi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melakukan pelayanan dan asuhan yang terintegrasi serta terkoordinasi kepada setiap pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:1.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.1 EP 3: Permintaan pemeriksaan laboratorium dan diagnostik imajing harus disertai indikasi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:1.1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.1 EP 4: Prosedur dan tindakan telah dilakukan sesuai instruksi dan PPA yang memberikan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Prosedur dan tindakan telah dilakukan sesuai instruksi dan PPA yang memberikan instruksi, alasan dilakukan prosedur atau tindakan serta…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.1:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.1 EP 5: Pasien yang menjalani tindakan invasif/berisiko di rawat jalan telah dilakukan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:1.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.2 EP 1: PPA telah membuat rencana asuhan untuk setiap pasien setelah diterima sebagai pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: PPA telah membuat rencana asuhan untuk setiap pasien setelah diterima sebagai pasien rawat inap dalam waktu 24 jam berdasarkan hasil…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.2 EP 2: Rencana asuhan dievaluasi secara berkala, direvisi atau dimutakhirkan serta…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rencana asuhan dievaluasi secara berkala, direvisi atau dimutakhirkan serta didokumentasikan dalam rekam medis oleh setiap PPA?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.2 EP 3: Instruksi berdasarkan rencana asuhan dibuat oleh PPA yang kompeten dan berwenang, dengan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Instruksi berdasarkan rencana asuhan dibuat oleh PPA yang kompeten dan berwenang, dengan cara yang seragam, dan didokumentasikan di CPPT?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.2 EP 4: Rencana asuhan pasien dibuat dengan membuat sasaran yang terukur dan di dokumentasikan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rencana asuhan pasien dibuat dengan membuat sasaran yang terukur dan di dokumentasikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:1.2:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 1.2 EP 5: DPJP telah melakukan evaluasi/review berkala dan verifikasi harian untuk memantau…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: DPJP telah melakukan evaluasi/review berkala dan verifikasi harian untuk memantau terlaksananya asuhan secara terintegrasi dan membuat…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pasien Risiko Tinggi dan Resusitasi Neonatus (PAP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2 EP 1: Pimpinan rumah sakit telah melaksanakan tanggung jawabnya untuk memberikan pelayanan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pasien Risiko Tinggi dan Resusitasi Neonatus (PAP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2 EP 2: Rumah sakit telah memberikan pelayanan pada pasien risiko tinggi dan pelayanan risiko…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah memberikan pelayanan pada pasien risiko tinggi dan pelayanan risiko tinggi yang telah diidentifikasi berdasarkan…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah memberikan pelayanan pada pasien risiko tinggi dan pelayanan risiko tinggi yang telah diidentifikasi berdasarkan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pasien Risiko Tinggi dan Resusitasi Neonatus (PAP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2 EP 3: Pimpinan rumah sakit telah mengidentifikasi risiko tambahan yang dapat mempengaruhi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pimpinan rumah sakit telah mengidentifikasi risiko tambahan yang dapat mempengaruhi pasien dan pelayanan risiko tinggi?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah menetapkan tim terpadu geriatri dan telah menyelenggarakan pelayanan sesuai tingkat jenis layanan",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.1 EP 3: Rumah sakit telah melaksanakan proses pemantauan dan evaluasi kegiatan pelayanan geriatri",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan proses pemantauan dan evaluasi kegiatan pelayanan geriatri?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.1 EP 4: Ada pelaporan penyelenggaraan pelayanan geriatri di rumah sakit",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.2 EP 2: Rumah sakit telah memberikan edukasi sebagai bagian dari pelayanan kesehatan warga…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah memberikan edukasi sebagai bagian dari pelayanan kesehatan warga lanjut usia di masyarakat berbasis rumah sakit…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.2 EP 3: Rumah sakit telah melaksanakan kegiatan sesuai program dan tersedia leaflet atau alat…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.2 EP 4: Rumah sakit telah melakukan evaluasi dan membuat laporan kegiatan pelayanan secara berkala",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.3 EP 2: Rumah sakit telah melaksanakan penyelenggaraan pelayanan jiwa yang berkualitas dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah melaksanakan penyelenggaraan pelayanan jiwa yang berkualitas dan menghargai hak-hak asasi orang dengan gangguan jiwa",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan penyelenggaraan pelayanan jiwa yang berkualitas dan menghargai hak-hak asasi orang dengan gangguan jiwa?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.3 EP 3: Rumah sakit telah melaksanakan proses pemantauan dan evaluasi kegiatan pelayanan jiwa",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.4 EP 2: Rumah sakit menggunakan instrumen berbasis bukti untuk skrining dan pengkajian pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.4 EP 4: Rumah sakit melatih sumber daya manusia yang mampu melakukan skrining, pengkajian, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit melatih sumber daya manusia yang mampu melakukan skrining, pengkajian, dan tata laksana pasien risiko bunuh diri?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.4 EP 5: Rumah sakit melakukan pengkajian risiko lingkungan yang dapat digunakan dalam percobaan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit melakukan pengkajian risiko lingkungan yang dapat digunakan dalam percobaan bunuh diri atau melukai diri sendiri; rumah sakit…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.4:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.4 EP 6: Rumah sakit melakukan pemantauan dan evaluasi pelaksanaan tata kelola pencegahan risiko…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.5 EP 1: Rumah sakit telah menerapkan proses pengenalan perubahan kondisi pasien yang memburuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan proses pengenalan perubahan kondisi pasien yang memburuk (EWS) dan mendokumentasikannya di dalam rekam medik…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.5 EP 2: Rumah sakit memiliki bukti PPA dilatih menggunakan EWS",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.6 EP 1: Pelayanan resusitasi tersedia dan diberikan selama 24 jam setiap hari di seluruh area…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pelayanan resusitasi tersedia dan diberikan selama 24 jam setiap hari di seluruh area rumah sakit?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.6 EP 2: Peralatan medis untuk resusitasi dan obat untuk bantuan hidup dasar dan lanjut…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Peralatan medis untuk resusitasi dan obat untuk bantuan hidup dasar dan lanjut terstandar sesuai dengan kebutuhan populasi pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.6:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Di seluruh area rumah sakit, bantuan hidup dasar diberikan segera saat dikenali henti jantung-paru dan bantuan hidup lanjut diberikan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.6:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.6 EP 4: Staf diberi pelatihan pelayanan bantuan hidup dasar/lanjut sesuai dengan ketentuan rumah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf diberi pelatihan pelayanan bantuan hidup dasar/lanjut sesuai dengan ketentuan rumah sakit?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.7:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.7 EP 1: Rumah sakit menerapkan penyelenggaraan pelayanan darah",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit menerapkan penyelenggaraan pelayanan darah?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:2.7:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:2.7:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 2.7 EP 3: Staf yang kompeten bertanggungjawab terhadap pelayanan darah di rumah sakit",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf yang kompeten bertanggungjawab terhadap pelayanan darah di rumah sakit?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Protokol Restraint NPO Fast Track (PAP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 3 EP 1: Berbagai pilihan makanan atau terapi nutrisi yang sesuai untuk kondisi, perawatan, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Protokol Restraint NPO Fast Track (PAP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 3 EP 2: Sebelum pasien rawat inap diberi makanan, terdapat instruksi pemberian makanan dalam…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Sebelum pasien rawat inap diberi makanan, terdapat instruksi pemberian makanan dalam rekam medis pasien yang didasarkan pada status gizi…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Protokol Restraint NPO Fast Track (PAP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 3 EP 3: Untuk makanan yang disediakan keluarga, edukasi diberikan mengenai batasan- batasan diet…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Untuk makanan yang disediakan keluarga, edukasi diberikan mengenai batasan- batasan diet pasien dan penyimpanan yang baik untuk mencegah…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:3:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Protokol Restraint NPO Fast Track (PAP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 3 EP 4: Memiliki bukti pemberian terapi gizi terintegrasi (rencana, pemberian dan evaluasi) pada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Memiliki bukti pemberian terapi gizi terintegrasi (rencana, pemberian dan evaluasi) pada pasien risiko gizi?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:3:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Protokol Restraint NPO Fast Track (PAP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 3 EP 5: Pemantauan dan evaluasi terapi gizi dicatat di rekam medis pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:4:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-PAIN-ASSESMENT"
+   ],
+   "studioPresetCodes": [
+    "SPO Asuhan End-of-Life dan Paliatif (PAP 4)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAP:4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Asuhan End-of-Life dan Paliatif (PAP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 4 EP 2: Informasi mengenai kemungkinan adanya nyeri dan pilihan tata laksananya diberikan kepada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Informasi mengenai kemungkinan adanya nyeri dan pilihan tata laksananya diberikan kepada pasien yang menerima terapi/ prosedur/pemeriksaan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Asuhan End-of-Life dan Paliatif (PAP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 4 EP 3: Pasien dan keluarga mendapatkan edukasi mengenai pengelolaan nyeri sesuai dengan latar…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien dan keluarga mendapatkan edukasi mengenai pengelolaan nyeri sesuai dengan latar belakang agama, budaya, nilai-nilai yang dianut?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:4:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Asuhan End-of-Life dan Paliatif (PAP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 4 EP 4: Staf rumah sakit D mendapatkan pelatihan mengenai cara melakukan edukasi bagi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf rumah sakit D mendapatkan pelatihan mengenai cara melakukan edukasi bagi pengelolaan W nyeri. S?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 5 EP 1: Rumah sakit menerapkan pengkajian pasien menjelang akhir kehidupan dan dapat dilakukan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit menerapkan pengkajian pasien menjelang akhir kehidupan dan dapat dilakukan pengkajian ulang sampai pasien yang memasuki fase…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAP:5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAP 5 EP 2: Asuhan menjelang akhir kehidupan ditujukan terhadap kebutuhan psikososial, emosional,…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ }
+]

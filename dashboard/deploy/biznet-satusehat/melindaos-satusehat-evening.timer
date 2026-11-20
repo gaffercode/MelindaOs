@@ -1,0 +1,10 @@
+[Unit]
+Description=MelindaOS SATUSEHAT pull, evening slot (17:55 WIB)
+
+[Timer]
+OnCalendar=*-*-* 17:55:00 Asia/Jakarta
+Persistent=true
+Unit=melindaos-satusehat@evening.service
+
+[Install]
+WantedBy=timers.target

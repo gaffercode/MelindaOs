@@ -1,0 +1,118 @@
+/* HRD org tree and CRM referral pipeline: same sheet language as Formularium (swiss-table, SectionHeading), accent = Melinda blue. */
+
+/* Org tree: nested lists, connectors drawn with pseudo-elements. */
+.org-scroll { overflow-x: auto; padding: 8px 4px 16px; }
+.org-tree, .org-level { display: flex; justify-content: center; gap: 0; margin: 0; padding: 0; list-style: none; }
+.org-level { position: relative; padding-top: 28px; }
+.org-node { position: relative; display: flex; flex-direction: column; align-items: center; padding: 28px 10px 0; }
+.org-node.is-root { padding-top: 0; }
+.org-node::before, .org-node::after { content: ""; position: absolute; top: 0; width: 50%; height: 28px; border-top: 1.5px solid var(--color-accent); }
+.org-node::before { right: 50%; }
+.org-node::after { left: 50%; border-left: 1.5px solid var(--color-accent); }
+.org-node:first-child::before, .org-node:last-child::after { border-top-color: transparent; }
+.org-node:only-child::after { border-top: 0; }
+.org-node:last-child::before { border-right: 1.5px solid var(--color-accent); border-radius: 0 8px 0 0; }
+.org-node:first-child::after { border-radius: 8px 0 0 0; }
+.org-node:only-child::before { border: 0; }
+.org-node.is-root::before, .org-node.is-root::after { display: none; }
+.org-level::before { content: ""; position: absolute; top: 0; left: 50%; height: 28px; border-left: 1.5px solid var(--color-accent); }
+.org-card { display: grid; gap: 2px; min-width: 11.5rem; max-width: 14rem; padding: 12px 14px; border: 1px solid var(--color-border-subtle); border-radius: 10px; background: var(--surface, #fff); text-align: center; box-shadow: 0 1px 2px rgba(16, 19, 18, .04); }
+.org-position { font-size: var(--type-ui); color: var(--color-accent-text); font-weight: 500; }
+.org-name { font-size: var(--type-ui); font-weight: 500; line-height: 1.35; overflow-wrap: anywhere; }
+.org-node.is-root > .org-card { border-color: var(--color-accent); background: var(--color-accent-soft, #E3F1FF); }
+
+.hrd-phone { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hrd-wa { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent-text); font-weight: 500; text-decoration: none; }
+.hrd-wa:hover { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .org-tree, .org-level { flex-direction: column; align-items: stretch; padding-top: 0; }
+  .org-level::before, .org-node::before, .org-node::after { display: none; }
+  .org-node, .org-node.is-root { align-items: stretch; padding: 8px 0 0 16px; border-left: 1.5px solid var(--color-accent); margin-left: 8px; }
+  .org-node.is-root { border-left: 0; margin-left: 0; padding-left: 0; }
+  .org-card { max-width: none; text-align: left; }
+}
+
+/* CRM */
+.crm-stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0 0 16px; padding: 0; list-style: none; border: 1px solid var(--color-border-subtle); border-radius: 10px; overflow: hidden; }
+.crm-stage { display: grid; gap: 4px; padding: 14px 16px; border-right: 1px solid var(--color-border-subtle); }
+.crm-stage:last-child { border-right: 0; }
+.crm-stage-name { font-size: var(--type-ui); color: var(--muted); }
+.crm-stage-count { font-size: var(--type-figure, 1.75rem); font-weight: 500; font-variant-numeric: tabular-nums; }
+.crm-stage-hint { font-size: var(--type-ui); color: var(--muted); }
+.crm-empty { padding: 20px 4px; color: var(--muted); }
+.crm-late { color: var(--orange-ink); }
+@media (max-width: 760px) {
+  .crm-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .crm-stage:nth-child(2n) { border-right: 0; }
+  .crm-stage:nth-child(-n + 2) { border-bottom: 1px solid var(--color-border-subtle); }
+}
+
+/* CRM jaringan mitra: bilah proporsi, tiga kartu kelompok, chip nama. Nada = aksen biru dalam tiga kepekatan. */
+.crm-tone-0 { --tone: var(--color-accent); }
+.crm-tone-1 { --tone: color-mix(in srgb, var(--color-accent) 60%, white); }
+.crm-tone-2 { --tone: color-mix(in srgb, var(--color-accent) 32%, white); }
+.crm-share { display: flex; gap: 3px; height: 10px; margin: 0 0 18px; }
+.crm-share-seg { height: 10px; flex-basis: 0; min-width: 8px; border-radius: 999px; background: var(--tone); }
+.crm-groups { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.crm-group { display: grid; gap: 14px; padding: 18px; border: 1px solid var(--color-border-subtle); border-top: 3px solid var(--tone); border-radius: 12px; background: var(--surface, #fff); }
+.crm-group:first-child { grid-row: span 2; }
+.crm-group-head { display: flex; align-items: center; gap: 14px; }
+.crm-sheet .crm-group .crm-group-count { flex: none; white-space: nowrap; font-size: 2.25rem; line-height: 1; font-weight: 500; font-variant-numeric: tabular-nums; color: var(--color-accent-text); }
+.crm-group-title { margin: 0; font-size: var(--type-ui); font-weight: 600; }
+.crm-sheet .crm-group .crm-group-note { margin: 2px 0 0; font-size: var(--type-ui); color: var(--muted); }
+.crm-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.crm-sheet .crm-chips .crm-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 6px; border: 1px solid var(--color-border-subtle); border-radius: 999px; font-size: var(--type-ui); background: var(--color-accent-soft, #E3F1FF); }
+.crm-group:not(:first-child) .crm-chip { padding-left: 12px; background: transparent; }
+.crm-sheet .crm-chip .crm-avatar { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--color-accent); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .02em; }
+@media (max-width: 760px) {
+  .crm-groups { grid-template-columns: minmax(0, 1fr); }
+  .crm-group:first-child { grid-row: auto; }
+}
+
+/* HRD karyawan per unit */
+.staff-units { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.staff-unit a { display: inline-flex; align-items: baseline; gap: 8px; padding: 6px 14px; border: 1px solid var(--color-border-subtle); border-radius: 999px; background: var(--color-accent-soft, #E3F1FF); text-decoration: none; color: inherit; }
+.staff-unit a:hover { border-color: var(--color-accent); }
+.staff-unit strong { color: var(--color-accent-text); font-variant-numeric: tabular-nums; }
+.staff-unit.is-open a { background: transparent; border-style: dashed; }
+.staff-group { margin: 0 0 24px; scroll-margin-top: 80px; }
+.staff-group-title { margin: 0 0 8px; font-size: var(--type-ui); font-weight: 600; }
+.staff-group-title small { margin-left: 6px; color: var(--muted); font-weight: 400; }
+.staff-note { margin: 0 0 8px; color: var(--orange-ink); font-size: var(--type-ui); }
+.staff-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; margin: 0 0 24px; }
+.staff-pair .staff-group { margin: 0; }
+@media (max-width: 900px) { .staff-pair { grid-template-columns: minmax(0, 1fr); } }
+
+.hrd-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin-bottom: 20px; }
+.hrd-filters label { display: grid; flex: 1 1 12rem; gap: 4px; min-width: 0; }
+.hrd-filters input, .hrd-filters select, .hrd-filters button {
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 8px;
+  background: var(--surface);
+  color: inherit;
+}
+.hrd-filters button { background: var(--color-accent-soft); cursor: pointer; }
+.hrd-filters a { align-self: center; color: var(--color-accent-text); text-decoration: underline; }
+
+/* Inline editor (components/hrd/hrd-editor.tsx) */
+.hrd-edit-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 24px; padding: 12px 16px; border: 1px solid var(--color-border-subtle); border-radius: 10px; background: var(--surface); }
+.hrd-edit-bar p { margin: 0; }
+.hrd-edit-primary, .hrd-edit-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border-radius: 8px; font-weight: 500; cursor: pointer; }
+.hrd-edit-primary { border: 1px solid var(--color-accent); background: var(--color-accent); color: #fff; }
+.hrd-edit-secondary { border: 1px solid var(--color-border-subtle); background: var(--surface); color: inherit; margin: 12px 0 28px; }
+.hrd-edit-primary:disabled, .hrd-edit-secondary:disabled, .hrd-icon-button:disabled { opacity: .5; cursor: not-allowed; }
+.hrd-edit-primary:focus-visible, .hrd-edit-secondary:focus-visible, .hrd-icon-button:focus-visible, .hrd-edit-table input:focus-visible, .hrd-edit-table select:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.hrd-editor { padding: 20px; border: 1.5px solid var(--color-accent); border-radius: 12px; }
+.hrd-editor-head h2 { margin: 0 0 4px; font-size: 1.375rem; }
+.hrd-editor-head p { margin: 0 0 20px; }
+.hrd-edit-table td { padding: 6px 8px; vertical-align: middle; }
+.hrd-edit-table input, .hrd-edit-table select { width: 100%; min-width: 9rem; min-height: 44px; padding: 8px 10px; border: 1px solid var(--color-border-subtle); border-radius: 8px; background: var(--surface); color: inherit; font: inherit; }
+.hrd-icon-button { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--color-border-subtle); border-radius: 8px; background: var(--surface); color: inherit; cursor: pointer; }
+.hrd-edit-actions { position: sticky; bottom: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; margin: 0 -20px -20px; padding: 14px 20px; border-top: 1px solid var(--color-border-subtle); border-radius: 0 0 12px 12px; background: var(--surface); }
+.hrd-edit-actions .hrd-edit-secondary { margin: 0; }
+.hrd-edit-error { flex: 1 1 100%; margin: 0; color: #B42318; font-weight: 500; }
+.hrd-edit-ok { margin: 0; color: #067647; font-weight: 500; }

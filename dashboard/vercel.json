@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build",
+  "crons": [
+    { "path": "/api/cron/satusehat", "schedule": "55 22 * * *" },
+    { "path": "/api/cron/satusehat", "schedule": "55 10 * * *" }
+  ]
+}

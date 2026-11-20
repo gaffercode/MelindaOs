@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "handoff.create input",
+  "description": "Input for handoff.create: structured handoff to human staff or an authorized department. Risk R3.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "destination": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Target department or staff queue."
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "user_requested_human",
+        "identity_ambiguous",
+        "system_unavailable",
+        "complaint",
+        "clinical_question",
+        "safety_concern",
+        "policy_limit",
+        "other"
+      ],
+      "description": "Controlled reason for the handoff."
+    },
+    "case_summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "What the user needs, what is verified, actions already attempted, and the unresolved issue."
+    },
+    "contact_preference": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "whatsapp",
+        "email",
+        "in_person",
+        "none"
+      ],
+      "description": "Preferred channel for staff to reach the user."
+    },
+    "sensitivity": {
+      "type": "string",
+      "enum": [
+        "D0",
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "description": "Data sensitivity class: D0 public, D1 internal operational, D2 personal administrative, D3 sensitive identifier."
+    },
+    "conversation_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Reference to the originating conversation."
+    },
+    "patient_ref": {
+      "type": "string",
+      "description": "Optional opaque patient reference, only when authorized."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "Client-generated key that makes retries of the same request safe."
+    }
+  },
+  "required": [
+    "destination",
+    "reason_code",
+    "case_summary",
+    "sensitivity",
+    "conversation_ref",
+    "idempotency_key"
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

@@ -1,0 +1,59 @@
+/* RSIA Melinda DHAI official document (matches the PDF builder and the BPJS credentialing letters): Calibri/Carlito, ink #111, muted #444. */
+.official-sheet { --ink: #111; --ink-muted: #444; --rule: #111; max-width: 56rem; margin-inline: auto; padding: 3.25rem 3.5rem 2.5rem; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-neu); background: #fff; color: var(--ink); font-family: Carlito, Calibri, "Segoe UI", sans-serif; font-size: 1.0625rem; line-height: 1.55; box-shadow: 0 1px 2px rgba(16, 19, 18, .05), 0 8px 24px rgba(16, 19, 18, .04); max-height: 56rem; overflow-y: auto; }
+.official-sheet p { margin: 0; }
+
+.official-sheet .official-kop { display: grid; grid-template-columns: 6rem minmax(0, 1fr) 6rem; align-items: center; padding-bottom: 1.1rem; border-bottom: 4px solid var(--rule); }
+.official-sheet .official-kop-logo { width: 5.25rem; height: auto; }
+.official-sheet .official-kop-text { grid-column: 2; text-align: center; display: grid; gap: .1rem; }
+.official-sheet .official-kop-line { font-size: .875rem; font-weight: 700; }
+.official-sheet .official-kop-name { font-size: 1.75rem; font-weight: 700; line-height: 1.2; }
+.official-sheet .official-kop-city { font-size: 1.0625rem; }
+.official-sheet .official-kop-contact { font-size: .875rem; color: var(--ink-muted); }
+
+.official-sheet .official-title { display: grid; gap: .45rem; padding: 1.1rem 0 .9rem; text-align: center; }
+.official-sheet .official-title h2 { margin: 0; font-size: 1.5rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.official-sheet .official-subtitle { font-size: .9375rem; font-style: italic; color: var(--ink-muted); }
+.official-sheet .official-kind { font-size: 1rem; font-weight: 700; }
+
+.official-sheet .official-meta { width: 100%; border-collapse: collapse; margin-bottom: .75rem; }
+.official-sheet .official-meta td { width: 50%; padding: .3rem .7rem; border: 1px solid var(--ink); font-size: 1rem; vertical-align: top; overflow-wrap: anywhere; }
+.official-sheet .official-meta tr:nth-child(even) td { background: #f7f7f7; }
+
+.official-sheet .official-section { margin-top: 1.1rem; }
+.official-sheet .official-section h3 { margin: 0 0 .3rem; font-size: 1.1875rem; font-weight: 700; color: var(--ink); }
+.official-sheet .official-body { font-size: 1.0625rem; overflow-wrap: anywhere; }
+.official-sheet .official-lines { white-space: pre-line; }
+
+.official-sheet .official-note { margin-top: .5rem; font-size: .9375rem; color: var(--orange-ink); }
+
+.official-sheet .official-table-wrap { overflow-x: auto; }
+.official-sheet .official-approval { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: .9375rem; }
+.official-sheet .official-approval th, .official-sheet .official-approval td { padding: .45rem .6rem; border: 1px solid var(--ink); text-align: left; vertical-align: top; }
+.official-sheet .official-approval thead th { background: var(--ink); color: #fff; font-size: .8125rem; font-weight: 700; }
+.official-sheet .official-approval tbody th { font-weight: 700; }
+.official-sheet .official-approval tbody tr { height: 3.5rem; }
+
+.official-sheet .official-penetapan { display: grid; gap: .15rem; width: min(24rem, 100%); margin-left: auto; font-size: 1rem; }
+.official-sheet .official-strong { font-weight: 700; }
+.official-sheet .official-signspace { height: 4.5rem; }
+.official-sheet .official-signatory { font-weight: 700; text-decoration: underline; }
+
+.official-sheet .official-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; padding-top: .5rem; border-top: 1px solid var(--ink); font-size: .8125rem; color: var(--ink-muted); }
+
+/* SK Direktur: the Menimbang / Mengingat / Memutuskan list in the same face. */
+.official-sheet .official-sk { display: grid; gap: .5rem; font-size: 1.0625rem; }
+.official-sheet .official-sk-row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: .75rem; }
+.official-sheet .official-sk-row > :first-child { font-weight: 700; }
+.official-sheet .official-sk-row > :last-child { white-space: pre-line; overflow-wrap: anywhere; }
+.official-sheet .official-centred { text-align: center; font-weight: 700; }
+
+@media (max-width: 640px) {
+  .official-sheet { padding: 1.5rem 1rem; }
+  .official-sheet .official-kop { grid-template-columns: 4rem minmax(0, 1fr); gap: .5rem; }
+  .official-sheet .official-kop-logo { width: 3.75rem; }
+  .official-sheet .official-kop-text { grid-column: 2; }
+  .official-sheet .official-kop-name { font-size: 1.25rem; }
+  .official-sheet .official-meta td { display: block; width: auto; }
+  .official-sheet .official-sk-row { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+}
+@media print { .official-sheet { max-height: none; border: 0; box-shadow: none; padding: 0; } }

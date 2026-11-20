@@ -1,0 +1,19 @@
+Proprietary License — RSIA Melinda DHAI (Digital Health Artificial Intelligence)
+
+Copyright (c) 2026 RSIA Melinda DHAI, Kediri, East Java, Indonesia.
+All rights reserved.
+
+1. The source code in this repository ("MelindaOS") is published for viewing only. Publication does not grant any
+   license. Except as allowed by law, no part of it may be copied, modified, redistributed, sublicensed, or used to
+   serve patients or third parties without prior written approval from RSIA Melinda DHAI.
+
+2. This repository does not contain the hospital's documents, staff or patient data, or credentials. Sample data under
+   dashboard/data/synthetic/ is fictional.
+
+3. Agent policies, schemas and tool contracts in this repository are governance-bound. Any clinical use must follow
+   the safety guardrails in knowledge/08_AGENT_POLICY.
+
+4. Contributions are accepted only with prior written agreement from RSIA Melinda DHAI and confer no license to reuse
+   the repository's contents.
+
+Contact: hai@melinda.co.id

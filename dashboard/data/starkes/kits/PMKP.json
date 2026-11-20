@@ -1,0 +1,1509 @@
+[
+ {
+  "epId": "47104-2024:PMKP:1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-SASARAN-KESELAMATAN-PASIEN",
+    "SOP-MGT-HOSPITAL-RISK-MANAGEMENT"
+   ],
+   "studioPresetCodes": [
+    "SPO Pemantauan Indikator Nasional Mutu INM (PMKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pemantauan Indikator Nasional Mutu INM (PMKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pemantauan Indikator Nasional Mutu INM (PMKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pemantauan Indikator Nasional Mutu INM (PMKP 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 1 EP 4: Program PMKP dievaluasi dalam Rapat koordinasi melibatkan komite-komite, pimpinan rumah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Program PMKP dievaluasi dalam Rapat koordinasi melibatkan komite-komite, pimpinan rumah sakit dan Kepala unit setiap triwulan untuk…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelaporan Insiden Keselamatan Pasien (PMKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 2 EP 1: Komite/Tim Penyelenggara Mutu terlibat dalam pemilihan indikator mutu prioritas baik…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu terlibat dalam pemilihan indikator mutu prioritas baik ditingkat rumah sakit maupun tingkat unit layanan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelaporan Insiden Keselamatan Pasien (PMKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 2 EP 2: Komite/Tim Penyelenggara Mutu melaksanakan koordinasi dan integrasi kegiatan pengukuran…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu melaksanakan koordinasi dan integrasi kegiatan pengukuran serta melakukan supervisi ke unit layanan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelaporan Insiden Keselamatan Pasien (PMKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 2 EP 3: Komite/Tim Penyelenggara Mutu mengintegrasikan laporan insiden keselamatan pasien,…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu mengintegrasikan laporan insiden keselamatan pasien, pengukuran budaya keselamatan, dan lainnya untuk…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Clinical Pathway dan Audit Klinis (PMKP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 3 EP 1: Rumah sakit melakukan pengumpulan data mencakup (poin a-c) dalam maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit melakukan pengumpulan data mencakup (poin a-c) dalam maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Clinical Pathway dan Audit Klinis (PMKP 3)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 1: Telah dilakukan agregasi dan Analisa data menggunakan metode dan teknik statistik…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Telah dilakukan agregasi dan Analisa data menggunakan metode dan teknik statistik terhadap semua indikator mutu yang telah diukur oleh…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 2: Hasil analisis digunakan untuk membuat rekomendasi tindakan perbaikan dan serta…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Hasil analisis digunakan untuk membuat rekomendasi tindakan perbaikan dan serta menghasilkan efisiensi penggunaan sumber daya?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 3: Memiliki bukti analisis data dilaporkan kepada Direktur dan representasi pemilik/dewan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Memiliki bukti analisis data dilaporkan kepada Direktur dan representasi pemilik/dewan pengawas sebagai bagian dari program peningkatan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 4: Memiliki bukti hasil Analisa berupa informasi INM dan e- report IKP diwajibkan lapor…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:4:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 5: Terdapat proses pembelajaran dari database eksternal untuk tujuan perbandingan internal…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:4:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 6: Keamanan dan kerahasiaan tetap dijaga saat berkontribusi pada database eksternal",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Keamanan dan kerahasiaan tetap dijaga saat berkontribusi pada database eksternal?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4:7",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Publikasi Mutu dan RTM (PMKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4 EP 7: Telah menganalisa efisiensi berdasarkan biaya dan jenis sumber daya yang digunakan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Telah menganalisa efisiensi berdasarkan biaya dan jenis sumber daya yang digunakan (sebelum dan sesudah perbaikan) terhadap satu proyek…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4.1 EP 1: Data dikumpulkan, dianalisis, dan diubah menjadi informasi untuk mengidentifikasi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Data dikumpulkan, dianalisis, dan diubah menjadi informasi untuk mengidentifikasi peluang- peluang untuk perbaikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4.1 EP 2: Staf yang kompeten melakukan proses pengukuran menggunakan alat dan teknik statistik",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf yang kompeten melakukan proses pengukuran menggunakan alat dan teknik statistik?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:4.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 4.1 EP 3: Hasil analisis data dilaporkan kepada penanggung jawab indikator mutu yang akan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Hasil analisis data dilaporkan kepada penanggung jawab indikator mutu yang akan melakukan perbaikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Manajemen Risiko Klinis dan FMEA (PMKP 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 5 EP 1: Rumah sakit telah melakukan validasi yang berbasis bukti meliputi poin a)-f) yang ada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melakukan validasi yang berbasis bukti meliputi poin a)-f) yang ada pada maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Manajemen Risiko Klinis dan FMEA (PMKP 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 5 EP 2: Pimpinan Rumah sakit bertanggung jawab atas validitas dan kualitas data serta hasil yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pimpinan Rumah sakit bertanggung jawab atas validitas dan kualitas data serta hasil yang dipublikasikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 6 EP 1: Rumah sakit telah membuat rencana perbaikan dan melakukan uji coba menggunakan metode…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah membuat rencana perbaikan dan melakukan uji coba menggunakan metode yang telah teruji dan menerapkannya untuk…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 6 EP 2: Tersedia kesinambungan data mulai dari pengumpulan data sampai perbaikan yang dilakukan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Tersedia kesinambungan data mulai dari pengumpulan data sampai perbaikan yang dilakukan dan dapat dipertahankan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:6:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 6 EP 3: Memiliki bukti perubahan regulasi dan perubahan proses yang diperlukan untuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Memiliki bukti perubahan regulasi dan perubahan proses yang diperlukan untuk mempertahankan perbaikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:6:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 6 EP 4: Keberhasilan telah didokumentasikan dan dijadikan laporan PMKP",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Keberhasilan telah didokumentasikan dan dijadikan laporan PMKP?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:7:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 7 EP 1: Rumah sakit melakukan evaluasi sesuai yang clinical pathway tercantum dalam maksud dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit melakukan evaluasi sesuai yang clinical pathway tercantum dalam maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:7:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 7 EP 2: Hasil evaluasi dapat menunjukkan adanya perbaikan terhadap kepatuhan dan mengurangi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Hasil evaluasi dapat menunjukkan adanya perbaikan terhadap kepatuhan dan mengurangi variasi dalam penerapan prioritas standar pelayanan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:7:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 7 EP 3: Rumah sakit telah melaksanakan audit klinis dan atau audit medis pada penerapan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan audit klinis dan atau audit medis pada penerapan prioritas standar pelayanan kedokteran di rumah sakit?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:8:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:8:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:8:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 8 EP 3: Pimpinan rumah sakit melakukan tindakan perbaikan korektif dan memantaunya…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pimpinan rumah sakit melakukan tindakan perbaikan korektif dan memantaunya efektivitasnya untuk mencegah atau mengurangi berulangnya…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:8:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:8:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 8 EP 5: Pimpinan rumah sakit melakukan tindakan perbaikan korektif dan memantau efektivitasnya…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pimpinan rumah sakit melakukan tindakan perbaikan korektif dan memantau efektivitasnya untuk mencegah atau mengurangi berulangnya KTD,…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:9:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 9 EP 1: Proses pengumpulan data sesuai a) sampai h) dari maksud dan tujuan, analisis, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Proses pengumpulan data sesuai a) sampai h) dari maksud dan tujuan, analisis, dan pelaporan diterapkan untuk memastikan akurasi data?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:9:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 9 EP 2: Analisis data mendalam dilakukan ketika terjadi tingkat, pola atau tren yang tak…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Analisis data mendalam dilakukan ketika terjadi tingkat, pola atau tren yang tak diharapkan yang digunakan untuk meningkatkan mutu dan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:9:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 9 EP 3: Data luaran (outcome) dilaporkan kepada direktur dan representatif pemilik/dewan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Data luaran (outcome) dilaporkan kepada direktur dan representatif pemilik/dewan pengawas sebagai bagian dari program peningkatan mutu dan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:10:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 10 EP 1: Rumah sakit telah melaksanakan pengukuran budaya keselamatan pasien dengan survei budaya…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan pengukuran budaya keselamatan pasien dengan survei budaya keselamatan pasien setiap tahun menggunakan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:10:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:11:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 11 EP 1: Komite/Tim Penyelenggara Mutu memandu penerapan program manajemen risiko yang di…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu memandu penerapan program manajemen risiko yang di tetapkan oleh Direktur?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:11:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 11 EP 2: Komite/Tim Penyelenggara Mutu telah membuat daftar risiko rumah sakit berdasarkan daftar…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:11:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 11 EP 3: Komite/Tim Penyelenggara Mutu telah membuat profil risiko dan rencana penanganan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:11:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 11 EP 4: Komite/Tim Penyelenggara Mutu telah membuat pemantauan terhadap rencana penanganan dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu telah membuat pemantauan terhadap rencana penanganan dan melaporkan kepada direktur dan representatif…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PMKP:11:5",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-HOSPITAL-RISK-MANAGEMENT"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PMKP:11:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PMKP 11 EP 6: Komite/Tim Penyelenggara Mutu telah memandu pemilihan minimal satu analisa secara…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Komite/Tim Penyelenggara Mutu telah memandu pemilihan minimal satu analisa secara proaktif proses berisiko tinggi yang diprioritaskan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ }
+]

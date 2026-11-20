@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "corporate",
+      "label": "Badan Hukum"
+    },
+    {
+      "id": "nib",
+      "label": "NIB + KBLI 86103"
+    },
+    {
+      "id": "spatial",
+      "label": "KKPR / Tata Ruang"
+    },
+    {
+      "id": "environment",
+      "label": "Persetujuan Lingkungan"
+    },
+    {
+      "id": "building",
+      "label": "PBG + SLF"
+    },
+    {
+      "id": "business_license",
+      "label": "Perizinan Berusaha RS"
+    },
+    {
+      "id": "hospital_standard",
+      "label": "Standar Rumah Sakit"
+    },
+    {
+      "id": "sdmk",
+      "label": "SDMK STR/SIP"
+    },
+    {
+      "id": "pb_umku",
+      "label": "PB UMKU Layanan Khusus"
+    },
+    {
+      "id": "ongoing",
+      "label": "Akreditasi, RME/PDP, Limbah, Pelaporan"
+    }
+  ],
+  "edges": [
+    {
+      "from": "corporate",
+      "to": "nib",
+      "type": "precondition"
+    },
+    {
+      "from": "nib",
+      "to": "spatial",
+      "type": "routing"
+    },
+    {
+      "from": "spatial",
+      "to": "environment",
+      "type": "dependency"
+    },
+    {
+      "from": "environment",
+      "to": "building",
+      "type": "dependency"
+    },
+    {
+      "from": "building",
+      "to": "business_license",
+      "type": "evidence"
+    },
+    {
+      "from": "business_license",
+      "to": "hospital_standard",
+      "type": "compliance"
+    },
+    {
+      "from": "hospital_standard",
+      "to": "sdmk",
+      "type": "compliance"
+    },
+    {
+      "from": "hospital_standard",
+      "to": "pb_umku",
+      "type": "service_trigger"
+    },
+    {
+      "from": "hospital_standard",
+      "to": "ongoing",
+      "type": "post_license"
+    }
+  ]
+}

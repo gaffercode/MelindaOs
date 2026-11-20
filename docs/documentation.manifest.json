@@ -1,0 +1,214 @@
+{
+  "schemaVersion": "1.0",
+  "standard": "SRDS-L2",
+  "scope": "projects/healthcare/melindaos",
+  "profile": "full-product",
+  "categories": {
+    "identity": {
+      "state": "documented",
+      "document": "README.md",
+      "evidence": ["dashboard/package.json", "pyproject.toml", "dashboard/data/validation.json"],
+      "rationale": "README rewritten on 2026-11-13 as a diagram-first page: static in-repo SVG hero and telemetry panel in a calm dark style, Mermaid diagrams on the same dark palette drawn from docs/architecture/ARCHITECTURE.md and the code, counts dated and taken from validation.json, the recorded lifecycle run and git ls-files."
+    },
+    "agent_guidance": {
+      "state": "documented",
+      "document": "AGENTS.md",
+      "evidence": [".agents/HANDOFF.md", ".agents/CONTEXT.md", "knowledge/10_TOOL_CONTRACTS/mcp/tool-contracts.yaml"],
+      "rationale": "Agent router and learned facts retained unchanged; it is a verification control and its read-first pointer matches the .agents memory files."
+    },
+    "architecture": {
+      "state": "documented",
+      "document": "docs/architecture/ARCHITECTURE.md",
+      "evidence": ["dashboard/lib/director/director-store.ts", "dashboard/lib/repository.ts", "dashboard/proxy.ts"],
+      "rationale": "Retained the dated snapshot guide with path:line evidence markers; a 2026-11-13 note lists known drift. Key cited files are still tracked."
+    },
+    "engineering": {
+      "state": "documented",
+      "document": "docs/engineering/DEVELOPMENT.md",
+      "evidence": ["project.contract.json", "tools/capsule.mjs", "dashboard/.env.example", "pyproject.toml"],
+      "rationale": "Rewritten from the contract toolchain, capsule.mjs stages and the variable list in .env.example."
+    },
+    "security": {
+      "state": "documented",
+      "document": "docs/security/SECURITY.md",
+      "evidence": ["dashboard/lib/director/director-auth.ts", "dashboard/lib/director/director-api.ts", "dashboard/lib/access/access-control.ts", "dashboard/lib/phi-guard.ts"],
+      "rationale": "Rewritten from the login, rate-limit, access-matrix and patient-identifier guard code; known weaknesses listed with their files."
+    },
+    "operations": {
+      "state": "documented",
+      "document": "docs/operations/RUNBOOK.md",
+      "evidence": ["dashboard/deploy/biznet-medify/README.md", "tools/readiness/answers.py", "dashboard/lib/migration-names.ts"],
+      "rationale": "Rewritten: daily check, migration application, Director answers, Medify key rotation and ownership, each from the matching code or deploy files."
+    },
+    "governance": {
+      "state": "documented",
+      "document": "docs/governance/BOUNDARIES.md",
+      "evidence": ["project.contract.json", ".agents/DECISIONS.md", "tools/governance/validate_frontmatter.py"],
+      "rationale": "Rewritten against the monorepo SAFRS control matrix and the registered sensitive paths for this capsule."
+    },
+    "api_integrations": {
+      "state": "documented",
+      "document": "docs/integrations/INTEGRATIONS.md",
+      "evidence": ["dashboard/lib/claude-client.ts", "dashboard/scripts/medify-pull.mjs", "dashboard/lib/starkes/drive-source.ts", "dashboard/lib/buffer.ts"],
+      "rationale": "Rewritten: Supabase, Medify publisher, Claude, Google Drive and Buffer with direction, authentication and off state; removed gateway noted."
+    },
+    "data_persistence": {
+      "state": "documented",
+      "document": "docs/data/DATA.md",
+      "evidence": ["dashboard/supabase/migrations/202610030001_director.sql", "dashboard/lib/director/director-store.ts", "dashboard/scripts/build-knowledge-index.ts"],
+      "rationale": "Rewritten from the create table statements per migration and the store's function list; no retention policy claimed."
+    },
+    "deployment": {
+      "state": "documented",
+      "document": "docs/operations/DEPLOYMENT.md",
+      "evidence": ["dashboard/package.json", "tools/capsule.mjs", "docs/operations/deployment-topology.md"],
+      "rationale": "Rewritten: build, environment, release, rollback; live hosting state is marked not verified."
+    },
+    "observability": {
+      "state": "documented",
+      "document": "docs/operations/OBSERVABILITY.md",
+      "evidence": ["dashboard/app/api/health/route.ts", "dashboard/lib/ops-alerts.ts", "dashboard/lib/log.ts"],
+      "rationale": "Rewritten: health endpoint, status card, structured logs; states that no tracing, metrics or alerting exists."
+    },
+    "architecture_decisions": {
+      "state": "documented",
+      "document": "docs/architecture/DECISIONS.md",
+      "evidence": [".agents/DECISIONS.md", "dashboard/lib/access/access-control.ts"],
+      "rationale": "Rewritten from the dated capsule decision log plus design choices visible in code; open questions listed, no invented history."
+    },
+    "collaboration": {
+      "state": "documented",
+      "document": "CONTRIBUTING.md",
+      "evidence": ["tools/capsule.mjs", "tools/governance/intake_pdf.py"],
+      "rationale": "Expanded: dashboard work allowed, capsule verification commands, branch, review and approval rules."
+    },
+    "release_history": {
+      "state": "documented",
+      "document": "CHANGELOG.md",
+      "evidence": [".agents/DECISIONS.md", "pyproject.toml"],
+      "rationale": "Retained history; Unreleased now records the 2026-11-12 removal and restructure and the 2026-11-13 capsule registration."
+    },
+    "regulatory_safety": {
+      "state": "documented",
+      "document": "docs/security/REGULATORY_SAFETY.md",
+      "evidence": ["knowledge/11_MACHINE_READABLE/starkes/starkes-kelulusan-2024.json", "tools/governance/intake_pdf.py", "dashboard/tests/content-guard.test.ts"],
+      "rationale": "Rewritten: non-diagnostic role, document approval, readiness without guessing, regulatory baseline sources and decision authority."
+    }
+  },
+  "deliverables": {
+    "product_identity": {
+      "state": "documented",
+      "document": "README.md",
+      "evidence": ["dashboard/package.json", "pyproject.toml", "dashboard/data/validation.json", "dashboard/lib/access/access-control.ts", "knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json", ".github/workflows/quality.yml"],
+      "rationale": "Sentra README presentation replaced on 2026-11-13 by a channel layout (CH-01 to CH-14); stale claims removed (no CI workflow, no build command, active MCP path, 13-agent fleet); the fleet now follows agent_fleet_registry."
+    },
+    "agent_instructions": {
+      "state": "documented",
+      "document": "AGENTS.md",
+      "evidence": [".agents/HANDOFF.md", ".agents/CONTEXT.md", "knowledge/10_TOOL_CONTRACTS/mcp/tool-contracts.yaml"],
+      "rationale": "Retained unchanged; read order points to the .agents memory files and the deny-all tool contract it describes is present."
+    },
+    "product_scope": {
+      "state": "documented",
+      "document": "docs/product/PRODUCT_SCOPE.md",
+      "evidence": ["dashboard/lib/access/access-control.ts", "dashboard/lib/navigation.ts", "dashboard/app/page.tsx"],
+      "rationale": "Rewritten from the page list and the role-to-permission matrix; out-of-scope items cite the recorded decisions."
+    },
+    "system_architecture": {
+      "state": "documented",
+      "document": "docs/architecture/ARCHITECTURE.md",
+      "evidence": ["dashboard/lib/director/director-store.ts", "dashboard/lib/repository.ts", "dashboard/proxy.ts"],
+      "rationale": "Retained the evidence-marked architecture guide with a 2026-11-13 known-drift note; snapshot date and removal notes are explicit, key citations resolve."
+    },
+    "architecture_decisions": {
+      "state": "documented",
+      "document": "docs/architecture/DECISIONS.md",
+      "evidence": [".agents/DECISIONS.md", "dashboard/lib/director/director-auth.ts"],
+      "rationale": "Rewritten as a sourced decision inventory: dated capsule decisions, code-visible design choices with trade-offs, open questions."
+    },
+    "developer_setup": {
+      "state": "documented",
+      "document": "docs/engineering/DEVELOPMENT.md",
+      "evidence": ["project.contract.json", "tools/capsule.mjs", "dashboard/.env.example", "pyproject.toml"],
+      "rationale": "Rewritten: Node 24, npm 11.19.0, uv and Python 3.12, locked installs, every server variable and the daily commands."
+    },
+    "testing_strategy": {
+      "state": "documented",
+      "document": "docs/engineering/TESTING.md",
+      "evidence": ["dashboard/vitest.config.ts", "dashboard/scripts/db-test.sh", "pyproject.toml", ".github/workflows/quality.yml"],
+      "rationale": "Rewritten: suites, coverage minimums, guard tests, SQL tests, CI jobs and what is not covered."
+    },
+    "verification_evidence": {
+      "state": "documented",
+      "document": "docs/engineering/VERIFICATION.md",
+      "evidence": ["project.contract.json", "tools/capsule.mjs"],
+      "rationale": "Rewritten: acceptance commands and the 2026-11-13 results as run; unrun checks marked NOT RUN; SRDS tool limit stated."
+    },
+    "security_boundaries": {
+      "state": "documented",
+      "document": "docs/security/SECURITY.md",
+      "evidence": ["dashboard/lib/director/director-auth.ts", "dashboard/lib/director/director-api.ts", "dashboard/lib/access/access-control.ts", "dashboard/lib/phi-guard.ts"],
+      "rationale": "Rewritten: data classes, modes, passcode and accounts, CSRF and origin, database rate limits, secrets, patient guard, weaknesses."
+    },
+    "operations_runbook": {
+      "state": "documented",
+      "document": "docs/operations/RUNBOOK.md",
+      "evidence": ["dashboard/deploy/biznet-medify/README.md", "tools/readiness/answers.py", "dashboard/lib/migration-names.ts"],
+      "rationale": "Rewritten: ownership, start and stop, daily check, migrations, Director answers, Medify key, drug orders, agent drafts."
+    },
+    "troubleshooting": {
+      "state": "documented",
+      "document": "docs/operations/TROUBLESHOOTING.md",
+      "evidence": ["dashboard/lib/director/director-store.ts", "dashboard/lib/ops-alerts.ts", "dashboard/lib/xlsx-read.ts"],
+      "rationale": "Rewritten with the real dashboard messages, store error codes, build and test failures, spreadsheet limits and publisher faults."
+    },
+    "governance_boundaries": {
+      "state": "documented",
+      "document": "docs/governance/BOUNDARIES.md",
+      "evidence": ["project.contract.json", ".agents/DECISIONS.md", "tools/governance/validate_frontmatter.py"],
+      "rationale": "Rewritten: owner authority, SAFRS R0 to R3 as defined by the monorepo control matrix, sensitive paths, audit trail, independence."
+    },
+    "api_integrations": {
+      "state": "documented",
+      "document": "docs/integrations/INTEGRATIONS.md",
+      "evidence": ["dashboard/lib/claude-client.ts", "dashboard/scripts/medify-pull.mjs", "dashboard/lib/starkes/drive-source.ts", "dashboard/lib/buffer.ts"],
+      "rationale": "Rewritten: every external system with direction, authentication, code and off state, plus the machine-facing endpoints."
+    },
+    "data_model": {
+      "state": "documented",
+      "document": "docs/data/DATA.md",
+      "evidence": ["dashboard/supabase/migrations/202610030001_director.sql", "dashboard/lib/director/director-store.ts", "dashboard/scripts/build-knowledge-index.ts"],
+      "rationale": "Rewritten: library, generated indexes, melinda_private tables per migration, ledger, storage, local files, retention as found."
+    },
+    "deployment_release": {
+      "state": "documented",
+      "document": "docs/operations/DEPLOYMENT.md",
+      "evidence": ["dashboard/package.json", "tools/capsule.mjs", "docs/operations/deployment-topology.md"],
+      "rationale": "Rewritten: hosts, build, environment, release, open pre-release items and rollback; live state not verified."
+    },
+    "observability": {
+      "state": "documented",
+      "document": "docs/operations/OBSERVABILITY.md",
+      "evidence": ["dashboard/app/api/health/route.ts", "dashboard/lib/ops-alerts.ts", "dashboard/lib/log.ts"],
+      "rationale": "Rewritten: health endpoint, status card, log format and codes, dashboard signals; absence of alerts and metrics stated."
+    },
+    "regulatory_safety": {
+      "state": "documented",
+      "document": "docs/security/REGULATORY_SAFETY.md",
+      "evidence": ["knowledge/11_MACHINE_READABLE/starkes/starkes-kelulusan-2024.json", "tools/governance/intake_pdf.py", "dashboard/tests/content-guard.test.ts"],
+      "rationale": "Rewritten: what the software is not, clinical document approval, regulatory baseline sources, STARKES aid, decision authority."
+    },
+    "collaboration": {
+      "state": "documented",
+      "document": "CONTRIBUTING.md",
+      "evidence": ["tools/capsule.mjs", "tools/governance/intake_pdf.py"],
+      "rationale": "Expanded: scope corrected, ground rules, format brief, verification commands, branch and approval rules, support path."
+    },
+    "release_history": {
+      "state": "documented",
+      "document": "CHANGELOG.md",
+      "evidence": [".agents/DECISIONS.md", "pyproject.toml"],
+      "rationale": "Retained Keep a Changelog history; Unreleased extended with the dated 2026-11-12 and 2026-11-13 changes."
+    }
+  }
+}

@@ -1,0 +1,2612 @@
+[
+ {
+  "epId": "47104-2024:KPS:1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 1 EP 2: Kepala unit telah merencanakan dan menetapkan persyaratan pendidikan, kompetensi dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 1 EP 3: Kebutuhan staf telah direncanakan sesuai poin a)-e) dalam maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 1 EP 4: Perencanaan staf meliputi penghitungan jumlah, jenis, dan kualifikasi staf menggunakan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:1:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 1 EP 5: Perencanaan staf termasuk membahas penugasan dan rotasi/alih fungsi staf",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:1:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Perencanaan dan Pola Ketenagaan (KPS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 1 EP 6: Efektivitas perencanaan staf dipantau secara berkelanjutan dan diperbarui sesuai kebutuhan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Rekrutmen Penempatan dan Orientasi Staf (KPS 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 2 EP 1: Setiap staf telah memiliki uraian tugas sesuai dengan tugas yang diberikan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Setiap staf telah memiliki uraian tugas sesuai dengan tugas yang diberikan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Rekrutmen Penempatan dan Orientasi Staf (KPS 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 2 EP 2: Tenaga medis dan tenaga kesehatan yang diidentifikasi dalam a) hingga d) dalam maksud…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Tenaga medis dan tenaga kesehatan yang diidentifikasi dalam a) hingga d) dalam maksud dan tujuan, memiliki uraian tugas yang sesuai dengan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Verifikasi STR dan SIP (KPS 3)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Verifikasi STR dan SIP (KPS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 3 EP 2: Rumah sakit telah menerapkan proses meliputi poin a) – c) dimaksud dan tujuan secara…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Orientasi Umum dan Khusus Unit (KPS 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 4 EP 1: Rumah sakit telah menetapkan dan menerapkan proses untuk menyesuaikan kompetensi PPA…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Orientasi Umum dan Khusus Unit (KPS 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 4 EP 2: Para PPA baru dievaluasi pada saat mulai bekerja oleh kepala unit di mana PPA tersebut…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Orientasi Umum dan Khusus Unit (KPS 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 4 EP 3: Terdapat setidaknya satu atau lebih evaluasi yang didokumentasikan untuk tiap PPA sesuai…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pendidikan dan Pelatihan Staf (KPS 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 5 EP 1: Rumah sakit telah menetapkan dan menerapkan proses untuk menyesuaikan kompetensi staf…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pendidikan dan Pelatihan Staf (KPS 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 5 EP 2: Staf non klinis yang baru dinilai kinerjanya pada saat akan memulai pekerjaannya oleh…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:5:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pendidikan dan Pelatihan Staf (KPS 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 5 EP 3: Terdapat setidaknya satu atau lebih evaluasi yang didokumentasikan untuk tiap staf non…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO MCU dan Imunisasi Staf (KPS 6)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 6 EP 1: File kepegawaian staf distandardisasi dan dipelihara serta dijaga kerahasiaannya sesuai…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO MCU dan Imunisasi Staf (KPS 6)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 6 EP 2: File kepegawaian mencakup poin a) – g) sesuai maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:7:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:7:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 7 EP 2: Tenaga medis dan tenaga kesehatan baru telah diberikan orientasi umum dan orientasi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Tenaga medis dan tenaga kesehatan baru telah diberikan orientasi umum dan orientasi khusus sesuai?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:7:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 7 EP 3: Staf non klinis baru telah diberikan orientasi umum dan orientasi khusus",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf non klinis baru telah diberikan orientasi umum dan orientasi khusus?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:7:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 7 EP 4: Tenaga kontrak, paruh waktu, mahasiswa atau trainee dan sukarelawan telah diberikan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Tenaga kontrak, paruh waktu, mahasiswa atau trainee dan sukarelawan telah diberikan orientasi umum dan orientasi khusus (jika ada)?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:8:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO OPPE FPPE Staf Medis (KPS 8)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 8 EP 1: Rumah sakit telah mengidentifikasi kebutuhan pendidikan staf berdasarkan sumber berbagai…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:8:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO OPPE FPPE Staf Medis (KPS 8)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:8:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO OPPE FPPE Staf Medis (KPS 8)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 8 EP 3: Pendidikan dan pelatihan berkelanjutan diberikan kepada staf rumah sakit baik internal…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pendidikan dan pelatihan berkelanjutan diberikan kepada staf rumah sakit baik internal maupun eksternal?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:8:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO OPPE FPPE Staf Medis (KPS 8)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 8 EP 4: Rumah sakit telah menyediakan waktu, anggaran, sarana dan prasarana yang memadai bagi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah menyediakan waktu, anggaran, sarana dan prasarana yang memadai bagi semua staf untuk mendapat kesempatan mengikuti…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:8.1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-KEBIJAKAN-PELAYANAN-RESUSITASI"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:8.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 8.1 EP 2: Terdapat bukti yang menunjukkan bahwa staf yang mengikuti pelatihan BHD atau bantuan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:8.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 8.1 EP 3: Tingkat pelatihan yang ditentukan untuk tiap staf harus diulang berdasarkan persyaratan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:9:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:9:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 2: Program kesehatan dan keselamatan staf mencakup setidaknya a) hingga h) yang tercantum…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Program kesehatan dan keselamatan staf mencakup setidaknya a) hingga h) yang tercantum dalam maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:9:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 3: Rumah sakit mengidentifikasi penularan penyakit infeksi atau paparan yang dapat terjadi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit mengidentifikasi penularan penyakit infeksi atau paparan yang dapat terjadi pada staf serta melakukan upaya pencegahan dengan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:9:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 4: Berdasar atas epidemologi penyakit infeksi maka rumah sakit mengidentifikasi risiko staf…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:9:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 5: Rumah sakit telah D melaksanakan evaluasi, konseling, dan tata laksana lebih lanjut…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah D melaksanakan evaluasi, konseling, dan tata laksana lebih lanjut untuk staf yang terpapar penyakit infeksi serta…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:9:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 6: Rumah sakit telah mengidentifikasi area yang berpotensi untuk terjadi tindakan kekerasan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah mengidentifikasi area yang berpotensi untuk terjadi tindakan kekerasan di tempat kerja (workplace violence) dan…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:9:7",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 9 EP 7: Rumah sakit telah melaksanakan evaluasi, konseling, dan tata laksana lebih lanjut untuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan evaluasi, konseling, dan tata laksana lebih lanjut untuk staf yang mengalami cedera akibat tindakan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:10:1",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-HBL-MSBL-DAN-NSBL-RSIA-MELINDA-KEDIRI"
+   ],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10 EP 2: Rumah sakit telah melaksanakan proses kredensial dan pemberian kewenangan klinis untuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan proses kredensial dan pemberian kewenangan klinis untuk pelayanan diagnostik, konsultasi, dan tata laksana…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:10:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10 EP 3: Rumah sakit telah melaksanakan proses kredensial dan pemberian kewenangan klinis kepada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10 EP 4: Setiap tenaga medis yang memberikan pelayanan di rumah sakit wajib menandatangani…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10 EP 5: Rumah sakit telah melaksanakan verifikasi ke Lembaga / Badan /Instansi pendidikan atau…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10 EP 6: Ada bukti dilaksanakan kredensial tambahan ke sumber yang mengeluarkan apabila tenaga…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Ada bukti dilaksanakan kredensial tambahan ke sumber yang mengeluarkan apabila tenaga medis yang meminta kewenangan klinis tambahan yang…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:10.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10.1 EP 2: Pengangkatan tidak dilakukan sampai setidaknya izin/surat tanda registrasi sudah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:10.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 10.1 EP 3: Untuk tenaga medis yang belum mendapatkan kewenangan mandiri, dilakukan supervisi dengan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:11:1",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-RKK-DAN-KREDENSIAL-POLI-PENYAKIT-DALAM"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:11:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 11 EP 2: Ada bukti pemberian kewenangan klinis berdasar atas rekomendasi kewenangan klinis dari…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:11:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 11 EP 3: Ada bukti pelaksanaan pemberian kewenangan tambahan setelah melakukan verifikasi dari…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:11:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 11 EP 4: Surat penugasan klinis dan rincian kewenangan klinis anggota tenaga medis dalam bentuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:11:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 11 EP 5: Setiap tenaga medis hanya memberikan pelayanan klinis sesuai kewenangan klinis yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Setiap tenaga medis hanya memberikan pelayanan klinis sesuai kewenangan klinis yang diberikan kepadanya?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:KPS:12:1",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-HBL-MSBL-DAN-NSBL-RSIA-MELINDA-KEDIRI"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 1: Rumah sakit telah menetapkan dan menerapkan proses penilaian kinerja untuk evaluasi mutu…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 2: Penilaian OPPE tenaga medis memuat 3 (tiga) area umum 1) – 3) dalam maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 3: Penilaian OPPE juga meliputi peran tenaga medis dalam pencapaian target indikator mutu…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 4: Data dan informasi hasil pelayanan klinis dari tenaga medis dikaji secara objektif dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 5: Data dan informasi hasil pemantauan kinerja tenaga medis sekurang-kurangnya setiap 12…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 6: Jika terjadi kejadian insiden keselamatan pasien atau pelanggaran perilaku etik maka…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:12:7",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 12 EP 7: Bila ada temuan yang berdampak pada pemberian kewenangan tenaga medis, temuan tersebut…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:13:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 13 EP 1: Berdasarkan penilaian praktik profesional berkelanjutan tenaga medis, rumah sakit…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:13:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 13 EP 2: Terdapat bukti terkini dalam berkas setiap tenaga medis untuk semua kredensial yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:13:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 13 EP 3: Ada bukti pemberian kewenangan klinis tambahan didasarkan atas kredensial yang telah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:14:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 14 EP 1: Rumah sakit telah menetapkan dan menerapkan proses kredensial yang efektif terhadap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:14:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 14 EP 2: Tersedia bukti dokumentasi pendidikan, registrasi, sertifikasi, izin, pelatihan, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:14:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 14 EP 3: Terdapat pelaksanaan verifikasi ke sumber Badan/Lembaga/ institusi penyelenggara…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:14:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 14 EP 4: Terdapat bukti dokumen kredensial yang dipelihara pada setiap tenaga perawat",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:14:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 14 EP 5: Rumah sakit menerapkan proses untuk memastikan bahwa kredensial perawat kontrak lengkap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:15:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:15:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:16:1",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-KPI-DAN-REMUNERASI"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 16 EP 1: Rumah sakit telah melakukan penilaian kinerja tenaga perawat secara periodik menggunakan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:16:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 16 EP 2: Penilaian kinerja tenaga perawat meliputi pemenuhan uraian tugasnya dan perannya dalam…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:16:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 16 EP 3: Pimpinan rumah sakit dan kepala unit telah berlaku adil (just culture) ketika ada temuan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:16:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 16 EP 4: Rumah sakit telah mendokumentasikan hasil kajian, tindakan yang diambil, dan setiap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:17:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 17 EP 1: Rumah sakit telah menetapkan dan menerapkan proses kredensial yang efektif terhadap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:17:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 17 EP 2: Tersedia bukti dokumentasi pendidikan, registrasi, sertifikasi, izin, pelatihan, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:17:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 17 EP 3: Terdapat pelaksanaan verifikasi ke sumber Badan/Lembaga/ institusi penyelenggara…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:17:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 17 EP 4: Terdapat dokumen kredensial yang dipelihara dari setiap tenaga kesehatan lainnya",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:18:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:18:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:19:1",
+  "regulation": {
+   "docIds": [
+    "SOP-MGT-KPI-DAN-REMUNERASI"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 19 EP 1: Rumah sakit telah melakukan penilaian kinerja tenaga Kesehatan lainnya secara periodik…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:19:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 19 EP 2: Penilain kinerja tenaga Kesehatan lainnya meliputi pemenuhan uraian tugasnya dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:19:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 19 EP 3: Pimpinan rumah sakit dan kepala unit telah berlaku adil (just culture) ketika ada temuan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:KPS:19:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan KPS 19 EP 4: Rumah sakit telah mendokumentasikan hasil kajian, tindakan yang diambil, dan setiap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ }
+]

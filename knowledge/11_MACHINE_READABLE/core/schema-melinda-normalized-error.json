@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Melinda normalized error",
+  "description": "Normalized error payload returned by Melinda tools.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ok": {
+      "type": "boolean",
+      "const": false,
+      "description": "Always false for an error payload."
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Canonical machine-readable error code from ERROR_CONTRACT."
+        },
+        "message": {
+          "type": "string",
+          "description": "Internal diagnostic message."
+        },
+        "retryable": {
+          "type": "boolean",
+          "description": "Whether the same request may be retried."
+        },
+        "safe_user_message": {
+          "type": "string",
+          "description": "User-facing message: what happened and the next safe option, without blaming the user or exposing internals."
+        },
+        "handoff_recommended": {
+          "type": "boolean",
+          "description": "Whether a human handoff is recommended."
+        },
+        "correlation_id": {
+          "type": "string",
+          "description": "Identifier linking the error to server-side audit and traces."
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "retryable",
+        "safe_user_message",
+        "handoff_recommended",
+        "correlation_id"
+      ],
+      "description": "Error details."
+    }
+  },
+  "required": [
+    "ok",
+    "error"
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

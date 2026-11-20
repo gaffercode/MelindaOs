@@ -1,0 +1,73 @@
+{
+  "note": "Fictional sample. Not the RSIA Melinda BPJS credentialing dossier; the real index stays in the private monorepo.",
+  "categories": [
+    {
+      "id": "ALL",
+      "name": "Semua Dokumen",
+      "badge": "3",
+      "count": 3
+    },
+    {
+      "id": "01",
+      "name": "Persyaratan Mutlak",
+      "badge": "01",
+      "count": 2
+    },
+    {
+      "id": "02",
+      "name": "Komitmen Kinerja & Mutu",
+      "badge": "02",
+      "count": 1
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-001",
+      "filename": "01.01_Contoh_Surat_Permohonan_Kerja_Sama.pdf",
+      "rel_path": "01_PERSYARATAN_MUTLAK/01.01_Contoh_Surat_Permohonan_Kerja_Sama.pdf",
+      "cat_id": "01",
+      "cat_name": "PERSYARATAN MUTLAK",
+      "subfolder": "",
+      "subfolder_label": "",
+      "title": "Contoh Surat Permohonan Kerja Sama",
+      "doc_num": "01.01",
+      "pic": "dr. Contoh Direktur",
+      "badge": "DIREKSI",
+      "ext": "PDF",
+      "size_kb": 100.0,
+      "url": "/api/director/kredensial/01_PERSYARATAN_MUTLAK/01.01_Contoh_Surat_Permohonan_Kerja_Sama.pdf"
+    },
+    {
+      "id": "DOC-002",
+      "filename": "01.02_Contoh_Izin_Operasional.pdf",
+      "rel_path": "01_PERSYARATAN_MUTLAK/01.02_Contoh_Izin_Operasional.pdf",
+      "cat_id": "01",
+      "cat_name": "PERSYARATAN MUTLAK",
+      "subfolder": "",
+      "subfolder_label": "",
+      "title": "Contoh Izin Operasional",
+      "doc_num": "01.02",
+      "pic": "Contoh Kabag Umum",
+      "badge": "UMUM",
+      "ext": "PDF",
+      "size_kb": 100.0,
+      "url": "/api/director/kredensial/01_PERSYARATAN_MUTLAK/01.02_Contoh_Izin_Operasional.pdf"
+    },
+    {
+      "id": "DOC-003",
+      "filename": "02.01_Contoh_Komitmen_Mutu.pdf",
+      "rel_path": "02_KOMITMEN_KINERJA_DAN_MUTU/02.01_Contoh_Komitmen_Mutu.pdf",
+      "cat_id": "02",
+      "cat_name": "KOMITMEN KINERJA & MUTU",
+      "subfolder": "",
+      "subfolder_label": "",
+      "title": "Contoh Komitmen Mutu",
+      "doc_num": "02.01",
+      "pic": "Contoh Ketua Mutu",
+      "badge": "MUTU",
+      "ext": "PDF",
+      "size_kb": 100.0,
+      "url": "/api/director/kredensial/02_KOMITMEN_KINERJA_DAN_MUTU/02.01_Contoh_Komitmen_Mutu.pdf"
+    }
+  ]
+}

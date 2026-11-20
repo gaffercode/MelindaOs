@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "note": "Fictional sample. Not RSIA Melinda staff. The real directory lives in the private Supabase bucket hrd.",
+  "updatedAt": "2099-01-15",
+  "officials": [
+    { "id": "direktur", "position": "Direktur", "name": "dr. Contoh Direktur", "phone": "+6281200000001", "parent": null, "unit": "Pimpinan" },
+    { "id": "wadir-sdm-keuangan", "position": "Wadir SDM & Keuangan", "name": "Contoh Wadir Satu, S.E.", "phone": "+6281200000002", "parent": "direktur", "unit": "SDM dan keuangan" },
+    { "id": "wadir-operasional", "position": "Wadir Operasional", "name": "dr. Contoh Wadir Dua", "phone": "+6281200000003", "parent": "direktur", "unit": "Operasional" },
+    { "id": "kabag-umum", "position": "Kabag Umum sekaligus Kepala SDM", "name": "Contoh Kabag Umum", "phone": "+6281200000004", "parent": "wadir-sdm-keuangan", "unit": "Umum dan SDM" },
+    { "id": "kabag-pelayanan", "position": "Kabag Pelayanan", "name": "Contoh Kabag Pelayanan, A.Md.Keb.", "phone": "+6281200000005", "parent": "wadir-operasional", "unit": "Pelayanan" }
+  ],
+  "staff": [
+    { "name": "Contoh Direktur", "title": "dr.", "position": "Direktur", "unit": "Direksi" },
+    { "name": "Contoh Staf Khusus", "title": "S.Tr.RMIK", "position": "Staf Khusus Direktur", "unit": "Direksi" },
+    { "name": "Contoh Dokter Spesialis", "title": "dr., Sp.OG", "position": "Ketua Komite Medik", "unit": "Komite Medik" },
+    { "name": "Contoh Bidan Satu", "title": "A.Md.Keb.", "position": "Bidan VK", "unit": "Pelayanan" },
+    { "name": "Contoh Bidan Dua", "title": "A.Md.Keb.", "position": "Bidan VK", "unit": "Pelayanan" },
+    { "name": "Contoh Perawat", "title": "S.Kep., Ns.", "position": "Perawat Poli Rawat Jalan", "unit": "Pelayanan" },
+    { "name": "Contoh Apoteker", "title": "S.Farm., Apt.", "position": "Apoteker", "unit": "Farmasi" },
+    { "name": "Contoh Tata Graha", "title": "", "position": "Asisten Rumah Tangga", "unit": "Umum & SDM" },
+    { "name": "Contoh Staf Keuangan", "title": "S.E.", "position": "Staf Keuangan", "unit": "Keuangan" },
+    { "name": "Contoh Belum Terdata", "title": "", "position": null, "unit": null }
+  ]
+}

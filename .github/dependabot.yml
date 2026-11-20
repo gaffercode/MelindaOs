@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /dashboard
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - security
+    groups:
+      patch:
+        update-types:
+          - "patch"
+    ignore:
+      # Majors stay pinned exactly and are upgraded by hand; only patch and security updates are proposed.
+      - dependency-name: "*"
+        update-types:
+          - "major"
+      # Unpatchable on npm (Chief approved 2026-10-11). Revisit when patched releases publish.
+      - dependency-name: braces
+      - dependency-name: node-forge
+      - dependency-name: sprintf-js

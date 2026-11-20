@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "notification.send input",
+  "description": "Input for notification.send: transactional confirmation, reminder, or handoff notification through an approved provider. Risk R4.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "recipient_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Recipient reference, not an arbitrary destination."
+    },
+    "template_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Approved message template identifier."
+    },
+    "template_variables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      },
+      "description": "Structured variables for the approved template."
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "sms",
+        "email"
+      ],
+      "description": "Delivery channel."
+    },
+    "confirmation_token": {
+      "type": "string",
+      "description": "Confirmation token; required unless hospital policy permits automatic sending for an already-confirmed transaction."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "Client-generated key that makes retries of the same request safe."
+    }
+  },
+  "required": [
+    "recipient_ref",
+    "template_id",
+    "template_variables",
+    "channel",
+    "idempotency_key"
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

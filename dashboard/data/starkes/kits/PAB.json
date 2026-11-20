@@ -1,0 +1,1312 @@
+[
+ {
+  "epId": "47104-2024:PAB:1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-PEDOMAN-PELAYANAN-ANESTESI",
+    "SOP-KLI-ASESMEN-PRA-ANESTESI-PEMILIHAN-JENIS-ANESTESI",
+    "SOP-KLI-ASESMEN-PASKA-ANESTESI"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 1 EP 2: Pelayanan anestesi dan sedasi yang telah diberikan dapat memenuhi kebutuhan pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 1 EP 3: Pelayanan anestesi dan sedasi tersedia 24 jam 7 (tujuh) hari sesuai dengan kebutuhan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Pelayanan anestesi dan sedasi tersedia 24 jam 7 (tujuh) hari sesuai dengan kebutuhan pasien",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pelayanan anestesi dan sedasi tersedia 24 jam 7 (tujuh) hari sesuai dengan kebutuhan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 2 EP 1: Rumah sakit telah menerapkan pelayanan anestesi dan sedasi secara seragam di seluruh…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan pelayanan anestesi dan sedasi secara seragam di seluruh area sesuai regulasi yang ditetapkan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 2 EP 2: Rumah sakit telah menetapkan penanggung jawab pelayanan anestesi dan sedasi adalah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 2 EP 3: Bila memerlukan profesional pemberi asuhan terdapat PPA dari luar rumah sakit untuk…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Monitoring Recovery Room (PAB 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3 EP 1: Rumah sakit telah melaksanakan pemberian sedasi moderat dan dalam yang seragam di semua…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan pemberian sedasi moderat dan dalam yang seragam di semua tempat di rumah sakit sesuai dengan poin a) - f)…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Monitoring Recovery Room (PAB 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3 EP 2: Peralatan dan perbekalan gawat darurat tersedia di tempat dilakukan sedasi moderat dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Peralatan dan perbekalan gawat darurat tersedia di tempat dilakukan sedasi moderat dan dalam serta dipergunakan sesuai jenis sedasi, usia,…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Monitoring Recovery Room (PAB 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3 EP 3: PPA yang terlatih dan berpengalaman dalam memberikan bantuan hidup lanjut (advance)…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3.1 EP 2: Profesional pemberi asuhan (PPA) yang bertanggung jawab melakukan pemantauan selama…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3.1 EP 3: Kompetensi semua PPA yang terlibat dalam sedasi moderat dan dalam tercatat di file…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3.2 EP 1: Rumah sakit telah menerapkan pengkajian prasedasi dan dicatat dalam rekam medis meliputi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3.2 EP 2: Rumah sakit telah menerapkan pemantauan pasien selama dilakukan pelayanan sedasi moderat…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:3.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 3.2 EP 3: Kriteria pemulihan telah digunakan dan didokumentasikan untuk mengidentifikasi pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Manajemen Nyeri Pasca Operasi dan Sedasi (PAB 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 4 EP 1: Pengkajian pra-anestesi telah dilakukan untuk setiap pasien yang akan dilakukan anestesi",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Manajemen Nyeri Pasca Operasi dan Sedasi (PAB 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 4 EP 2: Pengkajian pra induksi telah dilakukan secara terpisah untuk mengevaluasi ulang pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Manajemen Nyeri Pasca Operasi dan Sedasi (PAB 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 4 EP 3: Kedua pengkajian tersebut telah dilakukan oleh PPA yang kompeten dan telah diberikan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 5 EP 1: Rumah sakit telah menerapkan pemberian informasi kepada pasien dan atau keluarga atau…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan pemberian informasi kepada pasien dan atau keluarga atau pihak yang akan memberikan keputusan tentang jenis,…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 5 EP 2: Pemberian informasi dilakukan oleh dokter spesialis anestesi dan didokumentasikan dalam…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pemberian informasi dilakukan oleh dokter spesialis anestesi dan didokumentasikan dalam formulir persetujuan tindakan anestesi/sedasi?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 6 EP 1: Frekuensi dan jenis pemantauan selama tindakan anestesi dan pembedahan didasarkan pada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Frekuensi dan jenis pemantauan selama tindakan anestesi dan pembedahan didasarkan pada status pra anestesi pasien, anestesi yang…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 6 EP 2: Pemantauan status fisiologis pasien sesuai dengan panduan praktik klinis (PPK) rekam…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:6.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 6.1 EP 1: Rumah sakit telah menerapkan pemantauan pasien pasca anestesi baik di ruang intensif…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan pemantauan pasien pasca anestesi baik di ruang intensif maupun di ruang pemulihan dan didokumentasikan dalam…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:6.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 6.1 EP 2: Pasien dipindahkan dari unit pasca anestesi (atau pemantauan pemulihan dihentikan)…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien dipindahkan dari unit pasca anestesi (atau pemantauan pemulihan dihentikan) sesuai dengan kriteria baku yang ditetapkan dengan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:6.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 6.1 EP 3: Waktu dimulai dan dihentikannya proses pemulihan dicatat di dalam rekam medis pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Waktu dimulai dan dihentikannya proses pemulihan dicatat di dalam rekam medis pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7 EP 1: Rumah sakit telah menerapkan pengkajian pra bedah pada pasien yang akan dioperasi oleh…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan pengkajian pra bedah pada pasien yang akan dioperasi oleh dokter penanggung jawab pelayanan (DPJP) sebelum…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7 EP 2: Diagnosis praoperasi dan rencana prosedur/tindakan operasi berdasarkan hasil pengkajian…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Diagnosis praoperasi dan rencana prosedur/tindakan operasi berdasarkan hasil pengkajian prabedah dan didokumentasikan di rekam medik?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.1 EP 1: Rumah sakit telah menerapkan pemberian informasi kepada pasien dan atau keluarga atau…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan pemberian informasi kepada pasien dan atau keluarga atau pihak yang akan memberikan keputusan tentang jenis,…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.1 EP 2: Pemberian informasi dilakukan oleh dokter penanggung jawab pelayanan (DPJP)…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pemberian informasi dilakukan oleh dokter penanggung jawab pelayanan (DPJP) didokumentasikan dalam formulir persetujuan tindakan kedokteran?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.2 EP 1: Laporan operasi memuat poin a) – h) pada maksud dan tujuan serta dicatat pada…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.2 EP 2: Laporan operasi telah tersedia segera setelah operasi selesai dan sebelum pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.3 EP 1: Rencana asuhan pascaoperasi dicatat di rekam medis pasien dalam waktu 24 jam oleh dokter…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.3 EP 2: Rencana asuhan pascaoperasi termasuk rencana asuhan medis, keperawatan, oleh PPA lainnya…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.3 EP 3: Rencana asuhan pasca operasi diubah berdasarkan pengkajian ulang pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rencana asuhan pasca operasi diubah berdasarkan pengkajian ulang pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7.4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PAB:7.4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.4 EP 3: Rumah sakit mempunyai proses untuk melacak implan medis yang telah digunakan pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit mempunyai proses untuk melacak implan medis yang telah digunakan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PAB:7.4:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PAB 7.4 EP 4: Rumah sakit menerapkan proses untuk menghubungi dan memantau pasien dalam jangka waktu…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ }
+]

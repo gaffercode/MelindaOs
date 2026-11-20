@@ -1,0 +1,2197 @@
+[
+ {
+  "epId": "47104-2024:AKP:1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN"
+   ],
+   "studioPresetCodes": [
+    "SPO Triase PONEK ESI/MEWS (AKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Triase PONEK ESI/MEWS (AKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan proses skrining baik di dalam maupun di luar rumah sakit dan terdokumentasi?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Triase PONEK ESI/MEWS (AKP 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1 EP 3: Ada proses untuk memberikan hasil pemeriksaan diagnostik kepada tenaga kesehatan yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Ada proses untuk memberikan hasil pemeriksaan diagnostik kepada tenaga kesehatan yang kompeten/terlatih untuk bertanggung jawab menentukan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Triase PONEK ESI/MEWS (AKP 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Bila kebutuhan pasien tidak dapat dipenuhi sesuai misi dan sumber daya yang ada, maka rumah sakit akan merujuk atau membantu pasien ke…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.1 EP 1: Proses triase dan pelayanan kegawatdaruratan telah diterapkan oleh staf yang kompeten…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Proses triase dan pelayanan kegawatdaruratan telah diterapkan oleh staf yang kompeten dan bukti dokumen kompetensi dan kewenangan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.1 EP 2: Staf telah menggunakan kriteria triase berbasis bukti untuk memprioritaskan pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Staf telah menggunakan kriteria triase berbasis bukti untuk memprioritaskan pasien sesuai dengan kegawatannya",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf telah menggunakan kriteria triase berbasis bukti untuk memprioritaskan pasien sesuai dengan kegawatannya?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.1 EP 3: Pasien darurat dinilai dan distabilkan sesuai kapasitas rumah sakit sebelum ditransfer…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien darurat dinilai dan distabilkan sesuai kapasitas rumah sakit sebelum ditransfer ke ruang rawat atau dirujuk dan didokumentasikan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.2 EP 1: Rumah sakit telah melaksanakan skrining pasien masuk rawat inap untuk menetapkan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:1.2:2",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:1.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.2 EP 3: Rumah sakit telah menerapkan kriteria masuk dan kriteria keluar di unit pelayanan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan kriteria masuk dan kriteria keluar di unit pelayanan intensif menggunakan parameter diagnostik dan atau…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.2 EP 4: Staf yang kompeten dan berwenang di unit pelayanan khusus dan unit pelayanan intensif…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Staf yang kompeten dan berwenang di unit pelayanan khusus dan unit pelayanan intensif terlibat dalam penyusunan kriteria masuk dan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.3 EP 1: Pasien dan atau keluarga diberi informasi jika ada penundaan dan atau keterlambatan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien dan atau keluarga diberi informasi jika ada penundaan dan atau keterlambatan pelayanan beserta alasannya dan dicatat di rekam medis?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:1.3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 1.3 EP 2: Pasien dan atau keluarga diberi informasi tentang alternatif yang tersedia sesuai…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien dan atau keluarga diberi informasi tentang alternatif yang tersedia sesuai kebutuhan klinis pasien dan dicatat di rekam medis?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Discharge Planning Terintegrasi (AKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2 EP 1: Rumah sakit telah menerapkan proses penerimaan pasien meliputi poin a) – f) pada maksud…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah menerapkan proses penerimaan pasien meliputi poin a) – f) pada maksud dan tujuan",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan proses penerimaan pasien meliputi poin a) – f) pada maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Discharge Planning Terintegrasi (AKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2 EP 2: Rumah sakit telah menerapkan sistem pendaftaran pasien rawat jalan dan rawat inap baik…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan sistem pendaftaran pasien rawat jalan dan rawat inap baik secara offline maupun secara online dan dilakukan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Discharge Planning Terintegrasi (AKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2 EP 3: Rumah sakit telah memberikan informasi tentang rencana asuhan yang akan diberikan, hasil…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah memberikan informasi tentang rencana asuhan yang akan diberikan, hasil asuhan yang diharapkan serta perkiraan biaya yang…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Discharge Planning Terintegrasi (AKP 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2 EP 4: Saat diterima sebagai pasien rawat inap, pasien dan keluarga mendapat edukasi dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Saat diterima sebagai pasien rawat inap, pasien dan keluarga mendapat edukasi dan orientasi tentang ruang rawat inap?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2.1 EP 1: Rumah sakit telah melaksanakan pengelolaan alur pasien untuk menghindari penumpukan.…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah melaksanakan pengelolaan alur pasien untuk menghindari penumpukan. Mencakup poin a) – g) pada maksud dan tujuan",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan pengelolaan alur pasien untuk menghindari penumpukan. Mencakup poin a) – g) pada maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2.1 EP 2: Manajer pelayanan pasien (MPP)/case manager terlibat dalam pelaksanaan pengaturan alur…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Manajer pelayanan pasien (MPP)/case manager terlibat dalam pelaksanaan pengaturan alur pasien untuk menghindari penumpukan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2.1 EP 3: Rumah sakit telah melakukan evaluasi terhadap pengelolaan alur pasien secara berkala dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melakukan evaluasi terhadap pengelolaan alur pasien secara berkala dan melaksanakan upaya perbaikannya?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:2.1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 2.1 EP 4: Ada sistem informasi tentang ketersediaan tempat tidur secara online kepada masyarakat",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 3 EP 1: Para PPA telah memberikan asuhan pasien secara terintegrasi berfokus pada pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Para PPA telah memberikan asuhan pasien secara terintegrasi berfokus pada pasien meliputi poin a) - f) pada maksud dan tujuan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:3:2",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN"
+   ],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Para profesional pemberi asuhan (PPA) dan manajer pelayanan pasien (MPP) telah melaksanakan kesinambungan dan koordinasi pelayanan…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Para profesional pemberi asuhan (PPA) dan manajer pelayanan pasien (MPP) telah melaksanakan kesinambungan dan koordinasi pelayanan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:3:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 3 EP 4: Pencatatan perkembangan pasien didokumentasikan para PPA di formulir catatan pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:3:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 3 EP 5: Pencatatan di unit intensif atau unit khusus menggunakan lembar pemantauan pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pencatatan di unit intensif atau unit khusus menggunakan lembar pemantauan pasien khusus, pencatatan perkembangan pasien dilakukan pada…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:3:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 3 EP 6: Perencanaan dan pelayanan pasien secara terintegrasi diinformasikan kepada pasien dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Perencanaan dan pelayanan pasien secara terintegrasi diinformasikan kepada pasien dan atau keluarga secara berkala sesuai ketentuan Rumah…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:3.1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-ALUR-PELAYANAN-DAN-ASUHAN-PASIEN",
+    "SOP-OPS-SPO-PEMBERIAN-INFORMASI-MEDIS-OLEH-DPJP"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menetapkan bahwa setiap pasien memiliki dokter penanggung jawab pelayanan (DPJP) dan telah melakukan asuhan pasien…?",
+    "keyAnswer": "Jelaskan langkah sesuai SK Alur Pelayanan dan Asuhan Pasien; SPO Pemberian Informasi Medis oleh Dokter Penanggung Jawab Pelayanan (DPJP) kepada Pasien/Keluarganya."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:3.1:2",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-ALUR-PELAYANAN-DAN-ASUHAN-PASIEN",
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:3.1:3",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-ALUR-PELAYANAN-DAN-ASUHAN-PASIEN"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kontinuitas Rawat Jalan dan Antrian (AKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 4 EP 1: Rumah sakit telah menerapkan proses transfer pasien antar unit pelayanan di dalam rumah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah menerapkan proses transfer pasien antar unit pelayanan di dalam rumah sakit dilengkapi dengan formulir transfer pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Kontinuitas Rawat Jalan dan Antrian (AKP 4)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 4 EP 2: Formulir transfer internal meliputi poin a) - g) pada maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN",
+    "SOP-KLI-SK-ALUR-PELAYANAN-DAN-ASUHAN-PASIEN"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5 EP 3: Penyusunan rencana dan instruksi pemulangan didokumentasikan dalam rekam medis pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Penyusunan rencana dan instruksi pemulangan didokumentasikan dalam rekam medis pasien dan diberikan kepada pasien secara tertulis?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5 EP 4: Tindak lanjut pemulangan pasien bila diperlukan dapt ditujukan kepada fasilitas…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Tindak lanjut pemulangan pasien bila diperlukan dapt ditujukan kepada fasilitas pelayanan kesehatan baik perorangan ataupun dimana pasien…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.1 EP 2: Rumah sakit memberikan salinan ringkasan pasien pulang kepada pihak yang berkepentingan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.1 EP 3: Formulir Ringkasan pasien pulang dijelaskan kepada pasien dan atau keluarga",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Formulir Ringkasan pasien pulang dijelaskan kepada pasien dan atau keluarga?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.2 EP 1: Rumah sakit telah menetapkan proses untuk mengelola pasien rawat jalan dan rawat inap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.2 EP 2: Ada bukti pemberian edukasi kepada pasien tentang risiko medis akibat asuhan medis yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Ada bukti pemberian edukasi kepada pasien tentang risiko medis akibat asuhan medis yang belum lengkap?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.2 EP 3: Pasien keluar rumah sakit atas permintaan sendiri, tetapi tetap mengikuti proses…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien keluar rumah sakit atas permintaan sendiri, tetapi tetap mengikuti proses pemulangan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.2 EP 4: Dokter keluarga (bila ada) atau dokter yang memberi asuhan berikutnya kepada pasien…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Dokter keluarga (bila ada) atau dokter yang memberi asuhan berikutnya kepada pasien diberitahu tentang kondisi tersebut?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.2:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.2 EP 5: Ada dokumentasi rumah sakit melakukan pengkajian untuk mengetahui alasan pasien keluar…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.3 EP 2: Rumah sakit melakukan identifikasi pasien menderita penyakit yang membahayakan dirinya…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.3 EP 3: Rumah sakit melaporkan kepada pihak yang berwenang bila ada indikasi kondisi pasien yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit melaporkan kepada pihak yang berwenang bila ada indikasi kondisi pasien yang membahayakan dirinya sendiri atau lingkungan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.4:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-FKTP-REFERRAL-PATHWAYS-AND-EMERGENCY",
+    "SOP-KLI-SK-KEBIJAKAN-AKSES-DAN-KESINAMBUNGAN-PELAYANAN",
+    "SOP-KLI-SOP-RUJUKAN-GAWAT-DARURAT-POLI-KE-UGD"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.4:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.4 EP 2: Rujukan pasien dilakukan sesuai dengan kebutuhan kesinambungan asuhan pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rujukan pasien dilakukan sesuai dengan kebutuhan kesinambungan asuhan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.4 EP 3: Rumah sakit yang merujuk memastikan bahwa fasilitas kesehatan yang menerima dapat…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit yang merujuk memastikan bahwa fasilitas kesehatan yang menerima dapat memenuhi kebutuhan pasien yang dirujuk?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.4:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.4 EP 4: Ada kerjasama rumah sakit yang merujuk dengan rumah sakit yang menerima rujukan yang…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.5:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.5:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.5 EP 2: Selama proses rujukan ada staf yang kompeten sesuai dengan kondisi pasien yang selalu…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Selama proses rujukan ada staf yang kompeten sesuai dengan kondisi pasien yang selalu memantau dan mencatatnya dalam rekam medis?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.5:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.5 EP 3: Selama proses rujukan tersedia obat, bahan medis habis pakai, alat kesehatan, dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Selama proses rujukan tersedia obat, bahan medis habis pakai, alat kesehatan, dan peralatan medis sesuai dengan kebutuhan kondisi pasien",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Selama proses rujukan tersedia obat, bahan medis habis pakai, alat kesehatan, dan peralatan medis sesuai dengan kebutuhan kondisi pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.5:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.5 EP 4: Rumah sakit memiliki proses serah terima pasien antara staf pengantar dan yang menerima",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit memiliki proses serah terima pasien antara staf pengantar dan yang menerima?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.5:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.5 EP 5: Pasien dan keluarga dijelaskan apabila rujukan yang dibutuhkan tidak dapat dilaksanakan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Pasien dan keluarga dijelaskan apabila rujukan yang dibutuhkan tidak dapat dilaksanakan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.6 EP 1: Dokumen rujukan berisi nama dari fasilitas pelayanan kesehatan yang menerima dan nama…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.6 EP 2: Dokumen rujukan berisi alasan pasien dirujuk, memuat kondisi pasien, dan kebutuhan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.6:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.6 EP 3: Dokumen rujukan juga memuat prosedur dan intervensi yang sudah dilakukan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.6:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.6 EP 4: Proses rujukan dievaluasi dalam aspek mutu dan keselamatan pasien",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Proses rujukan dievaluasi dalam aspek mutu dan keselamatan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.7:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:AKP:5.7:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.7 EP 2: Rumah sakit memiliki proses yang dapat dibuktikan bahwa PRMRJ mudah ditelusur dan mudah…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit memiliki proses yang dapat dibuktikan bahwa PRMRJ mudah ditelusur dan mudah di- review?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:5.7:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 5.7 EP 3: Proses tersebut dievaluasi untuk memenuhi kebutuhan para DPJP dan meningkatkan mutu…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Proses tersebut dievaluasi untuk memenuhi kebutuhan para DPJP dan meningkatkan mutu serta keselamatan pasien?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 6 EP 1: Rumah sakit memiliki proses transportasi pasien sesuai dengan kebutuhannya yang meliputi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit memiliki proses transportasi pasien sesuai dengan kebutuhannya yang meliputi pengkajian kebutuhan transportasi, SDM, obat,…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 6 EP 2: Bila rumah sakit memiliki kendaraan transport sendiri, ada bukti pemeliharan kendaraan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Bila rumah sakit memiliki kendaraan transport sendiri, ada bukti pemeliharan kendaraan tersebut sesuai dengan peraturan perundang- undangan?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:6:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan AKP 6 EP 3: Bila rumah sakit bekerja sama dengan jasa transportasi pasien mandiri, ada bukti kerja…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Bila rumah sakit bekerja sama dengan jasa transportasi pasien mandiri, ada bukti kerja sama tersebut dan evaluasi berkala dari rumah sakit…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:AKP:6:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ }
+]

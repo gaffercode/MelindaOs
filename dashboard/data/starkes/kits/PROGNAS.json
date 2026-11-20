@@ -1,0 +1,1311 @@
+[
+ {
+  "epId": "47104-2024:PROGNAS:1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-STARKES-PROGNAS",
+    "SOP-KLI-SPO-PERINATAL-RESTI",
+    "SOP-KLI-PONEK-FISIOLOGIS"
+   ],
+   "studioPresetCodes": [
+    "SPO PONEK 24 Jam (PROGNAS 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO PONEK 24 Jam (PROGNAS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 1 EP 2: Terdapat Tim PONEK yang ditetapkan oleh rumah sakit dengan rincian tugas dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1:3",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-STARKES-PROGNAS"
+   ],
+   "studioPresetCodes": [
+    "SPO PONEK 24 Jam (PROGNAS 1)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO PONEK 24 Jam (PROGNAS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 1 EP 4: Terdapat bukti pelaksanaan program PONEK Rumah Sakit",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Terdapat bukti pelaksanaan program PONEK Rumah Sakit?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO PONEK 24 Jam (PROGNAS 1)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 1 EP 5: Program PONEK Rumah Sakit dipantau dan dievaluasi secara rutin",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Program PONEK Rumah Sakit dipantau dan dievaluasi secara rutin?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1.1:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-STARKES-PROGNAS"
+   ],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 1.1 EP 2: Rumah sakit melakukan pembinaan terhadap jejaring secara berkala",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:1.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 1.1 EP 3: Telah dilakukan evaluasi program pembinaan jejaring rujukan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Penurunan Stunting dan Wasting (PROGNAS 2)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Penurunan Stunting dan Wasting (PROGNAS 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2 EP 2: Direktur menetapkan tim TB Paru Rumah sakit beserta program kerjanya",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Penurunan Stunting dan Wasting (PROGNAS 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2 EP 3: Ada bukti pelaksanaan promosi kesehatan, surveilans dan upaya pencegahan tuberkulosis",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Penurunan Stunting dan Wasting (PROGNAS 2)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2 EP 4: Tersedianya laporan pelaksanaan promosi Kesehatan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Tersedia ruang pelayanan rawat jalan yang memenuhi pedoman pencegahan dan pengendalian infeksi tuberkulosis",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Bila rumah sakit memberikan pelayanan rawat inap bagi pasien tuberkulosis paru dewasa maka rumah sakit harus memiliki ruang rawat inap…",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Tersedia ruang pengambilan spesimen sputum yang memenuhi pedoman pencegahan dan pengendalian infeksi tuberkulosis",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.2:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2.2 EP 1: Rumah sakit telah menerapkan kepatuhan staf medis terhadap panduan praktik klinis…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.2:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2.2 EP 2: Rumah sakit merencanakan dan mengadakan penyediaan Obat Anti Tuberkulosis",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.2:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2.2 EP 3: Rumah sakit melaksanakan pelayanan TB MDR (bagi rumah sakit rujukan TB MDR)",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:2.2:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 2.2 EP 4: Rumah sakit melaksanakan pencatatan dan pelaporan kasus TB Paru sesuai ketentuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 1: Rumah sakit telah melaksanakan kebijakan program penanggulangan HIV/AIDS sesuai…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 2: Rumah sakit telah menerapkan fungsi rujukan HIV/AIDS pada rumah sakit sesuai dengan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 3: Rumah Sakit melaksanakan pelayanan PITC dan PMTC",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 4: Rumah sakit memberikan pelayanan ODHA dengan faktor risiko IO",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 5: Rumah sakit merencanakan dan mengadakan penyediaan ARV",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:3:6",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 3 EP 6: Rumah sakit melakukan pemantauan dan evaluasi program penanggulangan HIV/AIDS",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:4:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan KB Rumah Sakit PKBRS (PROGNAS 4)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:4:2",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-KESEHATAN-ANAK-SPO-STUNTING-DAN-WASTING",
+    "SOP-KLI-STARKES-PROGNAS"
+   ],
+   "studioPresetCodes": [
+    "SPO Pelayanan KB Rumah Sakit PKBRS (PROGNAS 4)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:4:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pelayanan KB Rumah Sakit PKBRS (PROGNAS 4)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:4.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 4.1 EP 1: Rumah sakit membuktikan telah melakukan pendampingan intervensi dan pengelolaan gizi…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit membuktikan telah melakukan pendampingan intervensi dan pengelolaan gizi serta penguatan jejaring rujukan kepada rumah sakit…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PROGNAS:4.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 4.1 EP 2: Rumah sakit telah menerapkan sistem pemantauan dan evaluasi, bukti pelaporan, dan analisis",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5:1",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-PELAYANAN-KIAKB-SPO-PKBRS",
+    "SOP-KLI-STARKES-PROGNAS"
+   ],
+   "studioPresetCodes": [
+    "SPO Pengendalian Resistensi Antimikroba PPRA (PROGNAS 5)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5:2",
+  "regulation": {
+   "docIds": [
+    "SOP-KLI-STARKES-PROGNAS",
+    "SOP-KLI-PELAYANAN-KIAKB-SPO-PKBRS"
+   ],
+   "studioPresetCodes": [
+    "SPO Pengendalian Resistensi Antimikroba PPRA (PROGNAS 5)"
+   ]
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pengendalian Resistensi Antimikroba PPRA (PROGNAS 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 5 EP 3: Rumah sakit telah melaksanakan program KB Paska Persalinan dan Paska Keguguran",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": [
+    "SPO Pengendalian Resistensi Antimikroba PPRA (PROGNAS 5)"
+   ]
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 5 EP 4: Rumah sakit telah melakukan pemantauan dan evaluasi pelaksanaan PKBRS",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 5.1 EP 1: Rumah sakit telah menyediakan alat dan obat kontrasepsi dan sarana penunjang pelayanan KB",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah menyediakan alat dan obat kontrasepsi dan sarana penunjang pelayanan KB",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 5.1 EP 2: Rumah sakit menyediakan layanan konseling bagi peserta dan calon peserta program KB",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:5.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": [
+   "Foto memperlihatkan: Rumah sakit telah merancang dan menyediakan ruang pelayanan KB yang memadai",
+   "Tanggal, jam, dan lokasi foto dicatat",
+   "Tidak ada wajah, nama, atau nomor rekam medis pasien pada foto"
+  ],
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": null,
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6 EP 3: Rumah sakit telah melaksanakan program kerja sesuai dengan maksud dan tujuan",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6 EP 4: Rumah sakit telah melaksanakan pemantauan dan evaluasi kegiatan PPRA sesuai dengan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6:5",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6 EP 5: Komite/tim PRA telah membuat laporan kepada pimpinan rumah sakit secara berkala dan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6.1:1",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6.1 EP 1: Rumah sakit telah melaksanakan dan mengembangkan penatagunaan antimikroba di unit…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": [
+   {
+    "role": "Staf pelaksana",
+    "question": "Bagaimana unit Anda menerapkan ketentuan ini: Rumah sakit telah melaksanakan dan mengembangkan penatagunaan antimikroba di unit pelayanan yang melibatkan dokter, apoteker, perawat, dan…?",
+    "keyAnswer": "Jelaskan langkah yang berlaku di unit; regulasi rumah sakit untuk EP ini belum ada di KB."
+   }
+  ]
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6.1:2",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6.1 EP 2: Rumah sakit telah menyusun dan mengembangkan panduan praktik klinis (PPK), panduan…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6.1:3",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6.1 EP 3: Terdapat mekanisme untuk mengawasi pelaksanaan penatagunaan antimikroba (terhadap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ },
+ {
+  "epId": "47104-2024:PROGNAS:6.1:4",
+  "regulation": {
+   "docIds": [],
+   "studioPresetCodes": []
+  },
+  "form": {
+   "title": "Bukti pelaksanaan PROGNAS 6.1 EP 4: Rumah sakit telah melaksanakan pemantauan dan evaluasi secara bersinambung terhadap…",
+   "fields": [
+    {
+     "label": "Tanggal pelaksanaan",
+     "type": "date"
+    },
+    {
+     "label": "Unit / ruangan",
+     "type": "text"
+    },
+    {
+     "label": "Uraian pelaksanaan",
+     "type": "text"
+    },
+    {
+     "label": "Sesuai regulasi rumah sakit",
+     "type": "check"
+    },
+    {
+     "label": "Nama dan tanda tangan penanggung jawab",
+     "type": "signature"
+    }
+   ]
+  },
+  "photoChecklist": null,
+  "practice": null
+ }
+]

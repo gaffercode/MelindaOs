@@ -1,0 +1,182 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "News edition v1",
+  "description": "One Warta & Regulasi edition for a report date. Every story, regulation, deadline, and watch item needs an https primary source. Images are null when no official image exists. Do not invent URLs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "date", "edition", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "date": { "$ref": "#/$defs/date" },
+    "edition": { "$ref": "#/$defs/edition" },
+    "provenance": { "$ref": "#/$defs/provenance" }
+  },
+  "$defs": {
+    "text": { "type": "string", "maxLength": 300, "pattern": "\\S" },
+    "longText": { "type": "string", "maxLength": 2000, "pattern": "\\S" },
+    "note": { "type": "string", "maxLength": 2000 },
+    "date": { "type": "string", "maxLength": 10, "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "time": { "type": "string", "maxLength": 5, "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$" },
+    "timestamp": { "type": "string", "maxLength": 40, "pattern": "^\\d{4}-\\d{2}-\\d{2}T(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d{1,3})?(?:Z|[+-](?:0\\d|1[0-4]):[0-5]\\d)$" },
+    "https": { "type": "string", "maxLength": 500, "pattern": "^https://\\S+$" },
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "definition", "source", "observedAt", "periodStart", "periodEnd", "cutoff"],
+      "properties": {
+        "value": { "anyOf": [{ "type": "integer", "minimum": 0, "maximum": 1000000 }, { "type": "null" }] },
+        "definition": { "$ref": "#/$defs/text" },
+        "source": { "$ref": "#/$defs/text" },
+        "observedAt": { "$ref": "#/$defs/timestamp" },
+        "periodStart": { "$ref": "#/$defs/date" },
+        "periodEnd": { "$ref": "#/$defs/date" },
+        "cutoff": { "anyOf": [{ "$ref": "#/$defs/time" }, { "type": "null" }] }
+      }
+    },
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kicker", "headline", "deck", "byline", "image", "imageAlt", "paragraphs", "editorNote", "sourceUrl", "sourceName"],
+      "properties": {
+        "kicker": { "$ref": "#/$defs/text" },
+        "headline": { "$ref": "#/$defs/text" },
+        "deck": { "$ref": "#/$defs/longText" },
+        "byline": { "$ref": "#/$defs/text" },
+        "image": { "anyOf": [{ "$ref": "#/$defs/https" }, { "type": "null" }] },
+        "imageAlt": { "anyOf": [{ "$ref": "#/$defs/text" }, { "type": "null" }] },
+        "paragraphs": { "type": "array", "maxItems": 12, "items": { "$ref": "#/$defs/longText" } },
+        "editorNote": { "$ref": "#/$defs/note" },
+        "sourceUrl": { "$ref": "#/$defs/https" },
+        "sourceName": { "$ref": "#/$defs/text" }
+      }
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["volume", "number", "city", "publishedAt", "tagline", "pdfUrl", "lead", "weather", "watchlist", "deadlines", "regulasi", "inbox"],
+      "properties": {
+        "volume": { "$ref": "#/$defs/text" },
+        "number": { "$ref": "#/$defs/text" },
+        "city": { "$ref": "#/$defs/text" },
+        "publishedAt": { "$ref": "#/$defs/text" },
+        "tagline": { "$ref": "#/$defs/text" },
+        "pdfUrl": { "anyOf": [{ "$ref": "#/$defs/https" }, { "type": "null" }] },
+        "lead": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/story" }] },
+        "weather": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["summary", "high", "low", "image", "imageAlt", "forecast", "sourceUrl", "sourceName", "observedAt", "cutoff"],
+              "properties": {
+                "summary": { "$ref": "#/$defs/longText" },
+                "high": { "$ref": "#/$defs/metric" },
+                "low": { "$ref": "#/$defs/metric" },
+                "image": { "anyOf": [{ "$ref": "#/$defs/https" }, { "type": "null" }] },
+                "imageAlt": { "anyOf": [{ "$ref": "#/$defs/text" }, { "type": "null" }] },
+                "forecast": {
+                  "type": "array",
+                  "maxItems": 14,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["day", "label", "high", "low"],
+                    "properties": {
+                      "day": { "$ref": "#/$defs/text" },
+                      "label": { "$ref": "#/$defs/text" },
+                      "high": { "$ref": "#/$defs/metric" },
+                      "low": { "$ref": "#/$defs/metric" }
+                    }
+                  }
+                },
+                "sourceUrl": { "$ref": "#/$defs/https" },
+                "sourceName": { "$ref": "#/$defs/text" },
+                "observedAt": { "$ref": "#/$defs/timestamp" },
+                "cutoff": { "anyOf": [{ "$ref": "#/$defs/time" }, { "type": "null" }] }
+              }
+            }
+          ]
+        },
+        "watchlist": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["org", "text", "sourceUrl", "sourceName"],
+            "properties": {
+              "org": { "$ref": "#/$defs/text" },
+              "text": { "$ref": "#/$defs/longText" },
+              "sourceUrl": { "$ref": "#/$defs/https" },
+              "sourceName": { "$ref": "#/$defs/text" }
+            }
+          }
+        },
+        "deadlines": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["when", "title", "note", "org", "sourceUrl", "sourceName"],
+            "properties": {
+              "when": { "$ref": "#/$defs/text" },
+              "title": { "$ref": "#/$defs/text" },
+              "note": { "$ref": "#/$defs/note" },
+              "org": { "$ref": "#/$defs/text" },
+              "sourceUrl": { "$ref": "#/$defs/https" },
+              "sourceName": { "$ref": "#/$defs/text" }
+            }
+          }
+        },
+        "regulasi": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kicker", "title", "summary", "status", "sourceUrl", "sourceName"],
+            "properties": {
+              "kicker": { "$ref": "#/$defs/text" },
+              "title": { "$ref": "#/$defs/text" },
+              "summary": { "$ref": "#/$defs/longText" },
+              "status": { "$ref": "#/$defs/text" },
+              "sourceUrl": { "$ref": "#/$defs/https" },
+              "sourceName": { "$ref": "#/$defs/text" }
+            }
+          }
+        },
+        "inbox": { "type": "array", "maxItems": 20, "items": { "$ref": "#/$defs/story" } }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["producer", "sourceObservedAt", "periodStart", "periodEnd", "cutoff", "sources", "notes"],
+      "properties": {
+        "producer": { "$ref": "#/$defs/text" },
+        "sourceObservedAt": { "$ref": "#/$defs/timestamp" },
+        "periodStart": { "$ref": "#/$defs/date" },
+        "periodEnd": { "$ref": "#/$defs/date" },
+        "cutoff": { "anyOf": [{ "$ref": "#/$defs/time" }, { "type": "null" }] },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "url", "note"],
+            "properties": {
+              "name": { "$ref": "#/$defs/text" },
+              "url": { "anyOf": [{ "$ref": "#/$defs/https" }, { "type": "null" }] },
+              "note": { "$ref": "#/$defs/note" }
+            }
+          }
+        },
+        "notes": { "$ref": "#/$defs/note" }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+service: MAAF Execution Backend
+version: v1
+base_path: /v1
+endpoints:
+  POST /actions:
+    purpose: Accept policy-approved action envelope; re-authorize, ensure idempotency,
+      route to provider adapter, audit.
+    required:
+    - request_id
+    - tool
+    - actor
+    - purpose
+    - risk_class
+    - payload
+  GET /auth/health:
+    purpose: Return provider connection state without secret values.
+  POST /auth/recover:
+    purpose: Run automated token/session recovery ladder.
+  POST /provider/social/publish:
+    purpose: Provider-neutral social publishing adapter endpoint.
+  POST /executive/brief/assemble:
+    purpose: Aggregate normalized exception data for DIR.
+required_backend_controls:
+- TLS
+- workload authentication
+- rate limits
+- idempotency store
+- policy re-check
+- audit log
+- secret vault integration
+- provider adapters
+- retry/backoff
+- dead-letter handling
+- redaction
+prohibited:
+- return raw provider tokens to MCP
+- trust model-supplied actor/preapproval
+- log patient data or secrets by default

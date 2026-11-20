@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratinjau Dokumen MelindaOS</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #eef2f5;
+      color: #0f172a;
+      font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-y: auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+      background: #ffffff;
+      color: #0f172a;
+      border-bottom: 1px solid #e6ebf0;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      font-size: 13px;
+    }
+    .doc-title {
+      font-weight: 600;
+      color: #0f172a;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 60%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      background: #078d8f0d;
+      color: #067476;
+      border: 1px solid #078d8f33;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .brand-badge {
+      background: #078d8f0d;
+      color: #067476;
+      border: 1px solid #078d8f33;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    @media (max-width: 920px) {
+      .brand-badge { display: none; }
+    }
+    .btn-group { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #e6ebf0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn:hover {
+      background: #f8fafb;
+      border-color: #067476;
+      color: #067476;
+    }
+    #pagesContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 16px;
+      width: 100%;
+    }
+    .page-wrapper {
+      position: relative;
+      background: #ffffff;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e6ebf0;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    canvas {
+      display: block;
+    }
+    .page-number {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    #loadingNotice {
+      color: #5b6b7c;
+      margin-top: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #e6ebf0;
+      border-top-color: #067476;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="sticky-bar">
+    <div id="docInfo" class="doc-title">
+      <span class="badge">RESMI SSOT</span>
+      <span class="brand-badge">Designed &amp; Created by dr. Ferdi Andriska &amp; dr. Novia Dwi Anggraini</span>
+      <span id="fileNameLabel">Memuat naskah dokumen...</span>
+    </div>
+    <div class="btn-group">
+      <button class="btn" onclick="zoom(-0.2)">－ Perkecil</button>
+      <span id="zoomLabel" style="min-width: 45px; text-align: center; font-size: 12px; font-weight: 600; color: #5b6b7c;">100%</span>
+      <button class="btn" onclick="zoom(0.2)">＋ Perbesar</button>
+      <button class="btn" onclick="fitWidth()">Lebar Pas</button>
+    </div>
+  </div>
+
+  <div id="loadingNotice">
+    <div class="spinner"></div>
+    <span>Menyiapkan lembar dokumen...</span>
+  </div>
+
+  <div id="pagesContainer"></div>
+
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    
+    let currentPdf = null;
+    let currentScale = 1.35;
+    const container = document.getElementById('pagesContainer');
+    const loadingNotice = document.getElementById('loadingNotice');
+    const fileNameLabel = document.getElementById('fileNameLabel');
+    const zoomLabel = document.getElementById('zoomLabel');
+
+    const params = new URLSearchParams(window.location.search);
+    const fileUrl = params.get('file');
+
+    if (fileUrl) {
+      const fileName = decodeURIComponent(fileUrl.split('/').pop());
+      fileNameLabel.textContent = fileName;
+
+      pdfjsLib.getDocument({
+        url: fileUrl,
+        cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/cmaps/',
+        cMapPacked: true,
+      }).promise.then(pdf => {
+        currentPdf = pdf;
+        loadingNotice.style.display = 'none';
+        fileNameLabel.textContent = `${fileName} • ${pdf.numPages} Halaman`;
+        renderAllPages();
+      }).catch(err => {
+        loadingNotice.innerHTML = `
+          <div style="text-align: center; color: #b4233a; max-width: 420px; padding: 24px; background: white; border: 1px solid #e6ebf0; border-radius: 8px;">
+            <p style="font-weight: 600; margin-bottom: 6px;">Pratinjau canvas terhambat</p>
+            <p style="font-size: 12px; color: #5b6b7c; margin-bottom: 14px;">${err.message}</p>
+            <a href="${fileUrl}" target="_blank" style="display: inline-block; background: #067476; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 500;">Buka Dokumen di Tab Baru</a>
+          </div>
+        `;
+      });
+    } else {
+      loadingNotice.innerHTML = '<span style="color:#b4233a;">Parameter file tidak ditemukan.</span>';
+    }
+
+    async function renderAllPages() {
+      if (!currentPdf) return;
+      container.innerHTML = '';
+      zoomLabel.textContent = Math.round(currentScale * 75) + '%';
+
+      // High-DPI / Retina super-sampling multiplier (minimum 2x for razor-sharp vector text)
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+
+      for (let num = 1; num <= currentPdf.numPages; num++) {
+        try {
+          const page = await currentPdf.getPage(num);
+          
+          // Viewport rendered at physical pixel density (DPR scaled)
+          const viewport = page.getViewport({ scale: currentScale * dpr });
+          
+          // Logical display dimensions in CSS pixels
+          const cssWidth = Math.floor(viewport.width / dpr);
+          const cssHeight = Math.floor(viewport.height / dpr);
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'page-wrapper';
+          wrapper.style.width = cssWidth + 'px';
+          wrapper.style.height = cssHeight + 'px';
+
+          const canvas = document.createElement('canvas');
+          // Physical buffer size (crisp HiDPI)
+          canvas.width = Math.floor(viewport.width);
+          canvas.height = Math.floor(viewport.height);
+          // Visual CSS display size (scaled down to fit 1x logical viewport)
+          canvas.style.width = cssWidth + 'px';
+          canvas.style.height = cssHeight + 'px';
+
+          const pageNumBadge = document.createElement('div');
+          pageNumBadge.className = 'page-number';
+          pageNumBadge.textContent = `Hal. ${num} dari ${currentPdf.numPages}`;
+
+          wrapper.appendChild(canvas);
+          wrapper.appendChild(pageNumBadge);
+          container.appendChild(wrapper);
+
+          const ctx = canvas.getContext('2d', { alpha: false });
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+
+          const renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+          };
+          await page.render(renderContext).promise;
+        } catch (e) {
+          console.error("Gagal render halaman " + num, e);
+        }
+      }
+    }
+
+    function zoom(delta) {
+      const newScale = Math.min(Math.max(currentScale + delta, 0.6), 2.5);
+      if (newScale !== currentScale) {
+        currentScale = newScale;
+        renderAllPages();
+      }
+    }
+
+    function fitWidth() {
+      if (!container) return;
+      const availableWidth = window.innerWidth - 60;
+      if (availableWidth > 320) {
+        currentScale = availableWidth / 620;
+        renderAllPages();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+[
+  {"id":"sk","format":"{seq}/SK/RSIA-M/{month}/{year}","nextSequence":null,"authority":"director","sourceIds":["tata-naskah"],"reconciled":false},
+  {"id":"spo","format":"{seq}/SPO/RSIA-M/{year}","nextSequence":null,"authority":"director","sourceIds":["tata-naskah"],"reconciled":false},
+  {"id":"form","format":"{seq}/FORM/RSIA-M/{year}","nextSequence":null,"authority":"director","sourceIds":["tata-naskah"],"reconciled":false},
+  {"id":"materi","format":"{seq}/MAT/RSIA-M/{year}","nextSequence":null,"authority":"director","sourceIds":["tata-naskah"],"reconciled":false},
+  {"id":"monitoring","format":"{seq}/MON/RSIA-M/{year}","nextSequence":null,"authority":"director","sourceIds":["tata-naskah"],"reconciled":false}
+]

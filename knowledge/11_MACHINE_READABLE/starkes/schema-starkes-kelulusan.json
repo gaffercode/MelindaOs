@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "STARKES accreditation pass/fail criteria",
+  "description": "Machine-readable pass/fail criteria for hospital accreditation survey results under STARKES 2024, pinned to the official survey guideline (decree, URL, SHA-256, page). Consumed by the STARKES tracker to compute the projected accreditation status.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema_ref": {
+      "type": "string",
+      "const": "schema-starkes-kelulusan.json",
+      "description": "Name of this schema file."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^starkes-kelulusan-[0-9]{4}$",
+      "description": "Stable identifier of the criteria set, suffixed with the year of the standard."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Plain-language note on how the criteria are read."
+    },
+    "standard": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The accreditation standard the criteria belong to.",
+      "properties": {
+        "decree": { "type": "string", "pattern": "HK\\.01\\.07/MENKES/[0-9]+/[0-9]{4}$", "description": "Full decree number of the standard." },
+        "title": { "type": "string", "minLength": 1, "description": "Title of the standard." },
+        "revokes": { "type": "string", "description": "Decree number revoked by this standard, if any." }
+      },
+      "required": ["decree", "title"]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Provenance of the transcribed values.",
+      "properties": {
+        "decree": { "type": "string", "minLength": 1, "description": "Survey guideline decree that holds the criteria table." },
+        "url": { "type": "string", "format": "uri", "description": "Download URL of the guideline PDF." },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$", "description": "SHA-256 of the PDF as retrieved." },
+        "page": { "type": "string", "pattern": "^[0-9]+(-[0-9]+)?$", "description": "Printed page or page range holding the criteria table." },
+        "section": { "type": "string", "description": "Section heading on that page." },
+        "retrievedAt": { "type": "string", "format": "date", "description": "Date the PDF was retrieved (YYYY-MM-DD)." }
+      },
+      "required": ["decree", "url", "sha256", "page", "retrievedAt"]
+    },
+    "non_teaching": { "$ref": "#/$defs/criteriaSet", "description": "Criteria for hospitals that are not teaching hospitals or teaching sites." },
+    "teaching": { "$ref": "#/$defs/criteriaSet", "description": "Criteria for teaching hospitals and teaching sites." }
+  },
+  "required": ["id", "description", "standard", "source", "non_teaching", "teaching"],
+  "$defs": {
+    "criteriaSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "paripurna": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Highest status.",
+          "properties": {
+            "chapters_min_80": { "type": "string", "enum": ["all_applicable_except_prognas"], "description": "Which chapters must score at least 80%." },
+            "prognas_min": { "type": "integer", "const": 100, "description": "Minimum PROGNAS score in percent." }
+          },
+          "required": ["chapters_min_80", "prognas_min"]
+        },
+        "utama": { "$ref": "#/$defs/rangeStatus", "description": "Second status." },
+        "madya": { "$ref": "#/$defs/rangeStatus", "description": "Third status." },
+        "tidak_terakreditasi": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Not accredited when any listed condition holds.",
+          "properties": {
+            "chapters_min_80_below": { "type": "integer", "minimum": 1, "description": "Fewer than this many chapters score at least 80%." },
+            "skp_below": { "type": "integer", "minimum": 0, "maximum": 100, "description": "SKP score below this percent." },
+            "prognas_below": { "type": "integer", "minimum": 0, "maximum": 100, "description": "PROGNAS score below this percent." },
+            "logic": { "type": "string", "enum": ["any"], "description": "How the conditions combine." }
+          },
+          "required": ["chapters_min_80_below", "skp_below", "prognas_below", "logic"]
+        }
+      },
+      "required": ["paripurna", "utama", "madya", "tidak_terakreditasi"]
+    },
+    "rangeStatus": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chapters_min_80_range": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "Inclusive [min, max] count of chapters scoring at least 80%."
+        },
+        "skp_min": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Minimum SKP score in percent." },
+        "prognas_min": { "type": "integer", "const": 100, "description": "Minimum PROGNAS score in percent." }
+      },
+      "required": ["chapters_min_80_range", "skp_min", "prognas_min"]
+    }
+  },
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

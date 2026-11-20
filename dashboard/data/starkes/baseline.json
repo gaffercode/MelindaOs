@@ -1,0 +1,62 @@
+{
+  "id": "47104-2024",
+  "verifiedAsOf": "2026-11-05",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "INSTRUMEN-47104-2024",
+      "url": "https://keslan.kemkes.go.id/unduhan/fileunduhan_1737603973_377193.pdf",
+      "sha256": "fde4091e97bd4b9de944994e3764a125bdc83f07d3fba680ecb5023bb478dd80",
+      "retrievedAt": "2026-11-05",
+      "pageConvention": "One-based printed page equals PDF page index + 1; pilot printed page 380."
+    }
+  ],
+  "chapters": [
+    "TKRS",
+    "KPS",
+    "MFK",
+    "PMKP",
+    "MRMIK",
+    "PPI",
+    "PPK",
+    "AKP",
+    "HPK",
+    "PP",
+    "PAP",
+    "PAB",
+    "PKPO",
+    "KE",
+    "SKP",
+    "PROGNAS"
+  ],
+  "epTotal": 806,
+  "epCountByChapter": {
+    "TKRS": 71,
+    "KPS": 81,
+    "MFK": 72,
+    "PMKP": 44,
+    "MRMIK": 51,
+    "PPI": 62,
+    "PPK": 23,
+    "AKP": 67,
+    "HPK": 39,
+    "PP": 58,
+    "PAP": 52,
+    "PAB": 38,
+    "PKPO": 53,
+    "KE": 25,
+    "SKP": 24,
+    "PROGNAS": 46
+  },
+  "scoreInferred": [
+    {
+      "id": "47104-2024:TKRS:4:2",
+      "allowedScores": [
+        0,
+        5,
+        10
+      ],
+      "basis": "p18-19: Skoring cell empty. TKRS 4 a) has the same evidence (R, D, W) and scores 0/5/10, as do 8 of the 10 EPs with R, D, W evidence. Director delegated the choice (2026-11-07)."
+    }
+  ]
+}

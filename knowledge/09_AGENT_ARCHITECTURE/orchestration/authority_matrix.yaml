@@ -1,0 +1,28 @@
+levels:
+  L0:
+    name: Observe
+    autonomous: true
+    examples: [read, monitor, calculate, classify]
+  L1:
+    name: Prepare
+    autonomous: true
+    examples: [draft, summarize, recommend, prepare_report]
+  L2:
+    name: InternalWorkflow
+    autonomous: true
+    conditions: [reversible, internal_only, no_external_commitment]
+    examples: [create_task, remind, route, tag, reconcile]
+  L3:
+    name: ConsequentialExternal
+    autonomous: conditional
+    rule: "Allowed only for explicitly pre-approved action classes; otherwise human approval."
+    examples: [publish_public_content, send_external_email, submit_claim]
+  L4:
+    name: HighConsequence
+    autonomous: false
+    examples: [payment, hr_sanction, permission_change, legal_commitment]
+  L5:
+    name: ClinicalAuthority
+    autonomous: false
+    human_required: clinician
+    examples: [diagnosis, prescription, clinical_order, final_clinical_documentation]

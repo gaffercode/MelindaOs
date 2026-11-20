@@ -1,0 +1,58 @@
+{
+  "name": "melindaos-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "prebuild": "node scripts/fetch-private-data.mjs && node scripts/build-knowledge-index.ts",
+    "build": "next build",
+    "knowledge-index": "node scripts/build-knowledge-index.ts",
+    "migrate:doctor": "node scripts/migrate-doctor.mjs",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@vercel/speed-insights": "2.1.0",
+    "cn": "^0.5.2",
+    "figma-squircle": "^1.1.0",
+    "jose": "^6.2.13",
+    "lucide-react": "1.48.0",
+    "minisearch": "7.2.0",
+    "motion": "14.9.1",
+    "next": "16.4.6",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.5.438",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-use-measure": "^2.1.7",
+    "sonner": "^2.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitest/coverage-v8": "5.1.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "jsdom": "31.0.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "5.1.0"
+  },
+  "overrides": {
+    "minimatch": ">=11.0.1"
+  }
+}

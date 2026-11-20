@@ -1,0 +1,312 @@
+# Kode agent mengikuti roster resmi (retag 2026-11-07; registry: knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json).
+routines:
+- id: R001
+  agent: KATT
+  title: Director Morning Brief
+  schedule: daily 07:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Ringkas safety, operations, people, revenue, patient experience, risk, dan
+    keputusan yang diperlukan.
+  automation_policy: automatic_unless_policy_escalates
+- id: R002
+  agent: KATT
+  title: Open Loops Watch
+  schedule: hourly
+  event: null
+  risk_class: L2
+  goal: Deteksi task lintas unit yang melewati SLA dan eskalasi hanya setelah recovery
+    otomatis.
+  automation_policy: automatic_unless_policy_escalates
+- id: R003
+  agent: KATT
+  title: Weekly Executive Review
+  schedule: weekly Monday 07:30 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Kompilasi tren mingguan dan keputusan eksekutif.
+  automation_policy: automatic_unless_policy_escalates
+- id: R004
+  agent: KATT
+  title: Monthly Management Review
+  schedule: monthly day 1 08:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Kompilasi KPI, risiko, resource allocation, dan isu struktural.
+  automation_policy: automatic_unless_policy_escalates
+- id: R005
+  agent: KATT
+  title: Clinical Safety Exception Watch
+  schedule: hourly
+  event: null
+  risk_class: L1
+  goal: Deteksi indikator yang memenuhi kriteria human clinical review.
+  automation_policy: automatic_unless_policy_escalates
+- id: R006
+  agent: KATT
+  title: Incident Review Preparation
+  schedule: event
+  event: CLINICAL_SAFETY_EXCEPTION
+  risk_class: L1
+  goal: Siapkan timeline, provenance, dan review packet tanpa membuat keputusan klinis
+    final.
+  automation_policy: automatic_unless_policy_escalates
+- id: R007
+  agent: AURE
+  title: Credentialing Governance Check
+  schedule: weekly Friday 09:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau expiry/kelengkapan credential profesional yang disediakan source system.
+  automation_policy: automatic_unless_policy_escalates
+- id: R008
+  agent: KATT
+  title: Daily Capacity & Patient Flow
+  schedule: daily 06:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau kapasitas, bed/unit readiness, bottleneck, dan discharge delay.
+  automation_policy: automatic_unless_policy_escalates
+- id: R009
+  agent: KATT
+  title: Tomorrow OR Readiness
+  schedule: daily 16:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Validasi kesiapan jadwal operasi esok hari dan exception non-klinis.
+  automation_policy: automatic_unless_policy_escalates
+- id: R010
+  agent: KATT
+  title: VK Readiness Watch
+  schedule: every 2 hours
+  event: null
+  risk_class: L1
+  goal: Pantau readiness Unit Bersalin/VK dan eskalasi exception material.
+  automation_policy: automatic_unless_policy_escalates
+- id: R011
+  agent: KATT
+  title: Outpatient Congestion Watch
+  schedule: hourly business-hours
+  event: null
+  risk_class: L1
+  goal: Deteksi antrean/waktu tunggu abnormal.
+  automation_policy: automatic_unless_policy_escalates
+- id: R012
+  agent: KATT
+  title: Facility Readiness
+  schedule: daily 05:30 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau maintenance overdue, room readiness, utility, dan equipment downtime.
+  automation_policy: automatic_unless_policy_escalates
+- id: R013
+  agent: KATT
+  title: Complaint SLA Watch
+  schedule: hourly
+  event: null
+  risk_class: L2
+  goal: Kejar follow-up complaint dan eskalasi hanya jika SLA breach.
+  automation_policy: automatic_unless_policy_escalates
+- id: R014
+  agent: KATT
+  title: Linen & Cleaning Readiness
+  schedule: daily 05:45 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Deteksi shortage/ketidaksiapan linen dan cleaning.
+  automation_policy: automatic_unless_policy_escalates
+- id: R015
+  agent: KATT
+  title: Security Incident Triage
+  schedule: event
+  event: AUDIT_ANOMALY
+  risk_class: L1
+  goal: Klasifikasi incident dan route ke owner.
+  automation_policy: automatic_unless_policy_escalates
+- id: R016
+  agent: KATT
+  title: RME Completeness Watch
+  schedule: every 4 hours
+  event: null
+  risk_class: L1
+  goal: Deteksi dokumen RME yang belum lengkap berdasarkan rule source system.
+  automation_policy: automatic_unless_policy_escalates
+- id: R017
+  agent: KATT
+  title: Lab TAT Exceptions
+  schedule: hourly
+  event: null
+  risk_class: L1
+  goal: Deteksi turnaround time laboratorium di luar SLA.
+  automation_policy: automatic_unless_policy_escalates
+- id: R018
+  agent: AEGIS
+  title: Pharmacy Critical Stock
+  schedule: every 2 hours
+  event: null
+  risk_class: L1
+  goal: Deteksi critical stock, stockout risk, dan expiry risk.
+  automation_policy: automatic_unless_policy_escalates
+- id: R019
+  agent: KATT
+  title: Nutrition Service Exceptions
+  schedule: daily 10:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau exception layanan gizi.
+  automation_policy: automatic_unless_policy_escalates
+- id: R020
+  agent: KATT
+  title: Tomorrow Staffing Gap
+  schedule: daily 15:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Deteksi shift gap esok hari dan cari opsi internal sesuai policy.
+  automation_policy: automatic_unless_policy_escalates
+- id: R021
+  agent: KATT
+  title: Attendance Exception
+  schedule: daily 08:30 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Ringkas exception absensi tanpa membuat sanksi otomatis.
+  automation_policy: automatic_unless_policy_escalates
+- id: R022
+  agent: KATT
+  title: Credential Expiry Watch
+  schedule: daily 09:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Deteksi credential staf yang mendekati expiry.
+  automation_policy: automatic_unless_policy_escalates
+- id: R023
+  agent: KATT
+  title: Recruitment Pipeline Watch
+  schedule: daily 14:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau bottleneck rekrutmen dan follow-up otomatis kandidat sesuai template
+    pre-approved.
+  automation_policy: automatic_unless_policy_escalates
+- id: R024
+  agent: KATT
+  title: Daily Finance Reconciliation
+  schedule: daily 20:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Rekonsiliasi ringkasan transaksi dan deteksi variance.
+  automation_policy: automatic_unless_policy_escalates
+- id: R025
+  agent: KATT
+  title: Cash Variance Watch
+  schedule: daily 21:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Deteksi variance kas/pembayaran dan route untuk verifikasi.
+  automation_policy: automatic_unless_policy_escalates
+- id: R026
+  agent: KATT
+  title: AR Aging Watch
+  schedule: daily 11:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Pantau aging piutang dan exception material.
+  automation_policy: automatic_unless_policy_escalates
+- id: R027
+  agent: KATT
+  title: Weekly Cashflow Forecast
+  schedule: weekly Friday 16:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Siapkan rolling cashflow forecast dari source keuangan.
+  automation_policy: automatic_unless_policy_escalates
+- id: R028
+  agent: KATT
+  title: Claim Aging Watch
+  schedule: every 4 hours
+  event: null
+  risk_class: L2
+  goal: Deteksi klaim melewati SLA dan otomatis meminta deficiency check ke SYS.
+  automation_policy: automatic_unless_policy_escalates
+- id: R029
+  agent: KATT
+  title: Rejected Claim Root Cause
+  schedule: event
+  event: CLAIM_REJECTED
+  risk_class: L1
+  goal: Klasifikasi penyebab penolakan dan buat resolution packet.
+  automation_policy: automatic_unless_policy_escalates
+- id: R030
+  agent: KATT
+  title: Claim Documentation Chase
+  schedule: hourly business-hours
+  event: null
+  risk_class: L2
+  goal: Follow-up internal untuk dokumen klaim yang kurang.
+  automation_policy: automatic_unless_policy_escalates
+- id: R031
+  agent: KATT
+  title: Policy Denial Review
+  schedule: event
+  event: POLICY_DENIED_ACTION
+  risk_class: L1
+  goal: Verifikasi apakah penolakan policy benar dan catat anomali.
+  automation_policy: automatic_unless_policy_escalates
+- id: R032
+  agent: KATT
+  title: Weekly Governance Audit
+  schedule: weekly Sunday 22:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Audit action logs, provenance, approvals, dan unusual access.
+  automation_policy: automatic_unless_policy_escalates
+- id: R033
+  agent: KATT
+  title: Credential Scope Audit
+  schedule: weekly Sunday 21:00 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Deteksi scope OAuth/service credential yang lebih luas dari kebutuhan.
+  automation_policy: automatic_unless_policy_escalates
+- id: R034
+  agent: KATT
+  title: Social Content Calendar Orchestration
+  schedule: daily 09:30 Asia/Jakarta
+  event: null
+  risk_class: L2
+  goal: Koordinasikan draft, review policy, dan publishing terjadwal lintas kanal.
+  automation_policy: automatic_unless_policy_escalates
+- id: R035
+  agent: KATT
+  title: Public Review & Message Triage
+  schedule: every 2 hours
+  event: null
+  risk_class: L1
+  goal: Klasifikasi pesan/review publik dan siapkan respons sesuai policy.
+  automation_policy: automatic_unless_policy_escalates
+- id: R036
+  agent: KATT
+  title: Token Health Executive Exception
+  schedule: daily 06:30 Asia/Jakarta
+  event: null
+  risk_class: L1
+  goal: Hanya eskalasi credential yang tidak dapat dipulihkan otomatis.
+  automation_policy: automatic_unless_policy_escalates
+- id: R037
+  agent: KATT
+  title: Website Content Sync
+  schedule: daily 10:30 Asia/Jakarta
+  event: null
+  risk_class: L2
+  goal: Sinkronkan konten institusional yang telah disetujui ke website dan kanal
+    terkait.
+  automation_policy: automatic_unless_policy_escalates
+- id: R038
+  agent: KATT
+  title: External Publish Verification
+  schedule: event
+  event: SOCIAL_PUBLISH_READY
+  risk_class: L1
+  goal: Periksa privacy, clinical claims, source, tone, dan authority sebelum publish
+    class yang membutuhkan verification.
+  automation_policy: automatic_unless_policy_escalates

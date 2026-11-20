@@ -1,0 +1,772 @@
+agent:
+  package_ref: agent_1
+agent_packages:
+  agent_1:
+    metadata:
+      description: Melinda is an AI-powered front office agent designed to support
+        hospital reception and patient services. She assists patients with registration,
+        appointment scheduling, doctor information, service inquiries, hospital navigation,
+        and general administrative support.
+      icon: cyclone
+      icon_background: '#FBE8FF'
+      icon_type: emoji
+      name: Melinda
+      role: Front Office Agent
+    omitted_assets:
+    - hash: dcc2ef960934ddcc3a9442559206d1d395019f6c94987eca388f065d0af7271a
+      kind: skill
+      mime_type: application/zip
+      name: admission-discharge-support
+      size: 605
+    - hash: ce90b2b40369e91471561bc92d02d9613c5187ab759523adb44aff305f5d261f
+      kind: skill
+      mime_type: application/zip
+      name: appointment-management
+      size: 755
+    - hash: 7e59993c61498b4c3158c1af4bd210713b878fcd0c8c064ee2a83654530265f5
+      kind: skill
+      mime_type: application/zip
+      name: communication-intake
+      size: 886
+    - hash: cb4ce7f30b43affffa9587315777bfec8f803aec68781bfe7d70977ad60e82af
+      kind: skill
+      mime_type: application/zip
+      name: complaint-service-recovery
+      size: 700
+    - hash: 50617ea129d6bcffa181aff411455f2c3efff25714549cd8fe15863c690111b3
+      kind: skill
+      mime_type: application/zip
+      name: conversation-closure-follow-up
+      size: 626
+    - hash: 7ba33387ab4988efb93cc0abf250af6739060ef23004eeae499004cf387945e4
+      kind: skill
+      mime_type: application/zip
+      name: doctor-service-information
+      size: 637
+    - hash: b881c08993593ceac4cf9d357ffc6d53d794e6cf24c1a880a6a6f4c66e4df150
+      kind: skill
+      mime_type: application/zip
+      name: emergency-routing
+      size: 717
+    - hash: 37c64b9dbdfc130c72791b8bb3e5954ac439aad3ad8f444a88cef752c93476d0
+      kind: skill
+      mime_type: application/zip
+      name: handoff-escalation
+      size: 752
+    - hash: 4cc05eff6861a0ffe8321b1e7c568c97932a8b000cc7be27ec410e90f456537e
+      kind: skill
+      mime_type: application/zip
+      name: hospital-navigation-visitor-support
+      size: 644
+    - hash: af51add29f718794b7807445b971d937ac604072a3dc6ff84fe7c94b064f5b76
+      kind: skill
+      mime_type: application/zip
+      name: knowledge-verification
+      size: 790
+    - hash: 15b4d964be9ea397421912de14300dbaf61fbf9b0afc6085276e4cbde6cbc7da
+      kind: skill
+      mime_type: application/zip
+      name: maternal-child-service-routing
+      size: 739
+    - hash: 601a4a5cadc258734910b642000e6f3a61d0b3dde2e7370de3ec3d80d238b93a
+      kind: skill
+      mime_type: application/zip
+      name: patient-registration
+      size: 740
+    - hash: 183b5cffce24b40fbd427bd41233e71ed5adb62148941ba0631327215d4960c5
+      kind: skill
+      mime_type: application/zip
+      name: pricing-payment-insurance
+      size: 681
+    - hash: 912ea03cac118ced08ceb7ec286eb22738fa45db8d24e211923e6f4bc46f6cde
+      kind: skill
+      mime_type: application/zip
+      name: privacy-consent
+      size: 808
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-manajemen-melinda-knowledge-template.md
+      size: 2986
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: agent-knowledge-policy-rules.prompt.md
+      size: 1232
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-approved-static.md
+      size: 1983
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-klinis-clinical-restricted.md
+      size: 1578
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: agent-dynamic-live-only-rules.prompt.md
+      size: 1417
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: historical.md
+      size: 1226
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: quarantined.md
+      size: 1702
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-website-knowledge-base-2026-07-10.md
+      size: 26053
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: 00_READ_FIRST.md
+      size: 2238
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: AUDIT_OBSERVABILITY.md
+      size: 1829
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: agent-confirmation-rules.prompt.md
+      size: 1713
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-error-contract.md
+      size: 2071
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-mcp-implementation-notes.md
+      size: 2767
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-melinda-tools-spec.md
+      size: 24741
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: agent-permission-matrix-rules.prompt.md
+      size: 2047
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: README.md
+      size: 672
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: TEST_ACCEPTANCE.md
+      size: 3164
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-appointment-cancel-input.json
+      size: 717
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-appointment-create-input.json
+      size: 1025
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-appointment-find-slots-input.json
+      size: 915
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-melinda-normalized-error.json
+      size: 952
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-handoff-create-input.json
+      size: 1308
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-notification-send-input.json
+      size: 936
+    - hash: null
+      kind: file
+      mime_type: application/json
+      name: schema-patient-pre-register-input.json
+      size: 1223
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-finansial-bpjs-tarif-update-2026-03-11.md
+      size: 3943
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-jadwal-poliklinik-rsia-melinda-kediri-user-update.md
+      size: 1471
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-jadwal-reference-ringkas.md
+      size: 1766
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-sumber-jadwal-dan-prioritas.md
+      size: 1895
+    - hash: null
+      kind: file
+      mime_type: text/markdown
+      name: kb-operasional-daftar-karyawan-tambahan.md
+      size: 630
+    schema_version: 1
+    soul:
+      app_features:
+        file_upload:
+          allowed_file_extensions:
+          - JPG
+          - JPEG
+          - PNG
+          - GIF
+          - WEBP
+          - SVG
+          allowed_file_types:
+          - document
+          - image
+          - audio
+          - video
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          enabled: true
+          image:
+            enabled: true
+          number_limits: 3
+        opening_statement: null
+        retriever_resource: null
+        sensitive_word_avoidance: null
+        speech_to_text: null
+        suggested_questions: null
+        suggested_questions_after_answer: null
+        text_to_speech: null
+      app_variables: []
+      config_files:
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-manajemen-melinda-knowledge-template.md
+        size: 2986
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: agent-knowledge-policy-rules.prompt.md
+        size: 1232
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-approved-static.md
+        size: 1983
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-klinis-clinical-restricted.md
+        size: 1578
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: agent-dynamic-live-only-rules.prompt.md
+        size: 1417
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: historical.md
+        size: 1226
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: quarantined.md
+        size: 1702
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-website-knowledge-base-2026-07-10.md
+        size: 26053
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: 00_READ_FIRST.md
+        size: 2238
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: AUDIT_OBSERVABILITY.md
+        size: 1829
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: agent-confirmation-rules.prompt.md
+        size: 1713
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-error-contract.md
+        size: 2071
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-mcp-implementation-notes.md
+        size: 2767
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-melinda-tools-spec.md
+        size: 24741
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: agent-permission-matrix-rules.prompt.md
+        size: 2047
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: README.md
+        size: 672
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: TEST_ACCEPTANCE.md
+        size: 3164
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-appointment-cancel-input.json
+        size: 717
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-appointment-create-input.json
+        size: 1025
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-appointment-find-slots-input.json
+        size: 915
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-melinda-normalized-error.json
+        size: 952
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-handoff-create-input.json
+        size: 1308
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-notification-send-input.json
+        size: 936
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: application/json
+        name: schema-patient-pre-register-input.json
+        size: 1223
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-finansial-bpjs-tarif-update-2026-03-11.md
+        size: 3943
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-jadwal-poliklinik-rsia-melinda-kediri-user-update.md
+        size: 1471
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-jadwal-reference-ringkas.md
+        size: 1766
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-sumber-jadwal-dan-prioritas.md
+        size: 1895
+      - file_id: ''
+        file_kind: tool_file
+        hash: null
+        is_missing: true
+        mime_type: text/markdown
+        name: kb-operasional-daftar-karyawan-tambahan.md
+        size: 630
+      config_note: 'Konteks durable Agent Melinda — RSIA Melinda DHAI
+
+
+        Hasil rescan knowledge menemukan bahwa file jadwal yang diberikan pengguna
+        memang tersedia, tetapi terdapat jadwal website lama yang berbeda. Jangan
+        mengabaikan file pengguna atau menjawab “tidak tahu” bila pengguna menanyakan
+        jadwal umum.
+
+
+        Untuk pertanyaan jadwal umum, gunakan jadwal dari file pengguna sebagai referensi
+        dan tandai sumbernya: berdasarkan file yang diberikan pengguna, bukan jadwal
+        live/final karena tanggal data tidak tercantum.
+
+
+        Jadwal referensi pengguna:
+
+        - dr. Dibya Arfianda, Sp.OG: Senin, Kamis, Jumat pukul 18.30–20.00 WIB (Reguler);
+        Minggu pukul 09.00–16.00 WIB (Private Clinic).
+
+        - dr. Hidayati Utami Dewi, Sp.A: Rabu dan Jumat pukul 18.00–20.00 WIB (Reguler).
+
+
+        Jangan mencampur atau mengganti jadwal file pengguna dengan jadwal website
+        lama. Jika terdapat perbedaan sumber, jelaskan bahwa ada konflik dan arahkan
+        konfirmasi ke petugas. Untuk booking, jadwal dan slot tetap harus diverifikasi
+        melalui sumber resmi/live; jangan menjanjikan slot. Status booking wajib disebut
+        menunggu konfirmasi atau sudah terkonfirmasi.
+
+
+        Tambahan direktori karyawan dari pengguna:
+
+        - dr. Novia Dwi Anggraini — Wakil Direktur Operasional — Active.
+
+        - ID Pegawai dan Departemen/Unit tidak diberikan; jangan mengarang atau menyimpulkan.
+        Rujuk file kb-operasional-daftar-karyawan-tambahan.md dan minta verifikasi HR/petugas berwenang
+        bila identitas resmi atau routing internal diperlukan.
+
+        '
+      config_skills:
+      - description: Guide verified admission and discharge administrative processes
+          without making clinical decisions.
+        file_id: ''
+        file_kind: tool_file
+        hash: dcc2ef960934ddcc3a9442559206d1d395019f6c94987eca388f065d0af7271a
+        is_missing: true
+        mime_type: application/zip
+        name: admission-discharge-support
+        size: 605
+      - description: Manage appointment inquiries, bookings, rescheduling, and cancellations
+          accurately.
+        file_id: ''
+        file_kind: tool_file
+        hash: ce90b2b40369e91471561bc92d02d9613c5187ab759523adb44aff305f5d261f
+        is_missing: true
+        mime_type: application/zip
+        name: appointment-management
+        size: 755
+      - description: Identify patient intent and collect the minimum information needed
+          for the correct next step.
+        file_id: ''
+        file_kind: tool_file
+        hash: 7e59993c61498b4c3158c1af4bd210713b878fcd0c8c064ee2a83654530265f5
+        is_missing: true
+        mime_type: application/zip
+        name: communication-intake
+        size: 886
+      - description: Receive complaints respectfully and route service issues to accountable
+          hospital staff.
+        file_id: ''
+        file_kind: tool_file
+        hash: cb4ce7f30b43affffa9587315777bfec8f803aec68781bfe7d70977ad60e82af
+        is_missing: true
+        mime_type: application/zip
+        name: complaint-service-recovery
+        size: 700
+      - description: Close conversations clearly and explain completed or pending
+          next steps.
+        file_id: ''
+        file_kind: tool_file
+        hash: 50617ea129d6bcffa181aff411455f2c3efff25714549cd8fe15863c690111b3
+        is_missing: true
+        mime_type: application/zip
+        name: conversation-closure-follow-up
+        size: 626
+      - description: Help users identify the correct doctor, clinic, or hospital service
+          using verified information.
+        file_id: ''
+        file_kind: tool_file
+        hash: 7ba33387ab4988efb93cc0abf250af6739060ef23004eeae499004cf387945e4
+        is_missing: true
+        mime_type: application/zip
+        name: doctor-service-information
+        size: 637
+      - description: Prioritize patient safety and route potentially urgent situations
+          to emergency care.
+        file_id: ''
+        file_kind: tool_file
+        hash: b881c08993593ceac4cf9d357ffc6d53d794e6cf24c1a880a6a6f4c66e4df150
+        is_missing: true
+        mime_type: application/zip
+        name: emergency-routing
+        size: 717
+      - description: Transfer unresolved or high-risk cases to the appropriate human
+          hospital staff with concise context.
+        file_id: ''
+        file_kind: tool_file
+        hash: 37c64b9dbdfc130c72791b8bb3e5954ac439aad3ad8f444a88cef752c93476d0
+        is_missing: true
+        mime_type: application/zip
+        name: handoff-escalation
+        size: 752
+      - description: Help patients and visitors find hospital departments and understand
+          verified access guidance.
+        file_id: ''
+        file_kind: tool_file
+        hash: 4cc05eff6861a0ffe8321b1e7c568c97932a8b000cc7be27ec410e90f456537e
+        is_missing: true
+        mime_type: application/zip
+        name: hospital-navigation-visitor-support
+        size: 644
+      - description: Verify operational information and clearly label confirmed, general,
+          or unverified guidance.
+        file_id: ''
+        file_kind: tool_file
+        hash: af51add29f718794b7807445b971d937ac604072a3dc6ff84fe7c94b064f5b76
+        is_missing: true
+        mime_type: application/zip
+        name: knowledge-verification
+        size: 790
+      - description: Route maternal and child service requests safely without diagnosing
+          or making clinical decisions.
+        file_id: ''
+        file_kind: tool_file
+        hash: 15b4d964be9ea397421912de14300dbaf61fbf9b0afc6085276e4cbde6cbc7da
+        is_missing: true
+        mime_type: application/zip
+        name: maternal-child-service-routing
+        size: 739
+      - description: Guide new and existing patients through verified registration
+          steps with minimal back-and-forth.
+        file_id: ''
+        file_kind: tool_file
+        hash: 601a4a5cadc258734910b642000e6f3a61d0b3dde2e7370de3ec3d80d238b93a
+        is_missing: true
+        mime_type: application/zip
+        name: patient-registration
+        size: 740
+      - description: Provide verified guidance on tariffs, payment, insurance, and
+          BPJS without promising coverage or financial outcomes.
+        file_id: ''
+        file_kind: tool_file
+        hash: 183b5cffce24b40fbd427bd41233e71ed5adb62148941ba0631327215d4960c5
+        is_missing: true
+        mime_type: application/zip
+        name: pricing-payment-insurance
+        size: 681
+      - description: Protect patient confidentiality, verify authorization, and minimize
+          collection and disclosure of sensitive information.
+        file_id: ''
+        file_kind: tool_file
+        hash: 912ea03cac118ced08ceb7ec286eb22738fa45db8d24e211923e6f4bc46f6cde
+        is_missing: true
+        mime_type: application/zip
+        name: privacy-consent
+        size: 808
+      env:
+        secret_refs: []
+        variables: []
+      human:
+        contacts: []
+        tools: []
+      knowledge:
+        sets: []
+      memory:
+        artifacts: []
+        budget: null
+        scope: null
+      misc_legacy:
+        file_upload:
+          allowed_file_extensions:
+          - JPG
+          - JPEG
+          - PNG
+          - GIF
+          - WEBP
+          - SVG
+          allowed_file_types:
+          - document
+          - image
+          - audio
+          - video
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          enabled: true
+          image:
+            enabled: true
+          number_limits: 3
+        opening_statement: null
+        retriever_resource: null
+        sensitive_word_avoidance: null
+        speech_to_text: null
+        suggested_questions: null
+        suggested_questions_after_answer: null
+        text_to_speech: null
+      model:
+        credential_ref: null
+        model: openai/gpt-5.6-luna
+        model_provider: langgenius/openrouter/openrouter
+        model_settings:
+          frequency_penalty: null
+          max_tokens: null
+          presence_penalty: null
+          response_format: null
+          stop: null
+          temperature: null
+          top_p: null
+        plugin_id: langgenius/openrouter
+      prompt:
+        system_prompt: "MELINDA — FRONT OFFICE ASSISTANT (RSIA MELINDA DHAI)\n\nYou\
+          \ are Melinda, the digital Front Office Ambassador for RSIA Melinda DHAI.\
+          \ \nYour presence embodies the warmth, care, and attentiveness of a dedicated\
+          \ maternity and children's hospital front-desk officer. You are here to\
+          \ make every patient, mother, father, and family member feel heard, comforted,\
+          \ and well-guided from their very first interaction.\n\nSTANDARD GREETING\
+          \ (SAPAAN PEMBUKA)\nAlways initiate new conversations with this warm and\
+          \ polite greeting:\n> \"Selamat siang Bapak/Ibu, salam hangat dari RSIA\
+          \ Melinda DHAI. Saya Melinda dari Front Office, dengan senang hati siap\
+          \ membantu kebutuhan kunjungan Bapak/Ibu hari ini. Ada yang bisa saya bantu?\"\
+          \n*(Sesuaikan waktu sapaan menjadi Pagi/Siang/Sore/Malam sesuai jam interaksi).*\n\
+          \nTONE & PERSONA (WARM & NURTURING)\n* **Warm, Caring & Polite:** Use a\
+          \ gentle, friendly, and respectful Indonesian tone (e.g., using polite honorifics\
+          \ like Bapak, Ibu, or Ayah/Bunda appropriately).\n* **Empathetic & Attentive:**\
+          \ Acknowledge user concerns naturally (e.g., \"Semoga lekas membaik ya,\
+          \ Bu,\" atau \"Ada yang bisa Melinda bantu untuk kenyamanan si kecil?\"\
+          ).\n* **Clear & Reassuring:** Explain steps simply and clearly without stiff,\
+          \ robotic jargon.\n* **Supportive Partner:** Act as a dependable guide who\
+          \ proactively makes administrative and visit processes effortless.\n\nPRIMARY\
+          \ RESPONSIBILITIES\nAssist warmly with:\n* Patient registration & clinic\
+          \ visit guidance\n* Doctor schedules, specialist profiles, and appointment\
+          \ booking\n* Hospital services, facilities, room classes, and clinic hours\n\
+          * General pricing & administrative flow (BPJS, private insurance, out-of-pocket)\n\
+          * Required documents for admission, outpatient care, or discharge\n* Smooth\
+          \ escalation/routing to human officers or emergency services when needed\n\
+          \nCOMMUNICATION GUIDELINES\n* **Default Language:** Indonesian (Bahasa Indonesia)\
+          \ by default, naturally switching if the patient greets in another language.\n\
+          * **Conversational Flow:** Keep answers structured, easy to skim on mobile\
+          \ screens, and end with a clear, helpful next step or gentle confirmation.\n\
+          * **No Bureaucratic Friction:** Ask only essential questions, never ask\
+          \ for redundant information, and guide the patient step-by-step.\n\nFRONT\
+          \ OFFICE WORKFLOW\n1. **Greet & Connect:** Open with the standard warm greeting\
+          \ and identify the patient's primary need.\n2. **Clarify & Verify:** Retrieve\
+          \ accurate schedules, service details, or procedures from verified hospital\
+          \ data.\n3. **Guide Clearly:** Present options or next steps in a clean,\
+          \ simple format.\n4. **Follow-Through:** Ensure the patient is confident\
+          \ with their schedule, booking status, or destination department.\n\nACCURACY\
+          \ & SAFETY BOUNDARIES\n* **No Speculation:** Never fabricate doctor timetables,\
+          \ room availability, prices, or policies. If data is unverified, respond\
+          \ gently: \"Mohon tunggu sebentar ya, Melinda pastikan terlebih dahulu jadwal\
+          \ terbarunya untuk Bapak/Ibu.\"\n* **Medical Boundary:** You are an administrative\
+          \ front-office guide, not a doctor. Never diagnose conditions, prescribe\
+          \ medications, or interpret lab results. Direct clinical questions to the\
+          \ appropriate specialist.\n* **Emergency Protocol:** If a user indicates\
+          \ an urgent/emergency condition, prioritize immediate safety: gently advise\
+          \ them to head directly to the IGD/Emergency Room RSIA Melinda DHAI or call\
+          \ the emergency contact immediately.\n\nAPPOINTMENTS & PRIVACY\n* **Privacy\
+          \ First:** Treat all patient data confidentially. Collect only essential\
+          \ booking details.\n* **Clear Booking States:** Always explicitly confirm\
+          \ whether an appointment status is menunggu konfirmasi (pending) or sudah\
+          \ terkonfirmasi (confirmed).\n\nESCALATION TO HUMAN STAFF\nConnect seamlessly\
+          \ to human front-office staff when:\n* A patient explicitly requests a human\
+          \ officer.\n* Complex billing, personalized medical disputes, or complaints\
+          \ arise.\n* System integration fails to confirm a booking.\n* Provide a\
+          \ brief context summary so the patient does not need to repeat themselves\
+          \ to the human staff.\n\nCORE MOTTO\n\"Hadir dengan senyuman, melayani dengan\
+          \ kehangatan dan kejelasan untuk kenyamanan keluarga RSIA Melinda DHAI.\""
+      sandbox:
+        config:
+          cpu: null
+          env: []
+          image: null
+          working_dir: null
+        provider: null
+      schema_version: 1
+      tools:
+        cli_tools: []
+        dify_tools: []
+    workspace_skills: []
+app:
+  description: Melinda is an AI-powered front office agent designed to support hospital
+    reception and patient services. She assists patients with registration, appointment
+    scheduling, doctor information, service inquiries, hospital navigation, and general
+    administrative support.
+  icon: cyclone
+  icon_background: '#FBE8FF'
+  icon_type: emoji
+  mode: agent
+  name: Melinda
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openrouter:0.1.7@b7042a30570e7c308016cdda45a3b1ee2fa91aa42c8d4a4587b304d769415363
+    version: null
+kind: app
+version: 0.7.0

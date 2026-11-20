@@ -1,0 +1,6 @@
+# Kode agent mengikuti roster resmi (retag 2026-11-07; registry: knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json).
+name: Director Command
+members:
+- KATT
+owner: KATT
+purpose: Executive exceptions and decisions

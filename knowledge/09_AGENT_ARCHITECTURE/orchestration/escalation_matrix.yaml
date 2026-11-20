@@ -1,0 +1,27 @@
+# Kode agent mengikuti roster resmi (retag 2026-11-07; registry: knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json).
+escalation_rules:
+  - id: AUTH_PROVIDER_REAUTH_REQUIRED
+    trigger: "provider_requires_human_reauth == true and automated_recovery_exhausted == true"
+    target: KATT
+    human: Director_or_designated_admin
+    urgency: medium
+  - id: CLINICAL_L5
+    trigger: "risk_class == L5"
+    target: KATT
+    human: authorized_clinician
+    urgency: high
+  - id: FINANCE_L4
+    trigger: "risk_class == L4 and domain == finance"
+    target: KATT
+    human: authorized_finance_signatory
+    urgency: high
+  - id: PRIVACY_INCIDENT
+    trigger: "privacy_or_data_leak_suspected == true"
+    target: KATT
+    human: Director_and_privacy_owner
+    urgency: critical
+  - id: OPEN_LOOP_BREACH
+    trigger: "sla_breached == true and recovery_attempted == true"
+    target: KATT
+    human: accountable_owner
+    urgency: variable

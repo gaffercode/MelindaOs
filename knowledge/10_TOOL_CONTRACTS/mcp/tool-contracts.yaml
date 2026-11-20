@@ -1,0 +1,86 @@
+version: '2026-11-20'
+security:
+  actor_binding: server-side environment / workload identity; model cannot set actor
+    role
+  preapproval_binding: server-side policy; model cannot self-approve
+  secrets: provider secrets remain behind MAAF/Vault and are never returned to MCP
+    clients
+tools:
+- name: melinda.social.publish
+  risk: L3
+  preapprovable: true
+  idempotent_required: true
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.social.schedule
+  risk: L3
+  preapprovable: true
+  idempotent_required: true
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.auth.health
+  risk: L0
+  preapprovable: true
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.email.send
+  risk: L3
+  preapprovable: true
+  idempotent_required: true
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.website.publish
+  risk: L3
+  preapprovable: true
+  idempotent_required: true
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.ops.task.assign
+  risk: L2
+  preapprovable: true
+  idempotent_required: true
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.finance.summary
+  risk: L0
+  preapprovable: true
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.claims.exceptions
+  risk: L0
+  preapprovable: true
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.clinical.red_flag.check
+  risk: L5
+  preapprovable: false
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.medify.schedule.read
+  risk: L0
+  preapprovable: true
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.medify.bed_capacity.read
+  risk: L0
+  preapprovable: true
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.medify.queue_status.read
+  risk: L4
+  preapprovable: false
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS
+- name: melinda.satusehat.patient_lookup
+  risk: L4
+  preapprovable: false
+  idempotent_required: false
+  allowed_roles:
+  - ALL_ACCESS

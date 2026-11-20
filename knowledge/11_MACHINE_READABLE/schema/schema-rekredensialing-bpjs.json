@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skema Evaluasi Rekredensialing BPJS FKRTL",
+  "description": "Skema validasi instrumen self-assessment rekredensialing faskes rujukan tingkat lanjutan BPJS Kesehatan di RSIA Melinda DHAI Kediri",
+  "type": "object",
+  "required": [
+    "faskes_id",
+    "nama_faskes",
+    "tanggal_penilaian",
+    "status_kelayakan",
+    "skor_total",
+    "kriteria_mutlak",
+    "rincian_komponen"
+  ],
+  "properties": {
+    "faskes_id": {
+      "type": "string",
+      "description": "Kode entitas faskes FKRTL pada sistem HFIS BPJS",
+      "pattern": "^[0-9]{8}$"
+    },
+    "nama_faskes": {
+      "type": "string",
+      "description": "Nama resmi fasilitas kesehatan sesuai izin operasional",
+      "minLength": 5
+    },
+    "tanggal_penilaian": {
+      "type": "string",
+      "description": "Tanggal pelaksanaan self-assessment penilaian kredensialing format YYYY-MM-DD",
+      "format": "date"
+    },
+    "status_kelayakan": {
+      "type": "string",
+      "description": "Status rekomendasi hasil evaluasi faskes",
+      "enum": [
+        "SANGAT_LAYAK",
+        "LAYAK_DENGAN_SYARAT",
+        "TIDAK_LAYAK"
+      ]
+    },
+    "skor_total": {
+      "type": "number",
+      "description": "Nilai kumulatif evaluasi teknis rentang 0 hingga 100",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "kriteria_mutlak": {
+      "type": "object",
+      "description": "Status pemenuhan enam kriteria mutlak PKS faskes",
+      "required": [
+        "izin_operasional_aktif",
+        "akreditasi_berlaku",
+        "pengelolaan_limbah_b3",
+        "pks_darah_pmi"
+      ],
+      "properties": {
+        "izin_operasional_aktif": {
+          "type": "boolean",
+          "description": "Ketersediaan izin operasional atau sertifikat standar aktif"
+        },
+        "akreditasi_berlaku": {
+          "type": "boolean",
+          "description": "Ketersediaan sertifikat akreditasi yang masih berlaku"
+        },
+        "pengelolaan_limbah_b3": {
+          "type": "boolean",
+          "description": "Ketersediaan izin TPS B3 dan kontrak transporter berizin"
+        },
+        "pks_darah_pmi": {
+          "type": "boolean",
+          "description": "Ketersediaan PKS penyediaan darah dengan UDD PMI"
+        }
+      }
+    },
+    "rincian_komponen": {
+      "type": "object",
+      "description": "Rincian skor per komponen penilaian teknis kredensialing",
+      "required": [
+        "skor_sdm",
+        "skor_sarpras",
+        "skor_alkes",
+        "skor_digitalisasi"
+      ],
+      "properties": {
+        "skor_sdm": {
+          "type": "number",
+          "description": "Skor pemenuhan rasio dan kompetensi SDM medis",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "skor_sarpras": {
+          "type": "number",
+          "description": "Skor kelayakan fisik bangunan dan ruang rawat",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "skor_alkes": {
+          "type": "number",
+          "description": "Skor kelengkapan dan kepatuhan kalibrasi alat kesehatan",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "skor_digitalisasi": {
+          "type": "number",
+          "description": "Skor bridging antrean online, ketersediaan bed, dan jadwal operasi",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  },
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

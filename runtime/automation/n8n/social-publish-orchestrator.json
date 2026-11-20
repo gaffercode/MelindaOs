@@ -1,0 +1,55 @@
+{
+  "name": "MAAF - Social Publish Orchestrator",
+  "active": false,
+  "nodes": [
+    {
+      "id": "webhook",
+      "name": "Validated Publish Job",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "maaf-social-publish",
+        "responseMode": "onReceived"
+      }
+    },
+    {
+      "id": "dispatch",
+      "name": "Dispatch to MAAF Provider Adapter",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        300,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.MAAF_BACKEND_URL + \"/v1/provider/social/publish\"}}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($json.body || $json) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Validated Publish Job": {
+      "main": [
+        [
+          {
+            "node": "Dispatch to MAAF Provider Adapter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

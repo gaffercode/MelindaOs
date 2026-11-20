@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "ontology_version": "2026.2.0",
+  "institution": {
+    "name": "RSIA Melinda DHAI",
+    "legal_entity": "Rumah Sakit Ibu dan Anak Melinda",
+    "classification": "Rumah Sakit Khusus Swasta (KBLI 86103)",
+    "location": "Kediri, Jawa Timur, Indonesia",
+    "core_specialties": [
+      "Obstetri & Ginekologi (Obgyn)",
+      "Kesehatan Anak & Neonatologi (Pediatrik)",
+      "Bedah Kebidanan & Kandungan",
+      "Klinik Fertilitas & Tumbuh Kembang"
+    ],
+    "emergency_service": {
+      "name": "IGD 24 Jam Maternal & Neonatal",
+      "status": "Always Active (24/7)",
+      "bypass_fktp_required": true
+    }
+  },
+  "clinical_packages": {
+    "maternal_obstetrics": [
+      {
+        "id": "MAT-01",
+        "name": "Persalinan Pervaginam / Spontan",
+        "icd10": "O80",
+        "ina_cbg_code": "O-6-10-I",
+        "ina_cbg_description": "Persalinan Vagina Ringan",
+        "clinical_pathway_ref": "knowledge/04_BPJS/maternal_obstetrics/kb-klinis-maternal-obstetrics-kb.md",
+        "fktp_referral_required": true
+      },
+      {
+        "id": "MAT-02",
+        "name": "Sectio Caesarea (SC) Terencana / Elektif",
+        "icd10": "O82.0",
+        "ina_cbg_code": "O-6-11-I",
+        "ina_cbg_description": "Sectio Caesarea Ringan",
+        "clinical_pathway_ref": "knowledge/04_BPJS/maternal_obstetrics/kb-klinis-maternal-obstetrics-kb.md",
+        "fktp_referral_required": true
+      },
+      {
+        "id": "MAT-03",
+        "name": "Sectio Caesarea Cito / Emergency",
+        "icd10": "O82.1",
+        "ina_cbg_code": "O-6-11-II",
+        "ina_cbg_description": "Sectio Caesarea Sedang/Gawat Darurat",
+        "clinical_pathway_ref": "knowledge/04_BPJS/maternal_obstetrics/kb-klinis-maternal-obstetrics-kb.md",
+        "fktp_referral_required": false,
+        "entry_point": "IGD 24 Jam"
+      },
+      {
+        "id": "MAT-04",
+        "name": "Preeklampsia Berat (PEB) & Eklampsia",
+        "icd10": "O14.1 / O15.0",
+        "ina_cbg_code": "O-6-13-II",
+        "ina_cbg_description": "Hipertensi Kompleks dalam Kehamilan",
+        "clinical_pathway_ref": "knowledge/06_CLINICAL_SAFETY/referral/kb-klinis-emergency-red-flags.md",
+        "red_flag_alert": true,
+        "fktp_referral_required": false,
+        "entry_point": "IGD Cito"
+      },
+      {
+        "id": "MAT-05",
+        "name": "Perdarahan Antepartum / Solusio Plasenta / Plasenta Previa",
+        "icd10": "O20.0 / O44.1 / O45.9",
+        "ina_cbg_code": "O-6-12-II",
+        "ina_cbg_description": "Perdarahan Obstetri Akut",
+        "clinical_pathway_ref": "knowledge/06_CLINICAL_SAFETY/referral/kb-klinis-emergency-red-flags.md",
+        "red_flag_alert": true,
+        "fktp_referral_required": false,
+        "entry_point": "IGD Cito"
+      }
+    ],
+    "pediatric_neonatal": [
+      {
+        "id": "PED-01",
+        "name": "Asfiksia Neonatorum & Distres Napas (RDS)",
+        "icd10": "P21.9 / P22.0",
+        "ina_cbg_code": "P-8-12-II",
+        "ina_cbg_description": "Gangguan Respiratorik Neonatus Sedang/Berat",
+        "clinical_pathway_ref": "knowledge/06_CLINICAL_SAFETY/referral/kb-klinis-emergency-red-flags.md",
+        "red_flag_alert": true,
+        "entry_point": "NICU / IGD"
+      },
+      {
+        "id": "PED-02",
+        "name": "Bayi Berat Lahir Rendah (BBLR) & Prematuritas",
+        "icd10": "P07.1 / P07.3",
+        "ina_cbg_code": "P-8-08-II",
+        "ina_cbg_description": "Neonatus BBLR Sedang",
+        "clinical_pathway_ref": "knowledge/04_BPJS/pediatric_neonatal/kb-klinis-pediatric-neonatal-kb.md",
+        "entry_point": "Perinatologi / NICU"
+      },
+      {
+        "id": "PED-03",
+        "name": "Hiperbilirubinemia / Ikterus Neonatorum",
+        "icd10": "P59.9",
+        "ina_cbg_code": "P-8-14-I",
+        "ina_cbg_description": "Ikterus Neonatus dengan Fototerapi",
+        "clinical_pathway_ref": "knowledge/04_BPJS/pediatric_neonatal/kb-klinis-pediatric-neonatal-kb.md",
+        "fktp_referral_required": true
+      },
+      {
+        "id": "PED-04",
+        "name": "Bronkopneumonia / Pneumonia Anak Akut",
+        "icd10": "J18.0",
+        "ina_cbg_code": "J-4-16-I",
+        "ina_cbg_description": "Infeksi Saluran Napas Bawah Anak",
+        "clinical_pathway_ref": "knowledge/04_BPJS/pediatric_neonatal/kb-klinis-pediatric-neonatal-kb.md",
+        "fktp_referral_required": true
+      },
+      {
+        "id": "PED-05",
+        "name": "Kejang Demam Kompleks / Status Epileptikus Anak",
+        "icd10": "R56.0 / G41.9",
+        "ina_cbg_code": "G-4-14-II",
+        "ina_cbg_description": "Kejang Akut Pediatrik",
+        "clinical_pathway_ref": "knowledge/06_CLINICAL_SAFETY/referral/kb-klinis-emergency-red-flags.md",
+        "red_flag_alert": true,
+        "entry_point": "IGD 24 Jam"
+      }
+    ]
+  },
+  "emergency_red_flags": {
+    "maternal_triggers": [
+      "perdarahan jalan lahir aktif pada kehamilan",
+      "nyeri perut hebat mendadak pada trimester 3",
+      "tekanan darah >= 160/110 mmHg",
+      "sakit kepala hebat dengan pandangan kabur / scotoma",
+      "nyeri ulu hati hebat (epigastric pain) pada bumil",
+      "gerakan janin berkurang drastis atau tidak terasa",
+      "keluar cairan ketuban hijau/keruh atau berbau sebelum inpartu",
+      "kejang pada ibu hamil atau pasca persalinan"
+    ],
+    "pediatric_triggers": [
+      "bayi sesak napas, merintih (grunting), retraksi dada berat",
+      "bayi biru (sianosis) pada bibir atau ekstremitas",
+      "bayi tidak mau menyusu sama sekali / letargis / lemas terkulai",
+      "kejang pada bayi atau anak",
+      "demam tinggi pada neonatus usia < 28 hari",
+      "muntah hijau atau perut kembung tegang hebat",
+      "tanda dehidrasi berat: mata sangat cekung, ubun-ubun cekung, turgor lambat"
+    ],
+    "mandatory_action": {
+      "response_type": "IMMEDIATE_IGD_ROUTING",
+      "message": "Segera bawa pasien ke Instalasi Gawat Darurat (IGD) 24 Jam RSIA Melinda DHAI. Kondisi ini memerlukan pemeriksaan dokter secara langsung dan cepat. Jangan menunggu jadwal poli!",
+      "hotline": "IGD RSIA Melinda 24 Jam"
+    }
+  }
+}

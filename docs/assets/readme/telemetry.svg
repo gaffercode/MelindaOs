@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240" role="img" aria-labelledby="t d">
+  <title id="t">MelindaOS recorded evidence, 13 November 2026</title>
+  <desc id="d">487 of 487 documents pass the format checker (12 November 2026); pytest 217 passed and Vitest 1,960 passed with 3 skipped (13 November 2026); 33 SQL migrations; 56 API route files and 22 pages; the 13 MAAF runtime tools are deny-all with no backend.</desc>
+  <style>
+    .serif { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; }
+    .sans { font-family: -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  </style>
+  <rect x="0.5" y="0.5" width="1199" height="239" rx="4" fill="#111418" stroke="#2D333B"/>
+  <text class="sans" x="40" y="44" font-size="12" letter-spacing="2" fill="#9DA7B3">RECORDED EVIDENCE</text>
+  <text class="sans" x="1160" y="44" text-anchor="end" font-size="12" letter-spacing="1" fill="#6E7681">Snapshot 13 November 2026</text>
+  <line x1="40" y1="60" x2="1160" y2="60" stroke="#2D333B"/>
+
+  <g stroke="#262C34">
+    <line x1="226" y1="76" x2="226" y2="190"/><line x1="413" y1="76" x2="413" y2="190"/><line x1="600" y1="76" x2="600" y2="190"/>
+    <line x1="787" y1="76" x2="787" y2="190"/><line x1="974" y1="76" x2="974" y2="190"/>
+  </g>
+
+  <g class="sans" font-size="11.5" letter-spacing="1.5" fill="#9DA7B3">
+    <text x="40" y="92">DOCUMENTS</text><text x="246" y="92">PYTEST</text><text x="433" y="92">VITEST</text>
+    <text x="620" y="92">MIGRATIONS</text><text x="807" y="92">SURFACE</text><text x="994" y="92">MAAF RUNTIME</text>
+  </g>
+  <g class="serif" font-size="44" fill="#E6EDF3">
+    <text x="38" y="146">487<tspan font-size="22" fill="#6E7681"> / 487</tspan></text>
+    <text x="244" y="146">217</text><text x="431" y="146">1,960</text><text x="618" y="146">33</text><text x="805" y="146">56</text><text x="992" y="146">13</text>
+  </g>
+  <g class="sans" font-size="13" fill="#9DA7B3">
+    <text x="40" y="172">pass the checker</text><text x="246" y="172">passed, 0 failed</text><text x="433" y="172">passed, 3 skipped</text>
+    <text x="620" y="172">SQL, Supabase</text><text x="807" y="172">API routes, 22 pages</text><text x="994" y="172" fill="#D0694F">tools, all deny-all</text>
+  </g>
+  <g class="sans" font-size="11.5" fill="#6E7681">
+    <text x="40" y="190">12 Nov · validation.json</text><text x="246" y="190">13 Nov · Python 3.12</text><text x="433" y="190">13 Nov · dashboard</text>
+    <text x="620" y="190">git ls-files</text><text x="807" y="190">guard test on every route</text><text x="994" y="190">open circuit, no backend</text>
+  </g>
+
+  <line x1="40" y1="206" x2="1160" y2="206" stroke="#2D333B"/>
+  <text class="sans" x="40" y="226" font-size="12" fill="#6E7681">A green checker is format conformance, not production readiness.</text>
+</svg>

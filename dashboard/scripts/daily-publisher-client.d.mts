@@ -1,0 +1,20 @@
+export type PreparedDailyDocument = { body: string; date: string; idempotencyKey: string };
+export type DailyDocumentClientReceipt = {
+  id: string;
+  revisionId: string;
+  kind: "medify_snapshot" | "medify_run_status" | "satusehat_snapshot";
+  payloadHash: string;
+  date: string;
+  status: "stored";
+  receivedAt: string;
+  replayed: boolean;
+};
+export type DailyPublisherClientOptions = { baseUrl: string; token: string; fetch?: typeof fetch; sleep?: (milliseconds: number) => Promise<void>; timeoutMs?: number };
+export function assertPublisherClient(options: DailyPublisherClientOptions): void;
+export function publisherFromEnv(env?: Record<string, string | undefined>): { baseUrl: string | undefined; token: string | undefined };
+export function prepareMedifySnapshot(input: string, idempotencyKey?: string): PreparedDailyDocument;
+export function submitMedifySnapshot(submission: PreparedDailyDocument, options: DailyPublisherClientOptions): Promise<DailyDocumentClientReceipt>;
+export function prepareMedifyRunStatus(input: string, idempotencyKey?: string): PreparedDailyDocument;
+export function submitMedifyRunStatus(submission: PreparedDailyDocument, options: DailyPublisherClientOptions): Promise<DailyDocumentClientReceipt>;
+export function prepareSatusehatSnapshot(input: string, idempotencyKey?: string): PreparedDailyDocument;
+export function submitSatusehatSnapshot(submission: PreparedDailyDocument, options: DailyPublisherClientOptions): Promise<DailyDocumentClientReceipt>;

@@ -1,0 +1,86 @@
+{
+  "name": "MAAF - Token Health Watch",
+  "active": false,
+  "nodes": [
+    {
+      "id": "schedule",
+      "name": "Every 30 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 30
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "health",
+      "name": "MAAF Auth Health",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        250,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "={{$env.MAAF_BACKEND_URL + \"/v1/auth/health\"}}",
+        "authentication": "predefinedCredentialType"
+      }
+    },
+    {
+      "id": "recover",
+      "name": "Attempt Auto Recovery",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{$env.MAAF_BACKEND_URL + \"/v1/auth/recover\"}}",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($json) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Every 30 Minutes": {
+      "main": [
+        [
+          {
+            "node": "MAAF Auth Health",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MAAF Auth Health": {
+      "main": [
+        [
+          {
+            "node": "Attempt Auto Recovery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

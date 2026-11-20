@@ -1,0 +1,220 @@
+{
+  "nextIncludes": {
+    "/api/dashboard": [
+      "./data/knowledge-index.json",
+      "./data/validation.json"
+    ],
+    "/api/search": [
+      "./data/knowledge-index.json"
+    ],
+    "/api/health": [
+      "./data/knowledge-index.json"
+    ],
+    "/api/mcp": [
+      "./data/knowledge-index.json",
+      "./data/knowledge-chunks.json",
+      "./data/knowledge-search-index.json",
+      "./data/validation.json"
+    ],
+    "/api/ask": [
+      "./data/knowledge-chunks.json",
+      "./data/knowledge-search-index.json"
+    ],
+    "/api/melinda/chat": [
+      "./data/knowledge-chunks.json",
+      "./data/knowledge-search-index.json"
+    ],
+    "/api/director/order-obat/sumber": [
+      "./data/pharmacy-orders/2026-11-03-pengajuan-order-obat-november.pdf"
+    ],
+    "/api/director/order-obat/berkas": [
+      "./data/pharmacy-orders/*.pdf",
+      "./node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/api/director/order-obat/berkas/\\[id\\]": [
+      "./data/pharmacy-orders/*.pdf",
+      "./node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/order-obat": [
+      "./data/pharmacy-orders/*.pdf",
+      "./node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/formularium": [
+      "./data/formularium/*.xlsx"
+    ],
+    "/api/starkes/kit": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png",
+      "./data/starkes/kits/*.json"
+    ],
+    "/api/starkes/bundle": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/starkes/bundle-all": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/studio/generate": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/studio/packages/\\[id\\]/export": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png",
+      "./data/studio-source-snapshot.json"
+    ],
+    "/api/studio/patient-identification": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png",
+      "./data/studio-source-snapshot.json"
+    ],
+    "/api/studio/packages": [
+      "./data/studio-source-snapshot.json"
+    ],
+    "/api/studio/packages/\\[id\\]": [
+      "./data/studio-source-snapshot.json"
+    ],
+    "/api/director/tasks/recap": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/board": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/archive": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/\\[id\\]/replies": [
+      "./assets/fonts/carlito/*.ttf",
+      "./public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/document-answers": [
+      "./data/director-queue.json"
+    ],
+    "/api/director/document-answers/unduh": [
+      "./data/director-queue.json"
+    ],
+    "/isian-dokumen": [
+      "./data/director-queue.json"
+    ]
+  },
+  "requires": {
+    "/api/starkes/kit": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png",
+      "data/starkes/kits/TKRS.json"
+    ],
+    "/api/starkes/bundle": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/starkes/bundle-all": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/studio/generate": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/studio/packages/[id]/export": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png",
+      "data/studio-source-snapshot.json"
+    ],
+    "/api/studio/patient-identification": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png",
+      "data/studio-source-snapshot.json"
+    ],
+    "/api/director/tasks/recap": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/board": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/archive": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/director/tasks/[id]/replies": [
+      "assets/fonts/carlito/Carlito-Regular.ttf",
+      "assets/fonts/carlito/Carlito-Bold.ttf",
+      "assets/fonts/carlito/Carlito-Italic.ttf",
+      "public/branding/rsia-melinda-logo-official.png"
+    ],
+    "/api/studio/packages": [
+      "data/studio-source-snapshot.json"
+    ],
+    "/api/studio/packages/[id]": [
+      "data/studio-source-snapshot.json"
+    ],
+    "/api/ask": [
+      "data/knowledge-chunks.json",
+      "data/knowledge-search-index.json"
+    ],
+    "/api/melinda/chat": [
+      "data/knowledge-chunks.json",
+      "data/knowledge-search-index.json"
+    ],
+    "/api/search": [
+      "data/knowledge-index.json"
+    ],
+    "/api/dashboard": [
+      "data/knowledge-index.json"
+    ],
+    "/api/health": [
+      "data/knowledge-index.json"
+    ],
+    "/api/mcp": [
+      "data/knowledge-index.json",
+      "data/knowledge-chunks.json",
+      "data/knowledge-search-index.json",
+      "data/validation.json"
+    ],
+    "/api/director/order-obat/sumber": [
+      "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/order-obat": [
+      "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/api/director/order-obat/berkas": [
+      "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/api/director/order-obat/berkas/[id]": [
+      "node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs"
+    ],
+    "/api/director/document-answers": [
+      "data/director-queue.json"
+    ],
+    "/api/director/document-answers/unduh": [
+      "data/director-queue.json"
+    ],
+    "/isian-dokumen": [
+      "data/director-queue.json"
+    ]
+  },
+  "_publicTree": "The November drug order PDF is private, so the public build does not require it in this trace."
+}

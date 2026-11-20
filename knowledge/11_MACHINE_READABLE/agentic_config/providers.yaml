@@ -1,0 +1,49 @@
+providers:
+  facebook:
+    primary_auth: meta_graph_oauth
+    secret_ref: vault://melinda/prod/social/facebook
+    refresh_strategy: meta_token_lifecycle_monitor_and_renew_when_supported
+    browser_fallback: true
+    capabilities: [publish, read_page_content, insights]
+  instagram:
+    primary_auth: instagram_api_oauth
+    secret_ref: vault://melinda/prod/social/instagram
+    refresh_strategy: refresh_valid_long_lived_instagram_user_token_before_expiry
+    browser_fallback: true
+    capabilities: [publish, insights, comment_moderation]
+  threads:
+    primary_auth: threads_oauth
+    secret_ref: vault://melinda/prod/social/threads
+    refresh_strategy: refresh_long_lived_threads_token_before_expiry
+    browser_fallback: true
+    capabilities: [publish, read, insights]
+  linkedin:
+    primary_auth: linkedin_oauth2
+    secret_ref: vault://melinda/prod/social/linkedin
+    refresh_strategy: programmatic_refresh_if_app_approved_else_scheduled_reauthorization
+    browser_fallback: true
+    capabilities: [organization_publish, organization_read, analytics]
+  youtube:
+    primary_auth: google_oauth2_offline
+    secret_ref: vault://melinda/prod/social/youtube
+    refresh_strategy: oauth_refresh_token_offline_access
+    browser_fallback: true
+    capabilities: [upload, manage, analytics]
+  x:
+    primary_auth: x_oauth2_pkce
+    secret_ref: vault://melinda/prod/social/x
+    refresh_strategy: oauth2_offline_access_refresh_token
+    browser_fallback: true
+    capabilities: [post, media_upload, read, analytics]
+  email:
+    primary_auth: provider_api_oauth_or_service_credential
+    secret_ref: vault://melinda/prod/email/primary
+    refresh_strategy: provider_specific_oauth_refresh_or_service_credential_rotation
+    browser_fallback: false
+    capabilities: [send, receive, search, attachments]
+  website:
+    primary_auth: cms_api_or_signed_webhook
+    secret_ref: vault://melinda/prod/website/cms
+    refresh_strategy: rotate_service_credential_by_policy
+    browser_fallback: true
+    capabilities: [publish, update, media_upload, read]

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "appointment.create input",
+  "description": "Input for appointment.create: book a confirmed appointment in a bookable slot. Risk R3. Requires patient_ref or pre_registration_token.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "slot_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Bookable slot identifier returned by appointment.find_slots."
+    },
+    "patient_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque patient reference from patient.resolve_administrative_identity."
+    },
+    "pre_registration_token": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Pre-registration token from patient.pre_register for a new patient."
+    },
+    "contact_preference": {
+      "type": "string",
+      "enum": [
+        "phone",
+        "whatsapp",
+        "email",
+        "none"
+      ],
+      "description": "Preferred channel for appointment communication."
+    },
+    "payer_type": {
+      "type": "string",
+      "description": "Payer type, when required by hospital policy."
+    },
+    "confirmation_token": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Token proving explicit user confirmation bound to this exact normalized booking action."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "Client-generated key that makes retries of the same request safe."
+    }
+  },
+  "required": [
+    "slot_id",
+    "confirmation_token",
+    "idempotency_key"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "patient_ref"
+      ]
+    },
+    {
+      "required": [
+        "pre_registration_token"
+      ]
+    }
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "TKRS": {
+    "name": "Tata Kelola Rumah Sakit",
+    "group": "Manajemen",
+    "kbRef": "kb-manajemen-starkes-tkrs-tata-kelola-rumah-sakit",
+    "studioPresetCodes": [
+      "SPO Hospital Bylaws dan Representasi Pemilik (TKRS 1)",
+      "SPO Tanggung Jawab Direktur Rumah Sakit (TKRS 2)",
+      "SPO Akuntabilitas Pimpinan Unit Kerja (TKRS 3)",
+      "SK Direktur Pemberlakuan Pedoman Tata Kelola Mutu & Akreditasi",
+      "SPO Pengelolaan Kontrak Pihak Ketiga (TKRS 5)",
+      "SPO Pengadaan Obat dan Alat Kesehatan (TKRS 6)",
+      "SPO Tata Kelola Etika dan Hukum RS (TKRS 7)",
+      "SPO Budaya Keselamatan dan Safety Culture Survey (TKRS 8)"
+    ],
+    "applicability": "required"
+  },
+  "KPS": {
+    "name": "Kualifikasi & Pendidikan Staf",
+    "group": "Manajemen",
+    "kbRef": "kb-manajemen-starkes-kps-kualifikasi-dan-pendidikan-staf",
+    "studioPresetCodes": [
+      "SPO Perencanaan dan Pola Ketenagaan (KPS 1)",
+      "SPO Rekrutmen Penempatan dan Orientasi Staf (KPS 2)",
+      "SPO Verifikasi STR dan SIP (KPS 3)",
+      "SPO Orientasi Umum dan Khusus Unit (KPS 4)",
+      "SPO Pendidikan dan Pelatihan Staf (KPS 5)",
+      "SPO MCU dan Imunisasi Staf (KPS 6)",
+      "SPO Pelaksanaan Rekredensialing FKRTL BPJS",
+      "SPO OPPE FPPE Staf Medis (KPS 8)",
+      "SPO Kredensialing Keperawatan dan Kebidanan (KPS 9)",
+      "SPO Kredensialing Tenaga Kesehatan Lain (KPS 10)"
+    ],
+    "applicability": "required"
+  },
+  "MFK": {
+    "name": "Manajemen Fasilitas & Keselamatan",
+    "group": "Manajemen",
+    "kbRef": "kb-manajemen-starkes-mfk-manajemen-fasilitas-dan-keselamatan",
+    "studioPresetCodes": [
+      "SPO Kepemimpinan dan Program MFK (MFK 1)",
+      "SPO Keamanan Fisik Fasilitas (MFK 2)",
+      "SPO Pengelolaan Bahan dan Limbah B3 (MFK 3)",
+      "SPO Simulasi Kebakaran Code Red (MFK 4)",
+      "SPO Proteksi Kebakaran dan Inspeksi APAR (MFK 5)",
+      "SPO Pemeliharaan dan Kalibrasi Alat Medis (MFK 6)",
+      "SPO Pemeliharaan Utilitas Kritis (MFK 7)",
+      "SPO Pelatihan MFK Seluruh Staf (MFK 8)"
+    ],
+    "applicability": "required"
+  },
+  "PMKP": {
+    "name": "Peningkatan Mutu & Keselamatan Pasien",
+    "group": "Manajemen",
+    "kbRef": "kb-manajemen-starkes-pmkp-mutu-dan-keselamatan-pasien",
+    "studioPresetCodes": [
+      "SPO Pemantauan Indikator Nasional Mutu INM (PMKP 1)",
+      "SPO Pelaporan Insiden Keselamatan Pasien (PMKP 2)",
+      "SPO Clinical Pathway dan Audit Klinis (PMKP 3)",
+      "SPO Publikasi Mutu dan RTM (PMKP 4)",
+      "SPO Manajemen Risiko Klinis dan FMEA (PMKP 5)"
+    ],
+    "applicability": "required"
+  },
+  "MRMIK": {
+    "name": "Rekam Medis & Info Kesehatan",
+    "group": "Manajemen",
+    "kbRef": "kb-manajemen-starkes-mrmik-rekam-medis-dan-informasi-kesehatan",
+    "studioPresetCodes": [
+      "SPO Backup dan Audit Akses RME (MRMIK 1)",
+      "SPO Kerahasiaan Data Pasien UU PDP (MRMIK 2)",
+      "SPO Kelengkapan dan Retensi Rekam Medis (MRMIK 3)",
+      "SPO Coding Indexing dan ROI (MRMIK 4)"
+    ],
+    "applicability": "required"
+  },
+  "PPI": {
+    "name": "Pencegahan & Pengendalian Infeksi",
+    "group": "Keselamatan & Mutu",
+    "kbRef": "kb-klinis-starkes-ppi-pencegahan-pengendalian-infeksi",
+    "studioPresetCodes": [
+      "SPO Bundle Pencegahan Infeksi Daerah Operasi (PPI 1)",
+      "SPO Sterilisasi CSSD dan Indikator Biologi (PPI 2)",
+      "SPO Bundle ISK dan Surveilans HAIs (PPI 3)",
+      "SPO Sharp Disposal dan APD (PPI 4)"
+    ],
+    "applicability": "required"
+  },
+  "PPK": {
+    "name": "Pendidikan dalam Pelayanan Kesehatan",
+    "group": "Program Nasional",
+    "kbRef": "kb-manajemen-starkes-ppk-pendidikan-dalam-pelayanan-kesehatan",
+    "studioPresetCodes": [],
+    "applicability": "not_applicable"
+  },
+  "AKP": {
+    "name": "Akses & Kontinuitas Pelayanan",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-akp-akses-kontinuitas-pelayanan",
+    "studioPresetCodes": [
+      "SPO Triase PONEK ESI/MEWS (AKP 1)",
+      "SPO Discharge Planning Terintegrasi (AKP 2)",
+      "SPO Transfer Intra-RS dan Rujukan Sisrute (AKP 3)",
+      "SPO Kontinuitas Rawat Jalan dan Antrian (AKP 4)"
+    ],
+    "applicability": "required"
+  },
+  "HPK": {
+    "name": "Hak Pasien & Keluarga",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-hpk-hak-pasien-keluarga",
+    "studioPresetCodes": [
+      "SPO General Consent dan Hak Pasien (HPK 1)",
+      "SPO Informed Consent Tindakan Medis (HPK 2)",
+      "SPO Penanganan Komplain dan Second Opinion (HPK 3)",
+      "SPO Dukungan Spiritual dan Kebutuhan Khusus (HPK 4)"
+    ],
+    "applicability": "required"
+  },
+  "PP": {
+    "name": "Pengkajian Pasien",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-pp-pengkajian-pasien",
+    "studioPresetCodes": [
+      "SPO Asesmen Awal Pasien 24 Jam (PP 1)",
+      "SPO Asesmen Nyeri Nutrisi dan Risiko Jatuh (PP 2)",
+      "SPO Re-asesmen Berkala Kondisi Pasien (PP 3)",
+      "SPO Pengkajian Psikososial dan Edukasi Awal (PP 4)"
+    ],
+    "applicability": "required"
+  },
+  "PAP": {
+    "name": "Pelayanan & Asuhan Pasien",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-pap-pelayanan-asuhan-pasien",
+    "studioPresetCodes": [
+      "SPO Asuhan Terintegrasi CPPT (PAP 1)",
+      "SPO Pasien Risiko Tinggi dan Resusitasi Neonatus (PAP 2)",
+      "SPO Protokol Restraint NPO Fast Track (PAP 3)",
+      "SPO Asuhan End-of-Life dan Paliatif (PAP 4)"
+    ],
+    "applicability": "required"
+  },
+  "PAB": {
+    "name": "Pelayanan Anestesi & Bedah",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-pab-anestesi-bedah",
+    "studioPresetCodes": [
+      "SPO Asesmen Pra-Anestesi dan Pemilihan Jenis Anestesi",
+      "SPO Penerapan Surgical Safety Checklist (WHO SSC)",
+      "Formulir Surgical Safety Checklist (WHO SSC)",
+      "SPO Monitoring Recovery Room (PAB 3)",
+      "SPO Manajemen Nyeri Pasca Operasi dan Sedasi (PAB 4)"
+    ],
+    "applicability": "required"
+  },
+  "PKPO": {
+    "name": "Pelayanan Kefarmasian & Obat",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-pkpo-pelayanan-kefarmasian",
+    "studioPresetCodes": [
+      "SPO Keamanan Obat High Alert dan LASA (SKP 3)",
+      "Formulir Telaah Resep & Rekonsiliasi Obat",
+      "Pedoman Formularium Non-Fornas Poli Penyakit Dalam",
+      "SPO Narkotika dan Psikotropika (PKPO 4)"
+    ],
+    "applicability": "required"
+  },
+  "KE": {
+    "name": "Komunikasi & Edukasi",
+    "group": "Pelayanan Pasien",
+    "kbRef": "kb-klinis-starkes-ke-komunikasi-edukasi",
+    "studioPresetCodes": [
+      "SPO Edukasi Pasien Teach-Back PKRS (KE 1)",
+      "SPO Asesmen Kemampuan Belajar Edukasi (KE 2)",
+      "SPO Verifikasi Pemahaman Teach-Back (KE 3)",
+      "SPO Komunikasi Risiko dan Materi KIE (KE 4)"
+    ],
+    "applicability": "required"
+  },
+  "SKP": {
+    "name": "Sasaran Keselamatan Pasien",
+    "group": "Keselamatan & Mutu",
+    "kbRef": "kb-klinis-starkes-skp-sasaran-keselamatan-pasien",
+    "studioPresetCodes": [
+      "SPO Identifikasi Pasien dengan 2 Indikator",
+      "SPO Komunikasi Efektif dengan Metode SBAR & TBAK",
+      "SPO Keamanan Obat High Alert dan LASA (SKP 3)",
+      "SPO Site Marking dan Surgical Safety Checklist (SKP 4)",
+      "SPO Kebersihan Tangan 5 Momen WHO (SKP 5)",
+      "SPO Asesmen dan Pencegahan Risiko Jatuh (SKP 6)",
+      "Formulir Asesmen Risiko Jatuh Morse & Humpty Dumpty"
+    ],
+    "applicability": "required"
+  },
+  "PROGNAS": {
+    "name": "Program Nasional Kemenkes",
+    "group": "Program Nasional",
+    "kbRef": "kb-klinis-starkes-prognas-ponek-stunting-tb-pkbrs",
+    "studioPresetCodes": [
+      "SPO PONEK 24 Jam (PROGNAS 1)",
+      "SPO Penurunan Stunting dan Wasting (PROGNAS 2)",
+      "SPO Pelayanan TB Strategi DOTS (PROGNAS 3)",
+      "SPO Pelayanan KB Rumah Sakit PKBRS (PROGNAS 4)",
+      "SPO Pengendalian Resistensi Antimikroba PPRA (PROGNAS 5)"
+    ],
+    "applicability": "required"
+  }
+}

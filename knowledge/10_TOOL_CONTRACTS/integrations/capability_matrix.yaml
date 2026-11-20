@@ -1,0 +1,41 @@
+channels:
+  facebook:
+    publish: api
+    analytics: api
+    auth: oauth/token lifecycle
+    manual_login: fallback only
+  instagram:
+    publish: api for professional account
+    analytics: api
+    auth: oauth/long-lived token lifecycle
+    manual_login: fallback only
+  threads:
+    publish: api
+    analytics: api where available
+    auth: oauth/long-lived token lifecycle
+    manual_login: fallback only
+  linkedin:
+    publish: Posts API
+    analytics: organization APIs subject to access
+    auth: oauth2
+    manual_login: reauth only if required
+  youtube:
+    publish: YouTube Data API
+    analytics: API
+    auth: OAuth2 offline refresh
+    manual_login: reauth only if required
+  x:
+    publish: X API v2 Manage Posts
+    analytics: API/tier-dependent
+    auth: OAuth2 PKCE offline.access
+    manual_login: reauth only if required
+  email:
+    publish: provider API
+    analytics: delivery provider dependent
+    auth: OAuth/service credential
+    manual_login: exception only
+  website:
+    publish: CMS API/signed webhook
+    analytics: analytics provider
+    auth: service identity
+    manual_login: temporary fallback

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "note": "Fictional sample. Not the RSIA Melinda accreditation team. The real teams live in the private Supabase bucket hrd.",
+  "updatedAt": "2099-01-15",
+  "committee": [{ "role": "Ketua", "names": ["Contoh Ketua Panitia"] }],
+  "chapters": {
+    "tkrs": { "lead": "Contoh Ketua TKRS", "members": ["Contoh Anggota Satu"] },
+    "skp": { "lead": "Contoh Ketua SKP", "members": ["Contoh Anggota Dua"] },
+    "pmkp": { "lead": null, "leadCandidates": ["Contoh Kandidat A", "Contoh Kandidat B"], "members": ["Contoh Anggota Tiga"] }
+  }
+}

@@ -1,0 +1,21 @@
+# Kode agent mengikuti roster resmi (retag 2026-11-07; registry: knowledge/11_MACHINE_READABLE/ontology/rsia_clinical_ontology.json).
+trust_domains:
+  executive_public:
+    agents: [KATT]
+    data: [executive_summary, public_content, operational_exceptions]
+  clinical_operations:
+    agents: [KATT]
+    data: [deidentified_operational_clinical_metrics, quality_exceptions]
+  finance:
+    agents: [KATT]
+    data: [financial_summary, claim_status, revenue_cycle]
+  people_hr:
+    agents: [KATT]
+    data: [workforce_summary, staffing, credential_expiry]
+  verification:
+    agents: [KATT]
+    data: [audit_events, provenance, policy_decisions]
+constraints:
+  shared_bot_user_is_security_boundary: false
+  cross_domain_access: "MCP allowlisted tools only"
+  universal_credentials_prohibited: true

@@ -1,0 +1,42 @@
+node_modules/
+.next/
+coverage/
+# Local Calibri copies for official letterhead (see assets/fonts/README.md)
+assets/fonts/*.ttf
+public/branding/preview-*.pdf
+.vitest/
+*.tsbuildinfo
+.env*
+!.env.example
+.vercel/
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+# Daily operational data stays outside Git; retain the labeled example only.
+data/director/*.json
+!data/director/2026-10-03.json
+data/melinda/*.json
+!data/melinda/2026-10-23.json
+data/melinda/.idempotency.json
+data/simrs/
+data/medify/
+# Raw Medify responses kept by medify-pull.mjs --dump-raw for diagnosis.
+work/
+data/knowledge-index.json
+data/knowledge-chunks.json
+data/knowledge-search-index.json
+data/studio-source-snapshot.json
+data/agent-files.json
+data/agent-file-contents.json
+data/knowledge-doc-contents.json
+data/director-queue.json
+data/studio-runtime/
+# BPJS credentialing files live in the private Supabase Storage bucket `kredensial`, never under public/.
+public/kredensial/0[1-8]_*/
+public/kredensial/index.html
+public/kredensial/documents_index.json
+
+# Director signature and stamp images live in the private Supabase bucket `signatures` (see supabase/storage/signatures-bucket.sql).
+assets/signature/

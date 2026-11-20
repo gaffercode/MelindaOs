@@ -1,0 +1,939 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Director submission v2",
+  "description": "Sanitized aggregate-only draft. Runtime additionally checks real dates, source alignment, duplicate identifiers, arithmetic consistency and size. Free text requires source sanitization and human review; shape validation is not PHI detection.",
+  "type": "object",
+  "properties": {
+    "brief": {
+      "$ref": "#/$defs/day"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "schedule": {
+          "$ref": "#/$defs/source"
+        },
+        "agenda": {
+          "$ref": "#/$defs/source"
+        },
+        "priorities": {
+          "$ref": "#/$defs/source"
+        },
+        "decisions": {
+          "$ref": "#/$defs/source"
+        },
+        "followUps": {
+          "$ref": "#/$defs/source"
+        },
+        "dailyReport": {
+          "$ref": "#/$defs/source"
+        },
+        "inpatient": {
+          "$ref": "#/$defs/source"
+        },
+        "outpatient": {
+          "$ref": "#/$defs/source"
+        },
+        "emergency": {
+          "$ref": "#/$defs/source"
+        },
+        "systems": {
+          "$ref": "#/$defs/source"
+        },
+        "notes": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "brief",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "text": {
+      "type": "string",
+      "maxLength": 500,
+      "pattern": "\\S"
+    },
+    "optionalText": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,80}$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "time": {
+      "type": "string",
+      "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$"
+    },
+    "timestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d{1,3})?(?:Z|[+-](?:0\\d|1[0-4]):[0-5]\\d)$"
+    },
+    "scheduleItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "start": {
+          "$ref": "#/$defs/time"
+        },
+        "end": {
+          "$ref": "#/$defs/time"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "note": {
+          "$ref": "#/$defs/optionalText"
+        }
+      },
+      "required": [
+        "id",
+        "start",
+        "end",
+        "title",
+        "note"
+      ],
+      "additionalProperties": false
+    },
+    "priority": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "note": {
+          "$ref": "#/$defs/optionalText"
+        },
+        "urgent": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "note",
+        "urgent"
+      ],
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "note": {
+          "$ref": "#/$defs/optionalText"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "label": {
+                "$ref": "#/$defs/text"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 6,
+          "minItems": 2
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "note",
+        "options"
+      ],
+      "additionalProperties": false
+    },
+    "followUp": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "$ref": "#/$defs/text"
+        },
+        "status": {
+          "$ref": "#/$defs/text"
+        },
+        "pic": {
+          "$ref": "#/$defs/text"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "status",
+        "pic",
+        "updatedAt"
+      ],
+      "additionalProperties": false
+    },
+    "dailyReport": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/text"
+        },
+        "visits": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bpjsSubmitted": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bpjsPending": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revenue": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expenses": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "updatedAt",
+        "source",
+        "visits",
+        "bpjsSubmitted",
+        "bpjsPending",
+        "revenue",
+        "expenses"
+      ],
+      "additionalProperties": false
+    },
+    "inpatient": {
+      "type": "object",
+      "properties": {
+        "occupied": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vacant": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "occupancyPercent": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "wards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "name": {
+                "$ref": "#/$defs/text"
+              },
+              "occupied": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "capacity": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "note": {
+                "$ref": "#/$defs/optionalText"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "occupied",
+              "capacity",
+              "note"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "occupied",
+        "capacity",
+        "vacant",
+        "occupancyPercent",
+        "wards"
+      ],
+      "additionalProperties": false
+    },
+    "outpatient": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "$ref": "#/$defs/date"
+              },
+              "total": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "obgyn": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "pediatrics": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "date",
+              "total",
+              "obgyn",
+              "pediatrics"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        },
+        "pediatricsLast31Days": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "newPatientsPercent": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payerMix": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "cash": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "bpjs": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "insurance": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "cash",
+                "bpjs",
+                "insurance"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "days",
+        "pediatricsLast31Days",
+        "newPatientsPercent",
+        "payerMix"
+      ],
+      "additionalProperties": false
+    },
+    "emergency": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "$ref": "#/$defs/date"
+              },
+              "visits": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cutoff": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "date",
+              "visits",
+              "cutoff"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "days"
+      ],
+      "additionalProperties": false
+    },
+    "executive": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "source": {
+          "$ref": "#/$defs/text"
+        },
+        "example": {
+          "type": "boolean"
+        },
+        "inpatient": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/inpatient"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outpatient": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/outpatient"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "emergency": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/emergency"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "systems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "title": {
+                "$ref": "#/$defs/text"
+              },
+            "detail": {
+              "$ref": "#/$defs/text"
+              },
+              "status": {
+                "enum": [
+                  "warning",
+                  "unavailable"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "title",
+              "detail",
+              "status"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 100
+        },
+        "positiveNotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 100
+        },
+        "validationNotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/text"
+          },
+          "maxItems": 100
+        }
+      },
+      "required": [
+        "updatedAt",
+        "source",
+        "example"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "sourceObservedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "periodStart": {
+          "$ref": "#/$defs/date"
+        },
+        "periodEnd": {
+          "$ref": "#/$defs/date"
+        },
+        "cutoff": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "$ref": "#/$defs/text"
+            },
+            "reference": {
+              "$ref": "#/$defs/text"
+            }
+          },
+          "required": [
+            "label",
+            "reference"
+          ],
+          "additionalProperties": false
+        },
+        "metricDefinitions": {
+          "type": "object",
+          "maxProperties": 100,
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_.-]{0,79}$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      },
+      "required": [
+        "sourceObservedAt",
+        "periodStart",
+        "periodEnd",
+        "cutoff",
+        "source",
+        "metricDefinitions"
+      ],
+      "additionalProperties": false
+    },
+    "day": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 2
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "updatedAt": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/scheduleItem"
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "updatedAt",
+            "source",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "agenda": {
+          "type": "object",
+          "properties": {
+            "updatedAt": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/scheduleItem"
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "updatedAt",
+            "source",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "priorities": {
+          "type": "object",
+          "properties": {
+            "updatedAt": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/priority"
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "updatedAt",
+            "source",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "decisions": {
+          "type": "object",
+          "properties": {
+            "updatedAt": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/decision"
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "updatedAt",
+            "source",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "followUps": {
+          "type": "object",
+          "properties": {
+            "updatedAt": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source": {
+              "$ref": "#/$defs/text"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/followUp"
+              },
+              "maxItems": 100
+            }
+          },
+          "required": [
+            "updatedAt",
+            "source",
+            "items"
+          ],
+          "additionalProperties": false
+        },
+        "dailyReport": {
+          "$ref": "#/$defs/dailyReport"
+        },
+        "brief": {
+          "$ref": "#/$defs/executive"
+        },
+        "clinicalBrief": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "date",
+        "schedule",
+        "agenda",
+        "priorities",
+        "decisions",
+        "followUps",
+        "dailyReport"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,40 @@
+organization: RSIA Melinda DHAI
+verified_by_user: true
+contacts:
+  phone: "+62 811-3650-101"
+  primary_email: "hai@melinda.co.id"
+  alternate_email: "melinda.rsia@yahoo.com"
+channels:
+  website:
+    url: "https://melinda.co.id/"
+    preferred_integration: "cms_api_or_secure_webhook"
+  linkedin:
+    url: "https://www.linkedin.com/company/136046085"
+    organization_id: "136046085"
+    preferred_integration: "linkedin_posts_api"
+  youtube:
+    url: "https://www.youtube.com/@melindadhai"
+    handle: "@melindadhai"
+    preferred_integration: "youtube_data_api_v3"
+  facebook:
+    url: "https://www.facebook.com/profile.php?id=61580010681263"
+    page_or_profile_id: "61580010681263"
+    preferred_integration: "meta_graph_api"
+  instagram:
+    url: "https://www.instagram.com/rsia.melinda"
+    handle: "@rsia.melinda"
+    preferred_integration: "instagram_api"
+  threads:
+    url: "https://www.threads.com/@rsia.melinda"
+    handle: "@rsia.melinda"
+    preferred_integration: "threads_api"
+  x:
+    url: "https://x.com/rsiamelinda"
+    handle: "@rsiamelinda"
+    preferred_integration: "x_api_v2"
+meta_business:
+  business_id: "1104920441131638"
+  settings_url: "https://business.facebook.com/latest/settings/business_info?business_id=1104920441131638"
+secret_policy:
+  repository_contains_raw_secrets: false
+  secrets_location: "vault_or_cloud_secret_manager"

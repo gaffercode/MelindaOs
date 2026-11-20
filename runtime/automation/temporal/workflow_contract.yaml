@@ -1,0 +1,16 @@
+workflow: MelindaDurableAction
+inputs:
+- request_id
+- tool
+- payload_ref
+- risk_class
+- actor
+- purpose
+invariants:
+- never store provider secret in workflow history
+- idempotency key equals request_id
+- high-risk policy checked before every side effect
+retry_policy:
+  strategy: exponential_backoff
+  max_attempts: provider/action specific
+human_signal: approval_or_reauth only when policy/provider requires

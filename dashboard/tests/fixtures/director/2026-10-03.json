@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-03",
+  "schedule": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "items": [
+    { "id": "schedule-test", "start": "08:00", "end": "08:30", "title": "Rapat koordinasi uji", "note": "Agenda sintetis untuk verifikasi" }
+  ] },
+  "agenda": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "items": [
+    { "id": "agenda-test", "start": "09:00", "end": "09:30", "title": "Koordinasi operasional uji", "note": "Bukan agenda nyata" }
+  ] },
+  "priorities": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "items": [
+    { "id": "priority-test", "title": "Prioritas mendesak uji", "note": "Hanya pengujian penanda", "urgent": true }
+  ] },
+  "decisions": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "items": [
+    { "id": "decision-test", "title": "Keputusan sintetis untuk QA", "note": "Pilihan tidak dikirim dan bukan persetujuan institusi", "options": [ { "id": "approve", "label": "Setujui usulan uji" }, { "id": "revise", "label": "Minta revisi uji" } ] }
+  ] },
+  "followUps": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "items": [
+    { "id": "followup-test", "title": "Tindak lanjut uji", "status": "Menunggu verifikasi uji", "pic": "Tim QA", "updatedAt": "2026-10-03T01:25:00+07:00" }
+  ] },
+  "dailyReport": { "updatedAt": "2026-10-03T01:30:00+07:00", "source": "DATA UJI SINTETIS — bukan laporan RS", "visits": 23, "bpjsSubmitted": 10, "bpjsPending": 2, "revenue": 1250000, "expenses": 500000 }
+}

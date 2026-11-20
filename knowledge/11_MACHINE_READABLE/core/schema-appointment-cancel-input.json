@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "appointment.cancel input",
+  "description": "Input for appointment.cancel: cancel an existing appointment. Risk R4; confirmation and authentication required.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "appointment_reference": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Reference of the appointment to cancel, obtained from an authorized appointment lookup."
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "patient_request",
+        "schedule_conflict",
+        "duplicate_booking",
+        "other"
+      ],
+      "description": "Optional controlled cancellation reason."
+    },
+    "confirmation_token": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Token proving explicit user confirmation bound to this exact normalized cancel action."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "Client-generated key that makes retries of the same request safe."
+    }
+  },
+  "required": [
+    "appointment_reference",
+    "confirmation_token",
+    "idempotency_key"
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

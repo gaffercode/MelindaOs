@@ -1,0 +1,5 @@
+# Store every file byte for byte. Some files are CRLF, and the monorepo root attributes (LF normalisation,
+# PNG in Git LFS) must not rewrite them when this capsule is tracked there or published by subtree split.
+* -text
+# PNG files stay plain blobs, not Git LFS pointers: Vercel deploys them from the capsule repository.
+*.png -filter -diff -merge -text

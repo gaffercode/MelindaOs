@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "patient.pre_register input",
+  "description": "Input for patient.pre_register: minimum administrative pre-registration for a new patient. Risk R3. No clinical history.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "Patient full name."
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Patient date of birth (ISO 8601 date)."
+    },
+    "sex_admin": {
+      "type": "string",
+      "enum": [
+        "female",
+        "male",
+        "other_or_unspecified"
+      ],
+      "description": "Administrative sex."
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 40,
+      "description": "Contact phone number."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Optional contact email address."
+    },
+    "government_id": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Government identifier, only when required by hospital policy. Sensitivity D3."
+    },
+    "payer_id": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Insurance or payer member identifier, only when required. Sensitivity D3."
+    },
+    "privacy_notice_acknowledged": {
+      "type": "boolean",
+      "const": true,
+      "description": "Must be true: the privacy notice was acknowledged."
+    },
+    "confirmation_token": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Token proving explicit user confirmation bound to this exact pre-registration action."
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128,
+      "description": "Client-generated key that makes retries of the same request safe."
+    }
+  },
+  "required": [
+    "full_name",
+    "date_of_birth",
+    "phone",
+    "privacy_notice_acknowledged",
+    "confirmation_token",
+    "idempotency_key"
+  ],
+  "governance": {
+    "status": "APPROVED",
+    "validation_level": "CANONICAL",
+    "validated_by": "dr. Ferdi Andriska, S.H., M.Kn., CMDC",
+    "role": "Director in Command",
+    "date_enacted": "2026-09-28",
+    "enforcement": "Strict / Mandatory"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "melindaos-agent": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        ".",
+        "python",
+        "-m",
+        "melinda_agent_mcp.server"
+      ],
+      "env": {
+        "PYTHONPATH": "runtime/src",
+        "MELINDA_AGENT_MCP_TRANSPORT": "stdio",
+        "MELINDAOS_DASHBOARD_URL": "https://melindaos.app",
+        "MELINDAOS_MCP_TOKEN": "${MELINDAOS_MCP_TOKEN:-}"
+      }
+    },
+    "melindaos-dashboard": {
+      "type": "http",
+      "url": "https://melindaos.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MELINDAOS_MCP_TOKEN:-}"
+      }
+    }
+  }
+}

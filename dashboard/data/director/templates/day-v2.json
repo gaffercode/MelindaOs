@@ -1,0 +1,41 @@
+{
+  "brief": {
+    "schemaVersion": 2,
+    "date": "2026-10-03",
+    "schedule": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "items": []
+    },
+    "agenda": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "items": []
+    },
+    "priorities": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "items": []
+    },
+    "decisions": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "items": []
+    },
+    "followUps": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "items": []
+    },
+    "dailyReport": {
+      "updatedAt": null,
+      "source": "Belum tersedia",
+      "visits": null,
+      "bpjsSubmitted": null,
+      "bpjsPending": null,
+      "revenue": null,
+      "expenses": null
+    }
+  },
+  "provenance": {}
+}

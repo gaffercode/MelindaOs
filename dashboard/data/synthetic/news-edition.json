@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "date": "2099-01-15",
+  "edition": {
+    "volume": "Sintetis",
+    "number": "SYN",
+    "city": "Kediri",
+    "publishedAt": "07.16 WIB",
+    "tagline": "Fixture sintetis, bukan The Gaffer Times.",
+    "pdfUrl": null,
+    "lead": {
+      "kicker": "Sintetis",
+      "headline": "Edisi sintetis, bukan berita harian",
+      "deck": "Bukan edisi harian.",
+      "byline": "Fixture",
+      "image": null,
+      "imageAlt": null,
+      "paragraphs": ["Teks fixture sintetis. Bukan berita dan bukan regulasi."],
+      "editorNote": "",
+      "sourceUrl": "https://example.com/synthetic-news",
+      "sourceName": "Fixture sintetis"
+    },
+    "weather": {
+      "summary": "Tidak tersedia pada fixture sintetis.",
+      "high": {
+        "value": null,
+        "definition": "Suhu tertinggi pada fixture sintetis, bukan prakiraan.",
+        "source": "Fixture sintetis",
+        "observedAt": "2099-01-15T07:16:00+07:00",
+        "periodStart": "2099-01-15",
+        "periodEnd": "2099-01-15",
+        "cutoff": "07:16"
+      },
+      "low": {
+        "value": null,
+        "definition": "Suhu terendah pada fixture sintetis, bukan prakiraan.",
+        "source": "Fixture sintetis",
+        "observedAt": "2099-01-15T07:16:00+07:00",
+        "periodStart": "2099-01-15",
+        "periodEnd": "2099-01-15",
+        "cutoff": "07:16"
+      },
+      "image": null,
+      "imageAlt": null,
+      "forecast": [],
+      "sourceUrl": "https://example.com/synthetic-weather",
+      "sourceName": "Fixture sintetis",
+      "observedAt": "2099-01-15T07:16:00+07:00",
+      "cutoff": "07:16"
+    },
+    "watchlist": [
+      {
+        "org": "Fixture",
+        "text": "Butir pantauan sintetis, bukan kejadian.",
+        "sourceUrl": "https://example.com/synthetic-watch",
+        "sourceName": "Fixture sintetis"
+      }
+    ],
+    "deadlines": [
+      {
+        "when": "2099-01-20",
+        "title": "Jatuh tempo sintetis",
+        "note": "Bukan tenggat institusi.",
+        "org": "Fixture",
+        "sourceUrl": "https://example.com/synthetic-deadline",
+        "sourceName": "Fixture sintetis"
+      }
+    ],
+    "regulasi": [
+      {
+        "kicker": "Sintetis",
+        "title": "Butir sintetis, bukan regulasi",
+        "summary": "Bukan peraturan yang berlaku.",
+        "status": "sintetis",
+        "sourceUrl": "https://example.com/synthetic-regulasi",
+        "sourceName": "Fixture sintetis"
+      }
+    ],
+    "inbox": [
+      {
+        "kicker": "Sintetis",
+        "headline": "Kotak sintetis",
+        "deck": "Bukan ringkasan edisi.",
+        "byline": "Fixture",
+        "image": null,
+        "imageAlt": null,
+        "paragraphs": ["Teks fixture sintetis."],
+        "editorNote": "",
+        "sourceUrl": "https://example.com/synthetic-inbox",
+        "sourceName": "Fixture sintetis"
+      }
+    ]
+  },
+  "provenance": {
+    "producer": "fixture-sintetis",
+    "sourceObservedAt": "2099-01-15T07:16:00+07:00",
+    "periodStart": "2099-01-15",
+    "periodEnd": "2099-01-15",
+    "cutoff": "07:16",
+    "sources": [
+      { "name": "Fixture sintetis", "url": "https://example.com/synthetic-edition", "note": "Bukan sumber berita." }
+    ],
+    "notes": "SYNTHETIC. Bukan edisi berita."
+  }
+}
