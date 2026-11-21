@@ -43,6 +43,9 @@ jobs:
           node-version: "24"
           cache: npm
           cache-dependency-path: dashboard/package-lock.json
+      # Refuses secrets and local data files in any tracked file; needs only Node and Git.
+      - run: node tools/secret-scan.mjs
+        working-directory: .
       - uses: astral-sh/setup-uv@v10.2.0
         with:
           version: "0.12.17"

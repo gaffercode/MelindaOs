@@ -25,4 +25,12 @@ done
 if [ "$status" -eq 0 ]; then
   if node scripts/db-test-concurrency.mjs; then echo "PASS two-connection concurrency"; else echo "FAIL two-connection concurrency"; status=1; fi
 fi
+if [ "$status" -eq 0 ]; then
+  # The dummy seed (invented rows only) must stay valid against the current schema and be safe to run twice.
+  if psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f supabase/seed.sql && psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -q -f supabase/seed.sql; then
+    echo "PASS dummy seed (applied twice)"
+  else
+    echo "FAIL dummy seed"; status=1
+  fi
+fi
 exit $status

@@ -7,6 +7,32 @@ __pycache__/
 dist/
 build/
 .env
+# Local environment files, databases, dumps, backups and key files never enter Git (see SECURITY.md).
+# dashboard/tests/env-contract.test.ts checks these rules.
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.pgdump
+*.bak
+*.backup
+*.sql.gz
+*dump*.sql
+*backup*.sql
+backups/
+dumps/
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+service-account*.json
+credentials*.json
+.vercel/
+**/supabase/.temp/
 # Dashboard source is versioned; generated artifacts stay local
 dashboard/node_modules/
 dashboard/.next/

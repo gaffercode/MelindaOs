@@ -34,6 +34,34 @@ Stop dev/production preview before building in this checkout: concurrent Next pr
 
 `MELINDAOS_ROOT` optionally supplies the absolute repository root. Default: the parent of this dashboard directory. API calls use same-origin relative paths; no deployment host is embedded in components.
 
+## Local database and dummy data
+
+The dashboard runs without any database. With no `.env.local`, `npm run build` and `npm start` serve the pages in local
+mode (no login, no Supabase): `/api/health` answers `"director":"not_configured"`. Never expose that mode publicly.
+
+The database itself is plain PostgreSQL behind Supabase. To build an empty copy on your own machine you need PostgreSQL 16
+and `psql`. From the repository root, in a POSIX shell (Git Bash works on Windows):
+
+```bash
+createdb melinda_local
+DATABASE_URL=postgres://postgres@127.0.0.1:5432/melinda_local dashboard/scripts/db-test.sh
+```
+
+That one script creates the three Supabase roles if they are missing, applies every file in `supabase/migrations/` in
+order, runs the SQL acceptance tests in `supabase/tests/` (their synthetic rows roll back), runs the two-connection
+concurrency check and then applies `supabase/seed.sql` twice. The seed holds invented rows only: one Director instruction,
+two agenda items and one referral, all on fictional dates and names. The script needs an empty database; drop and recreate
+it to run again. CI runs the same script on every push (job `database`).
+
+Never point `DATABASE_URL` at the hospital's project. Real data lives only in the production Supabase project and its
+private storage buckets; nothing in this repository can rebuild it.
+
+Not covered here: the dashboard talking to that local database. The app reaches its database through Supabase's HTTP
+API (`/rest/v1/rpc/` and `/storage/v1/`), not through a PostgreSQL connection, so it needs a Supabase stack in front of
+PostgreSQL (for example the Supabase CLI's local stack), `MELINDAOS_DIRECTOR_STORE=supabase`, the stack's URL and secret
+key, and `MELINDAOS_ALLOW_LOCAL_HTTP=1` for a loopback `http://` address. That path is not exercised by this
+repository's tests or CI.
+
 ## Repository and deployment boundary
 
 The dashboard remains one application inside the MelindaOS repository. Keep its own package manifest, lockfile, build configuration, tests and assets together; no workspace framework or folder migration is needed for this single app. This follows the supported [Next.js project structure](https://nextjs.org/docs/app/getting-started/project-structure).

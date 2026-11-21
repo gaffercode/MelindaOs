@@ -18,7 +18,7 @@ describe("GET /api/health", () => {
 
   it("reports protected mode with broken configuration as not configured", async () => {
     vi.stubEnv("MELINDAOS_DIRECTOR_STORE", "supabase");
-    vi.stubEnv("MELINDAOS_SUPABASE_SECRET_KEY", "sb_secret_should_never_leak");
+    vi.stubEnv("MELINDAOS_SUPABASE_SECRET_KEY", "sb_secret_should_never_leak"); // secret-scan:allow (fake key)
     vi.stubEnv("MELINDAOS_APP_ORIGIN", "not a url");
     const response = await GET();
     const text = await response.text();
