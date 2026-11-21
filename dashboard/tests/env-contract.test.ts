@@ -51,12 +51,30 @@ function sourceFiles(dir: string): string[] {
   });
 }
 
+// const { A, B: alias } = process.env
+function destructured(text: string): string[] {
+  return [...text.matchAll(/\{([^{}]*)\}\s*=\s*(?:process\.env|env)\b/g)].flatMap(([, body]) =>
+    body
+      .split(",")
+      .map((part) => part.split(/[:=]/)[0].trim())
+      .filter((name) => /^[A-Z][A-Z0-9_]*$/.test(name)),
+  );
+}
+
+// Python keeps many names in constants, keyword arguments and tuples before they reach os.getenv, so every string
+// literal shaped like one of this project's variables counts as read.
+const PY_NAME = /["']((?:MELINDAOS|MELINDA|MAAF|MCP|SATUSEHAT|MEDIFY)_[A-Z][A-Z0-9_]*)["']/g;
+const namedInPython = (text: string) => [...text.matchAll(PY_NAME)].map((match) => match[1]);
+
 function variablesRead(dir: string): Map<string, string> {
   const found = new Map<string, string>();
   for (const file of sourceFiles(dir)) {
     const text = readFileSync(file, "utf8");
     for (const pattern of extname(file) === ".py" ? PY_READS : JS_READS) {
       for (const match of text.matchAll(pattern)) if (!found.has(match[1])) found.set(match[1], file.slice(root.length + 1));
+    }
+    for (const name of extname(file) === ".py" ? namedInPython(text) : destructured(text)) {
+      if (!found.has(name)) found.set(name, file.slice(root.length + 1));
     }
   }
   return found;
@@ -124,7 +142,7 @@ describe("ignore rules", () => {
     const mustBeIgnored = [
       ".env", ".env.local", ".env.production", ".env.development.local",
       "dashboard/.env.local", "runtime/.env", "runtime/.env.local",
-      "local.sqlite", "local.sqlite3", "dashboard/local.db",
+      "local.sqlite", "local.sqlite3", "dashboard/local.db", "local.db-wal", "local.sqlite-journal", ".envrc",
       "dump.sql", "prod-backup.sql", "melinda.dump", "melinda.pgdump", "melinda.sql.gz", "notes.bak", "backups/2026.tar", "dumps/a.sql",
       "server.pem", "private.key", "client.p12", "id_rsa", "id_ed25519", "service-account.json", "credentials.json",
       ".vercel/project.json", "dashboard/.vercel/project.json", "dashboard/supabase/.temp/project-ref",
@@ -138,6 +156,8 @@ describe("ignore rules", () => {
       "dashboard/.env.example", "runtime/.env.example",
       "dashboard/supabase/migrations/202610030001_director.sql", "dashboard/supabase/tests/director.sql",
       "dashboard/supabase/storage/hrd-bucket.sql", "dashboard/supabase/seed.sql",
+      // A migration or a route whose name merely contains "backup" or "dump" must not vanish from Git.
+      "dashboard/supabase/migrations/202612010001_backup_codes.sql", "dashboard/app/backups/page.tsx", "src/dumps/index.ts",
     ];
     expect(ignoredByThisCapsule(mustStayTrackable)).toEqual([]);
   });

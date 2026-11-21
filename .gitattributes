@@ -3,3 +3,5 @@
 * -text
 # PNG files stay plain blobs, not Git LFS pointers: Vercel deploys them from the capsule repository.
 *.png -filter -diff -merge -text
+# The commit hooks are shell scripts: they keep LF line endings on every platform.
+/.githooks/* text eol=lf

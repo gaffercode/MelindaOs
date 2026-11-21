@@ -15,7 +15,8 @@ It is a SAFRS capsule in the monorepo (`projects/healthcare/melindaos`), publish
 - Never re-run the legacy scripts (`extract_and_map_raw.py`, `inject_frontmatter.py`, `ocr_transcribe_all.py`, `clean_and_structure_knowledge.py`). They overwrite the canonical format. Use `transform_documents.py --refresh` instead. A new scan enters through `tools/governance/intake_pdf.py`.
 - Never guess OCR-glued or truncated text. Recover it from the source in `sources/raw/`, or leave the `[tidak terbaca pada sumber]` marker for review.
 - No patient PII/PHI in any committed file. Never commit secrets; `dashboard/.env.local` and the other local paths in `project.contract.json` `mutableStatePaths` are git-ignored.
-- Install the commit hook once per clone: `git config core.hooksPath .githooks`. It runs `tools/secret-scan.mjs` on what is staged and refuses secrets and local data files (env files, keys, databases, dumps). CI runs the same scan over every tracked file.
+- Install the commit hook once per clone: `git config core.hooksPath .githooks` (inside the monorepo, leave its own hooks path alone and call the script from there). It runs `tools/secret-scan.mjs` on what is staged and refuses known token formats, private keys, URLs that carry a password, filled secrets in configuration files, database dumps, and by name: env files, key files, databases and data exports (spreadsheets, CSV). It cannot tell real data from sample data inside an ordinary text, JSON or SQL file: review still decides. CI runs the same scan over every tracked file, which is after the push is already public; GitHub's secret scanning push protection (a repository setting) is the block at the server.
+- A reviewed data file is listed in `.secret-scan-allow` by its exact path with the reason; env files can never be listed.
 - Back up before a bulk rewrite. Git is the only rollback.
 - Add no new dependency without review. Install from the lockfiles only (`uv sync --locked`, `npm ci`).
 
