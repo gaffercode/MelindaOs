@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { parseCsv, type CsvTable } from "../csv";
 import { requirePermission } from "../access/access-api";
-import { DirectorApiError, jsonResponse } from "../director/director-api";
+import { DirectorApiError, jsonResponse, readBoundedJson } from "../director/director-api";
 import type { DirectorAuthConfiguration } from "../director/director-auth";
 import { DirectorStoreError } from "../director/director-store";
 import { logError } from "../log";
@@ -219,8 +219,7 @@ export async function openOrderFile(request: Request, id: string): Promise<Respo
 /** The Director accepts or rejects a submission file (null withdraws). A decision about the file, not an order or a payment. */
 export async function decideOrderFile(request: Request, id: string): Promise<Response> {
   const { config, reviewerId } = await requirePermission(request, "pharmacy.decide", true);
-  let body: unknown;
-  try { body = await request.json(); } catch { throw new DirectorApiError(400, "Isi permintaan tidak valid."); }
+  const body = await readBoundedJson(request, 4096);
   if (!body || typeof body !== "object") throw new DirectorApiError(400, "Isi permintaan tidak valid.");
   const { keputusan, catatan } = body as { keputusan?: unknown; catatan?: unknown };
   if (keputusan !== null && keputusan !== "diterima" && keputusan !== "ditolak") throw new DirectorApiError(400, "Keputusan harus diterima, ditolak, atau null.");

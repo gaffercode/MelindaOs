@@ -85,7 +85,9 @@
     "knowledge/07_LEGAL_REGULATORY/kredensial/berkas_2026/bukti_foto",
     "sources",
     "app",
-    ".claude",
+    ".claude/settings.local.json",
+    ".claude/worktrees",
+    ".claude/agent-memory",
     ".cursor",
     "build.log"
   ]

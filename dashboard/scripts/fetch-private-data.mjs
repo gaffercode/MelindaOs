@@ -2,12 +2,13 @@
 // Puts the hospital's private files (knowledge 01-07 and the archive, operational data under dashboard/data) into the
 // checkout before the production build. They live in the private Supabase bucket `build-data`, never in Git, so the
 // public repository holds code only. Runs as the first step of `npm run build`:
-//   MELINDAOS_PRIVATE_DATA unset  -> skipped (public CI, local work, preview deployments): the build uses what is on disk
+//   MELINDAOS_PRIVATE_DATA unset  -> skipped (public CI, local work, preview deployments): the build uses what is on disk.
+//                                      A Vercel production build with no private files on disk stops instead.
 //   MELINDAOS_PRIVATE_DATA=required -> every file in the current release is downloaded and checked against its SHA-256;
 //                                      any failure stops the build, so production never ships with half the data.
 // Secrets come from the environment and are never printed. Fetch only, no dependency.
 import { createHash } from "node:crypto";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, posix, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -36,6 +37,14 @@ export function safePath(path) {
   return path.startsWith("knowledge/") || path.startsWith("dashboard/data/") || path === "dashboard/scripts/trace-manifest.json";
 }
 
+// Knowledge folders that stay on the owner's machine by design and never go into a release (see the capsule .gitignore).
+const LOCAL_ONLY_KNOWLEDGE = ["knowledge/07_LEGAL_REGULATORY/kredensial/berkas_2026/bukti_foto/"];
+
+/** From a list of files Git ignores and does not track: the knowledge files a release built from Git's listing would miss. */
+export function untrackedKnowledge(ignored) {
+  return ignored.filter((file) => file.startsWith("knowledge/") && !LOCAL_ONLY_KNOWLEDGE.some((entry) => file.startsWith(entry)));
+}
+
 export function parseManifest(value) {
   if (!value || typeof value !== "object" || typeof value.release !== "string" || !Array.isArray(value.files)) return null;
   for (const file of value.files) {
@@ -54,7 +63,14 @@ async function download(origin, secret, object, transport) {
 }
 
 export async function fetchPrivateData({ env = process.env, transport = fetch, root = ROOT, concurrency = 8, log = console.log, required = REQUIRED_FILES } = {}) {
-  if (env.MELINDAOS_PRIVATE_DATA !== "required") { log("fetch-private-data: skipped (MELINDAOS_PRIVATE_DATA is not 'required')."); return { skipped: true, files: 0 }; }
+  if (env.MELINDAOS_PRIVATE_DATA !== "required") {
+    // Without the flag and without the files, a production build would ship a site with no hospital data and say nothing.
+    if (env.VERCEL_ENV === "production" && !existsSync(join(root, "knowledge", "01_HOSPITAL"))) {
+      throw new Error("this production build has no private data on disk; set MELINDAOS_PRIVATE_DATA=required and the Supabase variables on Vercel.");
+    }
+    log("fetch-private-data: skipped (MELINDAOS_PRIVATE_DATA is not 'required').");
+    return { skipped: true, files: 0 };
+  }
   const origin = (env.MELINDAOS_SUPABASE_URL ?? "").replace(/\/+$/, "");
   const secret = env.MELINDAOS_SUPABASE_SECRET_KEY ?? "";
   if (!/^https:\/\//.test(origin) || !secret) throw new Error("MELINDAOS_SUPABASE_URL (https) and MELINDAOS_SUPABASE_SECRET_KEY are required.");

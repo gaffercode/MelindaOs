@@ -1,6 +1,6 @@
 import { guard } from "@/lib/access/guard";
 import { requirePermission } from "@/lib/access/access-api";
-import { apiBoundary, DirectorApiError, jsonResponse } from "@/lib/director/director-api";
+import { apiBoundary, DirectorApiError, jsonResponse, rateLimit, readBoundedJson } from "@/lib/director/director-api";
 import { wibDate } from "@/lib/director/director-data";
 import { board } from "@/lib/tasks/store";
 import type { StructuralRoleId } from "@/lib/work-schedule/baseline-schedule";
@@ -46,14 +46,23 @@ export const GET = guard((request: Request) =>
 
 export const POST = guard((request: Request) =>
   apiBoundary(async () => {
-    const { config, principal } = await requirePermission(request, "executive.view", true);
-    const body = (await request.json().catch(() => null)) as Record<string, unknown> | null;
-    if (!body || typeof body.taskId !== "string" || typeof body.status !== "string") {
+    const { config, principal, reviewerId } = await requirePermission(request, "executive.view", true);
+    const body = (await readBoundedJson(request, 4096)) as Record<string, unknown> | null;
+    if (!body || typeof body !== "object" || typeof body.taskId !== "string" || typeof body.status !== "string") {
       throw new DirectorApiError(400, "Format umpan balik tugas tidak valid.");
     }
     if (!VALID_STATUSES.has(body.status as VaultTaskStatus)) {
       throw new DirectorApiError(400, "Status tugas tidak dikenal.");
     }
+    // Each accepted call writes one row to the instruction ledger, so the free-text fields are bounded here.
+    const tooLong = (value: unknown, max: number) => typeof value === "string" && value.length > max;
+    if (
+      (typeof body.date === "string" && !/^\d{4}-\d{2}-\d{2}$/.test(body.date)) ||
+      tooLong(body.taskId, 80) || tooLong(body.note, 280) || tooLong(body.thirdPartyName, 60) || tooLong(body.scheduleSlotId, 80)
+    ) {
+      throw new DirectorApiError(400, "Format umpan balik tugas tidak valid.");
+    }
+    await rateLimit(config, `vault-feedback:${reviewerId}`, 60, 3600);
     const result = await submitVaultTaskFeedback(config, {
       date: typeof body.date === "string" ? body.date : wibDate(),
       taskId: body.taskId,

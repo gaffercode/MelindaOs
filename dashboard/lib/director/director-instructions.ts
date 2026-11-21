@@ -24,7 +24,8 @@ export const actionLabels: Record<InstructionAction, string> = {
   escalate: "Eskalasi", defer: "Tunda", done: "Tandai selesai",
 };
 export const statusLabels: Record<InstructionStatus | "ditunda" | "dibatalkan", string> = {
-  dibuat: "Disimpan", terkirim_ke_grokbot: "Terkirim ke GrokBot", gagal: "Gagal terkirim",
+  // "terkirim_ke_grokbot" is a stored value from the time a bot relayed instructions; nothing sends them now, so the label says where the row stands.
+  dibuat: "Disimpan", terkirim_ke_grokbot: "Menunggu diteruskan", gagal: "Gagal terkirim",
   diteruskan: "Diteruskan", diterima_pic: "Diterima PIC", dikerjakan: "Dikerjakan", terkendala: "Terkendala", selesai: "Selesai", ditunda: "Ditunda", dibatalkan: "Dibatalkan",
 };
 export const sectionLabels: Record<InstructionSection, string> = { priorities: "Prioritas", followUps: "Tindak lanjut", decisions: "Keputusan", umum: "Umum" };

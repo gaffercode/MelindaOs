@@ -1,0 +1,17 @@
+{
+  "_note": "Fictional sample for the public repository. The production build replaces this file with the hospital's real content from private storage (dashboard/scripts/fetch-private-data.mjs).",
+  "safetyCatatan": "Sumber contoh fiktif.",
+  "safetyAnalysis": "Analisis mutu contoh fiktif.",
+  "claimsCatatan": "Catatan keuangan contoh fiktif.",
+  "claimsAnalysis": "Analisis keuangan contoh fiktif.",
+  "staffingCatatan": "Catatan SDM contoh fiktif.",
+  "staffingAnalysis": "Analisis SDM contoh fiktif.",
+  "emailTriageCatatan": "Triage contoh hambatan pihak ke-3.",
+  "dataLimitations": [
+    "Contoh keterbatasan data (fiktif)."
+  ],
+  "conclusion": [
+    "1) Kawal forum utama hari ini ({mainForumTitle}).",
+    "2) Putuskan {directorDecisionCount} item contoh di meja Direktur."
+  ]
+}

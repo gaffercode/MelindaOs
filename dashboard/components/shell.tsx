@@ -10,6 +10,7 @@ import { EnterItem } from "./motion";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { HookSidebar, type HookSidebarItem } from "@/components/ui/hook-sidebar";
 import { MelindaLogo } from "@/components/entrance/melinda-logo";
+import { RELEASE_LABEL } from "@/lib/release";
 
 export const navItems: Array<{ id: View; label: string; icon: typeof Gauge }> = [
   { id: "command", label: "Ringkasan", icon: Gauge },
@@ -93,6 +94,7 @@ export function Sidebar({ activeView, onNavigate, className, directorActive = fa
       </section>}
     </nav>
     <div className="sidebar-footer">
+      <span className="sidebar-credit">{RELEASE_LABEL} · masih dalam uji coba</span>
       {account
         ? <div className="sidebar-profile"><span className="profile-avatar" aria-hidden="true">{initials(account.displayName)}</span><span><strong>{account.displayName}</strong><small>{ROLE_LABELS[account.role]}</small></span></div>
         : <div className="sidebar-profile"><span className="profile-avatar">FA</span><span><strong>dr. Ferdi Andriska, S.H., M.Kn., CMDC</strong><small>Direktur</small></span></div>}

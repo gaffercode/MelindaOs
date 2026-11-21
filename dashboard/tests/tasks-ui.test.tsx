@@ -230,7 +230,7 @@ describe("Archive", () => {
     expect(html).toContain("IOC-0042");
     expect(html).toContain("Perbaikan AC VK");
     expect(html).toMatch(/<details/);
-    expect(html).toContain("Terkirim ke GrokBot");
+    expect(html).toContain("Menunggu diteruskan");
   });
 });
 

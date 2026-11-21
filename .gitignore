@@ -89,13 +89,13 @@ dashboard/data/*
 !dashboard/data/starkes/
 !dashboard/data/studio/
 !dashboard/data/validation.json
-!dashboard/data/content/
 !dashboard/data/director/
 dashboard/data/director/*
 !dashboard/data/director/templates/
 !dashboard/data/kredensial/
 dashboard/data/kredensial/*
 !dashboard/data/kredensial/index.json
+!dashboard/data/content/
 
 # Internal plans and the readiness outputs quoted from the private hospital documents: real files come from private
 # storage at build time (dashboard/scripts/fetch-private-data.mjs); the repository keeps fictional or empty stand-ins

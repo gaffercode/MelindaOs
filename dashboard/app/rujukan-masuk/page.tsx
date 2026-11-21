@@ -5,7 +5,7 @@ import { publicPrincipal } from "@/lib/access/access-control";
 import { requirePagePermission } from "@/lib/director/director-access";
 import { authConfiguration, protectedDirectorMode } from "@/lib/director/director-auth";
 import { wibDate } from "@/lib/director/director-data";
-import { listReferrals } from "@/lib/referral/referral-store";
+import { listInboxReferrals } from "@/lib/referral/referral-store";
 import { REFERRAL_STATUSES, type ReferralStatus, type StoredReferral } from "@/lib/referral/referral-types";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default async function ReferralInboxPage({ searchParams }: { searchParams
     try {
       const config = authConfiguration();
       if (!config) throw new Error("configuration");
-      referrals = await listReferrals(config, { limit: 100 });
+      referrals = await listInboxReferrals(config);
     } catch {
       unavailable = "Rujukan masuk belum tersedia. Penyimpanan atau pembaruan database belum siap.";
     }

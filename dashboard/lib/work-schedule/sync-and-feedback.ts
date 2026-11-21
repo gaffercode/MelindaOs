@@ -10,6 +10,7 @@ import { wibDate } from "../director/director-data";
 import type { Instruction, InstructionAction } from "../director/director-instructions";
 import { logError } from "../log";
 import type { MedifySnapshot } from "../medify/medify-snapshot-contract";
+import { readMedifySnapshot } from "../medify/medify-snapshot-store";
 import { composeNewsEdition } from "../news/news-composer";
 import type { ScheduleItemInput } from "../tasks/contract";
 import { board, replaceSchedule } from "../tasks/store";
@@ -138,6 +139,9 @@ export async function syncTodayAllPages(
   date = wibDate(),
   snapshot: MedifySnapshot | null = null
 ): Promise<SyncTodayResult> {
+  // Callers that do not hold the Medify snapshot (the route, Melinda chat) get the stored one; without it the
+  // republished brief would carry no hospital numbers and replace one that had them.
+  snapshot ??= (await readMedifySnapshot(date)).snapshot;
   const nowIso = new Date().toISOString();
   const { instructions } = await board(config, { now: nowIso }).catch(() => ({
     instructions: [] as Instruction[],

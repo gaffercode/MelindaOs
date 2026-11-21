@@ -1,0 +1,245 @@
+{
+  "_note": "Fictional sample for the public repository. The production build replaces this file with the hospital's real content from private storage (dashboard/scripts/fetch-private-data.mjs).",
+  "spo": [
+    {
+      "name": "SPO Contoh 1",
+      "starkesCode": "PKPO 3",
+      "jenis": "Kerangka formularium dan prosedur penyusunan",
+      "title": "Prosedur Contoh 1",
+      "doc_no": "001/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 1 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 1 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 1 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 1 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 1 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 1 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 1 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    },
+    {
+      "name": "SPO Contoh 2",
+      "starkesCode": "KPS 7",
+      "jenis": "Standar Prosedur Operasional (SPO)",
+      "title": "Prosedur Contoh 2",
+      "doc_no": "002/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 2 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 2 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 2 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 2 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 2 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 2 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 2 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    },
+    {
+      "name": "SPO Contoh 3",
+      "starkesCode": "PAB 1",
+      "jenis": "Standar Prosedur Operasional (SPO)",
+      "title": "Prosedur Contoh 3",
+      "doc_no": "003/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 3 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 3 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 3 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 3 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 3 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 3 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 3 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    },
+    {
+      "name": "SPO Contoh 4",
+      "starkesCode": "PAB 2",
+      "jenis": "Standar Prosedur Operasional (SPO)",
+      "title": "Prosedur Contoh 4",
+      "doc_no": "004/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 4 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 4 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 4 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 4 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 4 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 4 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 4 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    },
+    {
+      "name": "SPO Contoh 5",
+      "starkesCode": "PKPO 3",
+      "jenis": "Kerangka formularium dan prosedur penyusunan",
+      "title": "Prosedur Contoh 5",
+      "doc_no": "005/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 5 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 5 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 5 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 5 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 5 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 5 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 5 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    },
+    {
+      "name": "SPO Contoh 6",
+      "starkesCode": "PKPO 3",
+      "jenis": "Kerangka formularium dan prosedur penyusunan",
+      "title": "Prosedur Contoh 6",
+      "doc_no": "006/SPO/CONTOH/I/2099",
+      "rev": "00",
+      "date": "1 Januari 2099",
+      "unit": "Contoh unit SPO 6 (fiktif).",
+      "pengertian": "Contoh pengertian SPO 6 (fiktif).",
+      "tujuan": "Contoh tujuan SPO 6 (fiktif).",
+      "ruang_lingkup": "Contoh ruang lingkup SPO 6 (fiktif).",
+      "kebijakan": "Contoh kebijakan SPO 6 (fiktif).",
+      "tanggung_jawab": "Peran | Pemegang\nPelaksana | Contoh Unit",
+      "unit_terkait": "Contoh unit terkait SPO 6 (fiktif).",
+      "prosedur": "Langkah 1: Contoh langkah pertama.\nLangkah 2: Contoh langkah kedua.",
+      "dokumen_terkait": "Contoh dokumen terkait SPO 6 (fiktif).",
+      "riwayat_revisi": "00 | 1 Januari 2099 | Contoh fiktif",
+      "disusun_jabatan": "Kepala Unit Contoh",
+      "disusun_nama": "Contoh Penyusun",
+      "diperiksa_jabatan": "Direktur",
+      "diperiksa_nama": "dr. Contoh Direktur"
+    }
+  ],
+  "forms": [
+    {
+      "name": "Formulir Contoh 1",
+      "form_code": "FRM-CONTOH-01",
+      "starkes_ref": "STARKES PAB 2",
+      "unit": "Unit Contoh",
+      "title": "Formulir Contoh 1",
+      "instructions": "Isi formulir contoh ini (fiktif).",
+      "sections": [
+        {
+          "title": "Bagian contoh",
+          "rows": [
+            {
+              "item": "Butir contoh",
+              "desc": "Keterangan contoh",
+              "options": "Ya / Tidak"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Formulir Contoh 2",
+      "form_code": "FRM-CONTOH-02",
+      "starkes_ref": "STARKES PKPO 2",
+      "unit": "Unit Contoh",
+      "title": "Formulir Contoh 2",
+      "instructions": "Isi formulir contoh ini (fiktif).",
+      "sections": [
+        {
+          "title": "Bagian contoh",
+          "rows": [
+            {
+              "item": "Butir contoh",
+              "desc": "Keterangan contoh",
+              "options": "Ya / Tidak"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sk": [
+    {
+      "name": "SK Contoh 1",
+      "no_sk": "001/SK-CONTOH/I/2099",
+      "tentang": "Contoh keputusan direktur 1",
+      "menimbang": [
+        "bahwa ini contoh pertimbangan fiktif;"
+      ],
+      "mengingat": [
+        "Contoh dasar hukum;"
+      ],
+      "diktum": [
+        {
+          "label": "KESATU",
+          "isi": "Isi diktum contoh 1."
+        },
+        {
+          "label": "KEDUA",
+          "isi": "Isi diktum contoh 2."
+        },
+        {
+          "label": "KETIGA",
+          "isi": "Isi diktum contoh 3."
+        },
+        {
+          "label": "KEEMPAT",
+          "isi": "Isi diktum contoh 4."
+        }
+      ]
+    },
+    {
+      "name": "SK Contoh 2",
+      "no_sk": "002/SK-CONTOH/I/2099",
+      "tentang": "Contoh keputusan direktur 2",
+      "menimbang": [
+        "bahwa ini contoh pertimbangan fiktif;"
+      ],
+      "mengingat": [
+        "Contoh dasar hukum;"
+      ],
+      "diktum": [
+        {
+          "label": "KESATU",
+          "isi": "Isi diktum contoh 1."
+        },
+        {
+          "label": "KEDUA",
+          "isi": "Isi diktum contoh 2."
+        },
+        {
+          "label": "KETIGA",
+          "isi": "Isi diktum contoh 3."
+        },
+        {
+          "label": "KEEMPAT",
+          "isi": "Isi diktum contoh 4."
+        }
+      ]
+    }
+  ]
+}

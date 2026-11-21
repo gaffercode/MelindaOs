@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { DirectorAuthConfiguration } from "@/lib/director/director-auth";
 import { parseReferralPayload } from "@/lib/referral/referral-contract";
-import { listReferrals, submitReferral, updateReferralStatus } from "@/lib/referral/referral-store";
+import { listInboxReferrals, listReferrals, submitReferral, updateReferralStatus } from "@/lib/referral/referral-store";
 import { emptyReferralDraft, type StoredReferral } from "@/lib/referral/referral-types";
 
 function validPayload() {
@@ -45,6 +45,23 @@ describe("referral store", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0].payload.patient.name).toBe("Pasien QA");
     expect(calls[0]).toEqual({ command: "list", args: { limit: 25 }, rpc: "melinda_referrals" });
+  });
+
+  it("keeps an unhandled referral in the inbox when more than 100 newer ones exist", async () => {
+    const payload = validPayload();
+    const row = (index: number, status: string, receivedAt: string) => ({ id: `00000000-0000-4000-8000-${String(index).padStart(12, "0")}`, reference: `RJ-20261116-${String(index).padStart(8, "0")}`, receivedAt, status, payload, note: null, handledBy: null, handledAt: null });
+    const newestClosed = Array.from({ length: 100 }, (_, index) => row(index + 1, "selesai", `2026-11-16T05:${String(index % 60).padStart(2, "0")}:00Z`));
+    const oldUnhandled = row(500, "baru", "2026-11-10T02:00:00Z");
+    const calls: Record<string, unknown>[] = [];
+    const config = { store: { call: async (_command: string, args: Record<string, unknown>) => {
+      calls.push(args);
+      return { referrals: args.status === "baru" ? [oldUnhandled] : args.status ? [] : newestClosed };
+    } } } as unknown as DirectorAuthConfiguration;
+    const rows = await listInboxReferrals(config);
+    expect(rows).toHaveLength(101);
+    expect(rows.at(-1)?.id).toBe(oldUnhandled.id);
+    expect(rows[0].receivedAt >= rows[1].receivedAt).toBe(true);
+    expect(calls).toEqual([{ limit: 100 }, { status: "baru", limit: 100 }, { status: "dihubungi", limit: 100 }, { status: "diterima", limit: 100 }]);
   });
 
   it("updates a status and returns the stored row", async () => {
