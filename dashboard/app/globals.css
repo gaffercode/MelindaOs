@@ -2673,6 +2673,18 @@ circle.medify-chart-mark { fill: #334155; }
 .referral-inbox-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
 .referral-inbox-head h1 { margin: 0 0 6px; font-size: var(--type-title); font-weight: 500; letter-spacing: -0.01em; }
 .referral-inbox-head p:not(.referral-kicker) { margin: 0; color: var(--muted); font-size: var(--type-body); line-height: 1.55; }
+.referral-inbox-head-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.referral-new-count { display: inline-flex; align-items: center; min-height: 30px; padding: 0 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: var(--type-micro); font-weight: 600; }
+.referral-inbox-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.referral-inbox-tools input { flex: 1 1 260px; min-height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--color-background-surface); color: var(--text); font-size: var(--type-ui); }
+.referral-sort { display: inline-flex; overflow: hidden; border: 1px solid var(--line); border-radius: 999px; background: var(--color-background-surface); }
+.referral-sort button { min-height: 38px; padding: 0 12px; border: 0; background: transparent; color: var(--muted); font-size: var(--type-ui); }
+.referral-sort button.is-active { background: var(--accent-soft); color: var(--accent); }
+.referral-clear { border: 0; background: none; color: var(--accent); font-size: var(--type-micro); text-decoration: underline; }
+.referral-inbox-count { margin: 0 0 12px; color: var(--muted); font-size: var(--type-micro); }
+.referral-inbox-wait { justify-self: start; padding: 2px 8px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: var(--type-micro); }
+.referral-inbox-wait.is-overdue { background: var(--danger-soft); color: var(--danger); font-weight: 600; }
+.referral-contact-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 .referral-filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
 .referral-filters button { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--color-background-surface); color: var(--muted); font-size: var(--type-ui); }
 .referral-filters button.is-active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
@@ -2734,6 +2746,8 @@ circle.medify-chart-mark { fill: #334155; }
   .referral-strip { margin: -16px -16px 14px; }
   .referral-sheet { padding: 18px 16px; }
   .referral-inbox-head { flex-direction: column; }
+  .referral-inbox-head-actions { justify-content: flex-start; }
+  .referral-inbox-tools input { flex-basis: 100%; }
   .referral-inbox-facts > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
 @media print {
