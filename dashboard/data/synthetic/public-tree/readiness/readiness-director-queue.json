@@ -1,0 +1,43 @@
+{
+  "valueRules": {
+    "maxLength": 200,
+    "refusePattern": "\\b(belum|menunggu|perlu (?:di)?konfirmasi|perlu dicek|harus dicek|tidak tercantum|tidak ada di dokumen|tidak (?:dapat|bisa) dikonfirmasi|diisi (?:saat|oleh|dari)|jangan ditebak|ambil dari|status dokumen|draf untuk koreksi|dikonfirmasi|konfirmasi|tidak diketahui|belum ditetapkan)\\b"
+  },
+  "items": [
+    {
+      "id": "0000000000000001",
+      "docPath": "knowledge/06_CLINICAL_SAFETY/contoh/kb-operasional-spo-contoh.md",
+      "docTitle": "SPO Contoh (fiktif)",
+      "heading": "## Identitas Dokumen",
+      "text": "| Nomor dokumen | [ISI dari register resmi RS] |",
+      "slots": [
+        {
+          "column": 18,
+          "placeholder": "[ISI dari register resmi RS]",
+          "kind": "ISI",
+          "detail": "Contoh butir isian Direktur (fiktif).",
+          "lock": "number",
+          "header": "Isi"
+        }
+      ]
+    },
+    {
+      "id": "0000000000000002",
+      "docPath": "knowledge/06_CLINICAL_SAFETY/contoh/kb-operasional-spo-contoh.md",
+      "docTitle": "SPO Contoh (fiktif)",
+      "heading": "## Identitas Dokumen",
+      "text": "| Disusun oleh | Kepala Unit Contoh [CEK] | [ISI] |",
+      "slots": [
+        {
+          "column": 36,
+          "placeholder": "[CEK]",
+          "kind": "CEK",
+          "detail": "Contoh butir isian Direktur (fiktif).",
+          "lock": null,
+          "header": "Isi"
+        }
+      ]
+    }
+  ],
+  "drafts": []
+}

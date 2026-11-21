@@ -49,6 +49,11 @@ describe("role-aware navigation", () => {
     expect(screen.queryByText("Direktur")).toBeNull();
   });
 
+  it("tells every signed-in user that this is a beta build, with its version", () => {
+    shell("STAFF_HR");
+    expect(screen.getAllByText(/Versi beta \d+\.\d+\.\d+ · masih dalam uji coba/).length).toBeGreaterThan(0);
+  });
+
   it("gives the Director a Pengguna link", () => {
     render(<DirectorShell date="2026-11-12" pending={null} authenticated principal={{ kind: "director", role: "DIRECTOR", displayName: "Direktur", mustChange: false }} allowedPages={allowedPages({ role: "DIRECTOR", mustChange: false })}><p>isi</p></DirectorShell>);
     expect(screen.getAllByRole("link", { name: /Pengguna$/ })[0].getAttribute("href")).toBe("/pengguna");

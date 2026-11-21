@@ -73,9 +73,21 @@ describe("account sign-in", () => {
   it("rate limits by address and by email before looking the account up", async () => {
     await signIn(FINANCE.email, FINANCE.password);
     const lookup = fake.state.calls.findIndex((call) => call.command === "login_lookup");
-    expect(fake.state.calls.slice(0, lookup).map((call) => [call.command, call.args.bucket])).toEqual([["rate_limit", "access-ip:unknown"], ["rate_limit", `access-email:${FINANCE.email}`]]);
-    fake.state.rateLimits.set(`access-email:${FINANCE.email}`, 5);
+    expect(fake.state.calls.slice(0, lookup).map((call) => [call.command, call.args.bucket])).toEqual([["rate_limit", "access-ip:unknown"], ["rate_limit", `access-email:${FINANCE.email}:unknown`]]);
+    fake.state.rateLimits.set(`access-email:${FINANCE.email}:unknown`, 5);
     expect((await signIn(FINANCE.email, FINANCE.password)).status).toBe(429);
+  });
+
+  it("does not let failed sign-ins from one address lock the account for another address or for a password change", async () => {
+    const from = (address: string, password: string) => sessionRoute.POST(json("/api/access/session", "POST", { email: FINANCE.email, password }, { "X-Forwarded-For": address }));
+    for (let attempt = 0; attempt < 5; attempt += 1) expect((await from("203.0.113.9", "not-the-password")).status).toBe(401);
+    expect((await from("203.0.113.9", FINANCE.password)).status).toBe(429);
+    const owner = await from("198.51.100.4", FINANCE.password);
+    expect(owner.status).toBe(200);
+    const token = tokenFrom(owner);
+    const changed = await passwordRoute.POST(json("/api/access/password", "POST", { currentPassword: FINANCE.password, newPassword: "a-new-long-password-1" }, { Cookie: userCookie(token, true).split(";")[0], "X-CSRF-Token": csrfForSession(token, userOf(FINANCE.email).credentialVersion) }));
+    expect(changed.status).toBe(200);
+    expect(fake.state.calls.filter((call) => call.command === "rate_limit").map((call) => call.args.bucket)).toContain(`access-password:${FINANCE.email}`);
   });
 
   it("normalises the email before every check", async () => {

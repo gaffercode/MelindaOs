@@ -82,7 +82,7 @@ describe("Arahan panel", () => {
   it("shows a saved card read-only with its ledger status", () => {
     const saved = { ...toInstructionInput(card, today, context), id: "IOC-0012", status: "terkirim_ke_grokbot", history: [], createdAt: "2026-11-05T02:00:00Z" } as Instruction;
     const html = render({ saved });
-    expect(html).toContain("IOC-0012 · Terkirim ke GrokBot");
+    expect(html).toContain("IOC-0012 · Menunggu diteruskan");
     expect(html).not.toContain("<input");
     expect(html).not.toContain("<textarea");
   });

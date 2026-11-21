@@ -1,9 +1,9 @@
 import { createHash } from "node:crypto";
-import { mkdtempSync, readFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { REQUIRED_FILES, fetchPrivateData, parseManifest, safePath } from "../scripts/fetch-private-data.mjs";
+import { REQUIRED_FILES, fetchPrivateData, parseManifest, safePath, untrackedKnowledge } from "../scripts/fetch-private-data.mjs";
 
 const env = { MELINDAOS_PRIVATE_DATA: "required", MELINDAOS_SUPABASE_URL: "https://project.supabase.example", MELINDAOS_SUPABASE_SECRET_KEY: "test-service-key" } as unknown as NodeJS.ProcessEnv;
 const sha = (text: string) => createHash("sha256").update(text).digest("hex");
@@ -30,6 +30,25 @@ describe("fetch-private-data", () => {
     expect(await fetchPrivateData({ env: {} as NodeJS.ProcessEnv, transport, log: (line) => lines.push(line) })).toEqual({ skipped: true, files: 0 });
     expect(calls).toEqual([]);
     expect(lines[0]).toContain("skipped");
+  });
+
+  it("stops a Vercel production build that has neither the flag nor the private files on disk", async () => {
+    const production = { VERCEL_ENV: "production" } as unknown as NodeJS.ProcessEnv;
+    const { calls, transport } = storage({});
+    const empty = mkdtempSync(join(tmpdir(), "private-data-"));
+    await expect(fetchPrivateData({ env: production, transport, root: empty, log: () => {} })).rejects.toThrow("MELINDAOS_PRIVATE_DATA=required");
+    const carried = mkdtempSync(join(tmpdir(), "private-data-"));
+    mkdirSync(join(carried, "knowledge", "01_HOSPITAL"), { recursive: true });
+    expect(await fetchPrivateData({ env: production, transport, root: carried, log: () => {} })).toEqual({ skipped: true, files: 0 });
+    expect(calls).toEqual([]);
+  });
+
+  it("names knowledge files that Git does not track, except the folders kept local by design", () => {
+    expect(untrackedKnowledge([
+      "knowledge/06_CLINICAL_SAFETY/kb-klinis-baru.md",
+      "knowledge/07_LEGAL_REGULATORY/kredensial/berkas_2026/bukti_foto/lembar-01.pdf",
+      "dashboard/data/melinda/2026-11-20.json",
+    ])).toEqual(["knowledge/06_CLINICAL_SAFETY/kb-klinis-baru.md"]);
   });
 
   it("downloads the current release and checks every file", async () => {

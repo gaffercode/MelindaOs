@@ -83,9 +83,11 @@ export async function loginAccount(request: Request): Promise<Response> {
   const body = objectBody(await readBoundedJson(request, 4096), ["email", "password"], ["returnTo"]);
   if (typeof body.email !== "string" || body.email.length > 254) throw new DirectorApiError(400, "Format permintaan tidak valid.");
   // Throttle before verification so wrong passwords count too; scrypt is CPU-bound.
-  await rateLimit(config, `access-ip:${clientAddress(request)}`, 10, 900);
+  const address = clientAddress(request);
+  await rateLimit(config, `access-ip:${address}`, 10, 900);
   const email = body.email.trim().toLowerCase();
-  const emailBucket = `access-email:${email}`;
+  // Keyed on the address too: this counts before the password is checked, so an email-only bucket would let anyone lock a known account out.
+  const emailBucket = `access-email:${email}:${address}`;
   await rateLimit(config, emailBucket, 5, 900);
   const access = new AccessStore(config.store);
   const user = await available(access.loginLookup(email));
@@ -124,7 +126,8 @@ export async function changePassword(request: Request): Promise<Response> {
   const { principal, raw, session, access } = await requireAccount(request, config);
   const body = objectBody(await readBoundedJson(request, 4096), ["currentPassword", "newPassword"]);
   if (!validNewPassword(body.newPassword) || body.newPassword === body.currentPassword) throw new DirectorApiError(400, "Password baru harus 12–256 karakter dan berbeda dari password lama.");
-  await rateLimit(config, `access-email:${session.email}`, 5, 900);
+  // Its own bucket: only a signed-in session reaches this line, and failed sign-ins must not block a password change.
+  await rateLimit(config, `access-password:${session.email}`, 5, 900);
   const user = await available(access.loginLookup(session.email));
   if (!verifyPassword(body.currentPassword, user?.passwordHash ?? DUMMY_HASH) || !user) throw new DirectorApiError(400, "Password saat ini tidak sesuai.");
   const credentialVersion = randomBytes(32).toString("hex");

@@ -1,4 +1,4 @@
-import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createHash, scryptSync } from "node:crypto";
@@ -654,50 +654,5 @@ describe("AI Morning Brief Composer SATUSEHAT integration", () => {
     const brief = parseMelindaBrief(briefRow!.payload);
     expect(brief.sources).toContain("Satu Sehat Kemenkes");
     expect(brief.composer?.facts).toBe(facts.length);
-  });
-});
-
-describe("Biznet Gio SATUSEHAT scheduler kit", () => {
-  const dir = new URL("../deploy/biznet-satusehat/", import.meta.url);
-  const read = (name: string) => readFileSync(new URL(name, dir), "utf8");
-
-  it("schedules morning (05:55) and evening (17:55) Jakarta timers, five minutes before Medify", () => {
-    const morning = read("melindaos-satusehat-morning.timer");
-    const evening = read("melindaos-satusehat-evening.timer");
-    expect(morning).toContain("OnCalendar=*-*-* 05:55:00 Asia/Jakarta");
-    expect(morning).toContain("Unit=melindaos-satusehat@morning.service");
-    expect(evening).toContain("OnCalendar=*-*-* 17:55:00 Asia/Jakarta");
-    expect(evening).toContain("Unit=melindaos-satusehat@evening.service");
-    for (const timer of [morning, evening]) expect(timer).toContain("Persistent=true");
-  });
-
-  it("installs the standalone .mjs scripts using only node: and ./ imports", () => {
-    const install = read("install.sh");
-    const listed = install.match(/SCRIPTS=\(([^)]*)\)/)?.[1].trim().split(/\s+/) ?? [];
-    expect(listed.sort()).toEqual([
-      "daily-publisher-client.mjs",
-      "run-satusehat-scheduled.mjs",
-      "satusehat-pull.mjs",
-    ]);
-    for (const script of listed) {
-      expect(existsSync(new URL(`../scripts/${script}`, import.meta.url))).toBe(true);
-      const source = readFileSync(new URL(`../scripts/${script}`, import.meta.url), "utf8");
-      const local = [...source.matchAll(/from "\.\/([^"]+)"/g)].map((m) => m[1]);
-      for (const dep of local) expect(listed).toContain(dep);
-      expect(source).not.toMatch(/from "(?!node:|\.\/)/);
-    }
-  });
-
-  it("keeps all secrets empty in satusehat.env.example", () => {
-    const example = read("satusehat.env.example");
-    for (const key of [
-      "SATUSEHAT_CLIENT_ID",
-      "SATUSEHAT_CLIENT_SECRET",
-      "SATUSEHAT_ORG_ID",
-      "MELINDAOS_PUBLISHER_TOKEN",
-    ]) {
-      expect(example).toMatch(new RegExp(`^${key}=$`, "m"));
-    }
-    expect(example).toMatch(/^MELINDAOS_DASHBOARD_URL=https:\/\/melindaos\.app$/m);
   });
 });

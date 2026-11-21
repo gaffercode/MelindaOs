@@ -14,7 +14,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { PUBLIC_SUBSTITUTES, isPrivate } from "./private-data.mjs";
-import { BUCKET, parseManifest, safePath } from "../dashboard/scripts/fetch-private-data.mjs";
+import { BUCKET, parseManifest, safePath, untrackedKnowledge } from "../dashboard/scripts/fetch-private-data.mjs";
 
 const fail = (message) => { console.error(`publish-private-data: ${message}`); process.exit(1); };
 const capsule = process.cwd();
@@ -28,7 +28,11 @@ export function bundleFiles(listing) {
   return [...new Set([...wanted, ...originals])].filter((file) => safePath(file) && existsSync(join(capsule, file)) && statSync(join(capsule, file)).isFile()).sort();
 }
 
-const listing = execFileSync("git", ["ls-files", "-z", "--cached", "--others", "--exclude-standard"], { cwd: capsule, encoding: "utf8" }).split("\0").filter(Boolean);
+const gitFiles = (...flags) => execFileSync("git", ["ls-files", "-z", ...flags], { cwd: capsule, encoding: "utf8" }).split("\0").filter(Boolean);
+// .gitignore ignores knowledge/, so a document that was never added is in no Git listing and would be left out silently.
+const missed = untrackedKnowledge(gitFiles("--others", "--ignored", "--exclude-standard", "--", "knowledge"));
+if (missed.length) fail(`${missed.length} knowledge file(s) are on disk but not tracked by Git, so this release would not carry them:\n  ${missed.join("\n  ")}\nTrack them first (git add -f <path>), then run this again.`);
+const listing = gitFiles("--cached", "--others", "--exclude-standard");
 const files = bundleFiles(listing).map((path) => {
   const body = readFileSync(join(capsule, path));
   return { path, bytes: body.length, sha256: createHash("sha256").update(body).digest("hex") };

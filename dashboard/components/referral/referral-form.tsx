@@ -389,6 +389,7 @@ export function ReferralForm({ today, time, whatsapp }: { today: string; time: s
               <input {...fieldProps("referral-consent")} type="checkbox" checked={draft.consent} onChange={(event) => setDraft((current) => ({ ...current, consent: event.target.checked }))} />
               <span>Saya sudah menjelaskan tujuan rujukan kepada pasien atau keluarganya dan mendapat izin mengirim data ini ke RSIA Melinda DHAI. <b aria-hidden="true">*</b></span>
             </label>
+            <p className="referral-privacy">Pemberitahuan privasi: data pasien dan perujuk pada form ini dikirim ke RSIA Melinda DHAI, hanya dibuka oleh petugas rumah sakit yang berwenang, dan dipakai untuk menyiapkan penerimaan pasien rujukan. Permintaan koreksi atau penghapusan data dapat disampaikan langsung ke RSIA Melinda DHAI.</p>
 
             {fieldError("referral-consent")}
             {Object.keys(errors).length > 0 && (

@@ -1,47 +1,8 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { decisionReducer, initialDecisionState, type Decision, type DecisionAction, type DecisionState } from "@/lib/decision/decision-state";
+import { decisionReducer, initialDecisionState, type DecisionAction, type DecisionState } from "@/lib/decision/decision-state";
 import { readDecisionState, STORAGE_KEY } from "@/lib/decision/decision-storage";
-
-const seedDecisions: Decision[] = [
-  {
-    id: "sample-1",
-    title: "Tentukan scope koneksi SIMRS untuk fase berikutnya",
-    priority: "critical",
-    owner: "Nexus",
-    dueDate: "2026-10-01",
-    recommendation: "Validasi endpoint read-only dan authority boundary sebelum menyambungkan telemetry live.",
-    status: "local_draft",
-    resolutionReason: "",
-    createdAt: "2026-09-29T00:00:00.000Z",
-    updatedAt: "2026-09-29T00:00:00.000Z",
-  },
-  {
-    id: "sample-2",
-    title: "Review freshness policy untuk dokumen regulasi",
-    priority: "high",
-    owner: "Aegis",
-    dueDate: "2026-10-03",
-    recommendation: "Tetapkan ambang freshness berbasis kelas sumber sebelum menampilkan freshness KPI.",
-    status: "local_draft",
-    resolutionReason: "",
-    createdAt: "2026-09-29T00:05:00.000Z",
-    updatedAt: "2026-09-29T00:05:00.000Z",
-  },
-  {
-    id: "sample-3",
-    title: "Konfirmasi owner backend Decision Inbox",
-    priority: "medium",
-    owner: "Atlas",
-    dueDate: "2026-10-07",
-    recommendation: "Pilih service owner dan storage contract sebelum state lokal dipromosikan menjadi workflow institusi.",
-    status: "local_draft",
-    resolutionReason: "",
-    createdAt: "2026-09-29T00:10:00.000Z",
-    updatedAt: "2026-09-29T00:10:00.000Z",
-  },
-];
 
 interface DecisionSession {
   state: DecisionState;
@@ -61,12 +22,12 @@ export function DecisionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const bootstrap = window.setTimeout(() => {
       try {
-        const saved = readDecisionState(window.localStorage, { decisions: seedDecisions, audit: [] });
+        const saved = readDecisionState(window.localStorage, initialDecisionState);
         writable.current = saved.writable;
         setState(saved.state);
         setError(saved.error);
       } catch {
-        setState({ decisions: seedDecisions, audit: [] });
+        setState(initialDecisionState);
         setError("Penyimpanan browser tidak dapat dibaca. Perubahan berlaku pada sesi ini saja.");
       } finally {
         setReady(true);

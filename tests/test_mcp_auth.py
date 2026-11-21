@@ -2,6 +2,24 @@ import asyncio
 import importlib
 import importlib.util
 
+import pytest
+
+# Every variable the middleware reads. A value set on the developer's machine (a real MCP token, all-access mode)
+# would otherwise decide these tests.
+AUTH_ENVIRONMENT = (
+    "MELINDA_AGENT_MCP_BEARER_MAP_FILE",
+    "MELINDAOS_MCP_TOKEN",
+    "MELINDAOS_MCP_TOKEN_HASH",
+    "MAAF_ALL_ACCESS",
+    "MELINDAOS_MCP_ALL_ACCESS",
+)
+
+
+@pytest.fixture(autouse=True)
+def clean_auth_environment(monkeypatch):
+    for name in AUTH_ENVIRONMENT:
+        monkeypatch.delenv(name, raising=False)
+
 
 def middleware_type():
     spec = importlib.util.find_spec("melinda_maaf.mcp_auth")

@@ -1,4 +1,4 @@
-import { jsonResponse, readBoundedJson } from "../director/director-api";
+import { jsonResponse, rateLimit, readBoundedJson } from "../director/director-api";
 import { logError } from "../log";
 import { authenticateMcp, type McpAuthContext } from "./auth";
 import { executeMcpTool, MCP_ICONS, MCP_LOGO_URL, MCP_TOOLS, McpToolError } from "./tools";
@@ -13,6 +13,9 @@ const SERVER_INFO = {
   icons: MCP_ICONS,
 };
 const MAX_MCP_BODY_BYTES = 512_000;
+/** A batch runs its items in parallel, so its size bounds how many writes one request can fire. */
+const MAX_MCP_BATCH = 10;
+const MCP_CALLS_PER_MINUTE = 60;
 
 type JsonRpcId = string | number | null;
 type JsonRpcRequest = {
@@ -120,10 +123,12 @@ export async function handleMcpGet(request: Request): Promise<Response> {
 
 export async function handleMcpPost(request: Request): Promise<Response> {
   const ctx = await authenticateMcp(request);
+  // One shared token serves every agent, so the limit is per credential kind. File mode has no store to count in.
+  if (ctx.config) await rateLimit(ctx.config, `mcp:${ctx.mode}`, MCP_CALLS_PER_MINUTE, 60);
   const body = await readBoundedJson(request, MAX_MCP_BODY_BYTES);
 
   if (Array.isArray(body)) {
-    if (body.length === 0) {
+    if (body.length === 0 || body.length > MAX_MCP_BATCH) {
       return jsonResponse(rpcError(null, -32600, "Invalid Request"), 400);
     }
     const replies = (await Promise.all(body.map((item) => handleJsonRpcMessage(item, ctx)))).filter(

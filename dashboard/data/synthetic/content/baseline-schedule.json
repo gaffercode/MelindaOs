@@ -1,0 +1,2521 @@
+{
+  "_note": "Fictional sample for the public repository. The production build replaces this file with the hospital's real content from private storage (dashboard/scripts/fetch-private-data.mjs).",
+  "roles": [
+    {
+      "id": "direktur",
+      "title": "Direktur",
+      "officialName": "dr. Contoh Direktur",
+      "shortName": "dr. Contoh Direktur",
+      "workHoursWib": "10.00–18.00 WIB (Persiapan 09.00)",
+      "lineReportTo": "Pemilik / Dewan Pengawas",
+      "scopeSummary": "Contoh lingkup kerja Direktur (fiktif)."
+    },
+    {
+      "id": "wadir_ops",
+      "title": "Wadir Operasional",
+      "officialName": "dr. Contoh Wadir Operasional",
+      "shortName": "dr. Contoh Wadir Ops",
+      "workHoursWib": "09.00–18.00 WIB",
+      "lineReportTo": "Direktur",
+      "scopeSummary": "Contoh lingkup kerja Wadir Operasional (fiktif)."
+    },
+    {
+      "id": "wadir_keu_sdm",
+      "title": "Wadir Keuangan & SDM",
+      "officialName": "Contoh Wadir Keuangan, S.E.",
+      "shortName": "Ibu Contoh Wadir Keu",
+      "workHoursWib": "09.00–18.00 WIB",
+      "lineReportTo": "Direktur",
+      "scopeSummary": "Contoh lingkup kerja Wadir Keuangan & SDM (fiktif)."
+    },
+    {
+      "id": "kabag_pelayanan",
+      "title": "Kabag Pelayanan",
+      "officialName": "Contoh Kabag Pelayanan, A.Md.Keb.",
+      "shortName": "Ibu Contoh Pelayanan",
+      "workHoursWib": "08.00–16.00 WIB",
+      "lineReportTo": "Wadir Operasional",
+      "scopeSummary": "Contoh lingkup kerja Kabag Pelayanan (fiktif)."
+    },
+    {
+      "id": "kabag_umum",
+      "title": "Kabag Umum",
+      "officialName": "Contoh Kabag Umum",
+      "shortName": "Ibu Contoh Umum",
+      "workHoursWib": "08.00–16.00 WIB",
+      "lineReportTo": "Wadir Operasional",
+      "scopeSummary": "Contoh lingkup kerja Kabag Umum (fiktif)."
+    },
+    {
+      "id": "kabag_penunjang",
+      "title": "Kabag Penunjang",
+      "officialName": "Contoh Kabag Penunjang",
+      "shortName": "Bapak Contoh Penunjang",
+      "workHoursWib": "08.00–16.00 WIB",
+      "lineReportTo": "Wadir Operasional",
+      "scopeSummary": "Contoh lingkup kerja Kabag Penunjang (fiktif)."
+    },
+    {
+      "id": "kepala_sdm",
+      "title": "Kepala SDM",
+      "officialName": "Contoh Kabag Umum",
+      "shortName": "Ibu Contoh Umum",
+      "workHoursWib": "08.00–16.00 WIB",
+      "lineReportTo": "Wadir Keuangan & SDM",
+      "scopeSummary": "Contoh lingkup kerja Kepala SDM (fiktif)."
+    },
+    {
+      "id": "kepala_keuangan",
+      "title": "Kepala Keuangan",
+      "officialName": "Contoh Kepala Keuangan",
+      "shortName": "Ibu Contoh Keuangan",
+      "workHoursWib": "08.00–16.00 WIB",
+      "lineReportTo": "Wadir Keuangan & SDM",
+      "scopeSummary": "Contoh lingkup kerja Kepala Keuangan (fiktif)."
+    }
+  ],
+  "weekdays": {
+    "1": [
+      {
+        "idSuffix": "forum-a",
+        "timeRange": "08.10–08.25",
+        "startTime": "08:10",
+        "endTime": "08:25",
+        "title": "Contoh kegiatan clinical (forum-a)",
+        "category": "Clinical",
+        "forumId": "forum_a_klinis",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "forum-b",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-b)",
+        "category": "Meeting",
+        "forumId": "forum_b_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-keu",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-c-keu)",
+        "category": "Meeting",
+        "forumId": "forum_c_keuangan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-sdm",
+        "timeRange": "09.20–09.25",
+        "startTime": "09:20",
+        "endTime": "09:25",
+        "title": "Contoh kegiatan meeting (forum-c-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_c_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "pre-brief",
+        "timeRange": "09.30–09.40",
+        "startTime": "09:30",
+        "endTime": "09:40",
+        "title": "Contoh kegiatan preparation (pre-brief)",
+        "category": "Preparation",
+        "forumId": "pre_brief_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "baca-pre-brief",
+        "timeRange": "09.40–09.50",
+        "startTime": "09:40",
+        "endTime": "09:50",
+        "title": "Contoh kegiatan preparation (baca-pre-brief)",
+        "category": "Preparation",
+        "forumId": "baca_pre_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "lead-brief",
+        "timeRange": "10.00–10.15",
+        "startTime": "10:00",
+        "endTime": "10:15",
+        "title": "Lead brief harian contoh (Pekan {weekIndex} — dipimpin {leaderName})",
+        "category": "Meeting",
+        "forumId": "lead_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "{leaderName}",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "visite",
+        "timeRange": "10.15–10.40",
+        "startTime": "10:15",
+        "endTime": "10:40",
+        "title": "Contoh kegiatan clinical (visite)",
+        "category": "Clinical",
+        "forumId": "visite_prioritas",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "decision-log",
+        "timeRange": "10.45–11.00",
+        "startTime": "10:45",
+        "endTime": "11:00",
+        "title": "Contoh kegiatan meeting (decision-log)",
+        "category": "Meeting",
+        "forumId": "decision_log",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "blok-pembayaran",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (blok-pembayaran)",
+        "category": "Focus",
+        "forumId": "blok_pembayaran",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "fokus-direksi-pagi",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (fokus-direksi-pagi)",
+        "category": "Focus",
+        "forumId": "eksekusi_fokus_pagi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Eksternal",
+          "Pelayanan",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "istirahat",
+        "timeRange": "12.00–13.00",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "title": "Contoh kegiatan break (istirahat)",
+        "category": "Break",
+        "forumId": "istirahat_siang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "pleno-senin",
+        "timeRange": "13.00–13.45",
+        "startTime": "13:00",
+        "endTime": "13:45",
+        "title": "Contoh kegiatan meeting (pleno-senin)",
+        "category": "Meeting",
+        "forumId": "pleno_senin",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "jeda",
+        "timeRange": "13.45–14.00",
+        "startTime": "13:45",
+        "endTime": "14:00",
+        "title": "Contoh kegiatan break (jeda)",
+        "category": "Break",
+        "forumId": "jeda_dilindungi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "tertutup-pelayanan",
+        "timeRange": "14.00–14.45",
+        "startTime": "14:00",
+        "endTime": "14:45",
+        "title": "Contoh kegiatan meeting (tertutup-pelayanan)",
+        "category": "Meeting",
+        "forumId": "tertutup_pelayanan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "kabag_pelayanan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "laporan-kepala-fungsi",
+        "timeRange": "14.45–15.00",
+        "startTime": "14:45",
+        "endTime": "15:00",
+        "title": "Contoh kegiatan preparation (laporan-kepala-fungsi)",
+        "category": "Preparation",
+        "forumId": "laporan_kepala_fungsi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "update-sore-wadir",
+        "timeRange": "15.00–15.15",
+        "startTime": "15:00",
+        "endTime": "15:15",
+        "title": "Contoh kegiatan meeting (update-sore-wadir)",
+        "category": "Meeting",
+        "forumId": "update_sore_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "fokus-sore",
+        "timeRange": "15.15–18.00",
+        "startTime": "15:15",
+        "endTime": "18:00",
+        "title": "Contoh kegiatan focus (fokus-sore)",
+        "category": "Focus",
+        "forumId": "blok_fokus_sore",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      }
+    ],
+    "2": [
+      {
+        "idSuffix": "forum-a",
+        "timeRange": "08.10–08.25",
+        "startTime": "08:10",
+        "endTime": "08:25",
+        "title": "Contoh kegiatan clinical (forum-a)",
+        "category": "Clinical",
+        "forumId": "forum_a_klinis",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "forum-b",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-b)",
+        "category": "Meeting",
+        "forumId": "forum_b_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-keu",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-c-keu)",
+        "category": "Meeting",
+        "forumId": "forum_c_keuangan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-sdm",
+        "timeRange": "09.20–09.25",
+        "startTime": "09:20",
+        "endTime": "09:25",
+        "title": "Contoh kegiatan meeting (forum-c-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_c_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "pre-brief",
+        "timeRange": "09.30–09.40",
+        "startTime": "09:30",
+        "endTime": "09:40",
+        "title": "Contoh kegiatan preparation (pre-brief)",
+        "category": "Preparation",
+        "forumId": "pre_brief_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "baca-pre-brief",
+        "timeRange": "09.40–09.50",
+        "startTime": "09:40",
+        "endTime": "09:50",
+        "title": "Contoh kegiatan preparation (baca-pre-brief)",
+        "category": "Preparation",
+        "forumId": "baca_pre_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "lead-brief",
+        "timeRange": "10.00–10.15",
+        "startTime": "10:00",
+        "endTime": "10:15",
+        "title": "Lead brief harian contoh (Pekan {weekIndex} — dipimpin {leaderName})",
+        "category": "Meeting",
+        "forumId": "lead_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "{leaderName}",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "visite",
+        "timeRange": "10.15–10.40",
+        "startTime": "10:15",
+        "endTime": "10:40",
+        "title": "Contoh kegiatan clinical (visite)",
+        "category": "Clinical",
+        "forumId": "visite_prioritas",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "decision-log",
+        "timeRange": "10.45–11.00",
+        "startTime": "10:45",
+        "endTime": "11:00",
+        "title": "Contoh kegiatan meeting (decision-log)",
+        "category": "Meeting",
+        "forumId": "decision_log",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "blok-pembayaran",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (blok-pembayaran)",
+        "category": "Focus",
+        "forumId": "blok_pembayaran",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "fokus-direksi-pagi",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (fokus-direksi-pagi)",
+        "category": "Focus",
+        "forumId": "eksekusi_fokus_pagi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Eksternal",
+          "Pelayanan",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "istirahat",
+        "timeRange": "12.00–13.00",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "title": "Contoh kegiatan break (istirahat)",
+        "category": "Break",
+        "forumId": "istirahat_siang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "sync-layanan-klaim",
+        "timeRange": "13.00–13.45",
+        "startTime": "13:00",
+        "endTime": "13:45",
+        "title": "Contoh kegiatan meeting (sync-layanan-klaim)",
+        "category": "Meeting",
+        "forumId": "sync_layanan_klaim",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Casemix",
+          "Pelayanan",
+          "IT",
+          "Keuangan"
+        ]
+      },
+      {
+        "idSuffix": "jeda",
+        "timeRange": "13.45–14.00",
+        "startTime": "13:45",
+        "endTime": "14:00",
+        "title": "Contoh kegiatan break (jeda)",
+        "category": "Break",
+        "forumId": "jeda_dilindungi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "kabag_penunjang"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "tertutup-penunjang",
+        "timeRange": "14.00–14.45",
+        "startTime": "14:00",
+        "endTime": "14:45",
+        "title": "Contoh kegiatan meeting (tertutup-penunjang)",
+        "category": "Meeting",
+        "forumId": "tertutup_penunjang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "kabag_penunjang"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Farmasi",
+          "IT",
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "laporan-kepala-fungsi",
+        "timeRange": "14.45–15.00",
+        "startTime": "14:45",
+        "endTime": "15:00",
+        "title": "Contoh kegiatan preparation (laporan-kepala-fungsi)",
+        "category": "Preparation",
+        "forumId": "laporan_kepala_fungsi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "update-sore-wadir",
+        "timeRange": "15.00–15.15",
+        "startTime": "15:00",
+        "endTime": "15:15",
+        "title": "Contoh kegiatan meeting (update-sore-wadir)",
+        "category": "Meeting",
+        "forumId": "update_sore_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "eksternal-direksi",
+        "timeRange": "15.15–18.00",
+        "startTime": "15:15",
+        "endTime": "18:00",
+        "title": "Contoh kegiatan external (eksternal-direksi)",
+        "category": "External",
+        "forumId": "eksternal_direksi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Eksternal",
+          "Keuangan",
+          "Casemix"
+        ]
+      }
+    ],
+    "3": [
+      {
+        "idSuffix": "forum-a",
+        "timeRange": "08.10–08.25",
+        "startTime": "08:10",
+        "endTime": "08:25",
+        "title": "Contoh kegiatan clinical (forum-a)",
+        "category": "Clinical",
+        "forumId": "forum_a_klinis",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "forum-b",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-b)",
+        "category": "Meeting",
+        "forumId": "forum_b_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-keu",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-c-keu)",
+        "category": "Meeting",
+        "forumId": "forum_c_keuangan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-sdm",
+        "timeRange": "09.20–09.25",
+        "startTime": "09:20",
+        "endTime": "09:25",
+        "title": "Contoh kegiatan meeting (forum-c-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_c_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "pre-brief",
+        "timeRange": "09.30–09.40",
+        "startTime": "09:30",
+        "endTime": "09:40",
+        "title": "Contoh kegiatan preparation (pre-brief)",
+        "category": "Preparation",
+        "forumId": "pre_brief_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "baca-pre-brief",
+        "timeRange": "09.40–09.50",
+        "startTime": "09:40",
+        "endTime": "09:50",
+        "title": "Contoh kegiatan preparation (baca-pre-brief)",
+        "category": "Preparation",
+        "forumId": "baca_pre_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "lead-brief",
+        "timeRange": "10.00–10.15",
+        "startTime": "10:00",
+        "endTime": "10:15",
+        "title": "Lead brief harian contoh (Pekan {weekIndex} — dipimpin {leaderName})",
+        "category": "Meeting",
+        "forumId": "lead_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "{leaderName}",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "visite",
+        "timeRange": "10.15–10.40",
+        "startTime": "10:15",
+        "endTime": "10:40",
+        "title": "Contoh kegiatan clinical (visite)",
+        "category": "Clinical",
+        "forumId": "visite_prioritas",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "decision-log",
+        "timeRange": "10.45–11.00",
+        "startTime": "10:45",
+        "endTime": "11:00",
+        "title": "Contoh kegiatan meeting (decision-log)",
+        "category": "Meeting",
+        "forumId": "decision_log",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "blok-pembayaran",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (blok-pembayaran)",
+        "category": "Focus",
+        "forumId": "blok_pembayaran",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "fokus-direksi-pagi",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (fokus-direksi-pagi)",
+        "category": "Focus",
+        "forumId": "eksekusi_fokus_pagi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Eksternal",
+          "Pelayanan",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "istirahat",
+        "timeRange": "12.00–13.00",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "title": "Contoh kegiatan break (istirahat)",
+        "category": "Break",
+        "forumId": "istirahat_siang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "forum-d-ops",
+        "timeRange": "13.00–13.45",
+        "startTime": "13:00",
+        "endTime": "13:45",
+        "title": "Contoh kegiatan meeting (forum-d-ops)",
+        "category": "Meeting",
+        "forumId": "forum_d_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "jeda",
+        "timeRange": "13.45–14.00",
+        "startTime": "13:45",
+        "endTime": "14:00",
+        "title": "Contoh kegiatan break (jeda)",
+        "category": "Break",
+        "forumId": "jeda_dilindungi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "tertutup-umum",
+        "timeRange": "14.00–14.45",
+        "startTime": "14:00",
+        "endTime": "14:45",
+        "title": "Contoh kegiatan meeting (tertutup-umum)",
+        "category": "Meeting",
+        "forumId": "tertutup_umum",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Umum",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "laporan-kepala-fungsi",
+        "timeRange": "14.45–15.00",
+        "startTime": "14:45",
+        "endTime": "15:00",
+        "title": "Contoh kegiatan preparation (laporan-kepala-fungsi)",
+        "category": "Preparation",
+        "forumId": "laporan_kepala_fungsi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "update-sore-wadir",
+        "timeRange": "15.00–15.15",
+        "startTime": "15:00",
+        "endTime": "15:15",
+        "title": "Contoh kegiatan meeting (update-sore-wadir)",
+        "category": "Meeting",
+        "forumId": "update_sore_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "fokus-sore",
+        "timeRange": "15.15–18.00",
+        "startTime": "15:15",
+        "endTime": "18:00",
+        "title": "Contoh kegiatan focus (fokus-sore)",
+        "category": "Focus",
+        "forumId": "blok_fokus_sore",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      }
+    ],
+    "4": [
+      {
+        "idSuffix": "forum-a",
+        "timeRange": "08.10–08.25",
+        "startTime": "08:10",
+        "endTime": "08:25",
+        "title": "Contoh kegiatan clinical (forum-a)",
+        "category": "Clinical",
+        "forumId": "forum_a_klinis",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "forum-b",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-b)",
+        "category": "Meeting",
+        "forumId": "forum_b_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-keu",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-c-keu)",
+        "category": "Meeting",
+        "forumId": "forum_c_keuangan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-sdm",
+        "timeRange": "09.20–09.25",
+        "startTime": "09:20",
+        "endTime": "09:25",
+        "title": "Contoh kegiatan meeting (forum-c-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_c_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "pre-brief",
+        "timeRange": "09.30–09.40",
+        "startTime": "09:30",
+        "endTime": "09:40",
+        "title": "Contoh kegiatan preparation (pre-brief)",
+        "category": "Preparation",
+        "forumId": "pre_brief_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "baca-pre-brief",
+        "timeRange": "09.40–09.50",
+        "startTime": "09:40",
+        "endTime": "09:50",
+        "title": "Contoh kegiatan preparation (baca-pre-brief)",
+        "category": "Preparation",
+        "forumId": "baca_pre_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "lead-brief",
+        "timeRange": "10.00–10.15",
+        "startTime": "10:00",
+        "endTime": "10:15",
+        "title": "Lead brief harian contoh (Pekan {weekIndex} — dipimpin {leaderName})",
+        "category": "Meeting",
+        "forumId": "lead_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "{leaderName}",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "visite",
+        "timeRange": "10.15–10.40",
+        "startTime": "10:15",
+        "endTime": "10:40",
+        "title": "Contoh kegiatan clinical (visite)",
+        "category": "Clinical",
+        "forumId": "visite_prioritas",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "decision-log",
+        "timeRange": "10.45–11.00",
+        "startTime": "10:45",
+        "endTime": "11:00",
+        "title": "Contoh kegiatan meeting (decision-log)",
+        "category": "Meeting",
+        "forumId": "decision_log",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "blok-pembayaran",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (blok-pembayaran)",
+        "category": "Focus",
+        "forumId": "blok_pembayaran",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "fokus-direksi-pagi",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (fokus-direksi-pagi)",
+        "category": "Focus",
+        "forumId": "eksekusi_fokus_pagi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Eksternal",
+          "Pelayanan",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "istirahat",
+        "timeRange": "12.00–13.00",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "title": "Contoh kegiatan break (istirahat)",
+        "category": "Break",
+        "forumId": "istirahat_siang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "forum-e-keu-sdm",
+        "timeRange": "13.00–13.45",
+        "startTime": "13:00",
+        "endTime": "13:45",
+        "title": "Contoh kegiatan meeting (forum-e-keu-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_e_keu_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "jeda",
+        "timeRange": "13.45–14.00",
+        "startTime": "13:45",
+        "endTime": "14:00",
+        "title": "Contoh kegiatan break (jeda)",
+        "category": "Break",
+        "forumId": "jeda_dilindungi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "tertutup-keuangan-sdm",
+        "timeRange": "14.00–14.45",
+        "startTime": "14:00",
+        "endTime": "14:45",
+        "title": "Contoh kegiatan meeting (tertutup-keuangan-sdm)",
+        "category": "Meeting",
+        "forumId": "tertutup_keuangan_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "SDM",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "laporan-kepala-fungsi",
+        "timeRange": "14.45–15.00",
+        "startTime": "14:45",
+        "endTime": "15:00",
+        "title": "Contoh kegiatan preparation (laporan-kepala-fungsi)",
+        "category": "Preparation",
+        "forumId": "laporan_kepala_fungsi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "update-sore-wadir",
+        "timeRange": "15.00–15.15",
+        "startTime": "15:00",
+        "endTime": "15:15",
+        "title": "Contoh kegiatan meeting (update-sore-wadir)",
+        "category": "Meeting",
+        "forumId": "update_sore_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "fokus-sore",
+        "timeRange": "15.15–18.00",
+        "startTime": "15:15",
+        "endTime": "18:00",
+        "title": "Contoh kegiatan focus (fokus-sore)",
+        "category": "Focus",
+        "forumId": "blok_fokus_sore",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      }
+    ],
+    "5": [
+      {
+        "idSuffix": "forum-a",
+        "timeRange": "08.10–08.25",
+        "startTime": "08:10",
+        "endTime": "08:25",
+        "title": "Contoh kegiatan clinical (forum-a)",
+        "category": "Clinical",
+        "forumId": "forum_a_klinis",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan"
+        ]
+      },
+      {
+        "idSuffix": "forum-b",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-b)",
+        "category": "Meeting",
+        "forumId": "forum_b_ops",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_penunjang",
+          "kabag_umum",
+          "kepala_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-keu",
+        "timeRange": "09.00–09.15",
+        "startTime": "09:00",
+        "endTime": "09:15",
+        "title": "Contoh kegiatan meeting (forum-c-keu)",
+        "category": "Meeting",
+        "forumId": "forum_c_keuangan",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "forum-c-sdm",
+        "timeRange": "09.20–09.25",
+        "startTime": "09:20",
+        "endTime": "09:25",
+        "title": "Contoh kegiatan meeting (forum-c-sdm)",
+        "category": "Meeting",
+        "forumId": "forum_c_sdm",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_sdm",
+          "kabag_umum"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "pre-brief",
+        "timeRange": "09.30–09.40",
+        "startTime": "09:30",
+        "endTime": "09:40",
+        "title": "Contoh kegiatan preparation (pre-brief)",
+        "category": "Preparation",
+        "forumId": "pre_brief_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "baca-pre-brief",
+        "timeRange": "09.40–09.50",
+        "startTime": "09:40",
+        "endTime": "09:50",
+        "title": "Contoh kegiatan preparation (baca-pre-brief)",
+        "category": "Preparation",
+        "forumId": "baca_pre_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "lead-brief",
+        "timeRange": "10.00–10.15",
+        "startTime": "10:00",
+        "endTime": "10:15",
+        "title": "Lead brief harian contoh (Pekan {weekIndex} — dipimpin {leaderName})",
+        "category": "Meeting",
+        "forumId": "lead_brief",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "{leaderName}",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Farmasi",
+          "Casemix",
+          "Keuangan",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "visite",
+        "timeRange": "10.15–10.40",
+        "startTime": "10:15",
+        "endTime": "10:40",
+        "title": "Contoh kegiatan clinical (visite)",
+        "category": "Clinical",
+        "forumId": "visite_prioritas",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi"
+        ]
+      },
+      {
+        "idSuffix": "decision-log",
+        "timeRange": "10.45–11.00",
+        "startTime": "10:45",
+        "endTime": "11:00",
+        "title": "Contoh kegiatan meeting (decision-log)",
+        "category": "Meeting",
+        "forumId": "decision_log",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      },
+      {
+        "idSuffix": "blok-pembayaran",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (blok-pembayaran)",
+        "category": "Focus",
+        "forumId": "blok_pembayaran",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_keu_sdm",
+          "kepala_keuangan",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm"
+        ],
+        "leadName": "Ibu Contoh Wadir Keu",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Farmasi",
+          "Umum",
+          "IT",
+          "Casemix"
+        ]
+      },
+      {
+        "idSuffix": "fokus-direksi-pagi",
+        "timeRange": "11.00–12.00",
+        "startTime": "11:00",
+        "endTime": "12:00",
+        "title": "Contoh kegiatan focus (fokus-direksi-pagi)",
+        "category": "Focus",
+        "forumId": "eksekusi_fokus_pagi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Eksternal",
+          "Pelayanan",
+          "IT"
+        ]
+      },
+      {
+        "idSuffix": "istirahat",
+        "timeRange": "12.00–13.00",
+        "startTime": "12:00",
+        "endTime": "13:00",
+        "title": "Contoh kegiatan break (istirahat)",
+        "category": "Break",
+        "forumId": "istirahat_siang",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": []
+      },
+      {
+        "idSuffix": "eksternal-ops-jumat",
+        "timeRange": "13.00–14.45",
+        "startTime": "13:00",
+        "endTime": "14:45",
+        "title": "Contoh kegiatan external (eksternal-ops-jumat)",
+        "category": "External",
+        "forumId": "eksternal_ops_jumat",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "wadir_ops",
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang"
+        ],
+        "leadName": "dr. Contoh Wadir Ops",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Eksternal",
+          "Casemix",
+          "Umum"
+        ]
+      },
+      {
+        "idSuffix": "laporan-kepala-fungsi",
+        "timeRange": "14.45–15.00",
+        "startTime": "14:45",
+        "endTime": "15:00",
+        "title": "Contoh kegiatan preparation (laporan-kepala-fungsi)",
+        "category": "Preparation",
+        "forumId": "laporan_kepala_fungsi",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "kabag_pelayanan",
+          "kabag_umum",
+          "kabag_penunjang",
+          "kepala_sdm",
+          "kepala_keuangan",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "Ibu Contoh Pelayanan",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Umum",
+          "Farmasi",
+          "Keuangan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "update-sore-wadir",
+        "timeRange": "15.00–15.15",
+        "startTime": "15:00",
+        "endTime": "15:15",
+        "title": "Contoh kegiatan meeting (update-sore-wadir)",
+        "category": "Meeting",
+        "forumId": "update_sore_wadir",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Pelayanan",
+          "Keuangan",
+          "Casemix",
+          "Farmasi",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "fokus-sore",
+        "timeRange": "15.15–17.00",
+        "startTime": "15:15",
+        "endTime": "17:00",
+        "title": "Contoh kegiatan focus (fokus-sore)",
+        "category": "Focus",
+        "forumId": "blok_fokus_sore",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "SDM"
+        ]
+      },
+      {
+        "idSuffix": "tertutup-direksi",
+        "timeRange": "17.00–17.45",
+        "startTime": "17:00",
+        "endTime": "17:45",
+        "title": "Contoh kegiatan meeting (tertutup-direksi)",
+        "category": "Meeting",
+        "forumId": "tertutup_direksi_jumat",
+        "participants": [
+          "Contoh peserta A",
+          "Contoh peserta B"
+        ],
+        "roleIds": [
+          "direktur",
+          "wadir_ops",
+          "wadir_keu_sdm"
+        ],
+        "leadName": "dr. Contoh Direktur",
+        "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+        "domains": [
+          "Keuangan",
+          "Pelayanan",
+          "Casemix",
+          "Farmasi",
+          "Umum",
+          "SDM",
+          "IT",
+          "Eksternal"
+        ]
+      }
+    ]
+  },
+  "weekend": [
+    {
+      "idSuffix": "weekend-1",
+      "timeRange": "09.00–09.30",
+      "startTime": "09:00",
+      "endTime": "09:30",
+      "title": "Contoh kegiatan clinical (weekend-1)",
+      "category": "Clinical",
+      "forumId": "monitoring_akhir_pekan",
+      "participants": [
+        "Contoh peserta A",
+        "Contoh peserta B"
+      ],
+      "leadName": "dr. Contoh Direktur",
+      "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+      "domains": [
+        "Pelayanan",
+        "Farmasi"
+      ]
+    },
+    {
+      "idSuffix": "weekend-2",
+      "timeRange": "13.00–13.30",
+      "startTime": "13:00",
+      "endTime": "13:30",
+      "title": "Contoh kegiatan preparation (weekend-2)",
+      "category": "Preparation",
+      "forumId": "monitoring_akhir_pekan",
+      "participants": [
+        "Contoh peserta A",
+        "Contoh peserta B"
+      ],
+      "leadName": "dr. Contoh Direktur",
+      "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+      "domains": [
+        "Keuangan",
+        "Casemix",
+        "Umum"
+      ]
+    },
+    {
+      "idSuffix": "weekend-3",
+      "timeRange": "17.00–17.30",
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "title": "Contoh kegiatan focus (weekend-3)",
+      "category": "Focus",
+      "forumId": "monitoring_akhir_pekan",
+      "participants": [
+        "Contoh peserta A",
+        "Contoh peserta B"
+      ],
+      "leadName": "dr. Contoh Direktur",
+      "baselineAgenda": "Agenda contoh fiktif untuk pengujian tampilan.",
+      "domains": [
+        "IT",
+        "Umum",
+        "SDM"
+      ]
+    }
+  ]
+}

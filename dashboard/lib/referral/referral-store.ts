@@ -43,6 +43,21 @@ export async function listReferrals(
   return referrals.map(toStored).filter((row): row is StoredReferral => row !== null);
 }
 
+const OPEN_STATUSES: readonly ReferralStatus[] = ["baru", "dihubungi", "diterima"];
+
+/**
+ * The inbox list. One RPC list is capped at 100 rows, so the newest 100 alone would hide an unhandled referral behind
+ * newer ones; each open status is therefore read on its own and merged in, newest first.
+ */
+export async function listInboxReferrals(config: DirectorAuthConfiguration): Promise<StoredReferral[]> {
+  const lists = await Promise.all([
+    listReferrals(config, { limit: 100 }),
+    ...OPEN_STATUSES.map((status) => listReferrals(config, { status, limit: 100 })),
+  ]);
+  const byId = new Map(lists.flat().map((row) => [row.id, row]));
+  return [...byId.values()].sort((a, b) => b.receivedAt.localeCompare(a.receivedAt) || a.id.localeCompare(b.id));
+}
+
 export async function updateReferralStatus(
   config: DirectorAuthConfiguration,
   input: { id: string; status: ReferralStatus; note: string; actor: string },

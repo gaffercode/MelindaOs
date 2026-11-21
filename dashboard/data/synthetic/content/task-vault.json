@@ -1,0 +1,1173 @@
+{
+  "_note": "Fictional sample for the public repository. The production build replaces this file with the hospital's real content from private storage (dashboard/scripts/fetch-private-data.mjs).",
+  "active": [
+    {
+      "id": "ACT-2810-01",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas Farmasi nomor 1",
+      "summary": "Ringkasan fiktif untuk tugas contoh 1; bukan data rumah sakit.",
+      "domain": "Farmasi",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm",
+        "kabag_penunjang",
+        "kepala_keuangan"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "tertutup_penunjang",
+        "forum_c_keuangan",
+        "lead_brief"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-01",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-02",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas Pelayanan nomor 2",
+      "summary": "Ringkasan fiktif untuk tugas contoh 2; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "tertutup_pelayanan",
+        "forum_a_klinis",
+        "sync_layanan_klaim"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-03",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas SDM nomor 3",
+      "summary": "Ringkasan fiktif untuk tugas contoh 3; bukan data rumah sakit.",
+      "domain": "SDM",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm",
+        "kepala_sdm"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "forum_c_sdm",
+        "pleno_senin"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 3",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-04",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas SDM nomor 4",
+      "summary": "Ringkasan fiktif untuk tugas contoh 4; bukan data rumah sakit.",
+      "domain": "SDM",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_keu_sdm",
+        "kepala_sdm",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "forum_e_keu_sdm",
+        "tertutup_keuangan_sdm",
+        "forum_c_sdm"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-04",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-05",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas Casemix nomor 5",
+      "summary": "Ringkasan fiktif untuk tugas contoh 5; bukan data rumah sakit.",
+      "domain": "Casemix",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "wadir_keu_sdm",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "sync_layanan_klaim",
+        "eksternal_direksi",
+        "lead_brief"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 5",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-06",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas Pelayanan nomor 6",
+      "summary": "Ringkasan fiktif untuk tugas contoh 6; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_umum",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "tertutup_pelayanan",
+        "visite_prioritas",
+        "pleno_senin"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 6",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2810-07",
+      "sourceRegister": "ACT-2810",
+      "title": "Contoh tugas Eksternal nomor 7",
+      "summary": "Ringkasan fiktif untuk tugas contoh 7; bukan data rumah sakit.",
+      "domain": "Eksternal",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "direktur"
+      ],
+      "targetForums": [
+        "eksternal_ops_jumat",
+        "pleno_senin",
+        "blok_fokus_sore"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-01",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Umum nomor 8",
+      "summary": "Ringkasan fiktif untuk tugas contoh 8; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_umum",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_umum",
+        "forum_b_ops",
+        "visite_prioritas"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-02",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Pelayanan nomor 9",
+      "summary": "Ringkasan fiktif untuk tugas contoh 9; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "forum_a_klinis",
+        "tertutup_pelayanan",
+        "visite_prioritas"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-03",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Casemix nomor 10",
+      "summary": "Ringkasan fiktif untuk tugas contoh 10; bukan data rumah sakit.",
+      "domain": "Casemix",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "wadir_keu_sdm"
+      ],
+      "targetForums": [
+        "sync_layanan_klaim",
+        "lead_brief",
+        "decision_log"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 10",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-04",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Umum nomor 11",
+      "summary": "Ringkasan fiktif untuk tugas contoh 11; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_penunjang",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_penunjang",
+        "tertutup_umum",
+        "eksternal_ops_jumat"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 11",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-05",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Pelayanan nomor 12",
+      "summary": "Ringkasan fiktif untuk tugas contoh 12; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C",
+        "Contoh PIC D"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "forum_b_ops",
+        "sync_layanan_klaim"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-06",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Pelayanan nomor 13",
+      "summary": "Ringkasan fiktif untuk tugas contoh 13; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_pelayanan",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_pelayanan",
+        "visite_prioritas"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-07",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas IT nomor 14",
+      "summary": "Ringkasan fiktif untuk tugas contoh 14; bukan data rumah sakit.",
+      "domain": "IT",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "sync_layanan_klaim",
+        "tertutup_penunjang",
+        "lead_brief"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 14",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-08",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Farmasi nomor 15",
+      "summary": "Ringkasan fiktif untuk tugas contoh 15; bukan data rumah sakit.",
+      "domain": "Farmasi",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_penunjang",
+        "visite_prioritas",
+        "forum_b_ops"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-2610-09",
+      "sourceRegister": "ACT-2610",
+      "title": "Contoh tugas Pelayanan nomor 16",
+      "summary": "Ringkasan fiktif untuk tugas contoh 16; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_pelayanan",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "forum_b_ops",
+        "tertutup_pelayanan"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-1610-01",
+      "sourceRegister": "ACT-1610",
+      "title": "Contoh tugas Umum nomor 17",
+      "summary": "Ringkasan fiktif untuk tugas contoh 17; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "decision_log",
+        "tertutup_umum",
+        "eksekusi_fokus_pagi"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-17",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-1610-02",
+      "sourceRegister": "ACT-1610",
+      "title": "Contoh tugas Pelayanan nomor 18",
+      "summary": "Ringkasan fiktif untuk tugas contoh 18; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_pelayanan",
+        "kepala_keuangan"
+      ],
+      "targetForums": [
+        "decision_log",
+        "tertutup_pelayanan",
+        "sync_layanan_klaim"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-18",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "ACT-1610-03",
+      "sourceRegister": "ACT-1610",
+      "title": "Contoh tugas Keuangan nomor 19",
+      "summary": "Ringkasan fiktif untuk tugas contoh 19; bukan data rumah sakit.",
+      "domain": "Keuangan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "wadir_keu_sdm",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "tertutup_penunjang",
+        "forum_c_keuangan"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "PHARM-2610-01",
+      "sourceRegister": "PHARM-2610",
+      "title": "Contoh tugas Farmasi nomor 20",
+      "summary": "Ringkasan fiktif untuk tugas contoh 20; bukan data rumah sakit.",
+      "domain": "Farmasi",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "wadir_keu_sdm",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "tertutup_penunjang",
+        "lead_brief"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-20",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-01",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Umum nomor 21",
+      "summary": "Ringkasan fiktif untuk tugas contoh 21; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_umum",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_umum",
+        "forum_d_ops"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-02",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Umum nomor 22",
+      "summary": "Ringkasan fiktif untuk tugas contoh 22; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_umum",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "tertutup_umum",
+        "tertutup_pelayanan"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-03",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas IT nomor 23",
+      "summary": "Ringkasan fiktif untuk tugas contoh 23; bukan data rumah sakit.",
+      "domain": "IT",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_umum",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_umum",
+        "forum_d_ops"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 23",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-12",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas IT nomor 24",
+      "summary": "Ringkasan fiktif untuk tugas contoh 24; bukan data rumah sakit.",
+      "domain": "IT",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "forum_b_ops",
+        "tertutup_penunjang"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-15",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Keuangan nomor 25",
+      "summary": "Ringkasan fiktif untuk tugas contoh 25; bukan data rumah sakit.",
+      "domain": "Keuangan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_keu_sdm",
+        "kepala_keuangan",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "forum_e_keu_sdm",
+        "blok_pembayaran"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-17",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Keuangan nomor 26",
+      "summary": "Ringkasan fiktif untuk tugas contoh 26; bukan data rumah sakit.",
+      "domain": "Keuangan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_keu_sdm",
+        "kepala_keuangan",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "forum_c_keuangan",
+        "tertutup_keuangan_sdm"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-18",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Eksternal nomor 27",
+      "summary": "Ringkasan fiktif untuk tugas contoh 27; bukan data rumah sakit.",
+      "domain": "Eksternal",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "eksternal_direksi"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 27",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-19",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Eksternal nomor 28",
+      "summary": "Ringkasan fiktif untuk tugas contoh 28; bukan data rumah sakit.",
+      "domain": "Eksternal",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm",
+        "wadir_ops"
+      ],
+      "targetForums": [
+        "eksternal_direksi",
+        "tertutup_keuangan_sdm",
+        "sync_layanan_klaim"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 28",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-22",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Keuangan nomor 29",
+      "summary": "Ringkasan fiktif untuk tugas contoh 29; bukan data rumah sakit.",
+      "domain": "Keuangan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm",
+        "kepala_keuangan"
+      ],
+      "targetForums": [
+        "blok_pembayaran",
+        "forum_c_keuangan",
+        "tertutup_keuangan_sdm"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-23",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Casemix nomor 30",
+      "summary": "Ringkasan fiktif untuk tugas contoh 30; bukan data rumah sakit.",
+      "domain": "Casemix",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "wadir_keu_sdm",
+        "kepala_keuangan"
+      ],
+      "targetForums": [
+        "sync_layanan_klaim",
+        "tertutup_keuangan_sdm"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-26",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Casemix nomor 31",
+      "summary": "Ringkasan fiktif untuk tugas contoh 31; bukan data rumah sakit.",
+      "domain": "Casemix",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "wadir_ops",
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "sync_layanan_klaim",
+        "forum_a_klinis",
+        "forum_b_ops"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-30",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Pelayanan nomor 32",
+      "summary": "Ringkasan fiktif untuk tugas contoh 32; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_pelayanan",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_pelayanan",
+        "visite_prioritas"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-33",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas SDM nomor 33",
+      "summary": "Ringkasan fiktif untuk tugas contoh 33; bukan data rumah sakit.",
+      "domain": "SDM",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm",
+        "kepala_sdm",
+        "kepala_keuangan"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm",
+        "forum_e_keu_sdm"
+      ],
+      "defaultStatus": "butuh_keputusan_direktur",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "directorDecisionOption": {
+        "code": "DEC-33",
+        "optionsLabel": "Opsi A / Opsi B / Opsi C (contoh)",
+        "consequence": "Konsekuensi contoh fiktif."
+      },
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-38",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Eksternal nomor 34",
+      "summary": "Ringkasan fiktif untuk tugas contoh 34; bukan data rumah sakit.",
+      "domain": "Eksternal",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_umum",
+        "pleno_senin",
+        "lead_brief"
+      ],
+      "defaultStatus": "pending_pihak_ketiga",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "thirdPartyName": "Mitra Contoh 34",
+      "thirdPartyBlocker": "Menunggu jawaban mitra contoh.",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-39",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Pelayanan nomor 35",
+      "summary": "Ringkasan fiktif untuk tugas contoh 35; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B",
+        "Contoh PIC C"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_ops",
+        "kabag_pelayanan",
+        "kabag_umum",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "forum_d_ops",
+        "update_sore_wadir",
+        "lead_brief"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P0",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "MLOG-43",
+      "sourceRegister": "MASTER-LOG",
+      "title": "Contoh tugas Eksternal nomor 36",
+      "summary": "Ringkasan fiktif untuk tugas contoh 36; bukan data rumah sakit.",
+      "domain": "Eksternal",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "direktur",
+        "wadir_keu_sdm"
+      ],
+      "targetForums": [
+        "tertutup_direksi_jumat",
+        "blok_fokus_sore"
+      ],
+      "defaultStatus": "berjalan",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    }
+  ],
+  "completed": [
+    {
+      "id": "HIST-01",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Pelayanan nomor 100",
+      "summary": "Ringkasan fiktif untuk tugas contoh 100; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "forum_a_klinis"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-02",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Umum nomor 101",
+      "summary": "Ringkasan fiktif untuk tugas contoh 101; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_umum"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-03",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Pelayanan nomor 102",
+      "summary": "Ringkasan fiktif untuk tugas contoh 102; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "forum_a_klinis"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-04",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Farmasi nomor 103",
+      "summary": "Ringkasan fiktif untuk tugas contoh 103; bukan data rumah sakit.",
+      "domain": "Farmasi",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_penunjang"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-05",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Umum nomor 104",
+      "summary": "Ringkasan fiktif untuk tugas contoh 104; bukan data rumah sakit.",
+      "domain": "Umum",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_umum"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-06",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Farmasi nomor 105",
+      "summary": "Ringkasan fiktif untuk tugas contoh 105; bukan data rumah sakit.",
+      "domain": "Farmasi",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "kabag_penunjang",
+        "kabag_umum"
+      ],
+      "targetForums": [
+        "tertutup_penunjang"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-07",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Pelayanan nomor 106",
+      "summary": "Ringkasan fiktif untuk tugas contoh 106; bukan data rumah sakit.",
+      "domain": "Pelayanan",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_pelayanan"
+      ],
+      "targetForums": [
+        "tertutup_pelayanan"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-08",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas IT nomor 107",
+      "summary": "Ringkasan fiktif untuk tugas contoh 107; bukan data rumah sakit.",
+      "domain": "IT",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "forum_b_ops"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-09",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas Keuangan nomor 108",
+      "summary": "Ringkasan fiktif untuk tugas contoh 108; bukan data rumah sakit.",
+      "domain": "Keuangan",
+      "pic": [
+        "Contoh PIC A",
+        "Contoh PIC B"
+      ],
+      "roleIds": [
+        "wadir_keu_sdm",
+        "kabag_penunjang"
+      ],
+      "targetForums": [
+        "tertutup_keuangan_sdm"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P1",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    },
+    {
+      "id": "HIST-10",
+      "sourceRegister": "HIST-DONE",
+      "title": "Contoh tugas SDM nomor 109",
+      "summary": "Ringkasan fiktif untuk tugas contoh 109; bukan data rumah sakit.",
+      "domain": "SDM",
+      "pic": [
+        "Contoh PIC A"
+      ],
+      "roleIds": [
+        "kepala_sdm"
+      ],
+      "targetForums": [
+        "forum_c_sdm"
+      ],
+      "defaultStatus": "selesai",
+      "priority": "P2",
+      "deadlineLabel": "Contoh tenggat",
+      "evidenceRequired": "Contoh bukti penyelesaian."
+    }
+  ]
+}

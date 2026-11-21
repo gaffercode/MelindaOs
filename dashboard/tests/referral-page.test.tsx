@@ -36,4 +36,11 @@ describe("public referral sheet", () => {
     expect(html).not.toContain("wa.me");
     expect(html).not.toContain("Buka WhatsApp");
   });
+
+  it("tells the referrer who receives the data, what it is used for and how to ask for a correction", () => {
+    const html = renderToStaticMarkup(<ReferralForm today="2026-11-16" time="09:30" whatsapp="" />);
+    expect(html).toContain("Pemberitahuan privasi");
+    expect(html).toContain("hanya dibuka oleh petugas rumah sakit yang berwenang");
+    expect(html).toContain("koreksi atau penghapusan data");
+  });
 });
