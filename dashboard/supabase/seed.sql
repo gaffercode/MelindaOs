@@ -9,6 +9,12 @@ do $$
 declare
   r jsonb;
 begin
+  -- A safety net, not a guarantee: stop when this looks like a database in real use.
+  if current_database() !~* '(local|test|qa|dev|review|sandbox)'
+    and (exists (select 1 from melinda_private.access_users) or exists (select 1 from melinda_private.publications)) then
+    raise exception 'Refusing to seed database "%": it holds accounts or publications and its name does not say local, test, qa, dev, review or sandbox.', current_database();
+  end if;
+
   -- One Director instruction on a fictional report date.
   r := public.melinda_director_instructions('create', jsonb_build_object(
     'reviewerId', 'seed-reviewer', 'key', 'seed-instruction-0001', 'requestHash', repeat('5', 64),

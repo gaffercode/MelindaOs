@@ -43,13 +43,14 @@ The database itself is plain PostgreSQL behind Supabase. To build an empty copy 
 and `psql`. From the repository root, in a POSIX shell (Git Bash works on Windows):
 
 ```bash
-createdb melinda_local
+createdb -U postgres -h 127.0.0.1 melinda_local
 DATABASE_URL=postgres://postgres@127.0.0.1:5432/melinda_local dashboard/scripts/db-test.sh
 ```
 
 That one script creates the three Supabase roles if they are missing, applies every file in `supabase/migrations/` in
 order, runs the SQL acceptance tests in `supabase/tests/` (their synthetic rows roll back), runs the two-connection
-concurrency check and then applies `supabase/seed.sql` twice. The seed holds invented rows only: one Director instruction,
+concurrency check and then applies `supabase/seed.sql` twice. The seed stops when the database already holds
+accounts or publications and its name does not say local, test, qa, dev, review or sandbox. It holds invented rows only: one Director instruction,
 two agenda items and one referral, all on fictional dates and names. The script needs an empty database; drop and recreate
 it to run again. CI runs the same script on every push (job `database`).
 
