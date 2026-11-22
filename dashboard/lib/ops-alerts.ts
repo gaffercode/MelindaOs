@@ -9,6 +9,7 @@ import { MEDIFY_MAX_AGE_MS, SERVICE_HOURS } from "./freshness";
 import { logError } from "./log";
 import { parseMedifyRunStatus, type MedifyRunStatus } from "./medify/medify-run-status-contract";
 import { MIGRATION_NAMES } from "./migration-names";
+import { satusehatOAuthConfigured } from "./satusehat/satusehat-oauth-client";
 
 /**
  * Operational self-check shown on the Director's home page (`readSystemStatus`).
@@ -16,9 +17,10 @@ import { MIGRATION_NAMES } from "./migration-names";
  * Alerts:
  * - an instruction already handed to staff (open window, see `openInstructions`) passed its deadline without `selesai`;
  * - no census snapshot has been published for today by the census deadline (WIB), or the Medify pull went stale;
- * - a scheduled Medify pull on one of the previous `MISSED_PULL_LOOKBACK_DAYS` days left no complete run (see `missedMedifyPulls`).
+ * - a scheduled Medify pull on one of the previous `MISSED_PULL_LOOKBACK_DAYS` days left no complete run (see `missedMedifyPulls`);
+ * - no SATUSEHAT snapshot has arrived for today by the census deadline (see `satusehatMissingDetail`).
  */
-export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale" | "medify_pull_missed"; detail: string };
+export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale" | "medify_pull_missed" | "satusehat_missing"; detail: string };
 export type OpsReport = { checkedAt: string; date: string; alerts: OpsAlert[]; latestSnapshot: string | null };
 
 const SNAPSHOT_DEADLINE = "07:00";
@@ -74,6 +76,20 @@ export async function missedMedifyPulls(config: DirectorAuthConfiguration, today
   });
 }
 
+/** Vercel Cron authenticates with `CRON_SECRET`; `requireVercelCron` refuses anything shorter than 16 characters. */
+const CRON_SECRET_MIN_LENGTH = 16;
+
+/**
+ * Why today's SATUSEHAT snapshot is missing, naming the server setting to check first. Only whether a
+ * setting is present is read, never its value. `latest` is the newest stored snapshot date, if any.
+ */
+export function satusehatMissingDetail(date: string, latest: string | null, env: NodeJS.ProcessEnv = process.env): string {
+  const last = `terakhir: ${latest ?? "belum pernah"}`;
+  if (!satusehatOAuthConfigured(env)) return `Belum ada data SATUSEHAT untuk ${date} (${last}). Kredensial SATUSEHAT (SATUSEHAT_CLIENT_ID, SATUSEHAT_CLIENT_SECRET, SATUSEHAT_ORG_ID) belum lengkap di server dashboard.`;
+  if ((env.CRON_SECRET?.trim() ?? "").length < CRON_SECRET_MIN_LENGTH) return `Belum ada data SATUSEHAT untuk ${date} (${last}). CRON_SECRET belum dipasang di Vercel, sehingga jadwal otomatis 05.55 dan 17.55 WIB ditolak.`;
+  return `Belum ada data SATUSEHAT untuk ${date} (${last}). Pengaturan lengkap; periksa log cron /api/cron/satusehat di Vercel.`;
+}
+
 function hhmm(time: string): string { return time.slice(0, 5); }
 /** `YYYY-MM-DDTHH:mm` (WIB, the instruction deadline format) as `DD-MM-YYYY HH.MM WIB`. */
 function deadlineLabel(deadline: string): string { return `${deadline.slice(8, 10)}-${deadline.slice(5, 7)}-${deadline.slice(0, 4)} ${deadline.slice(11, 16).replace(":", ".")} WIB`; }
@@ -88,11 +104,12 @@ export async function collectOpsAlerts(now = new Date()): Promise<OpsReport> {
   for (const instruction of open) {
     if (instruction.deadline && delivered.has(instruction.status) && instruction.deadline < `${date}T${time}`) alerts.push({ code: "instruction_overdue", detail: `${instruction.id} (${instruction.itemTitle.slice(0, 80)}) melewati tenggat ${deadlineLabel(instruction.deadline)}, status ${instruction.status}.` });
   }
-  const [medify, census] = await Promise.all([latestDailyDocument(config, "medify_snapshot"), latestDailyDocument(config, "simrs_snapshot")]);
+  const [medify, census, satusehat] = await Promise.all([latestDailyDocument(config, "medify_snapshot"), latestDailyDocument(config, "simrs_snapshot"), latestDailyDocument(config, "satusehat_snapshot")]);
   // Medify is the primary census source; the manual SIMRS export (routine B) only covers a day Medify could not.
   const snapshot = medify?.report_date === date ? medify : census?.report_date === date ? census : medify ?? census;
   if (time >= SNAPSHOT_DEADLINE && snapshot?.report_date !== date) alerts.push({ code: "snapshot_missing", detail: `Belum ada tarikan Medify untuk ${date} (terakhir: ${snapshot?.report_date ?? "belum pernah"}).` });
   else if (medify?.report_date === date && time >= SERVICE_HOURS.from && time <= SERVICE_HOURS.to && now.getTime() - Date.parse(medify.received_at) > MEDIFY_MAX_AGE_MS) alerts.push({ code: "snapshot_stale", detail: `Tarikan Medify terakhir ${wibTime(medify.received_at)}; tidak ada tarikan baru lebih dari 13 jam pada jam layanan.` });
+  if (time >= SNAPSHOT_DEADLINE && satusehat?.report_date !== date) alerts.push({ code: "satusehat_missing", detail: satusehatMissingDetail(date, satusehat?.report_date ?? null) });
   const missed = medify ? await missedMedifyPulls(config, date) : [];
   if (missed.length) alerts.push({ code: "medify_pull_missed", detail: `Tarikan Medify terjadwal tidak lengkap dalam ${MISSED_PULL_LOOKBACK_DAYS} hari terakhir: ${missed.join("; ")}. Periksa jadwal di server Biznet.` });
   return { checkedAt: now.toISOString(), date, alerts, latestSnapshot: snapshot?.report_date ?? null };
