@@ -1,12 +1,13 @@
 import { requireConfiguration } from "./director/director-api";
-import { medifyPublisherConfiguration, protectedDirectorMode } from "./director/director-auth";
+import { type DirectorAuthConfiguration, medifyPublisherConfiguration, protectedDirectorMode } from "./director/director-auth";
 import { wibDate, wibTime } from "./director/director-data";
 import { type Instruction } from "./director/director-instructions";
 import { OPEN_WINDOW_DEFAULT_DAYS, openInstructions } from "./director/director-instructions-api";
 import { DirectorStoreError } from "./director/director-store";
-import { latestDailyDocument } from "./daily/daily-documents";
+import { latestDailyDocument, readDailyDocument } from "./daily/daily-documents";
 import { MEDIFY_MAX_AGE_MS, SERVICE_HOURS } from "./freshness";
 import { logError } from "./log";
+import { parseMedifyRunStatus, type MedifyRunStatus } from "./medify/medify-run-status-contract";
 import { MIGRATION_NAMES } from "./migration-names";
 
 /**
@@ -14,12 +15,64 @@ import { MIGRATION_NAMES } from "./migration-names";
  *
  * Alerts:
  * - an instruction already handed to staff (open window, see `openInstructions`) passed its deadline without `selesai`;
- * - no census snapshot has been published for today by the census deadline (WIB), or the Medify pull went stale.
+ * - no census snapshot has been published for today by the census deadline (WIB), or the Medify pull went stale;
+ * - a scheduled Medify pull on one of the previous `MISSED_PULL_LOOKBACK_DAYS` days left no complete run (see `missedMedifyPulls`).
  */
-export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale"; detail: string };
+export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale" | "medify_pull_missed"; detail: string };
 export type OpsReport = { checkedAt: string; date: string; alerts: OpsAlert[]; latestSnapshot: string | null };
 
 const SNAPSHOT_DEADLINE = "07:00";
+/** Past days checked for scheduled Medify pulls that never completed. Today is covered by `snapshot_missing` and `snapshot_stale`. */
+export const MISSED_PULL_LOOKBACK_DAYS = 7;
+
+/** `YYYY-MM-DD` shifted by `days` (calendar arithmetic on the WIB date string, no time zone involved). */
+function shiftDate(date: string, days: number): string {
+  const value = new Date(`${date}T00:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + days);
+  return value.toISOString().slice(0, 10);
+}
+
+/**
+ * What one past day's latest `medify_run_status` says about its two scheduled pulls (06:00 and 18:00 WIB).
+ * The store keeps the latest status per day, so only these cases are knowable:
+ * - no status at all: neither pull ran (the scheduler never started, or the host was down);
+ * - latest is the morning slot: the evening pull never ran;
+ * - latest status `failed`: that slot ran and failed.
+ * A day whose latest status is a complete or degraded evening pull is treated as fine; a morning pull
+ * missed on such a day cannot be seen from the latest status alone.
+ */
+export function missedSlotsForDay(status: Pick<MedifyRunStatus, "slot" | "status"> | null): string[] {
+  if (!status) return ["pagi", "sore"];
+  const failed = status.status === "failed";
+  if (status.slot === "morning") return failed ? ["pagi gagal", "sore"] : ["sore"];
+  return failed ? ["sore gagal"] : [];
+}
+
+/**
+ * Scheduled Medify pulls on the previous `MISSED_PULL_LOOKBACK_DAYS` days that did not complete, newest
+ * first, as `DD-MM (slots)`. A day whose status cannot be read is reported as unreadable, never as missed
+ * or as fine.
+ */
+export async function missedMedifyPulls(config: DirectorAuthConfiguration, today: string): Promise<string[]> {
+  const days = Array.from({ length: MISSED_PULL_LOOKBACK_DAYS }, (_, index) => shiftDate(today, -(index + 1)));
+  const reads = await Promise.all(days.map(async (date) => {
+    try {
+      const { document } = await readDailyDocument("medify_run_status", date, 0, { config });
+      if (!document) return { date, state: "none" as const };
+      const status = parseMedifyRunStatus(document.payload);
+      return status.date === date ? { date, state: "read" as const, status } : { date, state: "unreadable" as const };
+    } catch (error) {
+      logError("ops_medify_missed_read", error);
+      return { date, state: "unreadable" as const };
+    }
+  }));
+  const label = (date: string) => `${date.slice(8, 10)}-${date.slice(5, 7)}`;
+  return reads.flatMap((read) => {
+    if (read.state === "unreadable") return [`${label(read.date)} (status tidak terbaca)`];
+    const slots = missedSlotsForDay(read.state === "read" ? read.status : null);
+    return slots.length ? [`${label(read.date)} (${slots.join(", ")})`] : [];
+  });
+}
 
 function hhmm(time: string): string { return time.slice(0, 5); }
 /** `YYYY-MM-DDTHH:mm` (WIB, the instruction deadline format) as `DD-MM-YYYY HH.MM WIB`. */
@@ -40,6 +93,8 @@ export async function collectOpsAlerts(now = new Date()): Promise<OpsReport> {
   const snapshot = medify?.report_date === date ? medify : census?.report_date === date ? census : medify ?? census;
   if (time >= SNAPSHOT_DEADLINE && snapshot?.report_date !== date) alerts.push({ code: "snapshot_missing", detail: `Belum ada tarikan Medify untuk ${date} (terakhir: ${snapshot?.report_date ?? "belum pernah"}).` });
   else if (medify?.report_date === date && time >= SERVICE_HOURS.from && time <= SERVICE_HOURS.to && now.getTime() - Date.parse(medify.received_at) > MEDIFY_MAX_AGE_MS) alerts.push({ code: "snapshot_stale", detail: `Tarikan Medify terakhir ${wibTime(medify.received_at)}; tidak ada tarikan baru lebih dari 13 jam pada jam layanan.` });
+  const missed = medify ? await missedMedifyPulls(config, date) : [];
+  if (missed.length) alerts.push({ code: "medify_pull_missed", detail: `Tarikan Medify terjadwal tidak lengkap dalam ${MISSED_PULL_LOOKBACK_DAYS} hari terakhir: ${missed.join("; ")}. Periksa jadwal di server Biznet.` });
   return { checkedAt: now.toISOString(), date, alerts, latestSnapshot: snapshot?.report_date ?? null };
 }
 
