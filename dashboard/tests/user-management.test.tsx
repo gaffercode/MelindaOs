@@ -65,14 +65,14 @@ describe("user management", () => {
     expect(document.body.textContent).not.toContain(USER.id);
   });
 
-  it("offers exactly the five account roles, never Direktur", () => {
+  it("offers exactly the six account roles, never Direktur", () => {
     render(<UserManagement />);
     const all = within(screen.getByLabelText("Peran")).getAllByRole("option") as HTMLOptionElement[];
     expect(all[0].textContent).toBe("Pilih peran");
     expect(all[0].value).toBe("");
     const options = all.filter((option) => option.value !== "").map((option) => option.textContent);
     expect(options).toEqual(ACCOUNT_ROLES.map((role) => ROLE_LABELS[role]));
-    expect(options).toHaveLength(5);
+    expect(options).toHaveLength(6);
     expect(options).not.toContain("Direktur");
   });
 

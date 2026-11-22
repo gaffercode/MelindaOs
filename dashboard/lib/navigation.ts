@@ -26,6 +26,7 @@ const DIRECTOR_SKELETON_PATHS: Record<string, DirectorSection> = {
   "/melinda": "melinda-agent",
   "/arahan": "arahan",
   "/rujukan-masuk": "rujukan-masuk",
+  "/klinis": "klinis",
   "/satu-sehat": "satu-sehat",
   "/berita": "berita",
   "/studio": "studio",

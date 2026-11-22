@@ -2,6 +2,8 @@ import { sharedRetriever } from "../ask/http";
 import { composeFullExecutiveBrief } from "../composer/compose";
 import { detectFacts } from "../composer/facts";
 import { submitDailyDocument, submitDailyDocumentFile } from "../daily/daily-documents";
+import { auditClinicalRead, listClinicalEntries } from "../clinical/clinical-store";
+import type { ClinicalKind, StoredClinicalEntry } from "../clinical/clinical-types";
 import { canonicalHash } from "../director/director-store";
 import { validReportDate, wibDate } from "../director/director-data";
 import { parseInstructionInput, type Instruction } from "../director/director-instructions";
@@ -265,6 +267,36 @@ export const MCP_TOOLS: McpToolDefinition[] = [
     },
   },
   {
+    name: "baca_handover",
+    description: "Baca serah terima klinis (SBAR) yang diisi Direktur atau dokter. Memuat identitas pasien; pembacaan dicatat di jejak audit. Tanpa tanggal: 7 hari terakhir; rentang maksimal 31 hari.",
+    inputSchema: {
+      type: "object",
+      properties: { date: { type: "string" }, from: { type: "string" }, to: { type: "string" }, limit: { type: "integer", minimum: 1, maximum: 100 } },
+      required: [],
+      additionalProperties: false,
+    },
+  },
+  {
+    name: "baca_roster",
+    description: "Baca roster jaga per tanggal dan shift yang diisi Direktur atau dokter. Pembacaan dicatat di jejak audit. Tanpa tanggal: 7 hari terakhir.",
+    inputSchema: {
+      type: "object",
+      properties: { date: { type: "string" }, from: { type: "string" }, to: { type: "string" }, limit: { type: "integer", minimum: 1, maximum: 100 } },
+      required: [],
+      additionalProperties: false,
+    },
+  },
+  {
+    name: "baca_insiden",
+    description: "Baca laporan insiden (KTD, KNC, KPC, sentinel) yang diisi Direktur atau dokter. Pembacaan dicatat di jejak audit. Tanpa tanggal: 7 hari terakhir.",
+    inputSchema: {
+      type: "object",
+      properties: { date: { type: "string" }, from: { type: "string" }, to: { type: "string" }, limit: { type: "integer", minimum: 1, maximum: 100 } },
+      required: [],
+      additionalProperties: false,
+    },
+  },
+  {
     name: "sinkronkan_halaman",
     description: "Sinkronkan jadwal baseline, Task Vault, Morning Brief (/), Arahan (/arahan), dan Warta (/berita) untuk satu tanggal.",
     inputSchema: {
@@ -313,6 +345,48 @@ function assertNoPhi(payload: unknown): void {
       `Payload memuat indikator data pasien (${[...found].map((id) => identifierLabels[id]).join(", ")}). Hapus lalu kirim ulang.`
     );
   }
+}
+
+/** Indonesian-key view of one clinical entry, the way the other MCP read tools answer. */
+function clinicalView(entry: StoredClinicalEntry): Record<string, unknown> {
+  const head = { id: entry.id, tanggal: entry.date, shift: entry.shift, unit: entry.unit, dicatat_oleh: entry.createdBy, direvisi: entry.revision };
+  if (entry.kind === "handover") {
+    const p = entry.payload;
+    return { ...head, pasien: p.patient, no_rm: p.rm, ruang: p.room, situasi: p.situation, latar_belakang: p.background, penilaian: p.assessment, rekomendasi: p.recommendation, tindakan_belum_selesai: p.pending, diserahkan_oleh: p.from, diterima_oleh: p.to };
+  }
+  if (entry.kind === "roster") return { ...head, petugas: entry.payload.people.map((person) => ({ nama: person.name, peran: person.role })), catatan: entry.payload.notes };
+  const p = entry.payload;
+  return { ...head, jam: p.time, lokasi: p.place, jenis: p.type, grading: p.grade, kronologi: p.chronology, tindak_lanjut: p.followUp, status_penanganan: p.progress, pelapor: p.reporter };
+}
+
+/**
+ * Read clinical entries for an MCP caller. Every caller shares one identity, so each read is written to the audit table
+ * first; if that write fails the data is not returned (fail closed).
+ */
+async function readClinical(kind: ClinicalKind, args: Record<string, unknown>, ctx: McpAuthContext, now: Date): Promise<unknown> {
+  if (!ctx.config) return { status: "tidak_tersedia", pesan: "Data klinis hanya tersedia saat dashboard memakai penyimpanan Supabase." };
+  let from: string;
+  let to: string;
+  if (typeof args.date === "string" && args.date.trim()) {
+    from = to = resolveDate(args.date, now);
+  } else {
+    to = typeof args.to === "string" && args.to.trim() ? resolveDate(args.to, now) : wibDate(now);
+    from = typeof args.from === "string" && args.from.trim() ? resolveDate(args.from, now) : wibDate(new Date(now.getTime() - 6 * 86_400_000));
+  }
+  if (from > to) throw new McpToolError("Tanggal awal tidak boleh setelah tanggal akhir.");
+  if ((Date.parse(to) - Date.parse(from)) / 86_400_000 > 30) throw new McpToolError("Rentang tanggal maksimal 31 hari.");
+  let limit = 50;
+  if (args.limit !== undefined) {
+    if (typeof args.limit !== "number" || !Number.isInteger(args.limit) || args.limit < 1 || args.limit > 100) throw new McpToolError("Parameter 'limit' harus bilangan bulat 1–100.");
+    limit = args.limit;
+  }
+  const entries = await listClinicalEntries(ctx.config, { kind, from, to, status: "aktif", limit });
+  try {
+    await auditClinicalRead(ctx.config, { kind, reader: ctx.mode, count: entries.length, detail: { from, to, limit, ids: entries.map((entry) => entry.id) } });
+  } catch {
+    throw new McpToolError("Pencatatan audit pembacaan gagal; data klinis tidak dikirim. Coba lagi.");
+  }
+  return { status: "ok", dari: from, sampai: to, jumlah: entries.length, mungkin_terpotong: entries.length === limit, entri: entries.map(clinicalView) };
 }
 
 async function safeInstructions(ctx: McpAuthContext, now: Date): Promise<BoardInstruction[]> {
@@ -738,6 +812,13 @@ export async function executeMcpTool(
         pasien_terdaftar: patients?.total ?? null,
       };
     }
+
+    case "baca_handover":
+      return readClinical("handover", args, ctx, now);
+    case "baca_roster":
+      return readClinical("roster", args, ctx, now);
+    case "baca_insiden":
+      return readClinical("insiden", args, ctx, now);
 
     case "sinkronkan_halaman": {
       const date = resolveDate(args.date, now);

@@ -2,27 +2,28 @@ import { describe, expect, it } from "vitest";
 import { ACCOUNT_ROLES, allowedPages, API_PERMISSIONS, BOT_API_ROUTES, hasPermission, landingFor, PAGE_PERMISSIONS, permissionFor, PUBLIC_API_ROUTES, ROLE_LABELS, ruleFor, type Permission, type Role } from "@/lib/access/access-control";
 import { files, pageRoutes, PUBLIC_PAGES } from "./helpers/app-routes";
 
-const ROLES: Role[] = ["DIRECTOR", "VICE_DIRECTOR", "STAFF_FINANCE", "STAFF_HR", "STAFF_OPS", "STAFF_SUPPORT"];
+const ROLES: Role[] = ["DIRECTOR", "VICE_DIRECTOR", "DOCTOR", "STAFF_FINANCE", "STAFF_HR", "STAFF_OPS", "STAFF_SUPPORT"];
 /** Spec section 3, one row per permission; the columns follow ROLES. */
-const MATRIX: Record<string, readonly [boolean, boolean, boolean, boolean, boolean, boolean]> = {
-  "executive.view": [true, true, false, false, false, false],
-  "credentials.view": [true, true, false, false, false, false],
-  "pharmacy.decide": [true, true, false, false, false, false],
-  "casemix.view": [true, true, true, false, false, false],
-  "hrd.view": [true, true, false, true, false, false],
-  "hrd.edit": [true, false, false, true, false, false],
-  "pharmacy.view": [true, true, false, false, true, false],
-  "pharmacy.upload": [true, true, false, false, true, false],
-  "starkes.use": [true, true, false, false, true, false],
-  "crm.view": [true, true, false, false, false, true],
-  "news.view": [true, true, false, false, false, true],
-  "knowledge.ask": [true, true, true, true, true, true],
-  "studio.use": [true, false, false, false, false, false],
-  "instructions.send": [true, false, false, false, false, false],
-  "melinda.chat": [true, false, false, false, false, false],
-  "users.manage": [true, false, false, false, false, false],
-  "account.self": [true, true, true, true, true, true],
-  "director.only": [true, false, false, false, false, false],
+const MATRIX: Record<string, readonly [boolean, boolean, boolean, boolean, boolean, boolean, boolean]> = {
+  "executive.view": [true, true, false, false, false, false, false],
+  "credentials.view": [true, true, false, false, false, false, false],
+  "pharmacy.decide": [true, true, false, false, false, false, false],
+  "casemix.view": [true, true, false, true, false, false, false],
+  "hrd.view": [true, true, false, false, true, false, false],
+  "hrd.edit": [true, false, false, false, true, false, false],
+  "pharmacy.view": [true, true, false, false, false, true, false],
+  "pharmacy.upload": [true, true, false, false, false, true, false],
+  "starkes.use": [true, true, false, false, false, true, false],
+  "crm.view": [true, true, false, false, false, false, true],
+  "news.view": [true, true, false, false, false, false, true],
+  "knowledge.ask": [true, true, true, true, true, true, true],
+  "studio.use": [true, false, false, false, false, false, false],
+  "instructions.send": [true, false, false, false, false, false, false],
+  "melinda.chat": [true, false, false, false, false, false, false],
+  "clinical.use": [true, false, true, false, false, false, false],
+  "users.manage": [true, false, false, false, false, false, false],
+  "account.self": [true, true, true, true, true, true, true],
+  "director.only": [true, false, false, false, false, false, false],
 };
 const cases = Object.entries(MATRIX).flatMap(([permission, row]) => ROLES.map((role, index) => [role, permission, row[index]] as const));
 
@@ -283,6 +284,14 @@ describe("permission matrix snapshots", () => {
           "permission": "director.only",
         },
         {
+          "pattern": "/api/director/klinis",
+          "permission": "clinical.use",
+        },
+        {
+          "pattern": "/api/director/klinis/[id]",
+          "permission": "clinical.use",
+        },
+        {
           "methods": [
             "POST",
           ],
@@ -386,6 +395,10 @@ describe("permission matrix snapshots", () => {
         {
           "pattern": "/melinda",
           "permission": "melinda.chat",
+        },
+        {
+          "pattern": "/klinis",
+          "permission": "clinical.use",
         },
         {
           "pattern": "/pengguna",
