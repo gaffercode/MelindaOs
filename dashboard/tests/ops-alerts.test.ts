@@ -2,13 +2,15 @@ import { scryptSync } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { clearDailyDocumentCache } from "@/lib/daily/daily-documents";
 import { canonicalHash } from "@/lib/director/director-store";
-import { collectOpsAlerts, missedSlotsForDay } from "@/lib/ops-alerts";
+import { collectOpsAlerts, missedSlotsForDay, satusehatMissingDetail } from "@/lib/ops-alerts";
 
 const origin = "https://synthetic.example";
 const salt = "00112233445566778899aabbccddeeff";
 let instructions: Record<string, unknown>[];
 let latest: Record<string, { report_date: string; received_at?: string } | null>;
 /** Latest synthetic `medify_run_status` per past date; a date that is absent has no status. Defaults to a complete evening pull every day. */
+/** Latest stored SATUSEHAT snapshot date; defaults to today so the other checks are tested alone. */
+let satusehatLatest: string | null;
 let runStatuses: Record<string, { slot: "morning" | "evening"; status: "complete" | "failed" } | "unreadable" | null>;
 
 function runStatusDocument(date: string, slot: "morning" | "evening", status: "complete" | "failed") {
@@ -19,7 +21,7 @@ function runStatusDocument(date: string, slot: "morning" | "evening", status: "c
 }
 
 beforeEach(() => {
-  instructions = []; latest = { simrs_snapshot: null }; runStatuses = {};
+  instructions = []; latest = { simrs_snapshot: null }; runStatuses = {}; satusehatLatest = "2026-10-24";
   vi.useFakeTimers(); vi.setSystemTime(new Date("2026-10-24T03:30:00Z")); // 10:30 WIB
   vi.stubEnv("MELINDAOS_DIRECTOR_STORE", "supabase");
   vi.stubEnv("MELINDAOS_APP_ORIGIN", origin);
@@ -36,6 +38,7 @@ beforeEach(() => {
       if (entry === "unreadable") return Response.json({ errorCode: "invalid_command" });
       return Response.json({ document: entry ? runStatusDocument(args.date, entry.slot, entry.status) : null });
     }
+    if (command === "latest" && args.kind === "satusehat_snapshot") return Response.json({ document: satusehatLatest ? { id: "s", kind: args.kind, producer: "vercel-cron-satusehat", payload_hash: "0".repeat(64), report_date: satusehatLatest, received_at: `${satusehatLatest}T00:00:00Z` } : null });
     if (command === "latest") return Response.json({ document: latest[args.kind] ? { id: "x", kind: args.kind, producer: "biznet-medify", payload_hash: "0".repeat(64), received_at: "2026-10-24T00:00:00Z", ...latest[args.kind] } : null });
     return Response.json({ errorCode: "invalid_command" });
   });
@@ -142,5 +145,32 @@ describe("missed scheduled Medify pulls", () => {
     latest = { simrs_snapshot: { report_date: "2026-10-24" } };
     runStatuses = { "2026-10-23": null };
     expect(await codes()).toEqual([]);
+  });
+});
+
+describe("missing SATUSEHAT snapshot", () => {
+  const complete = { NODE_ENV: "test" as const, SATUSEHAT_CLIENT_ID: "synthetic-id", SATUSEHAT_CLIENT_SECRET: "synthetic-secret", SATUSEHAT_ORG_ID: "synthetic-org" };
+  it("alerts after the morning deadline when today's SATUSEHAT snapshot has not arrived", async () => {
+    latest = { simrs_snapshot: { report_date: "2026-10-24" } };
+    satusehatLatest = null;
+    const report = await collectOpsAlerts();
+    expect(report.alerts.map((alert) => alert.code)).toEqual(["satusehat_missing"]);
+    expect(report.alerts[0].detail).toContain("terakhir: belum pernah");
+  });
+  it("does not alert before the morning deadline", async () => {
+    vi.setSystemTime(new Date("2026-10-23T23:30:00Z")); // 06:30 WIB
+    satusehatLatest = "2026-10-23";
+    expect(await codes()).toEqual([]);
+  });
+  it("names missing credentials first, then a missing cron secret, then the cron log", () => {
+    expect(satusehatMissingDetail("2026-10-24", "2026-10-20", { NODE_ENV: "test" })).toContain("Kredensial SATUSEHAT");
+    expect(satusehatMissingDetail("2026-10-24", "2026-10-20", { ...complete, CRON_SECRET: "short" })).toContain("CRON_SECRET belum dipasang");
+    const ready = satusehatMissingDetail("2026-10-24", "2026-10-20", { ...complete, CRON_SECRET: "synthetic-cron-secret-0123456789" });
+    expect(ready).toContain("periksa log cron");
+    expect(ready).toContain("terakhir: 2026-10-20");
+  });
+  it("never puts a setting's value in the detail", () => {
+    const detail = satusehatMissingDetail("2026-10-24", null, { ...complete, CRON_SECRET: "synthetic-cron-secret-0123456789" });
+    for (const value of [complete.SATUSEHAT_CLIENT_ID, complete.SATUSEHAT_CLIENT_SECRET, complete.SATUSEHAT_ORG_ID, "synthetic-cron-secret-0123456789"]) expect(detail).not.toContain(value);
   });
 });

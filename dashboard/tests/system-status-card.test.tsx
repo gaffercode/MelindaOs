@@ -49,6 +49,8 @@ beforeEach(() => {
     }
     if (command === "open" && listBroken) return Response.json({ errorCode: "invalid_command" });
     if (command === "open") return Response.json({ instructions: instructions.map((row) => ({ pic: [], ...row })) });
+    // SATUSEHAT arrived today in every case here; its own alert is covered in ops-alerts.test.ts.
+    if (command === "latest" && args.kind === "satusehat_snapshot") return Response.json({ document: { id: "s", kind: args.kind, producer: "vercel-cron-satusehat", payload_hash: "0".repeat(64), report_date: today, received_at: "2026-10-24T00:00:00Z" } });
     if (command === "latest") return Response.json({ document: latest[args.kind] ? { id: "x", kind: args.kind, producer: "biznet-medify", payload_hash: "0".repeat(64), received_at: "2026-10-24T00:00:00Z", ...latest[args.kind] } : null });
     return Response.json({ errorCode: "invalid_command" });
   });
