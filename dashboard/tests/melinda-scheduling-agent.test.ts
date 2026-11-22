@@ -21,22 +21,25 @@ function makeContext() {
           };
         }
         if (command === "replace_schedule") return { items: args.items ?? [] };
+        if (command === "propose") return { action: { id: "00000000-0000-4000-8000-000000000001", kind: args.kind, summary: args.summary, status: "pending", expiresAt: "2026-11-19T02:15:00Z" } };
         if (command === "submit") return { replayed: false, id: "1", kind: args.kind, date: args.date, payloadHash: "abc", receivedAt: "2026-11-19T08:30:00Z" };
         return {};
       }),
     },
   } as unknown as DirectorAuthConfiguration;
 
-  return { config, now: new Date("2026-11-19T02:00:00Z") };
+  return { config, now: new Date("2026-11-19T02:00:00Z"), owner: "director-test", conversationId: null };
 }
 
 describe("melinda-scheduling-agent", () => {
-  it("registers the 4 scheduling chief-of-staff tools in MELINDA_TOOLS", () => {
+  it("registers the scheduling tools and no tool that writes without confirmation", () => {
     const names = MELINDA_TOOLS.map((t) => t.name);
     expect(names).toContain("baca_jadwal_struktural");
     expect(names).toContain("baca_task_vault");
-    expect(names).toContain("ubah_status_tugas");
-    expect(names).toContain("sinkronkan_halaman");
+    expect(names).toContain("usulkan_status_tugas");
+    expect(names).toContain("usulkan_sinkron");
+    expect(names).not.toContain("ubah_status_tugas");
+    expect(names).not.toContain("sinkronkan_halaman");
   });
 
   it("reads Thursday baseline schedule with injected Finance/Pharmacy issues via baca_jadwal_struktural", async () => {
@@ -52,25 +55,30 @@ describe("melinda-scheduling-agent", () => {
     expect(res.text).toContain("MLOG-22");
   });
 
-  it("updates task status cleanly via ubah_status_tugas", async () => {
+  it("only proposes a task status change via usulkan_status_tugas", async () => {
+    const ctx = makeContext();
     const res = await runTool(
-      "ubah_status_tugas",
+      "usulkan_status_tugas",
       {
         task_id: "ACT-2810-01",
         status: "pending_pihak_ketiga",
         pihak_ketiga: "Mitra Contoh",
         catatan: "Menunggu addendum PKS",
       },
-      makeContext()
+      ctx
     );
     expect(res.isError).toBe(false);
-    expect(res.text).toContain("IOC-8801");
+    expect(res.text).toContain("menunggu_konfirmasi");
     expect(res.text).toContain("pending_pihak_ketiga");
+    const commands = vi.mocked(ctx.config.store.call).mock.calls.map(([command]) => command);
+    expect(commands).toContain("propose");
+    expect(commands).not.toContain("create");
   });
 
   it("configures MELINDA_SYSTEM_PROMPT as Staf Khusus Direktur Bidang Penjadwalan with Rule #39", () => {
     expect(MELINDA_SYSTEM_PROMPT).toContain("Staf Khusus");
     expect(MELINDA_SYSTEM_PROMPT).toContain("Rule #39");
-    expect(MELINDA_SYSTEM_PROMPT).toContain("ubah_status_tugas");
+    expect(MELINDA_SYSTEM_PROMPT).toContain("usulkan_");
+    expect(MELINDA_SYSTEM_PROMPT).toContain("Konfirmasi");
   });
 });

@@ -91,6 +91,16 @@ export async function rateLimit(config: DirectorAuthConfiguration, bucket: strin
   const result = await config.store.call<{ allowed: boolean }>("rate_limit", { bucket, limit, seconds });
   if (result.allowed !== true) throw new DirectorApiError(429, "Terlalu banyak percobaan. Tunggu sebelum mencoba lagi.");
 }
+/** Heartbeat producer that records the last time the global login limit refused an attempt; `ops-alerts` reads it. */
+export const LOGIN_LOCK_PRODUCER = "alert:login-global-locked";
+
+/** The global bucket is full: anyone, the Director included, now gets 429. Log it and mark it for the home page. */
+async function reportLoginLock(config: DirectorAuthConfiguration, error: unknown): Promise<void> {
+  logError("director_login_global_locked", error);
+  await config.store.call("heartbeat", { producer: LOGIN_LOCK_PRODUCER }, "melinda_director_tasks")
+    .catch((failure: unknown) => logError("director_login_lock_mark", failure));
+}
+
 export function clientAddress(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
   return (forwarded || request.headers.get("x-real-ip")?.trim() || "unknown").slice(0, 64);
@@ -102,6 +112,11 @@ export async function loginSession(request: Request): Promise<Response> {
   // Throttle before verification so wrong passcodes count too; scrypt is CPU-bound.
   const ipBucket = `login-ip:${clientAddress(request)}`;
   await rateLimit(config, ipBucket, 10, 900);
+  // One Director account behind a shared passcode: cap attempts from every address together, loose enough that a stranger needs 30 tries to lock the Director out.
+  await rateLimit(config, `login-global:${config.reviewerId}`, 30, 900).catch(async (error: unknown) => {
+    if (error instanceof DirectorApiError && error.status === 429) await reportLoginLock(config, error);
+    throw error;
+  });
   // `role` is still accepted from old cached login pages and ignored: Director is the only role.
   if (!verifyPasscode(body.passcode, config.passcodeHash)) throw new DirectorApiError(401, "Passcode tidak sesuai.");
   const role: HumanSessionRole = "director";

@@ -19,11 +19,12 @@ import { findPatientIdentifiers, identifierLabels } from "../phi-guard";
 import { getDashboardData, loadKnowledgeChunks, loadKnowledgeDocuments, searchDocuments } from "../repository";
 import { parseScheduleSubmission } from "../tasks/contract";
 import { forRules, isFinal, isOverdue, reminderState } from "../tasks/rules";
-import { board, listSchedule, replaceSchedule, type BoardInstruction } from "../tasks/store";
+import { board, listSchedule, replaceSchedule, vaultLedger, type BoardInstruction } from "../tasks/store";
 import { leadBriefRotation, type StructuralRoleId } from "../work-schedule/baseline-schedule";
 import { buildEnrichedScheduleForRole, buildFallbackBoardSchedule, buildFallbackOfficePlan } from "../work-schedule/fallbacks";
+import { readScheduleOverrides } from "../work-schedule/schedule-overrides";
 import { submitVaultTaskFeedback, syncTodayAllPages } from "../work-schedule/sync-and-feedback";
-import { applyRule39, formatFeedbackNote, resolveVaultTasks, VAULT_TASKS, type VaultTaskStatus } from "../work-schedule/task-vault";
+import { applyRule39, formatFeedbackNote, resolveVaultTasks, stripExecutiveTag, VAULT_TASKS, type VaultTaskStatus } from "../work-schedule/task-vault";
 import type { McpAuthContext } from "./auth";
 
 export const MCP_LOGO_URL = "https://melindaos.app/brand/melindaos-logo.png";
@@ -164,7 +165,7 @@ export const MCP_TOOLS: McpToolDefinition[] = [
   },
   {
     name: "ubah_status_tugas",
-    description: "Perbarui status tugas Task Vault ke buku besar Arahan Direktur (mendukung bypass_rule39 untuk agent all-access).",
+    description: "Perbarui status tugas Task Vault ke buku besar Arahan Direktur (Rule #39 berlaku: selesai dari agent menjadi menunggu_verifikasi_novia). bypass_rule39 hanya berlaku pada sesi Direktur yang login; dari token agent diabaikan.",
     inputSchema: {
       type: "object",
       properties: {
@@ -389,6 +390,12 @@ async function readClinical(kind: ClinicalKind, args: Record<string, unknown>, c
   return { status: "ok", dari: from, sampai: to, jumlah: entries.length, mungkin_terpotong: entries.length === limit, entri: entries.map(clinicalView) };
 }
 
+/** Board rows plus archived Task Vault updates, for tools that resolve the vault or build schedules from it. */
+async function vaultInstructions(ctx: McpAuthContext, now: Date): Promise<BoardInstruction[]> {
+  if (!ctx.config) return [];
+  return vaultLedger(ctx.config, { now: now.toISOString() }).catch(() => [] as BoardInstruction[]);
+}
+
 async function safeInstructions(ctx: McpAuthContext, now: Date): Promise<BoardInstruction[]> {
   if (!ctx.config) return [];
   const res = await board(ctx.config, { now: now.toISOString() }).catch(() => ({ instructions: [] as BoardInstruction[] }));
@@ -533,12 +540,13 @@ export async function executeMcpTool(
       }
       const [dash, office] = await Promise.allSettled([listSchedule(ctx.config, { date }), readExecutivePlan(ctx.config, date)]);
       if (dash.status === "rejected" && office.status === "rejected") {
-        const instructions = await safeInstructions(ctx, now);
+        const instructions = await vaultInstructions(ctx, now);
+        const overrides = await readScheduleOverrides(ctx.config, date, "direktur");
         return {
           mode: "fallback",
           date,
-          jadwal: buildFallbackBoardSchedule(date, instructions),
-          officePlan: buildFallbackOfficePlan(date, instructions),
+          jadwal: buildFallbackBoardSchedule(date, instructions, overrides),
+          officePlan: buildFallbackOfficePlan(date, instructions, overrides),
         };
       }
       return {
@@ -582,9 +590,10 @@ export async function executeMcpTool(
         typeof args.role === "string" && STRUCTURAL_ROLE_IDS.includes(args.role as StructuralRoleId)
           ? (args.role as StructuralRoleId)
           : "direktur";
-      const instructions = await safeInstructions(ctx, now);
+      const instructions = await vaultInstructions(ctx, now);
       const rotation = leadBriefRotation(date);
-      const { slots } = buildEnrichedScheduleForRole(date, role, instructions);
+      const overrides = await readScheduleOverrides(ctx.config, date, role);
+      const { slots } = buildEnrichedScheduleForRole(date, role, instructions, overrides);
       return {
         tanggal: date,
         jabatan: role,
@@ -595,7 +604,7 @@ export async function executeMcpTool(
     }
 
     case "baca_task_vault": {
-      const instructions = await safeInstructions(ctx, now);
+      const instructions = await vaultInstructions(ctx, now);
       let tasks = resolveVaultTasks(instructions);
       if (typeof args.domain === "string" && args.domain.trim()) {
         const dom = args.domain.trim().toLowerCase();
@@ -620,7 +629,8 @@ export async function executeMcpTool(
       if (!task) {
         throw new McpToolError(`Tugas '${taskId}' tidak ditemukan di Task Vault.`);
       }
-      const bypassRule39 = args.bypass_rule39 !== false;
+      // Only the Director's own signed-in session may skip Rule #39; an agent token cannot grant itself that.
+      const bypassRule39 = args.bypass_rule39 === true && ctx.mode === "director_session";
       const thirdPartyName = typeof args.pihak_ketiga === "string" ? args.pihak_ketiga : undefined;
       const note = typeof args.catatan === "string" ? args.catatan : undefined;
       assertNoPhi({ taskId, thirdPartyName, note });
@@ -684,7 +694,7 @@ export async function executeMcpTool(
         action: args.action,
         deadline: args.deadline ?? null,
         pic: Array.isArray(args.pic) ? args.pic : [],
-        note: typeof args.note === "string" ? args.note : "",
+        note: typeof args.note === "string" ? stripExecutiveTag(args.note) : "",
         decisionOptionId: null,
         decisionLabel: null,
         linkedId: null,
@@ -737,7 +747,7 @@ export async function executeMcpTool(
           throw new McpToolError(error instanceof Error ? error.message : "Format Morning Brief tidak valid.");
         }
       } else {
-        const instructions = await safeInstructions(ctx, now);
+        const instructions = await vaultInstructions(ctx, now);
         const snapRes = await readMedifySnapshot(date, now);
         const snapshot = snapRes.snapshot;
         const facts = snapshot ? detectFacts(snapshot) : [];
@@ -748,6 +758,7 @@ export async function executeMcpTool(
           narrative: null,
           instructions,
           roleId: "direktur",
+          overrides: await readScheduleOverrides(ctx.config, date, "direktur"),
         });
       }
       assertNoPhi(payload);
@@ -778,9 +789,9 @@ export async function executeMcpTool(
           throw new McpToolError(error instanceof Error ? error.message : "Format Warta tidak valid.");
         }
       } else {
-        const instructions = await safeInstructions(ctx, now);
+        const instructions = await vaultInstructions(ctx, now);
         const snapRes = await readMedifySnapshot(date, now);
-        payload = composeNewsEdition({ date, snapshot: snapRes.snapshot, instructions });
+        payload = composeNewsEdition({ date, snapshot: snapRes.snapshot, instructions, overrides: await readScheduleOverrides(ctx.config, date, "direktur") });
       }
       assertNoPhi(payload);
       const docInput = {

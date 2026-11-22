@@ -2,7 +2,7 @@ import { directorCsrfHeaders } from "../client-api";
 import { MELINDA_UNAVAILABLE } from "./limits";
 import type { TurnEvent } from "./turn";
 
-const EVENT_TYPES = new Set(["conversation", "status", "text", "sources", "done", "error"]);
+const EVENT_TYPES = new Set(["conversation", "status", "text", "sources", "proposal", "done", "error"]);
 const isTurnEvent = (value: unknown): value is TurnEvent => typeof value === "object" && value !== null && "type" in value && typeof value.type === "string" && EVENT_TYPES.has(value.type);
 const errorOf = (value: unknown) => (typeof value === "object" && value !== null && "error" in value && typeof value.error === "string" ? value.error : MELINDA_UNAVAILABLE);
 

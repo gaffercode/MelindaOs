@@ -1,4 +1,4 @@
-import { requireConfiguration } from "./director/director-api";
+import { LOGIN_LOCK_PRODUCER, requireConfiguration } from "./director/director-api";
 import { type DirectorAuthConfiguration, medifyPublisherConfiguration, protectedDirectorMode } from "./director/director-auth";
 import { wibDate, wibTime } from "./director/director-data";
 import { type Instruction } from "./director/director-instructions";
@@ -16,9 +16,23 @@ import { MIGRATION_NAMES } from "./migration-names";
  * Alerts:
  * - an instruction already handed to staff (open window, see `openInstructions`) passed its deadline without `selesai`;
  * - no census snapshot has been published for today by the census deadline (WIB), or the Medify pull went stale;
- * - a scheduled Medify pull on one of the previous `MISSED_PULL_LOOKBACK_DAYS` days left no complete run (see `missedMedifyPulls`).
+ * - a scheduled Medify pull on one of the previous `MISSED_PULL_LOOKBACK_DAYS` days left no complete run (see `missedMedifyPulls`);
+ * - the global Director login limit refused an attempt in the last 24 hours (someone may be guessing the passcode).
  */
-export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale" | "medify_pull_missed"; detail: string };
+export type OpsAlert = { code: "instruction_overdue" | "snapshot_missing" | "snapshot_stale" | "medify_pull_missed" | "login_locked"; detail: string };
+
+const LOGIN_LOCK_WINDOW_MS = 24 * 60 * 60 * 1000;
+
+/** When the global login limit last refused an attempt, or null; a store failure only hides this one alert. */
+async function lastLoginLock(config: ReturnType<typeof requireConfiguration>): Promise<string | null> {
+  try {
+    const { heartbeats } = await config.store.call<{ heartbeats: { producer: string; seenAt: string }[] }>("health", {}, "melinda_director_tasks");
+    return heartbeats.find((item) => item.producer === LOGIN_LOCK_PRODUCER)?.seenAt ?? null;
+  } catch (error) {
+    logError("ops_alerts_login_lock", error);
+    return null;
+  }
+}
 export type OpsReport = { checkedAt: string; date: string; alerts: OpsAlert[]; latestSnapshot: string | null };
 
 const SNAPSHOT_DEADLINE = "07:00";
@@ -95,6 +109,8 @@ export async function collectOpsAlerts(now = new Date()): Promise<OpsReport> {
   else if (medify?.report_date === date && time >= SERVICE_HOURS.from && time <= SERVICE_HOURS.to && now.getTime() - Date.parse(medify.received_at) > MEDIFY_MAX_AGE_MS) alerts.push({ code: "snapshot_stale", detail: `Tarikan Medify terakhir ${wibTime(medify.received_at)}; tidak ada tarikan baru lebih dari 13 jam pada jam layanan.` });
   const missed = medify ? await missedMedifyPulls(config, date) : [];
   if (missed.length) alerts.push({ code: "medify_pull_missed", detail: `Tarikan Medify terjadwal tidak lengkap dalam ${MISSED_PULL_LOOKBACK_DAYS} hari terakhir: ${missed.join("; ")}. Periksa jadwal di server Biznet.` });
+  const locked = await lastLoginLock(config);
+  if (locked && now.getTime() - Date.parse(locked) < LOGIN_LOCK_WINDOW_MS) alerts.push({ code: "login_locked", detail: `Login Direktur ditolak batas global (30 percobaan per 15 menit) terakhir ${wibDate(new Date(locked))} pukul ${wibTime(locked)}. Kemungkinan ada yang menebak passcode; pertimbangkan mengganti passcode.` });
   return { checkedAt: now.toISOString(), date, alerts, latestSnapshot: snapshot?.report_date ?? null };
 }
 

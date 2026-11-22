@@ -91,7 +91,7 @@ describe("real director route handlers", () => {
   });
   it("rejects incorrect passcode, rate-limited attempts and cross-origin login", async () => {
     expect((await login(request("/api/director/session", "POST", { passcode: "wrong" }))).status).toBe(401);
-    expect(calls.filter((call) => call.command === "rate_limit")).toHaveLength(1);
+    expect(calls.filter((call) => call.command === "rate_limit")).toHaveLength(2);
     allowed = false;
     expect((await login(request("/api/director/session", "POST", { passcode: "synthetic-test-passcode" }))).status).toBe(429);
     expect((await login(request("/api/director/session", "POST", { passcode: "synthetic-test-passcode" }, { Origin: "https://other.example" }))).status).toBe(403);
@@ -102,6 +102,20 @@ describe("real director route handlers", () => {
     expect(response.status).toBe(429);
     expect(calls.map((call) => call.command)).toEqual(["rate_limit"]);
     expect(calls[0].args.bucket).toBe("login-ip:203.0.113.9");
+  });
+  it("throttles wrong passcodes for the Director account across addresses before verifying them", async () => {
+    const original = globalThis.fetch;
+    vi.stubGlobal("fetch", async (url: string, init: RequestInit) => {
+      const input = JSON.parse(init.body as string) as { command: string; args: Record<string, unknown> };
+      if (input.command === "rate_limit" && input.args.bucket === "login-global:director-test") { calls.push(input); return Response.json({ allowed: false }); }
+      return original(url, init);
+    });
+    const response = await login(request("/api/director/session", "POST", { passcode: "synthetic-test-passcode" }, { "X-Forwarded-For": "198.51.100.7" }));
+    expect(response.status).toBe(429);
+    expect(calls.map((call) => call.args.bucket).filter(Boolean)).toEqual(["login-ip:198.51.100.7", "login-global:director-test"]);
+    expect(calls.some((call) => call.command === "session_create")).toBe(false);
+    // The lock is marked for the home page alert.
+    expect(calls.find((call) => call.command === "heartbeat")?.args).toEqual({ producer: "alert:login-global-locked" });
   });
   it("refuses a bearer token on the human review and knowledge routes", async () => {
     const headers = { Authorization: "Bearer synthetic-bot-token", "Idempotency-Key": "synthetic-delivery-1" };

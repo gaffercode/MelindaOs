@@ -4,6 +4,7 @@ import { logError } from "../log";
 import { MELINDA_DAILY_TOKEN_LIMIT, MELINDA_HISTORY_MESSAGES, MELINDA_MAX_TOOL_ROUNDS, MELINDA_TURN_DEADLINE_MS, MELINDA_UNAVAILABLE } from "./limits";
 import { echoableContent, MelindaModelError, streamRound, type ApiMessage, type ContentBlock } from "./model";
 import { MELINDA_SYSTEM_PROMPT, turnContext } from "./prompt";
+import type { ActionProposal } from "./actions";
 import { appendMessage, createConversation, recentHistory, usageToday, type MelindaSource } from "./store";
 import { MELINDA_TOOLS, TOOL_STATUS, runTool } from "./tools";
 
@@ -16,6 +17,8 @@ export type TurnEvent =
   | { type: "status"; label: string }
   | { type: "text"; delta: string }
   | { type: "sources"; sources: MelindaSource[] }
+  /** A change Melinda prepared; the browser shows it with Konfirmasi and Batal. Nothing is written yet. */
+  | { type: "proposal"; proposal: ActionProposal }
   | { type: "done"; complete: boolean }
   | { type: "error"; message: string };
 
@@ -78,9 +81,10 @@ export async function runTurn({ config, owner, conversationId, message, now, sig
 
       messages.push({ role: "assistant", content });
       for (const call of calls) emit({ type: "status", label: TOOL_STATUS[call.name] ?? "Membaca data" });
-      const outputs = await Promise.all(calls.map((call) => runTool(call.name, call.input, { config, now })));
+      const outputs = await Promise.all(calls.map((call) => runTool(call.name, call.input, { config, now, owner, conversationId: conversation })));
       if (signal.aborted) throw new MelindaModelError("unreachable");
       for (const output of outputs) for (const source of output.sources) sources.set(source.href, source);
+      for (const output of outputs) if (output.proposal) emit({ type: "proposal", proposal: output.proposal });
       messages.push({ role: "user", content: outputs.map((output, index) => ({ type: "tool_result", tool_use_id: calls[index].id, content: output.text, ...(output.isError ? { is_error: true } : {}) })) });
       try {
         await appendMessage(config, owner, { conversationId: conversation, role: "tool", content: outputs.map((output) => output.text).join("\n"), toolCalls: calls.map((call) => ({ name: call.name, input: call.input })) });

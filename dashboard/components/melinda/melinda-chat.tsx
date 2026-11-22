@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { type FormEvent, type KeyboardEvent, useEffect, useEffectEvent, useLayoutEffect, useRef, useState } from "react";
 import { directorCsrfHeaders } from "@/lib/client-api";
+import type { ActionProposal } from "@/lib/melinda/actions";
 import type { MelindaBriefing } from "@/lib/melinda/briefing";
 import { sendMelinda } from "@/lib/melinda/client";
 import { MELINDA_MAX_MESSAGE } from "@/lib/melinda/limits";
@@ -14,12 +15,13 @@ import { MelindaBriefingView } from "./melinda-briefing";
 import { takeOpenConversation } from "./melinda-entry-card";
 import { MelindaHistory } from "./melinda-history";
 import { MelindaMarkdown } from "./melinda-markdown";
+import { MelindaProposal } from "./melinda-proposal";
 import "./melinda.css";
 
-type Bubble = { id: string; role: "user" | "assistant"; content: string; sources: MelindaSource[]; complete: boolean; error: string | null };
+type Bubble = { id: string; role: "user" | "assistant"; content: string; sources: MelindaSource[]; proposals: ActionProposal[]; complete: boolean; error: string | null };
 
-const bubbleOf = (message: MelindaMessage): Bubble => ({ id: message.id, role: message.role === "user" ? "user" : "assistant", content: message.content, sources: message.sources, complete: message.complete, error: null });
-const newBubble = (role: Bubble["role"], content: string): Bubble => ({ id: crypto.randomUUID(), role, content, sources: [], complete: true, error: null });
+const bubbleOf = (message: MelindaMessage): Bubble => ({ id: message.id, role: message.role === "user" ? "user" : "assistant", content: message.content, sources: message.sources, proposals: [], complete: message.complete, error: null });
+const newBubble = (role: Bubble["role"], content: string): Bubble => ({ id: crypto.randomUUID(), role, content, sources: [], proposals: [], complete: true, error: null });
 const hasMessages = (value: unknown): value is { messages: MelindaMessage[] } => typeof value === "object" && value !== null && "messages" in value && Array.isArray(value.messages);
 
 function CopyAnswer({ text }: { text: string }) {
@@ -81,6 +83,7 @@ export function MelindaChat({ briefing, initialConversations }: { briefing: Meli
       } else if (event.type === "status") setStatus(event.label);
       else if (event.type === "text") { setStatus(null); updateLast((bubble) => ({ ...bubble, content: bubble.content + event.delta })); }
       else if (event.type === "sources") updateLast((bubble) => ({ ...bubble, sources: event.sources }));
+      else if (event.type === "proposal") updateLast((bubble) => ({ ...bubble, proposals: [...bubble.proposals, event.proposal] }));
       else if (event.type === "error") updateLast((bubble) => ({ ...bubble, error: event.message }));
       else updateLast((bubble) => ({ ...bubble, complete: event.complete }));
     };
@@ -164,6 +167,7 @@ export function MelindaChat({ briefing, initialConversations }: { briefing: Meli
                 {bubble.content && <MelindaMarkdown text={bubble.content} />}
                 {busy && index === bubbles.length - 1 && <p role="status" className="melinda-status"><span className="melinda-dots" aria-hidden="true"><i /><i /><i /></span>{status ?? "Melinda sedang membaca"}</p>}
                 {bubble.error && <p role="alert" className="text-[var(--warn)]">{bubble.error}</p>}
+                {bubble.proposals.map((proposal) => <MelindaProposal key={proposal.id} proposal={proposal} />)}
                 {bubble.sources.length > 0 && <details className="melinda-sources">
                   <summary><Info className="size-4" aria-hidden="true" />Sumber ({bubble.sources.length})</summary>
                   <ul>{bubble.sources.map((source) => <li key={source.href}><Link href={source.href}>{source.label}</Link></li>)}</ul>

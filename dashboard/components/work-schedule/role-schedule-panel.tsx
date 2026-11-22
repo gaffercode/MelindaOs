@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sessionResponse } from "@/lib/client-api";
 import {
   STRUCTURAL_ROLES,
@@ -11,6 +11,7 @@ import {
 import {
   injectTasksIntoSchedule,
   resolveVaultTasks,
+  type EnrichedScheduleSlot,
   type VaultTaskStatus,
 } from "@/lib/work-schedule/task-vault";
 
@@ -28,12 +29,31 @@ export function RoleSchedulePanel({ date }: { date: string }) {
   const [localStatuses, setLocalStatuses] = useState<Record<string, VaultTaskStatus>>({});
   const [feedbackMessage, setFeedbackMessage] = useState<string>("");
 
+  const [served, setServed] = useState<{ key: string; slots: EnrichedScheduleSlot[] } | null>(null);
+  const [failedKey, setFailedKey] = useState<string | null>(null);
+  const [reload, setReload] = useState(0);
+  const key = `${date}:${roleId}:${reload}`;
+
+  // The server applies the task ledger and the Director's schedule changes; the baseline below only fills the wait or a failure.
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(`/api/director/tasks/vault-feedback?date=${encodeURIComponent(date)}&role=${encodeURIComponent(roleId)}`, { signal: controller.signal })
+      .then(async (res) => {
+        const body = (await res.json().catch(() => null)) as { slots?: unknown } | null;
+        if (!res.ok || !Array.isArray(body?.slots)) throw new Error("schedule_unavailable");
+        setServed({ key, slots: body.slots as EnrichedScheduleSlot[] });
+      })
+      .catch(() => { if (!controller.signal.aborted) setFailedKey(key); });
+    return () => controller.abort();
+  }, [date, roleId, key]);
+
   const rotation = leadBriefRotation(date);
-  const resolvedTasks = resolveVaultTasks([]).map((t) => ({
-    ...t,
-    status: localStatuses[t.id] ?? t.status,
+  const current = served?.key === key ? served.slots : null;
+  const baseline = injectTasksIntoSchedule(buildBaselineSchedule(date, roleId), resolveVaultTasks([]));
+  const slots = (current ?? baseline).map((slot) => ({
+    ...slot,
+    injectedTasks: slot.injectedTasks.map((task) => ({ ...task, status: localStatuses[task.id] ?? task.status })),
   }));
-  const slots = injectTasksIntoSchedule(buildBaselineSchedule(date, roleId), resolvedTasks);
 
   const sendFeedback = async (
     taskId: string,
@@ -67,6 +87,7 @@ export function RoleSchedulePanel({ date }: { date: string }) {
         rule39Applied: boolean;
       };
       setLocalStatuses((prev) => ({ ...prev, [taskId]: data.resolvedStatus }));
+      setReload((value) => value + 1);
       setFeedbackMessage(
         data.rule39Applied
           ? `${taskId}: Dicatat sebagai menunggu verifikasi dr. Novia (Rule #39).`
@@ -113,6 +134,12 @@ export function RoleSchedulePanel({ date }: { date: string }) {
           );
         })}
       </div>
+
+      {current === null && failedKey === key ? (
+        <p role="status" className="m-0 text-xs text-slate-600">
+          Jadwal terbaru belum dapat dimuat; yang tampil jadwal dasar tanpa perubahan jadwal dan status terakhir.
+        </p>
+      ) : null}
 
       {feedbackMessage ? (
         <p role="status" className="m-0 text-sm font-medium text-slate-800">

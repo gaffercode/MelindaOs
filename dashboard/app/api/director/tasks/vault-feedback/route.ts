@@ -1,9 +1,10 @@
 import { guard } from "@/lib/access/guard";
 import { requirePermission } from "@/lib/access/access-api";
 import { apiBoundary, DirectorApiError, jsonResponse, rateLimit, readBoundedJson } from "@/lib/director/director-api";
-import { wibDate } from "@/lib/director/director-data";
-import { board } from "@/lib/tasks/store";
+import { validReportDate, wibDate } from "@/lib/director/director-data";
+import { vaultLedger } from "@/lib/tasks/store";
 import type { StructuralRoleId } from "@/lib/work-schedule/baseline-schedule";
+import { readScheduleOverrides } from "@/lib/work-schedule/schedule-overrides";
 import {
   buildEnrichedScheduleForRole,
   submitVaultTaskFeedback,
@@ -34,12 +35,11 @@ export const GET = guard((request: Request) =>
     const { config } = await requirePermission(request, "executive.view");
     const params = new URL(request.url).searchParams;
     const date = params.get("date") ?? wibDate();
+    if (!validReportDate(date)) throw new DirectorApiError(400, "Tanggal tidak valid.");
     const roleParam = (params.get("role") ?? "direktur") as StructuralRoleId;
     const roleId = VALID_ROLES.has(roleParam) ? roleParam : "direktur";
-    const { instructions } = await board(config, { now: new Date().toISOString() }).catch(() => ({
-      instructions: [],
-    }));
-    const enriched = buildEnrichedScheduleForRole(date, roleId, instructions);
+    const instructions = await vaultLedger(config, { now: new Date().toISOString() }).catch(() => []);
+    const enriched = buildEnrichedScheduleForRole(date, roleId, instructions, await readScheduleOverrides(config, date, roleId));
     return jsonResponse({ date, roleId, ...enriched });
   })
 );

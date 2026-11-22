@@ -4,8 +4,9 @@ import { wibDate } from "./director-data";
 import { instructionStatuses, type Instruction } from "./director-instructions";
 import { buildTaskRecapPdf } from "../pdf/build-task-recap";
 import { boardSummary, forRules, isOverdue, reminderState } from "../tasks/rules";
-import { archive, board, listReplies, listSchedule } from "../tasks/store";
+import { archive, board, listReplies, listSchedule, vaultLedger } from "../tasks/store";
 import { buildFallbackBoardSchedule } from "../work-schedule/fallbacks";
+import { readScheduleOverrides } from "../work-schedule/schedule-overrides";
 import { resolveVaultTasks } from "../work-schedule/task-vault";
 
 const DAY = 86_400_000;
@@ -23,14 +24,15 @@ export const boardResponse = (request: Request) => apiBoundary(async () => {
   const { config } = await requirePermission(request, "executive.view");
   const now = new Date();
   const todayWib = wibDate(now);
-  const [boardResult, scheduleResult] = await Promise.all([
-    board(config, { now: now.toISOString() }), listSchedule(config, { date: todayWib }),
+  const [boardResult, scheduleResult, ledger, overrides] = await Promise.all([
+    board(config, { now: now.toISOString() }), listSchedule(config, { date: todayWib }), vaultLedger(config, { now: now.toISOString() }),
+    readScheduleOverrides(config, todayWib, "direktur"),
   ]);
   const nowWib = wibStamp(now);
   const rules = boardResult.instructions.map(forRules);
   const tasks = boardResult.instructions.map((item, index) => ({ ...item, overdue: isOverdue(rules[index], nowWib), reminder: reminderState(rules[index], now) }));
-  const schedule = scheduleResult.items.length > 0 ? scheduleResult.items : buildFallbackBoardSchedule(todayWib, boardResult.instructions);
-  const vaultTasks = resolveVaultTasks(boardResult.instructions);
+  const schedule = scheduleResult.items.length > 0 ? scheduleResult.items : buildFallbackBoardSchedule(todayWib, ledger, overrides);
+  const vaultTasks = resolveVaultTasks(ledger);
   return jsonResponse({
     summary: boardSummary(rules, now, nowWib),
     schedule,

@@ -97,6 +97,42 @@ describe("task-vault", () => {
     expect(btn?.latestNote).toBe("Menunggu revisi dokumen contoh");
   });
 
+  it("keeps a completion closed by an executive whose actor id carries no title", () => {
+    const done = makeInstruction({
+      itemId: "ACT-2610-01",
+      action: "done",
+      note: formatFeedbackNote({ status: "selesai", text: "Ditutup", executive: true }),
+      history: [{ status: "dibuat", at: "2026-11-19T09:00:00Z", actor: "reviewer-7f3a" }],
+    });
+    expect(resolveVaultTasks([done]).find((t) => t.id === "ACT-2610-01")?.status).toBe("selesai");
+  });
+
+  it("ignores an executive tag a caller wrote into the note text", () => {
+    const forged = makeInstruction({
+      itemId: "ACT-2610-01",
+      action: "done",
+      note: formatFeedbackNote({ status: "selesai", text: "[EKSEKUTIF] Ditutup" }),
+      history: [{ status: "dibuat", at: "2026-11-19T09:00:00Z", actor: "reviewer-7f3a" }],
+    });
+    expect(forged.note).not.toContain("[EKSEKUTIF]");
+    expect(resolveVaultTasks([forged]).find((t) => t.id === "ACT-2610-01")?.status).toBe("menunggu_verifikasi_novia");
+  });
+
+  it("moves the PIC on a reassignment and keeps it through later status updates", () => {
+    const task = VAULT_TASKS[0];
+    const pending = makeInstruction({ id: "IOC-2001", itemId: task.id, action: "defer", pic: [...task.pic], note: formatFeedbackNote({ status: "pending_pihak_ketiga", thirdPartyName: "Mitra Contoh", text: "Menunggu mitra" }), createdAt: "2026-11-19T08:00:00Z" });
+    const reassign = makeInstruction({ id: "IOC-2002", itemId: task.id, action: "assign", pic: ["PIC Baru"], note: formatFeedbackNote({ status: "pending_pihak_ketiga", thirdPartyName: "Mitra Contoh", text: "Dialihkan ke PIC Baru", executive: true }), createdAt: "2026-11-19T09:00:00Z" });
+    const later = makeInstruction({ id: "IOC-2003", itemId: task.id, action: "approve", pic: [...task.pic], note: formatFeedbackNote({ status: "berjalan", text: "Mitra sudah membalas", executive: true }), createdAt: "2026-11-19T10:00:00Z" });
+
+    const afterReassign = resolveVaultTasks([pending, reassign]).find((t) => t.id === task.id);
+    expect(afterReassign?.pic).toEqual(["PIC Baru"]);
+    expect(afterReassign?.status).toBe("pending_pihak_ketiga");
+
+    const afterUpdate = resolveVaultTasks([later, pending, reassign]).find((t) => t.id === task.id);
+    expect(afterUpdate?.pic).toEqual(["PIC Baru"]);
+    expect(afterUpdate?.status).toBe("berjalan");
+  });
+
   it("injects Finance/Pharmacy/Third-Party tasks into Thursday Tertutup Keuangan/SDM and drops completed tasks", () => {
     const thursdaySlots = buildBaselineSchedule("2026-11-19", "direktur");
     const directorClosedOne = makeInstruction({

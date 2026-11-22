@@ -5,8 +5,9 @@ import { validReportDate, wibDate } from "../director/director-data";
 import { buildOfficePlan, type OfficeCalendarRow, type OfficeReadinessRow } from "./executive-office";
 import type { DirectorAuthConfiguration } from "../director/director-auth";
 import { logError } from "../log";
-import { board } from "../tasks/store";
+import { vaultLedger } from "../tasks/store";
 import { buildFallbackOfficePlan } from "../work-schedule/fallbacks";
+import { readScheduleOverrides } from "../work-schedule/schedule-overrides";
 
 type Plan = {
   date: string; events: OfficeCalendarRow[]; readiness: OfficeReadinessRow[];
@@ -44,8 +45,8 @@ export const executivePlanResponse = (request: Request) => apiBoundary(async () 
   if (!validReportDate(date)) throw new DirectorApiError(400, "Tanggal tidak valid.");
   const plan = await readExecutivePlan(config, date);
   if (plan.events.length === 0) {
-    const { instructions } = await board(config, { now: new Date().toISOString() }).catch(() => ({ instructions: [] }));
-    const fallback = buildFallbackOfficePlan(date, instructions);
+    const instructions = await vaultLedger(config, { now: new Date().toISOString() }).catch(() => []);
+    const fallback = buildFallbackOfficePlan(date, instructions, await readScheduleOverrides(config, date, "direktur"));
     return jsonResponse({
       ...plan,
       events: fallback.events,

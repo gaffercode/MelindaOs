@@ -9,16 +9,17 @@ import { knowledgePath } from "../navigation";
 import { readOrderQueue } from "../pharmacy/order-obat-api";
 import { sharedRetriever } from "../ask/http";
 import { forRules, isFinal, isOverdue, reminderState } from "../tasks/rules";
-import { board, listSchedule } from "../tasks/store";
+import { board, listSchedule, vaultLedger } from "../tasks/store";
 import { leadBriefRotation, type StructuralRoleId } from "../work-schedule/baseline-schedule";
-import {
-  buildEnrichedScheduleForRole,
-  submitVaultTaskFeedback,
-  syncTodayAllPages,
-} from "../work-schedule/sync-and-feedback";
+import { buildEnrichedScheduleForRole } from "../work-schedule/sync-and-feedback";
 import { resolveVaultTasks, type VaultTaskStatus } from "../work-schedule/task-vault";
+import { readScheduleOverrides } from "../work-schedule/schedule-overrides";
+import { openInstructions } from "../director/director-instructions-api";
+import { DirectorStoreError } from "../director/director-store";
+import { ActionInputError, ARAHAN_FINAL_STATUSES, knownOfficials, proposeAction, type ActionKind, type ActionProposal } from "./actions";
 import type { ToolDefinition } from "./model";
 import type { MelindaSource } from "./store";
+import { melindaSystemMap } from "./system-map";
 
 const MAX_RESULT = 20_000;
 const MAX_TASKS = 30;
@@ -41,6 +42,8 @@ const vaultStatusValues: readonly VaultTaskStatus[] = [
   "butuh_keputusan_direktur",
   "menunggu_verifikasi_novia",
 ];
+
+const NAMES = { type: "array", items: { type: "string" } };
 
 export const MELINDA_TOOLS: ToolDefinition[] = [
   { name: "baca_jadwal", description: "Jadwal dan rapat Direktur hari ini, urut jam, beserta kesiapannya.", input_schema: noInput, strict: true },
@@ -77,31 +80,54 @@ export const MELINDA_TOOLS: ToolDefinition[] = [
     },
     strict: true,
   },
+  { name: "baca_peta_melindaos", description: "Peta MelindaOS: halaman, jenis tugas dan ID-nya, status, Rule #39, cara kerja usulan dan konfirmasi, serta daftar 8 jabatan dan pejabatnya. Baca ini bila ragu cara kerja sistem.", input_schema: noInput, strict: true },
+  { name: "cari_pejabat", description: "Cari nama pejabat atau staf yang dikenal MelindaOS beserta jabatannya, untuk mencocokkan nama yang disebut Direktur sebelum mengganti PIC. Kosongkan nama untuk melihat semuanya.", input_schema: { type: "object", properties: { nama: { type: "string" } }, required: [], additionalProperties: false }, strict: true },
+  { name: "baca_tindak_lanjut", description: "Arahan Direktur yang masih terbuka dalam 14 hari terakhir, dengan ID IOC, PIC, status, tenggat, dan tanda lewat tenggat.", input_schema: noInput, strict: true },
   {
-    name: "ubah_status_tugas",
-    description: "Perbarui status tugas di Task Vault dan catat ke buku besar Arahan Direktur (mendukung penandaan pihak ke-3 dan aturan verifikasi dr. Novia / Rule #39).",
-    input_schema: {
-      type: "object",
-      properties: {
-        task_id: { type: "string" },
-        status: { type: "string", enum: [...vaultStatusValues] },
-        pihak_ketiga: { type: "string" },
-        catatan: { type: "string" },
-      },
-      required: ["task_id", "status"],
-      additionalProperties: false,
-    },
+    name: "usulkan_ganti_pic",
+    description: "Siapkan usulan mengganti PIC sebuah tugas Task Vault (ID seperti ACT-2810-01) atau arahan (ID IOC-...). Status tugas tidak berubah. Perubahan baru tersimpan setelah Direktur menekan Konfirmasi.",
+    input_schema: { type: "object", properties: { task_id: { type: "string" }, pic: NAMES, catatan: { type: "string" } }, required: ["task_id", "pic"], additionalProperties: false },
     strict: true,
   },
   {
-    name: "sinkronkan_halaman",
-    description: "Sinkronkan jadwal baseline, Task Vault, Management Morning Brief (/), Arahan (/arahan), dan Warta (/berita) untuk hari ini.",
+    name: "usulkan_status_tugas",
+    description: "Siapkan usulan mengubah status tugas. Task Vault: selesai, berjalan, pending_pihak_ketiga (isi pihak_ketiga), butuh_keputusan_direktur, menunggu_verifikasi_novia. Arahan IOC: selesai, ditunda, dibatalkan. Tersimpan setelah Konfirmasi.",
+    input_schema: { type: "object", properties: { task_id: { type: "string" }, status: { type: "string", enum: [...new Set<string>([...vaultStatusValues, ...ARAHAN_FINAL_STATUSES])] }, pihak_ketiga: { type: "string" }, catatan: { type: "string" } }, required: ["task_id", "status"], additionalProperties: false },
+    strict: true,
+  },
+  {
+    name: "usulkan_tindak_lanjut",
+    description: "Siapkan usulan follow-up: minta update kepada PIC dengan tenggat (YYYY-MM-DDTHH:MM, WIB). Isi task_id bila untuk tugas yang ada, atau judul bila hal baru. Tersimpan setelah Konfirmasi.",
+    input_schema: { type: "object", properties: { task_id: { type: "string" }, judul: { type: "string" }, pic: NAMES, tenggat: { type: "string" }, catatan: { type: "string" } }, required: ["pic", "tenggat"], additionalProperties: false },
+    strict: true,
+  },
+  {
+    name: "usulkan_tugas_baru",
+    description: "Siapkan usulan tugas baru dari Direktur untuk PIC tertentu, opsional dengan tenggat (YYYY-MM-DDTHH:MM, WIB). Tersimpan di Arahan setelah Konfirmasi.",
+    input_schema: { type: "object", properties: { judul: { type: "string" }, pic: NAMES, tenggat: { type: "string" }, catatan: { type: "string" }, mendesak: { type: "boolean" } }, required: ["judul", "pic"], additionalProperties: false },
+    strict: true,
+  },
+  {
+    name: "usulkan_ubah_jadwal",
+    description: "Siapkan usulan mengubah jadwal satu jabatan pada satu tanggal: tambah rapat (mulai, judul), pindah rapat (slot_id, mulai), atau batal rapat (slot_id). Ambil slot_id dari baca_jadwal_struktural. Bentrok jam ditampilkan di usulan. Tersimpan setelah Konfirmasi.",
     input_schema: {
       type: "object",
-      properties: { date: { type: "string" } },
-      required: [],
+      properties: {
+        jenis: { type: "string", enum: ["tambah", "pindah", "batal"] },
+        jabatan: { type: "string", enum: [...structuralRoleIds] },
+        tanggal: { type: "string" }, slot_id: { type: "string" }, mulai: { type: "string" }, selesai: { type: "string" },
+        judul: { type: "string" }, tempat: { type: "string" }, catatan: { type: "string" },
+      },
+      required: ["jenis"],
       additionalProperties: false,
     },
+    // Not strict: its eight optional fields would put the request at the API limit of 24 optional
+    // strict parameters. parseScheduleChange checks every field on the server instead.
+  },
+  {
+    name: "usulkan_sinkron",
+    description: "Siapkan usulan menyinkronkan jadwal, Task Vault, Morning Brief (/), Arahan (/arahan), dan Warta (/berita) untuk satu tanggal. Berjalan setelah Konfirmasi.",
+    input_schema: { type: "object", properties: { date: { type: "string" } }, required: [], additionalProperties: false },
     strict: true,
   },
 ];
@@ -115,8 +141,15 @@ export const TOOL_STATUS: Record<string, string> = {
   cari_dokumen: "Mencari di dokumen",
   baca_jadwal_struktural: "Memetakan jadwal 8 jabatan struktural",
   baca_task_vault: "Memeriksa Task Vault & hambatan pihak ke-3",
-  ubah_status_tugas: "Memperbarui status tugas di buku besar",
-  sinkronkan_halaman: "Menyinkronkan seluruh halaman MelindaOS",
+  baca_peta_melindaos: "Membaca peta MelindaOS",
+  cari_pejabat: "Mencocokkan nama pejabat",
+  baca_tindak_lanjut: "Membaca arahan yang masih terbuka",
+  usulkan_ganti_pic: "Menyiapkan usulan ganti PIC",
+  usulkan_status_tugas: "Menyiapkan usulan status tugas",
+  usulkan_tindak_lanjut: "Menyiapkan usulan tindak lanjut",
+  usulkan_tugas_baru: "Menyiapkan usulan tugas baru",
+  usulkan_ubah_jadwal: "Menyiapkan usulan perubahan jadwal",
+  usulkan_sinkron: "Menyiapkan usulan sinkronisasi",
 };
 
 const FAILURE_LABEL: Record<string, string> = {
@@ -128,8 +161,15 @@ const FAILURE_LABEL: Record<string, string> = {
   cari_dokumen: "dokumen",
   baca_jadwal_struktural: "jadwal struktural",
   baca_task_vault: "Task Vault",
-  ubah_status_tugas: "status tugas",
-  sinkronkan_halaman: "sinkronisasi halaman",
+  baca_peta_melindaos: "peta MelindaOS",
+  cari_pejabat: "daftar pejabat",
+  baca_tindak_lanjut: "arahan terbuka",
+  usulkan_ganti_pic: "usulan ganti PIC",
+  usulkan_status_tugas: "usulan status tugas",
+  usulkan_tindak_lanjut: "usulan tindak lanjut",
+  usulkan_tugas_baru: "usulan tugas baru",
+  usulkan_ubah_jadwal: "usulan perubahan jadwal",
+  usulkan_sinkron: "usulan sinkronisasi",
 };
 
 /** Tool output is data: nothing inside it can open or close the wrapper the system prompt tells the model to distrust. */
@@ -137,8 +177,8 @@ export function wrapToolData(name: string, payload: string): string {
   return `<data_alat sumber="${name}">\n${payload.replace(/<(\/?)data_alat/gi, "&lt;$1data_alat")}\n</data_alat>`;
 }
 
-type Context = { config: DirectorAuthConfiguration; now: Date };
-type Output = { payload: unknown; sources?: MelindaSource[] };
+export type Context = { config: DirectorAuthConfiguration; now: Date; owner: string; conversationId: string | null };
+type Output = { payload: unknown; sources?: MelindaSource[]; proposal?: ActionProposal };
 class BadInput extends Error {}
 
 async function readSchedule({ config, now }: Context): Promise<Output> {
@@ -165,7 +205,7 @@ async function readTasks({ config, now }: Context, input: Record<string, unknown
   });
   return { payload: {
     jumlah: rows.length,
-    tugas: rows.slice(0, MAX_TASKS).map((row) => ({ judul: row.itemTitle, pic: row.pic, status: row.status, tenggat: row.deadline, catatan: row.note, balasan_terakhir: row.latestReply ? { dari: row.latestReply.fromName, ringkasan: row.latestReply.summary ?? row.latestReply.originalText.slice(0, 200), waktu: row.latestReply.receivedAt } : null })),
+    tugas: rows.slice(0, MAX_TASKS).map((row) => ({ id: row.id, judul: row.itemTitle, pic: row.pic, status: row.status, tenggat: row.deadline, catatan: row.note, balasan_terakhir: row.latestReply ? { dari: row.latestReply.fromName, ringkasan: row.latestReply.summary ?? row.latestReply.originalText.slice(0, 200), waktu: row.latestReply.receivedAt } : null })),
   } };
 }
 
@@ -215,9 +255,10 @@ async function readStructuralSchedule({ config, now }: Context, input: Record<st
   const role = typeof input.role === "string" && structuralRoleIds.includes(input.role as StructuralRoleId)
     ? (input.role as StructuralRoleId)
     : "direktur";
-  const { instructions } = await board(config, { now: now.toISOString() }).catch(() => ({ instructions: [] }));
+  const instructions = await vaultLedger(config, { now: now.toISOString() }).catch(() => []);
   const rotation = leadBriefRotation(date);
-  const { slots } = buildEnrichedScheduleForRole(date, role, instructions);
+  const overrides = await readScheduleOverrides(config, date, role);
+  const { slots } = buildEnrichedScheduleForRole(date, role, instructions, overrides);
   return {
     payload: {
       tanggal: date,
@@ -237,7 +278,7 @@ async function readStructuralSchedule({ config, now }: Context, input: Record<st
 }
 
 async function readTaskVault({ config, now }: Context, input: Record<string, unknown>): Promise<Output> {
-  const { instructions } = await board(config, { now: now.toISOString() }).catch(() => ({ instructions: [] }));
+  const instructions = await vaultLedger(config, { now: now.toISOString() }).catch(() => []);
   let tasks = resolveVaultTasks(instructions);
   if (typeof input.domain === "string" && input.domain.trim()) {
     const q = input.domain.trim().toLowerCase();
@@ -265,27 +306,32 @@ async function readTaskVault({ config, now }: Context, input: Record<string, unk
   };
 }
 
-async function updateTaskStatus({ config, now }: Context, input: Record<string, unknown>): Promise<Output> {
-  if (typeof input.task_id !== "string" || typeof input.status !== "string" || !vaultStatusValues.includes(input.status as VaultTaskStatus)) {
-    throw new BadInput();
-  }
-  const result = await submitVaultTaskFeedback(config, {
-    date: wibDate(now),
-    taskId: input.task_id,
-    status: input.status as VaultTaskStatus,
-    thirdPartyName: typeof input.pihak_ketiga === "string" ? input.pihak_ketiga : undefined,
-    note: typeof input.catatan === "string" ? input.catatan : undefined,
-    actorRole: "DIRECTOR",
-    actorLabel: "Direktur (via /melinda)",
-  });
-  return { payload: result };
+async function findOfficials({ config }: Context, input: Record<string, unknown>): Promise<Output> {
+  const query = typeof input.nama === "string" ? input.nama.trim().toLowerCase() : "";
+  const all = await knownOfficials(config);
+  const hits = query ? all.filter((item) => item.name.toLowerCase().includes(query) || (item.role ?? "").toLowerCase().includes(query)) : all;
+  return { payload: { jumlah: hits.length, pejabat: hits.map((item) => ({ nama: item.name, jabatan: item.role })), ...(query && hits.length === 0 ? { pesan: "Tidak ada yang cocok; tanyakan nama lengkapnya kepada Direktur." } : {}) } };
 }
 
-async function syncAllPagesTool({ config, now }: Context, input: Record<string, unknown>): Promise<Output> {
-  const date = typeof input.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(input.date) ? input.date : wibDate(now);
-  const result = await syncTodayAllPages(config, date);
-  return { payload: result };
+async function readFollowUps({ config, now }: Context): Promise<Output> {
+  const nowWib = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Jakarta", dateStyle: "short", timeStyle: "short" }).format(now).replace(" ", "T");
+  const { instructions } = await openInstructions(config, wibDate(now), 14);
+  return { payload: {
+    jumlah: instructions.length,
+    arahan: instructions.slice(0, MAX_TASKS).map((row) => ({ id: row.id, judul: row.itemTitle, pic: row.pic, status: row.status, tenggat: row.deadline, lewat_tenggat: row.deadline !== null && row.deadline < nowWib, tanggal: row.reportDate })),
+  } };
 }
+
+const proposer = (kind: ActionKind) => async ({ config, now, owner, conversationId }: Context, input: Record<string, unknown>): Promise<Output> => {
+  try {
+    const proposal = await proposeAction(config, { owner, conversationId, now, kind, input });
+    return { payload: { status: "menunggu_konfirmasi", ringkasan: proposal.summary, pesan: "Usulan tampil di bawah jawaban. Belum ada yang berubah sampai Direktur menekan Konfirmasi." }, proposal };
+  } catch (error) {
+    if (error instanceof ActionInputError) return { payload: { status: "ditolak", alasan: error.message } };
+    if (error instanceof DirectorStoreError && error.code === "missing_function") return { payload: { status: "belum_aktif", alasan: "Fitur usulan perubahan belum aktif: migrasi database 202611220002 dan 202611220003 belum diterapkan." } };
+    throw error;
+  }
+};
 
 const READERS: Record<string, (ctx: Context, input: Record<string, unknown>) => Promise<Output>> = {
   baca_jadwal: readSchedule,
@@ -296,18 +342,25 @@ const READERS: Record<string, (ctx: Context, input: Record<string, unknown>) => 
   cari_dokumen: searchDocuments,
   baca_jadwal_struktural: readStructuralSchedule,
   baca_task_vault: readTaskVault,
-  ubah_status_tugas: updateTaskStatus,
-  sinkronkan_halaman: syncAllPagesTool,
+  baca_peta_melindaos: async () => ({ payload: melindaSystemMap() }),
+  cari_pejabat: findOfficials,
+  baca_tindak_lanjut: readFollowUps,
+  usulkan_ganti_pic: proposer("ganti_pic"),
+  usulkan_status_tugas: proposer("status_tugas"),
+  usulkan_tindak_lanjut: proposer("tindak_lanjut"),
+  usulkan_tugas_baru: proposer("tugas_baru"),
+  usulkan_ubah_jadwal: proposer("ubah_jadwal"),
+  usulkan_sinkron: proposer("sinkron"),
 };
 
-/** Runs one read-only tool. Never throws: a failure becomes an error result the model can report. */
-export async function runTool(name: string, input: unknown, ctx: Context): Promise<{ text: string; sources: MelindaSource[]; isError: boolean }> {
+/** Runs one tool: a read, or a proposal that writes nothing until the Director confirms. Never throws: a failure becomes an error result the model can report. */
+export async function runTool(name: string, input: unknown, ctx: Context): Promise<{ text: string; sources: MelindaSource[]; isError: boolean; proposal?: ActionProposal }> {
   const reader = Object.hasOwn(READERS, name) ? READERS[name] : undefined;
   if (!reader || typeof input !== "object" || input === null) return { text: "Alat ini tidak tersedia.", sources: [], isError: true };
   try {
-    const { payload, sources = [] } = await reader(ctx, input as Record<string, unknown>);
+    const { payload, sources = [], proposal } = await reader(ctx, input as Record<string, unknown>);
     const json = JSON.stringify(payload);
-    return { text: wrapToolData(name, json.length > MAX_RESULT ? `${json.slice(0, MAX_RESULT)} (terpotong)` : json), sources, isError: false };
+    return { text: wrapToolData(name, json.length > MAX_RESULT ? `${json.slice(0, MAX_RESULT)} (terpotong)` : json), sources, isError: false, ...(proposal ? { proposal } : {}) };
   } catch (error) {
     if (error instanceof BadInput) return { text: "Masukan alat tidak valid.", sources: [], isError: true };
     logError(`melinda_tool_${name}`, error);
