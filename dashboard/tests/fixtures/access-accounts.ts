@@ -7,6 +7,7 @@ export const ACCESS_FIXTURES: readonly { email: string; role: AccountRole; displ
   { email: "staff.hr@melinda.test", role: "STAFF_HR", displayName: "Staf SDM Uji", password: "synthetic-staff.hr-example" },
   { email: "staff.ops@melinda.test", role: "STAFF_OPS", displayName: "Staf Operasional Uji", password: "synthetic-staff.ops-example" },
   { email: "staff.support@melinda.test", role: "STAFF_SUPPORT", displayName: "Staf Layanan Uji", password: "synthetic-staff.support-example" },
+  { email: "doctor@melinda.test", role: "DOCTOR", displayName: "Dokter Uji", password: "synthetic-doctor-example" },
 ];
 
 export const DIRECTOR_FIXTURE_PASSCODE = "synthetic-test-passcode";

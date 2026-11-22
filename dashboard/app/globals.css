@@ -2758,3 +2758,33 @@ circle.medify-chart-mark { fill: #334155; }
   .referral-sheet { width: 100% !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; }
   .referral-sheet-body > div { break-inside: avoid; }
 }
+
+/* Data klinis (/klinis): handover, roster, insiden. Sentence case, large type, one accent. */
+.klinis { display: grid; gap: 16px; max-width: 920px; }
+.klinis-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.klinis-head h1 { margin: 0 0 6px; font-size: var(--type-title); font-weight: 500; letter-spacing: -0.01em; }
+.klinis-head p { margin: 0; color: var(--muted); font-size: var(--type-body); line-height: 1.55; }
+.klinis-tabs { display: inline-flex; width: fit-content; overflow: hidden; border: 1px solid var(--line); border-radius: 999px; background: var(--color-background-surface); }
+.klinis-tabs button { min-height: 42px; padding: 0 18px; border: 0; background: transparent; color: var(--muted); font-size: var(--type-body); }
+.klinis-tabs button.is-active { background: var(--accent-soft); color: var(--accent); }
+.klinis-primary { min-height: 42px; padding: 0 18px; border: 0; border-radius: 12px; background: var(--accent); color: #ffffff; font-size: var(--type-body); }
+.klinis-primary:disabled { opacity: 0.6; }
+.klinis-ok { margin: 0; color: var(--muted); font-size: var(--type-body); }
+.klinis-error { margin: 0; color: #c2410c; font-size: var(--type-body); }
+.klinis-form { display: grid; gap: 14px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--color-background-surface); }
+.klinis-field { display: grid; gap: 6px; }
+.klinis-field span { color: var(--muted); font-size: var(--type-ui); }
+.klinis-field input, .klinis-field select, .klinis-field textarea { padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--color-background-canvas); color: var(--text); font: inherit; font-size: var(--type-body); }
+.klinis-actions { display: flex; gap: 10px; }
+.klinis-actions button:not(.klinis-primary) { min-height: 42px; padding: 0 18px; border: 1px solid var(--line); border-radius: 12px; background: transparent; color: var(--text); font-size: var(--type-body); }
+.klinis-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.klinis-entry { display: grid; gap: 6px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--color-background-surface); font-size: var(--type-body); line-height: 1.55; }
+.klinis-entry p { margin: 0; }
+.klinis-entry small { color: var(--muted); font-size: var(--type-ui); }
+.klinis-entry-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); font-size: var(--type-ui); }
+.klinis-people { margin: 0; padding-left: 20px; }
+.klinis-link { border: 0; background: none; color: var(--accent); font-size: var(--type-ui); text-decoration: underline; }
+.klinis-empty { margin: 0; color: var(--muted); font-size: var(--type-body); }
+@media (max-width: 720px) {
+  .klinis-head { flex-direction: column; }
+}

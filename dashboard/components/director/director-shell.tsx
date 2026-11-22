@@ -30,6 +30,7 @@ export function DirectorShell({ children, date, pending, authenticated = false, 
     activeSection === "melinda-agent" ? "Melinda"
     : activeSection === "arahan" ? "Arahan Direktur"
     : activeSection === "rujukan-masuk" ? "Rujukan masuk"
+    : activeSection === "klinis" ? "Data klinis"
     : activeSection === "satu-sehat" ? "Satu Sehat"
     : activeSection === "berita" ? "Warta & Regulasi"
     : activeSection === "studio" ? "Studio Dokumen RS"

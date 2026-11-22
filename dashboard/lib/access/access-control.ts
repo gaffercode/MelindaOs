@@ -2,10 +2,10 @@
  * Who may open which page or call which API route. Pure data and lookups, with no server-only imports,
  * so client components can import it to hide links; the server still enforces every rule.
  */
-export type Role = "DIRECTOR" | "VICE_DIRECTOR" | "STAFF_FINANCE" | "STAFF_HR" | "STAFF_OPS" | "STAFF_SUPPORT";
-export const ACCOUNT_ROLES: readonly Exclude<Role, "DIRECTOR">[] = ["VICE_DIRECTOR", "STAFF_FINANCE", "STAFF_HR", "STAFF_OPS", "STAFF_SUPPORT"];
+export type Role = "DIRECTOR" | "VICE_DIRECTOR" | "DOCTOR" | "STAFF_FINANCE" | "STAFF_HR" | "STAFF_OPS" | "STAFF_SUPPORT";
+export const ACCOUNT_ROLES: readonly Exclude<Role, "DIRECTOR">[] = ["VICE_DIRECTOR", "DOCTOR", "STAFF_FINANCE", "STAFF_HR", "STAFF_OPS", "STAFF_SUPPORT"];
 
-export type Permission = "executive.view" | "credentials.view" | "pharmacy.decide" | "casemix.view" | "hrd.view" | "hrd.edit" | "pharmacy.view" | "pharmacy.upload" | "starkes.use" | "crm.view" | "news.view" | "knowledge.ask" | "account.self" | "studio.use" | "instructions.send" | "melinda.chat" | "users.manage" | "director.only";
+export type Permission = "executive.view" | "credentials.view" | "pharmacy.decide" | "casemix.view" | "hrd.view" | "hrd.edit" | "pharmacy.view" | "pharmacy.upload" | "starkes.use" | "crm.view" | "news.view" | "knowledge.ask" | "account.self" | "studio.use" | "instructions.send" | "melinda.chat" | "clinical.use" | "users.manage" | "director.only";
 
 export type Principal = { kind: "director" | "account"; role: Role; id: string; displayName: string; csrfSecret: string; mustChange: boolean };
 
@@ -20,8 +20,9 @@ const VICE: readonly Permission[] = ["executive.view", "credentials.view", "phar
 
 /** Spec section 3. `DIRECTOR` holds every permission, including `director.only`; every account holds `account.self`. */
 export const ROLE_PERMISSIONS: Readonly<Record<Role, readonly Permission[]>> = {
-  DIRECTOR: [...VICE, "hrd.edit", "studio.use", "instructions.send", "melinda.chat", "users.manage", "director.only"],
+  DIRECTOR: [...VICE, "hrd.edit", "studio.use", "instructions.send", "melinda.chat", "clinical.use", "users.manage", "director.only"],
   VICE_DIRECTOR: VICE,
+  DOCTOR: ["clinical.use", ...EVERYONE],
   STAFF_FINANCE: ["casemix.view", ...EVERYONE],
   STAFF_HR: ["hrd.view", "hrd.edit", ...EVERYONE],
   STAFF_OPS: ["pharmacy.view", "pharmacy.upload", "starkes.use", ...EVERYONE],
@@ -31,6 +32,7 @@ export const ROLE_PERMISSIONS: Readonly<Record<Role, readonly Permission[]>> = {
 export const ROLE_LABELS: Readonly<Record<Role, string>> = {
   DIRECTOR: "Direktur",
   VICE_DIRECTOR: "Wakil Direktur",
+  DOCTOR: "Dokter",
   STAFF_FINANCE: "Staf keuangan",
   STAFF_HR: "Staf SDM",
   STAFF_OPS: "Staf operasional",
@@ -58,6 +60,7 @@ export const PAGE_PERMISSIONS: readonly RouteRule[] = [
   ...page("studio.use", "/studio"),
   ...page("instructions.send", "/arahan", "/arahan/arsip", "/arahan/persiapan"),
   ...page("melinda.chat", "/melinda"),
+  ...page("clinical.use", "/klinis"),
   ...page("users.manage", "/pengguna"),
   ...page("director.only", "/isian-dokumen"),
   ...page("executive.view", "/rujukan-masuk", "/satu-sehat"),
@@ -105,6 +108,8 @@ export const API_PERMISSIONS: readonly RouteRule[] = [
   { pattern: `${D}/agent-drafts`, permission: "director.only" },
   { pattern: `${D}/agent-drafts/[id]`, permission: "director.only" },
   { pattern: `${D}/agent-drafts/[id]/unduh`, permission: "director.only" },
+  { pattern: `${D}/klinis`, permission: "clinical.use" },
+  { pattern: `${D}/klinis/[id]`, permission: "clinical.use" },
   { pattern: `${D}/referrals/[id]`, methods: ["POST"], permission: "executive.view" },
   { pattern: `${D}/satusehat/sync`, methods: ["POST"], permission: "executive.view" },
 ];

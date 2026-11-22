@@ -35,4 +35,5 @@ export const MIGRATION_NAMES: readonly string[] = [
   "202611120002_director_answers",
   "202611160001_referrals",
   "202611190001_satusehat_snapshot_kind",
+  "202611220001_clinical_entries",
 ];

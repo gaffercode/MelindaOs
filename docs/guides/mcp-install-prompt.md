@@ -5,7 +5,7 @@ Env names, paths and tools were read from the code on 2026-11-20.
 
 | Server | Code | Transport | Purpose |
 |---|---|---|---|
-| Dashboard All-Access | `dashboard/app/api/mcp/route.ts`, `dashboard/lib/mcp/` | HTTP JSON-RPC at `/api/mcp` | 17 dashboard tools (documents, schedules, Task Vault, Morning Brief, Warta, Medify) |
+| Dashboard All-Access | `dashboard/app/api/mcp/route.ts`, `dashboard/lib/mcp/` | HTTP JSON-RPC at `/api/mcp` | 20 dashboard tools (documents, schedules, Task Vault, Morning Brief, Warta, Medify, clinical handover, roster and incidents) |
 | Agent All-Access (Python) | `runtime/src/melinda_agent_mcp/server.py` | stdio (default) or Streamable HTTP | knowledge base, repo file reads, bridge to dashboard and MAAF |
 | MAAF | `runtime/src/melinda_maaf/mcp_server.py` | Streamable HTTP at `/mcp` | 13 hospital tools behind the risk gateway (L1–L5) |
 
@@ -66,8 +66,8 @@ Steps:
 2. Register it:
    claude mcp add --transport http melindaos-dashboard <BASE_URL>/api/mcp \
      --header "Authorization: Bearer ${MELINDAOS_MCP_TOKEN}"
-3. Verify tools/list returns 17 tools, including agent_overview, cari_dokumen, baca_dokumen,
-   baca_jadwal, baca_task_vault, baca_morning_brief, baca_warta, baca_medify.
+3. Verify tools/list returns 20 tools, including agent_overview, cari_dokumen, baca_dokumen,
+   baca_jadwal, baca_task_vault, baca_morning_brief, baca_warta, baca_medify, baca_handover, baca_roster, baca_insiden.
 4. Call agent_overview and report the result.
 
 Rules:
@@ -115,4 +115,5 @@ Rules:
 - **Tokenless mode is local-only.** The dashboard accepts tokenless calls in file mode, and the Python agent server uses `allow_tokenless=True`. Never expose either to a network without a token.
 - **Store the hash, not the raw token**, on servers (`MELINDAOS_MCP_TOKEN_HASH`).
 - **Keep credentials separate**: the inbound MCP token is not the backend credential (`MAAF_GATEWAY_BEARER_FILE`).
+- **Clinical tools**: `baca_handover`, `baca_roster` and `baca_insiden` return patient names and record numbers typed on `/klinis`. Every MCP caller shares one identity, so whoever holds the token can read them; keep the token with the Director. Each read writes one row to `melinda_private.clinical_reads`, and the read fails if that row cannot be written.
 - **Patient data**: `satusehat_patient_lookup` takes a NIK. Enable it only via the allowlist for an approved role.

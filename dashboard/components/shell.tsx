@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Award, BookOpenCheck, Building2, Calculator, ClipboardCheck, Database, FileText, Gauge, Handshake, Inbox, ListChecks, MessageCircle, Network, Newspaper, Package, ShieldCheck, UserCog, Users, Briefcase, X } from "lucide-react";
+import { Activity, Award, BookOpenCheck, Building2, Calculator, ClipboardCheck, Database, FileText, Gauge, Handshake, HeartPulse, Inbox, ListChecks, MessageCircle, Network, Newspaper, Package, ShieldCheck, UserCog, Users, Briefcase, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -22,7 +22,7 @@ export function classNames(...values: Array<string | false | null | undefined>):
   return values.filter(Boolean).join(" ");
 }
 
-export type DirectorSection = "melinda" | "melinda-agent" | "arahan" | "rujukan-masuk" | "satu-sehat" | "berita" | "studio" | "isian-dokumen" | "starkes" | "casemix" | "kredensial" | "order-obat" | "formularium" | "hrd" | "crm" | "ruang-kerja" | "pengguna" | "ganti-password";
+export type DirectorSection = "melinda" | "melinda-agent" | "arahan" | "rujukan-masuk" | "klinis" | "satu-sehat" | "berita" | "studio" | "isian-dokumen" | "starkes" | "casemix" | "kredensial" | "order-obat" | "formularium" | "hrd" | "crm" | "ruang-kerja" | "pengguna" | "ganti-password";
 
 const icon = (Icon: typeof Gauge) => <Icon className="size-4" aria-hidden="true" />;
 const reportItems: Array<{ section: DirectorSection; item: HookSidebarItem }> = [
@@ -30,6 +30,7 @@ const reportItems: Array<{ section: DirectorSection; item: HookSidebarItem }> = 
   { section: "melinda-agent", item: { label: "Melinda", href: "/melinda", icon: icon(MessageCircle) } },
   { section: "arahan", item: { label: "Arahan Direktur", href: "/arahan", icon: icon(ClipboardCheck) } },
   { section: "rujukan-masuk", item: { label: "Rujukan masuk", href: "/rujukan-masuk", icon: icon(Inbox) } },
+  { section: "klinis", item: { label: "Data klinis", href: "/klinis", icon: icon(HeartPulse) } },
   { section: "satu-sehat", item: { label: "Satu Sehat", href: "/satu-sehat", icon: icon(Activity) } },
   { section: "berita", item: { label: "Warta & Regulasi", href: "/berita", icon: icon(Newspaper) } },
   { section: "studio", item: { label: "Studio Dokumen", href: "/studio", icon: icon(FileText) } },

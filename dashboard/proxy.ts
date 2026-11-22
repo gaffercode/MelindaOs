@@ -92,6 +92,7 @@ export const config = {
     "/arahan/arsip",
     "/arahan/persiapan",
     "/melinda",
+    "/klinis",
     "/pengguna",
     "/isian-dokumen",
     "/rujukan-masuk",
