@@ -47,6 +47,7 @@ beforeEach(() => {
       if (ledgerVersions === "garbage") return Response.json({ versions: "nope" });
       return command === "ledger" ? Response.json({ versions: ledgerVersions }) : Response.json({ errorCode: "invalid_command" });
     }
+    if (command === "health") return Response.json({ heartbeats: [] });
     if (command === "open" && listBroken) return Response.json({ errorCode: "invalid_command" });
     if (command === "open") return Response.json({ instructions: instructions.map((row) => ({ pic: [], ...row })) });
     if (command === "latest") return Response.json({ document: latest[args.kind] ? { id: "x", kind: args.kind, producer: "biznet-medify", payload_hash: "0".repeat(64), received_at: "2026-10-24T00:00:00Z", ...latest[args.kind] } : null });

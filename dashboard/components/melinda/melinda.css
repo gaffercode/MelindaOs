@@ -63,6 +63,18 @@
 /* A new message arrives (2026-11-11): the bubble or answer fades up once; the streamed text itself is never animated. */
 @media screen and (prefers-reduced-motion: no-preference) { .melinda-log > .melinda-bubble, .melinda-log > .melinda-answer { animation: pop-in var(--motion-default) var(--ease) backwards; } }
 @keyframes melinda-pulse { 0%, 80%, 100% { opacity: .25; transform: scale(.8); } 40% { opacity: 1; transform: scale(1); } }
+/* A change Melinda prepared (2026-11-22): nothing is written until Konfirmasi. */
+.melinda-proposal { display: flex; flex-direction: column; gap: 8px; margin: 4px 0; padding: 14px 16px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 12px; background: var(--surface); }
+.melinda-proposal-kind { margin: 0; font-size: var(--type-micro); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .04em; }
+.melinda-proposal-summary { margin: 0; font-size: var(--type-body); color: var(--color-text-primary); overflow-wrap: anywhere; }
+.melinda-proposal-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.melinda-proposal-actions button { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; font: inherit; font-size: var(--type-meta); cursor: pointer; transition: background-color .18s var(--ease), border-color .18s var(--ease), color .18s var(--ease); }
+.melinda-proposal-actions button:disabled { opacity: .6; cursor: progress; }
+.melinda-proposal-actions button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.melinda-proposal-confirm { border: 1px solid var(--accent); background: var(--accent); color: var(--surface); }
+.melinda-proposal-cancel { border: 1px solid var(--line); background: transparent; color: var(--color-text-primary); }
+.melinda-proposal-cancel:hover { background: var(--surface-soft); }
+.melinda-proposal-result { margin: 0; font-size: var(--type-meta); color: var(--color-text-secondary); }
 .melinda-retry { align-self: flex-start; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--accent); font: inherit; font-size: var(--type-body); cursor: pointer; }
 
 /* Composer: the one thing used every time, so it gets the weight */

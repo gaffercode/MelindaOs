@@ -65,3 +65,28 @@ export const board = (config: DirectorAuthConfiguration, args: { now: string }) 
   call<{ instructions: BoardInstruction[] }>(config, "board", args);
 export const archive = (config: DirectorAuthConfiguration, args: ArchiveArgs) =>
   call<{ instructions: BoardInstruction[]; offset: number; pageSize: number; hasMore: boolean }>(config, "archive", args);
+
+const VAULT_STATUS_TAG = "[STATUS:";
+const VAULT_ARCHIVE_PAGES = 4;
+
+/**
+ * The board plus archived rows that carry a Task Vault status tag, for resolving the vault only. A finished vault update
+ * goes to the archive at once (`action done`), or after 7 days; without its row the vault would show the task's default
+ * status again. Reads at most 200 archived rows, newest first. An archive failure falls back to the board alone.
+ */
+export async function vaultLedger(config: DirectorAuthConfiguration, args: { now: string }): Promise<BoardInstruction[]> {
+  const archived = async () => {
+    const rows: BoardInstruction[] = [];
+    for (let page = 0; page < VAULT_ARCHIVE_PAGES; page += 1) {
+      const result = await archive(config, { now: args.now, q: VAULT_STATUS_TAG, offset: rows.length });
+      rows.push(...result.instructions);
+      if (!result.hasMore) break;
+    }
+    return rows;
+  };
+  const [current, closed] = await Promise.all([
+    board(config, args),
+    archived().catch((error: unknown) => { logError("tasks_store_vault_archive", error); return [] as BoardInstruction[]; }),
+  ]);
+  return [...current.instructions, ...closed];
+}

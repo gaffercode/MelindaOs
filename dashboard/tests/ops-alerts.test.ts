@@ -8,6 +8,7 @@ const origin = "https://synthetic.example";
 const salt = "00112233445566778899aabbccddeeff";
 let instructions: Record<string, unknown>[];
 let latest: Record<string, { report_date: string; received_at?: string } | null>;
+let heartbeats: { producer: string; seenAt: string }[];
 /** Latest synthetic `medify_run_status` per past date; a date that is absent has no status. Defaults to a complete evening pull every day. */
 let runStatuses: Record<string, { slot: "morning" | "evening"; status: "complete" | "failed" } | "unreadable" | null>;
 
@@ -19,7 +20,7 @@ function runStatusDocument(date: string, slot: "morning" | "evening", status: "c
 }
 
 beforeEach(() => {
-  instructions = []; latest = { simrs_snapshot: null }; runStatuses = {};
+  instructions = []; latest = { simrs_snapshot: null }; runStatuses = {}; heartbeats = [];
   vi.useFakeTimers(); vi.setSystemTime(new Date("2026-10-24T03:30:00Z")); // 10:30 WIB
   vi.stubEnv("MELINDAOS_DIRECTOR_STORE", "supabase");
   vi.stubEnv("MELINDAOS_APP_ORIGIN", origin);
@@ -37,6 +38,7 @@ beforeEach(() => {
       return Response.json({ document: entry ? runStatusDocument(args.date, entry.slot, entry.status) : null });
     }
     if (command === "latest") return Response.json({ document: latest[args.kind] ? { id: "x", kind: args.kind, producer: "biznet-medify", payload_hash: "0".repeat(64), received_at: "2026-10-24T00:00:00Z", ...latest[args.kind] } : null });
+    if (command === "health") return Response.json({ heartbeats });
     return Response.json({ errorCode: "invalid_command" });
   });
 });
@@ -45,6 +47,15 @@ afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); vi.unstubAllGlobals();
 const codes = async () => (await collectOpsAlerts()).alerts.map((alert) => alert.code);
 
 describe("operational alerts", () => {
+  it("flags a global login lock from the last 24 hours only", async () => {
+    latest = { simrs_snapshot: { report_date: "2026-10-24" } };
+    heartbeats = [{ producer: "alert:login-global-locked", seenAt: "2026-10-24T01:15:00Z" }];
+    const report = await collectOpsAlerts();
+    expect(report.alerts.map((alert) => alert.code)).toEqual(["login_locked"]);
+    expect(report.alerts[0].detail).toContain("08:15 WIB");
+    heartbeats = [{ producer: "alert:login-global-locked", seenAt: "2026-10-23T03:00:00Z" }];
+    expect(await codes()).toEqual([]);
+  });
   it("reports no alerts when today's census exists and nothing is overdue", async () => {
     latest = { simrs_snapshot: { report_date: "2026-10-24" } };
     expect(await collectOpsAlerts()).toMatchObject({ date: "2026-10-24", alerts: [], latestSnapshot: "2026-10-24" });

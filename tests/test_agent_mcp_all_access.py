@@ -63,6 +63,46 @@ def test_knowledge_write_writes_inside_sandboxed_knowledge_root(tmp_path, monkey
     assert bad["status"] == "invalid_request"
 
 
+def test_knowledge_write_refuses_policy_contracts_and_approved_status(tmp_path, monkeypatch):
+    for folder in ("01_HOSPITAL", "08_AGENT_POLICY/core", "10_TOOL_CONTRACTS/mcp"):
+        (tmp_path / "knowledge" / folder).mkdir(parents=True)
+    monkeypatch.setenv("MELINDAOS_ROOT", str(tmp_path))
+
+    assert agent_mcp.knowledge_write("08_AGENT_POLICY/core/rules.prompt.md", "# x\n")["status"] == "forbidden"
+    assert agent_mcp.knowledge_write("knowledge/10_TOOL_CONTRACTS/mcp/tool-contracts.yaml", "tools: []\n")["status"] == "forbidden"
+    approved = agent_mcp.knowledge_write("01_HOSPITAL/spo.md", "---\nstatus: APPROVED\n---\n# SPO\n")
+    assert approved["status"] == "forbidden"
+    assert agent_mcp.knowledge_write("01_HOSPITAL/data.json", '{"status": "approved"}')["status"] == "forbidden"
+    assert not (tmp_path / "knowledge" / "01_HOSPITAL" / "spo.md").exists()
+    assert agent_mcp.knowledge_write("01_HOSPITAL/spo.md", "---\nstatus: DRAF\n---\n# SPO\n")["status"] == "written"
+
+
+def test_knowledge_write_refuses_approved_status_in_any_yaml_or_json_spelling(tmp_path, monkeypatch):
+    monkeypatch.setattr(agent_mcp, "repo_root", lambda: tmp_path)
+    (tmp_path / "knowledge").mkdir()
+    for content in (
+        "---\nstatus: !!str APPROVED\n---\n# SPO\n",
+        "---\nstatus: >-\n  APPROVED\n---\n# SPO\n",
+        "---\na: &x APPROVED\nstatus: *x\n---\n# SPO\n",
+        "---\ngovernance:\n  status: APPROVED\n---\n# SPO\n",
+    ):
+        assert agent_mcp.knowledge_write("01_HOSPITAL/spo.md", content)["status"] == "forbidden", content
+    assert agent_mcp.knowledge_write("11_MACHINE_READABLE/x.json", '{"governance": {"status": "\u0041PPROVED"}}')["status"] == "forbidden"
+
+
+def test_knowledge_write_refuses_agent_policy_files_and_approved_targets(tmp_path, monkeypatch):
+    monkeypatch.setattr(agent_mcp, "repo_root", lambda: tmp_path)
+    (tmp_path / "knowledge" / "01_HOSPITAL").mkdir(parents=True)
+    assert agent_mcp.knowledge_write("01_HOSPITAL/rules.prompt.md", "# x\n")["status"] == "forbidden"
+    assert agent_mcp.knowledge_write("09_AGENT_ARCHITECTURE/x.md", "# x\n")["status"] == "forbidden"
+    assert agent_mcp.knowledge_write("01_HOSPITAL/Rules.PROMPT.md", "# x\n")["status"] == "forbidden"
+    assert agent_mcp.knowledge_write("08_agent_policy/x.md", "# x\n")["status"] == "forbidden"
+    approved = tmp_path / "knowledge" / "01_HOSPITAL" / "spo.md"
+    approved.write_text("---\nstatus: APPROVED\n---\n# SPO\n", encoding="utf-8")
+    assert agent_mcp.knowledge_write("01_HOSPITAL/spo.md", "---\nstatus: DRAF\n---\n# SPO\n")["status"] == "forbidden"
+    assert "APPROVED" in approved.read_text(encoding="utf-8")
+
+
 def test_files_list_and_read_work_for_governed_docs():
     listed = agent_mcp.files_list("docs")
     assert listed["count"] > 0
@@ -72,13 +112,25 @@ def test_files_list_and_read_work_for_governed_docs():
     assert first in read_res["path"]
 
 
-def test_maaf_call_runs_as_the_shared_agent(monkeypatch):
+def test_maaf_call_runs_low_risk_tools_as_the_shared_agent(monkeypatch):
     monkeypatch.delenv("MAAF_BACKEND_URL", raising=False)
-    res = agent_mcp.maaf_call("melinda.social.publish", {"channel": "ig", "text": "Halo"})
+    res = agent_mcp.maaf_call("melinda.finance.summary", {"period": "2026-11"})
     assert res["status"] == "accepted"
     assert res["mode"] == "all_access_local"
     assert res["envelope"]["actor"] == "ALL_ACCESS"
-    assert res["envelope"]["all_access"] is True
+    assert "all_access" not in res["envelope"]
+
+
+def test_maaf_call_keeps_the_human_gates_for_l3_to_l5(monkeypatch):
+    monkeypatch.delenv("MAAF_BACKEND_URL", raising=False)
+    publish = agent_mcp.maaf_call("melinda.social.publish", {"channel": "ig", "text": "Halo"})
+    assert publish["status"] == "approval_required"
+    assert publish["human_required"] is True
+    queue = agent_mcp.maaf_call("melinda.medify.queue_status.read", {})
+    assert queue["status"] == "approval_required"
+    red_flag = agent_mcp.maaf_call("melinda.clinical.red_flag.check", {"text": "demam"})
+    assert red_flag["status"] == "human_only"
+    assert "envelope" not in red_flag
 
 
 def test_all_access_auth_supports_tokenless_local_and_master_token(monkeypatch):

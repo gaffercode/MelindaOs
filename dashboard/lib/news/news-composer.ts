@@ -5,6 +5,7 @@ import type { Instruction } from "../director/director-instructions";
 import type { MedifySnapshot } from "../medify/medify-snapshot-contract";
 import type { CountMetric } from "../publisher-contract";
 import { buildBaselineSchedule, leadBriefRotation } from "../work-schedule/baseline-schedule";
+import { applyOverrides, type ScheduleOverride } from "../work-schedule/schedule-overrides";
 import { resolveVaultTasks } from "../work-schedule/task-vault";
 import { parseNewsEdition, type NewsEditionDocument } from "./news-edition-contract";
 
@@ -45,12 +46,14 @@ export function composeNewsEdition(input: {
   date: string;
   snapshot: MedifySnapshot | null;
   instructions: readonly Instruction[];
+  /** The Director's schedule changes for the date, so the edition shows the day as changed. */
+  overrides?: readonly ScheduleOverride[];
 }): NewsEditionDocument {
   const { date, snapshot, instructions } = input;
   const observedAt = `${date}T06:30:00+07:00`;
   const resolved = resolveVaultTasks(instructions);
   const rotation = leadBriefRotation(date);
-  const schedule = buildBaselineSchedule(date, "direktur");
+  const schedule = applyOverrides(buildBaselineSchedule(date, "direktur"), (input.overrides ?? []).filter((item) => item.role === "direktur"));
 
   const openCount = resolved.filter((t) => t.status !== "selesai").length;
   const thirdPartyTasks = resolved.filter((t) => t.status === "pending_pihak_ketiga");

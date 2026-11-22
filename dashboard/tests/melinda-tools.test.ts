@@ -13,7 +13,7 @@ const { MELINDA_SYSTEM_PROMPT, turnContext } = await import("@/lib/melinda/promp
 
 const store = { call: vi.fn() };
 const now = new Date("2026-11-09T01:00:00Z");
-const ctx = { config: { store } as unknown as DirectorAuthConfiguration, now };
+const ctx = { config: { store } as unknown as DirectorAuthConfiguration, now, owner: "director-test", conversationId: null };
 const openTask = (id: string, extra: Record<string, unknown> = {}) => ({ id, itemTitle: `Tugas ${id}`, note: "Catatan", pic: ["Bu Yuni"], status: "dikerjakan", action: "assign", deadline: "2026-11-10T08:00", history: [], remindersSent: 0, lastReminderAt: null, latestReply: null, ...extra });
 
 beforeEach(() => { store.call.mockReset(); search.mockReset(); readMedifySnapshot.mockReset(); readMelindaBrief.mockReset(); vi.spyOn(console, "error").mockImplementation(() => undefined); });
@@ -29,10 +29,19 @@ describe("melinda tools", () => {
       "cari_dokumen",
       "baca_jadwal_struktural",
       "baca_task_vault",
-      "ubah_status_tugas",
-      "sinkronkan_halaman",
+      "baca_peta_melindaos",
+      "cari_pejabat",
+      "baca_tindak_lanjut",
+      "usulkan_ganti_pic",
+      "usulkan_status_tugas",
+      "usulkan_tindak_lanjut",
+      "usulkan_tugas_baru",
+      "usulkan_ubah_jadwal",
+      "usulkan_sinkron",
     ]);
-    expect(MELINDA_TOOLS.every((tool) => tool.strict === true && tool.input_schema.additionalProperties === false)).toBe(true);
+    expect(MELINDA_TOOLS.every((tool) => tool.input_schema.additionalProperties === false)).toBe(true);
+    // usulkan_ubah_jadwal is checked on the server instead, to stay under the API limit on optional strict parameters.
+    expect(MELINDA_TOOLS.filter((tool) => tool.strict !== true).map((tool) => tool.name)).toEqual(["usulkan_ubah_jadwal"]);
     expect(MELINDA_TOOLS.every((tool) => TOOL_STATUS[tool.name])).toBe(true);
   });
 

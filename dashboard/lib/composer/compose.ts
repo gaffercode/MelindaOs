@@ -7,6 +7,7 @@ import type { MelindaManagementMorningBrief } from "../melinda/melinda-brief-dat
 import { findPatientIdentifiers } from "../phi-guard";
 import type { SatusehatSnapshot } from "../satusehat/satusehat-snapshot-contract";
 import { buildBaselineSchedule, leadBriefRotation, type StructuralRoleId } from "../work-schedule/baseline-schedule";
+import { applyOverrides, type ScheduleOverride } from "../work-schedule/schedule-overrides";
 import { injectTasksIntoSchedule, resolveVaultTasks } from "../work-schedule/task-vault";
 import { SECTION_NAMES, type Fact } from "./facts";
 import type { Narrative } from "./narrative";
@@ -123,11 +124,12 @@ export function composeFullExecutiveBrief(input: {
   narrative: Narrative | null;
   instructions: readonly Instruction[];
   roleId?: StructuralRoleId;
+  overrides?: readonly ScheduleOverride[];
 }): MelindaManagementMorningBrief {
-  const { date, snapshot, satusehatSnapshot = null, facts, narrative, instructions, roleId = "direktur" } = input;
+  const { date, snapshot, satusehatSnapshot = null, facts, narrative, instructions, roleId = "direktur", overrides = [] } = input;
   const resolved = resolveVaultTasks(instructions);
   const rotation = leadBriefRotation(date);
-  const baseline = buildBaselineSchedule(date, roleId);
+  const baseline = applyOverrides(buildBaselineSchedule(date, roleId), overrides.filter((change) => change.role === roleId));
   const enrichedSchedule = injectTasksIntoSchedule(baseline, resolved);
 
   const openTasks = resolved.filter((t) => t.status !== "selesai");
@@ -241,7 +243,7 @@ export function composeFullExecutiveBrief(input: {
     sources: `${snapshot?.run
       ? `Medify (${wibTime(snapshot.run.completedAt).replace(":", ".")}) + Task Vault + Jadwal Baseline`
       : "Task Vault + Jadwal Baseline 8 Jabatan Struktural"}${satusehatSnapshot ? " + Satu Sehat Kemenkes" : ""}`,
-    status: narrative ? STATUS_WITH_ANALYSIS : "Otomatis",
+    status: narrative ? STATUS_WITH_ANALYSIS : STATUS_WITHOUT_ANALYSIS,
     catatanStatus: "",
     untuk: "Direktur RSIA Melinda DHAI",
     disiapkanOleh: "Melinda (Staf Khusus Penjadwalan Direktur)",

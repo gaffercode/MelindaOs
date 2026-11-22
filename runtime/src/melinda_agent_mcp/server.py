@@ -45,6 +45,9 @@ _KNOWLEDGE_FOLDERS = (
 )
 _GOVERNED_ROOTS = ("knowledge", "docs", "dashboard/schemas")
 _SKIP_PARTS = {".git", ".venv", "__pycache__", "node_modules", ".next", "coverage", "sources"}
+# The agent's own rules and tool grants are human-owned; APPROVED is a human review outcome, never an agent write.
+_WRITE_PROTECTED_FOLDERS = ("08_AGENT_POLICY", "09_AGENT_ARCHITECTURE", "10_TOOL_CONTRACTS")
+_APPROVED_STATUS = re.compile(r"""(?im)(?:^|[\s{,])"?status"?\s*:\s*["']?approved\b""")
 
 _READ = ToolAnnotations(read_only_hint=True, destructive_hint=False, idempotent_hint=True, open_world_hint=False)
 _WRITE = ToolAnnotations(read_only_hint=False, destructive_hint=False, idempotent_hint=True, open_world_hint=False)
@@ -61,8 +64,9 @@ Pintu tunggal MelindaOS untuk agent. Semua pemanggil memakai satu identitas: ALL
 2. Fakta rumah sakit: knowledge_search lalu knowledge_get. Status DRAF bukan fakta final; utamakan APPROVED.
 3. Docs dan schema repo: files_list lalu file_read.
 4. Data live dashboard (jadwal, Task Vault, Morning Brief, Warta, Medify): dashboard_mcp_call.
-5. Tool rumah sakit MAAF: maaf_call. Belum ada backend, jadi hasilnya hanya envelope lokal.
-6. knowledge_write, dashboard_mcp_call untuk tool tulis, dan maaf_call mengubah atau menyiapkan aksi nyata: minta persetujuan manusia dulu.
+5. Tool rumah sakit MAAF: maaf_call. Belum ada backend, jadi hasilnya hanya envelope lokal. Tool L3/L4 membalas approval_required dan L5 human_only.
+6. knowledge_write hanya untuk draf: folder 08_AGENT_POLICY dan 10_TOOL_CONTRACTS serta status APPROVED ditolak.
+7. knowledge_write, dashboard_mcp_call untuk tool tulis, dan maaf_call mengubah atau menyiapkan aksi nyata: minta persetujuan manusia dulu.
 Jangan mengarang fakta klinis, regulasi, atau jadwal; sebutkan sumber dan ketidakpastian."""
 
 mcp = MCPServer(
@@ -153,6 +157,21 @@ def _category_for(rel_path: str) -> str | None:
     if name.endswith(".md"):
         return "A"
     return None
+
+
+def _declared_status(rel_path: str, raw: str) -> str:
+    """The status the readers below would see, parsed the same way, so a write check cannot be fooled by YAML or JSON spelling."""
+    if rel_path.endswith(".json"):
+        try:
+            data = json.loads(raw)
+        except ValueError:
+            return ""
+        gov = data.get("governance") if isinstance(data, dict) else None
+        status = (gov.get("status") if isinstance(gov, dict) else None) or (data.get("status") if isinstance(data, dict) else None)
+        return str(status or "")
+    fm, _ = _split_frontmatter(raw)
+    gov = fm.get("governance") if isinstance(fm.get("governance"), dict) else {}
+    return str(gov.get("status") or fm.get("status") or "")
 
 
 def _doc_record(root: Path, file_path: Path) -> dict[str, Any] | None:
@@ -394,6 +413,19 @@ def knowledge_write(path: str, content: str) -> dict[str, Any]:
     target = _safe_resolve_under(knowledge_dir, cleaned)
     if target is None or any(part in _SKIP_PARTS for part in target.relative_to(knowledge_dir).parts):
         return {"status": "invalid_request", "reason": "Path harus berada di dalam knowledge/ yang valid."}
+    rel = "knowledge/" + target.relative_to(knowledge_dir).as_posix()
+    protected = {folder.casefold() for folder in _WRITE_PROTECTED_FOLDERS}
+    if target.relative_to(knowledge_dir).parts[0].casefold() in protected or rel.casefold().endswith(".prompt.md"):
+        return {"status": "forbidden", "reason": "Kebijakan agen dan kontrak tool hanya diubah manusia."}
+    if _APPROVED_STATUS.search(content) or _declared_status(rel, content).strip().upper() == "APPROVED":
+        return {"status": "forbidden", "reason": "Status APPROVED hanya dipasang lewat tinjauan manusia; simpan sebagai DRAF."}
+    if target.is_file():
+        try:
+            existing = target.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            existing = ""
+        if _declared_status(rel, existing).strip().upper() == "APPROVED":
+            return {"status": "forbidden", "reason": "Dokumen APPROVED hanya diubah lewat tinjauan manusia."}
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(content, encoding="utf-8")
     return {
@@ -506,7 +538,7 @@ def dashboard_mcp_call(tool_name: str, arguments: dict[str, Any] | None = None) 
 
 @mcp.tool(
     name="maaf_call",
-    description="Jalankan salah satu dari 13 tool kontrak MAAF (melinda.social.*, melinda.finance.summary, melinda.medify.*, dll) dengan hak all-access.",
+    description="Jalankan salah satu dari 13 tool kontrak MAAF (melinda.social.*, melinda.finance.summary, melinda.medify.*, dll). L0-L2 berjalan; L3/L4 membalas approval_required, L5 human_only.",
     annotations=_WRITE,
 )
 def maaf_call(
@@ -535,8 +567,6 @@ def maaf_call(
             allowed_roles=allowed_roles,
             purpose=purpose,
             request_id=rid,
-            preapproved=True,
-            all_access=True,
         )
     except ValueError as exc:
         return {"status": "invalid_request", "reason": str(exc)}

@@ -4,7 +4,7 @@ import { MELINDA_MAX_OUTPUT_TOKENS, MELINDA_ROUND_TIMEOUT_MS, melindaModel } fro
 
 export type ContentBlock = Record<string, unknown> & { type: string };
 export type ApiMessage = { role: "user" | "assistant"; content: string | ContentBlock[] };
-export type ToolDefinition = { name: string; description: string; input_schema: Record<string, unknown>; strict: true };
+export type ToolDefinition = { name: string; description: string; input_schema: Record<string, unknown>; strict?: true };
 export type RoundResult = { stopReason: string | null; content: ContentBlock[]; inputTokens: number; outputTokens: number };
 export class MelindaModelError extends Error {
   override readonly name = "MelindaModelError";

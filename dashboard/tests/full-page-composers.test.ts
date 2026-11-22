@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { composeFullExecutiveBrief } from "../lib/composer/compose";
+import { composeFullExecutiveBrief, STATUS_WITHOUT_ANALYSIS } from "../lib/composer/compose";
 import { parseMelindaBrief } from "../lib/melinda/melinda-brief-contract";
 import { composeNewsEdition } from "../lib/news/news-composer";
 import { parseNewsEdition } from "../lib/news/news-edition-contract";
@@ -16,6 +16,7 @@ describe("full-page-composers", () => {
     });
 
     const parsed = parseMelindaBrief(brief);
+    expect(parsed.status).toBe(STATUS_WITHOUT_ANALYSIS);
     expect(parsed.schedule.items.length).toBeGreaterThanOrEqual(8);
     expect(parsed.schedule.items.some((i) => i.kegiatan.toLowerCase().includes("keuangan"))).toBe(true);
     expect(parsed.safetyQuality.exceptions.length).toBeGreaterThanOrEqual(1);

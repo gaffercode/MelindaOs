@@ -112,17 +112,24 @@ const VALID_STATUSES: readonly VaultTaskStatus[] = [
   "butuh_keputusan_direktur",
   "menunggu_verifikasi_novia",
 ];
+const EXECUTIVE_TAG = "[EKSEKUTIF]";
+
+/** Removes the executive tag from text a caller wrote, so only formatFeedbackNote can set it. */
+export const stripExecutiveTag = (text: string) => text.split(EXECUTIVE_TAG).join("").trim();
 
 export function formatFeedbackNote(input: {
   status: VaultTaskStatus;
   thirdPartyName?: string;
   text: string;
+  /** The writer is the Director or a Vice Director, so Rule #39 was already settled when the note was written. */
+  executive?: boolean;
 }): string {
   const parts = [`[STATUS:${input.status}]`];
+  if (input.executive) parts.push(EXECUTIVE_TAG);
   if (input.thirdPartyName?.trim()) {
     parts.push(`[PIHAK3:${input.thirdPartyName.trim()}]`);
   }
-  const cleanText = input.text.trim();
+  const cleanText = stripExecutiveTag(input.text);
   if (cleanText) {
     parts.push(cleanText);
   }
@@ -133,6 +140,7 @@ export function parseFeedbackNote(note: string): {
   status: VaultTaskStatus | null;
   thirdPartyName?: string;
   text: string;
+  executive?: true;
 } {
   let working = note.trim();
   let status: VaultTaskStatus | null = null;
@@ -147,13 +155,16 @@ export function parseFeedbackNote(note: string): {
     working = working.replace(statusMatch[0], "").trim();
   }
 
+  const executive = working.includes(EXECUTIVE_TAG);
+  working = working.replace(EXECUTIVE_TAG, "").trim();
+
   const partyMatch = working.match(/\[PIHAK3:([^\]]+)\]/i);
   if (partyMatch) {
     thirdPartyName = partyMatch[1].trim();
     working = working.replace(partyMatch[0], "").trim();
   }
 
-  return { status, thirdPartyName, text: working };
+  return { status, thirdPartyName, text: working, ...(executive ? { executive: true } : {}) };
 }
 
 function isDirectorOrViceDirectorActor(actorName: string): boolean {
@@ -184,10 +195,16 @@ export function resolveVaultTasks(
     : [...VAULT_TASKS];
 
   const latestByItemId = new Map<string, Instruction>();
+  // Only an `assign` row moves a task to new PICs, so a later status update keeps them.
+  const latestAssignByItemId = new Map<string, Instruction>();
   for (const ins of instructions) {
     const existing = latestByItemId.get(ins.itemId);
     if (!existing || ins.createdAt >= existing.createdAt) {
       latestByItemId.set(ins.itemId, ins);
+    }
+    const assigned = latestAssignByItemId.get(ins.itemId);
+    if (ins.action === "assign" && ins.pic.length > 0 && (!assigned || ins.createdAt >= assigned.createdAt)) {
+      latestAssignByItemId.set(ins.itemId, ins);
     }
   }
 
@@ -200,7 +217,8 @@ export function resolveVaultTasks(
     const parsed = parseFeedbackNote(latest.note || "");
     const lastHistory = latest.history[latest.history.length - 1];
     const actor = lastHistory?.actor ?? "Direktur";
-    const executive = isDirectorOrViceDirectorActor(actor);
+    const executive = parsed.executive === true || isDirectorOrViceDirectorActor(actor);
+    const pic = latestAssignByItemId.get(task.id)?.pic ?? task.pic;
 
     let resolvedStatus: VaultTaskStatus = task.defaultStatus;
     if (parsed.status) {
@@ -217,6 +235,7 @@ export function resolveVaultTasks(
 
     return {
       ...task,
+      pic,
       status: resolvedStatus,
       thirdPartyName: parsed.thirdPartyName ?? task.thirdPartyName,
       latestNote: parsed.text || latest.note || undefined,

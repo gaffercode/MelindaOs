@@ -53,7 +53,9 @@ export class SupabaseDirectorStore {
       | "melinda_access"
       | "melinda_schema_status"
       | "melinda_referrals"
-      | "melinda_clinical" = "melinda_director"
+      | "melinda_clinical"
+      | "melinda_actions"
+      | "melinda_schedule_overrides" = "melinda_director"
   ): Promise<T> {
     const headers: Record<string, string> = { apikey: this.secret, "Content-Type": "application/json" };
     if (this.secret.startsWith("eyJ")) headers.Authorization = `Bearer ${this.secret}`;

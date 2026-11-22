@@ -13,8 +13,9 @@ import type { MedifySnapshot } from "../medify/medify-snapshot-contract";
 import { readMedifySnapshot } from "../medify/medify-snapshot-store";
 import { composeNewsEdition } from "../news/news-composer";
 import type { ScheduleItemInput } from "../tasks/contract";
-import { board, replaceSchedule } from "../tasks/store";
+import { replaceSchedule, vaultLedger } from "../tasks/store";
 import { buildEnrichedScheduleForRole } from "./fallbacks";
+import { readScheduleOverrides } from "./schedule-overrides";
 import {
   VAULT_TASKS,
   applyRule39,
@@ -78,6 +79,7 @@ export async function submitVaultTaskFeedback(
 
   const formattedNote = formatFeedbackNote({
     status: resolvedStatus,
+    executive,
     thirdPartyName: input.thirdPartyName ?? task.thirdPartyName,
     text:
       input.note?.trim() ||
@@ -134,6 +136,18 @@ export interface SyncTodayResult {
   readonly newsComposed: boolean;
 }
 
+/** The Director's day as stored schedule rows; the sync and a confirmed schedule change both write it this way. */
+export function directorScheduleItems(slots: ReturnType<typeof buildEnrichedScheduleForRole>["slots"]): ScheduleItemInput[] {
+  return slots.map((slot) => ({
+    start: slot.startTime,
+    end: slot.endTime,
+    title: slot.title.slice(0, 120),
+    place: "RSIA Melinda DHAI",
+    pic: [...slot.participants].slice(0, 8),
+    topic: slot.combinedTopicSummary.slice(0, 280),
+  }));
+}
+
 export async function syncTodayAllPages(
   config: DirectorAuthConfiguration,
   date = wibDate(),
@@ -143,19 +157,11 @@ export async function syncTodayAllPages(
   // republished brief would carry no hospital numbers and replace one that had them.
   snapshot ??= (await readMedifySnapshot(date)).snapshot;
   const nowIso = new Date().toISOString();
-  const { instructions } = await board(config, { now: nowIso }).catch(() => ({
-    instructions: [] as Instruction[],
-  }));
+  const instructions: Instruction[] = await vaultLedger(config, { now: nowIso }).catch(() => []);
 
-  const { slots, tasks } = buildEnrichedScheduleForRole(date, "direktur", instructions);
-  const scheduleItems: ScheduleItemInput[] = slots.map((slot) => ({
-    start: slot.startTime,
-    end: slot.endTime,
-    title: slot.title.slice(0, 120),
-    place: "RSIA Melinda DHAI",
-    pic: [...slot.participants].slice(0, 8),
-    topic: slot.combinedTopicSummary.slice(0, 280),
-  }));
+  const overrides = await readScheduleOverrides(config, date, "direktur");
+  const { slots, tasks } = buildEnrichedScheduleForRole(date, "direktur", instructions, overrides);
+  const scheduleItems = directorScheduleItems(slots);
 
   try {
     await replaceSchedule(config, { date, items: scheduleItems, producer: "melinda-sync-today" });
@@ -182,6 +188,7 @@ export async function syncTodayAllPages(
     narrative: null,
     instructions,
     roleId: "direktur",
+    overrides,
   });
 
   let briefComposed = false;
@@ -197,7 +204,7 @@ export async function syncTodayAllPages(
     logError("sync_today_brief", error);
   }
 
-  const edition = composeNewsEdition({ date, snapshot, instructions });
+  const edition = composeNewsEdition({ date, snapshot, instructions, overrides });
   let newsComposed = false;
   try {
     await submitDailyDocument(config, "news_edition", {

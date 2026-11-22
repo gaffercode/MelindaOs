@@ -2,24 +2,27 @@ import type { Instruction } from "../director/director-instructions";
 import type { OfficeCalendarRow, OfficeReadinessRow } from "../executive/executive-office";
 import type { ScheduleRow } from "../tasks/store";
 import { buildBaselineSchedule, type StructuralRoleId } from "./baseline-schedule";
+import { applyOverrides, type ScheduleOverride } from "./schedule-overrides";
 import { injectTasksIntoSchedule, resolveVaultTasks } from "./task-vault";
 
 export function buildEnrichedScheduleForRole(
   date: string,
   roleId: StructuralRoleId,
-  instructions: readonly Instruction[]
+  instructions: readonly Instruction[],
+  overrides: readonly ScheduleOverride[] = []
 ) {
   const tasks = resolveVaultTasks(instructions);
-  const baseline = buildBaselineSchedule(date, roleId);
+  const baseline = applyOverrides(buildBaselineSchedule(date, roleId), overrides.filter((change) => change.role === roleId));
   const slots = injectTasksIntoSchedule(baseline, tasks);
   return { slots, tasks };
 }
 
 export function buildFallbackBoardSchedule(
   date: string,
-  instructions: readonly Instruction[]
+  instructions: readonly Instruction[],
+  overrides: readonly ScheduleOverride[] = []
 ): ScheduleRow[] {
-  const { slots } = buildEnrichedScheduleForRole(date, "direktur", instructions);
+  const { slots } = buildEnrichedScheduleForRole(date, "direktur", instructions, overrides);
   return slots.map((slot, index) => ({
     id: slot.id,
     date,
@@ -38,9 +41,10 @@ export function buildFallbackBoardSchedule(
 
 export function buildFallbackOfficePlan(
   date: string,
-  instructions: readonly Instruction[]
+  instructions: readonly Instruction[],
+  overrides: readonly ScheduleOverride[] = []
 ): { events: OfficeCalendarRow[]; readiness: OfficeReadinessRow[] } {
-  const { slots } = buildEnrichedScheduleForRole(date, "direktur", instructions);
+  const { slots } = buildEnrichedScheduleForRole(date, "direktur", instructions, overrides);
   const meetingSlots = slots.filter(
     (s) => s.category === "Meeting" || s.category === "External" || s.category === "Clinical"
   );
