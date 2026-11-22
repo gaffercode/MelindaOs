@@ -37,7 +37,9 @@ function shiftDate(date: string, days: number): string {
 /**
  * What one past day's latest `medify_run_status` says about its two scheduled pulls (06:00 and 18:00 WIB).
  * The store keeps the latest status per day, so only these cases are knowable:
- * - no status at all: neither pull ran (the scheduler never started, or the host was down);
+ * - no status at all: neither pull reached the dashboard. The scheduler may not have run, or the dashboard
+ *   refused the publisher key or was unreachable; the failure status is sent with the same key to the same
+ *   host, so it is lost in those cases too;
  * - latest is the morning slot: the evening pull never ran;
  * - latest status `failed`: that slot ran and failed.
  * A day whose latest status is a complete or degraded evening pull is treated as fine; a morning pull
@@ -111,7 +113,7 @@ export async function collectOpsAlerts(now = new Date()): Promise<OpsReport> {
   else if (medify?.report_date === date && time >= SERVICE_HOURS.from && time <= SERVICE_HOURS.to && now.getTime() - Date.parse(medify.received_at) > MEDIFY_MAX_AGE_MS) alerts.push({ code: "snapshot_stale", detail: `Tarikan Medify terakhir ${wibTime(medify.received_at)}; tidak ada tarikan baru lebih dari 13 jam pada jam layanan.` });
   if (time >= SNAPSHOT_DEADLINE && satusehat?.report_date !== date) alerts.push({ code: "satusehat_missing", detail: satusehatMissingDetail(date, satusehat?.report_date ?? null) });
   const missed = medify ? await missedMedifyPulls(config, date) : [];
-  if (missed.length) alerts.push({ code: "medify_pull_missed", detail: `Tarikan Medify terjadwal tidak lengkap dalam ${MISSED_PULL_LOOKBACK_DAYS} hari terakhir: ${missed.join("; ")}. Periksa jadwal di server Biznet.` });
+  if (missed.length) alerts.push({ code: "medify_pull_missed", detail: `Tarikan Medify terjadwal tidak lengkap dalam ${MISSED_PULL_LOOKBACK_DAYS} hari terakhir: ${missed.join("; ")}. Periksa log server Biznet dan kunci publisher Medify di Vercel (MELINDAOS_MEDIFY_PUBLISHER_TOKEN_HASH): tarikan yang ditolak dashboard juga tidak meninggalkan catatan gagal.` });
   return { checkedAt: now.toISOString(), date, alerts, latestSnapshot: snapshot?.report_date ?? null };
 }
 
