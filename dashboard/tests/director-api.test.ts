@@ -117,6 +117,20 @@ describe("real director route handlers", () => {
     // The lock is marked for the home page alert.
     expect(calls.find((call) => call.command === "heartbeat")?.args).toEqual({ producer: "alert:login-global-locked" });
   });
+  it("still refuses the login with 429 when the lock cannot be marked", async () => {
+    const original = globalThis.fetch;
+    const logged = vi.spyOn(console, "error").mockImplementation(() => undefined);
+    vi.stubGlobal("fetch", async (url: string, init: RequestInit) => {
+      const input = JSON.parse(init.body as string) as { command: string; args: Record<string, unknown> };
+      if (input.command === "rate_limit" && input.args.bucket === "login-global:director-test") return Response.json({ allowed: false });
+      if (input.command === "heartbeat") return Response.json({ errorCode: "unreachable" });
+      return original(url, init);
+    });
+    const response = await login(request("/api/director/session", "POST", { passcode: "synthetic-test-passcode" }, { "X-Forwarded-For": "198.51.100.8" }));
+    expect(response.status).toBe(429);
+    expect(logged.mock.calls.map((call) => String(call[0]))).toEqual(expect.arrayContaining([expect.stringContaining("director_login_lock_mark")]));
+    logged.mockRestore();
+  });
   it("refuses a bearer token on the human review and knowledge routes", async () => {
     const headers = { Authorization: "Bearer synthetic-bot-token", "Idempotency-Key": "synthetic-delivery-1" };
     expect((await reviews(request("/api/director/reviews?tanggal=2026-10-03", "GET", undefined, headers))).status).toBe(401);
