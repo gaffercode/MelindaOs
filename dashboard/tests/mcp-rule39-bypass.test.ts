@@ -3,7 +3,7 @@ import type { McpAuthContext, McpAuthMode } from "@/lib/mcp/auth";
 import { executeMcpTool } from "@/lib/mcp/tools";
 import { VAULT_TASKS } from "@/lib/work-schedule/task-vault";
 
-const ctx = (mode: McpAuthMode): McpAuthContext => ({ agentId: "ALL_ACCESS", mode, config: null });
+const ctx = (mode: McpAuthMode): McpAuthContext => ({ agentId: "ALL_ACCESS", mode, credential: mode === "director_session" ? "director" : "shared", config: null });
 const close = async (mode: McpAuthMode) =>
   ((await executeMcpTool("ubah_status_tugas", { task_id: VAULT_TASKS[0].id, status: "selesai", bypass_rule39: true }, ctx(mode))) as { resolvedStatus: string }).resolvedStatus;
 

@@ -26,7 +26,7 @@ function context(opts: { rows?: unknown[]; auditFails?: boolean } = {}) {
       },
     },
   } as unknown as DirectorAuthConfiguration;
-  const ctx: McpAuthContext = { agentId: "ALL_ACCESS", mode: "master_token", config };
+  const ctx: McpAuthContext = { agentId: "ALL_ACCESS", mode: "master_token", credential: "katt", config };
   return { ctx, calls };
 }
 
@@ -40,7 +40,7 @@ describe("clinical MCP read tools", () => {
     }
   });
 
-  it("answers with Indonesian keys and writes one audit row naming the caller mode and the row count", async () => {
+  it("answers with Indonesian keys and writes one audit row naming the caller mode, credential and the row count", async () => {
     const { ctx, calls } = context({ rows: [handoverRow] });
     const result = (await executeMcpTool("baca_handover", { date: "2026-11-22" }, ctx, NOW)) as { status: string; jumlah: number; entri: Record<string, unknown>[] };
     expect(result.status).toBe("ok");
@@ -48,7 +48,7 @@ describe("clinical MCP read tools", () => {
     expect(result.entri[0]).toMatchObject({ tanggal: "2026-11-22", shift: "malam", pasien: "Ny. Pasien QA", no_rm: "123456", rekomendasi: "Pantau suhu", diserahkan_oleh: "Ns. A" });
     expect(calls.map((call) => call.command)).toEqual(["list", "audit_read"]);
     expect(calls[0].args).toMatchObject({ kind: "handover", from: "2026-11-22", to: "2026-11-22", status: "aktif" });
-    expect(calls[1].args).toEqual({ kind: "handover", reader: "master_token", count: 1, detail: { from: "2026-11-22", to: "2026-11-22", limit: 50, ids: [handoverRow.id] } });
+    expect(calls[1].args).toEqual({ kind: "handover", reader: "master_token:katt", count: 1, detail: { from: "2026-11-22", to: "2026-11-22", limit: 50, ids: [handoverRow.id] } });
     expect(result).toMatchObject({ mungkin_terpotong: false });
   });
 
@@ -65,7 +65,7 @@ describe("clinical MCP read tools", () => {
   });
 
   it("answers 'tidak_tersedia' without a database", async () => {
-    const result = await executeMcpTool("baca_insiden", {}, { agentId: "ALL_ACCESS", mode: "file", config: null }, NOW);
+    const result = await executeMcpTool("baca_insiden", {}, { agentId: "ALL_ACCESS", mode: "file", credential: "local", config: null }, NOW);
     expect(result).toMatchObject({ status: "tidak_tersedia" });
   });
 

@@ -56,10 +56,12 @@ Context:
 - JSON-RPC 2.0: initialize, notifications/initialized, ping, tools/list, tools/call. GET returns discovery info.
 - Auth (dashboard/lib/mcp/auth.ts):
   * Production, Vercel, or MELINDAOS_DIRECTOR_STORE other than "file": requires
-    `Authorization: Bearer <TOKEN>` matching server env MELINDAOS_MCP_TOKEN or its SHA-256 in
-    MELINDAOS_MCP_TOKEN_HASH. Without a token only a Director login cookie is accepted.
+    `Authorization: Bearer <TOKEN>` matching one entry of MELINDAOS_MCP_TOKEN_HASHES (one token per
+    bot), or the legacy MELINDAOS_MCP_TOKEN / MELINDAOS_MCP_TOKEN_HASH. Without a token only a
+    Director login cookie is accepted.
   * Local file mode (MELINDAOS_DIRECTOR_STORE unset): no token needed.
-  * Every caller runs as the one shared agent identity ALL_ACCESS; no agent header is needed.
+  * Every caller runs as the one shared agent identity ALL_ACCESS; no agent header is needed. The
+    token's name (for example `katt`) is recorded in the logs, the rate limit and clinical read audits.
 
 Steps:
 1. Ask me to put the token in shell env MELINDAOS_MCP_TOKEN (do not ask me to paste it in chat).
@@ -76,7 +78,9 @@ Rules:
 - Never print the token or save it to a committed file.
 ```
 
-Server side (operator): set `MELINDAOS_MCP_TOKEN_HASH` (safer than the raw token) in the dashboard env; see `dashboard/.env.example` lines 68–70. Production (`https://melindaos.app/api/mcp`) holds only the hash; the token was rotated on 2026-11-20.
+Server side (operator): set `MELINDAOS_MCP_TOKEN_HASHES` in the dashboard env, one `name=sha256hex` entry per bot, comma-separated (see `dashboard/.env.example`). Each bot gets its own token, so rotating or revoking one bot leaves the others working. A malformed entry rejects every token with 503, so a typo is visible at once. The legacy `MELINDAOS_MCP_TOKEN_HASH` is still accepted as credential `shared` until every bot has moved; remove it after that. A Vercel env change applies only after a redeploy.
+
+Diagnosing a 401: Vercel runtime logs carry `mcp_auth_rejected` with a `reason` (`missing`, `empty`, `format`, `mismatch`) and, for a mismatch, the first 8 hex characters of the presented token's SHA-256 (`fingerprint`). Compare it with the 8-character prefixes of the current hashes to tell a stale token from a wrong one. A successful call logs `mcp_auth_ok` with the credential name.
 
 Client side (this laptop): the raw token lives only in the Windows user env `MELINDAOS_MCP_TOKEN`. The committed `.mcp.json` already registers `melindaos-dashboard` and passes the token by `${MELINDAOS_MCP_TOKEN:-}`, so Claude Code opened at the capsule root needs no prompt. For an agent on another machine, give it the token through its own env or secret store, never in chat or a file.
 
@@ -113,7 +117,8 @@ Rules:
 ## Security checks
 
 - **Tokenless mode is local-only.** The dashboard accepts tokenless calls in file mode, and the Python agent server uses `allow_tokenless=True`. Never expose either to a network without a token.
-- **Store the hash, not the raw token**, on servers (`MELINDAOS_MCP_TOKEN_HASH`).
+- **Store the hash, not the raw token**, on servers (`MELINDAOS_MCP_TOKEN_HASHES`).
+- **One token per bot.** A shared token cannot be revoked for one bot without breaking the rest.
 - **Keep credentials separate**: the inbound MCP token is not the backend credential (`MAAF_GATEWAY_BEARER_FILE`).
 - **Clinical tools**: `baca_handover`, `baca_roster` and `baca_insiden` return patient names and record numbers typed on `/klinis`. Every MCP caller shares one identity, so whoever holds the token can read them; keep the token with the Director. Each read writes one row to `melinda_private.clinical_reads`, and the read fails if that row cannot be written.
 - **Patient data**: `satusehat_patient_lookup` takes a NIK. Enable it only via the allowlist for an approved role.

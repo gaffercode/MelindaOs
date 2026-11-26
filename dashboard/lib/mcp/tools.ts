@@ -383,7 +383,7 @@ async function readClinical(kind: ClinicalKind, args: Record<string, unknown>, c
   }
   const entries = await listClinicalEntries(ctx.config, { kind, from, to, status: "aktif", limit });
   try {
-    await auditClinicalRead(ctx.config, { kind, reader: ctx.mode, count: entries.length, detail: { from, to, limit, ids: entries.map((entry) => entry.id) } });
+    await auditClinicalRead(ctx.config, { kind, reader: `${ctx.mode}:${ctx.credential}`, count: entries.length, detail: { from, to, limit, ids: entries.map((entry) => entry.id) } });
   } catch {
     throw new McpToolError("Pencatatan audit pembacaan gagal; data klinis tidak dikirim. Coba lagi.");
   }

@@ -116,6 +116,7 @@ export async function handleMcpGet(request: Request): Promise<Response> {
     capabilities: { tools: { listChanged: false } },
     agentId: ctx.agentId,
     authMode: ctx.mode,
+    credential: ctx.credential,
     accessLevel: "ALL_ACCESS",
     tools: MCP_TOOLS.map((t) => t.name),
   });
@@ -123,8 +124,8 @@ export async function handleMcpGet(request: Request): Promise<Response> {
 
 export async function handleMcpPost(request: Request): Promise<Response> {
   const ctx = await authenticateMcp(request);
-  // One shared token serves every agent, so the limit is per credential kind. File mode has no store to count in.
-  if (ctx.config) await rateLimit(ctx.config, `mcp:${ctx.mode}`, MCP_CALLS_PER_MINUTE, 60);
+  // The limit is per credential, so one bot stuck in a loop cannot throttle the others. File mode has no store to count in.
+  if (ctx.config) await rateLimit(ctx.config, `mcp:${ctx.mode}:${ctx.credential}`, MCP_CALLS_PER_MINUTE, 60);
   const body = await readBoundedJson(request, MAX_MCP_BODY_BYTES);
 
   if (Array.isArray(body)) {
