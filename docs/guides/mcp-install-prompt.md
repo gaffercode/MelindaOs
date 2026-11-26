@@ -78,7 +78,7 @@ Rules:
 - Never print the token or save it to a committed file.
 ```
 
-Server side (operator): set `MELINDAOS_MCP_TOKEN_HASHES` in the dashboard env, one `name=sha256hex` entry per bot, comma-separated (see `dashboard/.env.example`). Each bot gets its own token, so rotating or revoking one bot leaves the others working. A malformed entry rejects every token with 503, so a typo is visible at once. The legacy `MELINDAOS_MCP_TOKEN_HASH` is still accepted as credential `shared` until every bot has moved; remove it after that. A Vercel env change applies only after a redeploy.
+Server side (operator): set `MELINDAOS_MCP_TOKEN_HASHES` in the dashboard env, one `name=sha256hex` entry per bot, comma-separated (see `dashboard/.env.example`). Each bot gets its own token, so rotating or revoking one bot leaves the others working. A malformed entry rejects every token with 503, so a typo is visible at once. The legacy `MELINDAOS_MCP_TOKEN_HASH` is still accepted as credential `shared` until every bot has moved; remove it after that. A Vercel env change applies only after a redeploy. Per-bot tokens were issued on 2026-11-26; the legacy shared hash stays until every bot has moved.
 
 Diagnosing a 401: Vercel runtime logs carry `mcp_auth_rejected` with a `reason` (`missing`, `empty`, `format`, `mismatch`) and, for a mismatch, the first 8 hex characters of the presented token's SHA-256 (`fingerprint`). Compare it with the 8-character prefixes of the current hashes to tell a stale token from a wrong one. A successful call logs `mcp_auth_ok` with the credential name.
 
